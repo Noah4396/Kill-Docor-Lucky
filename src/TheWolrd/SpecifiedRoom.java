@@ -6,14 +6,17 @@ import java.util.ArrayList;
  * Specified rooms, eg. Dining Hall, Billiard Room.
  */
 public class SpecifiedRoom implements Room {
-  private String name;
-  private int index;
-  private int leftCorner;
-  private int rightCorner;
-  private int upperCorner;
-  private int lowerCorner;
-  private ArrayList<item> items;
-
+  private final String name;
+  private final int index;
+  private final int leftCorner;
+  private final int rightCorner;
+  private final int upperCorner;
+  private final int lowerCorner;
+  private ArrayList<Item> items;
+  private ArrayList<SpecifiedRoom> leftRooms;
+  private ArrayList<SpecifiedRoom> rightRooms;
+  private ArrayList<SpecifiedRoom> upperRooms;
+  private ArrayList<SpecifiedRoom> lowerRooms;
   /**
    * Constructs a Specified object.
    *
@@ -35,6 +38,9 @@ public class SpecifiedRoom implements Room {
     this.items = new ArrayList<>();
   }
 
+  public void addItem(Item item){
+    this.items.add(item);
+  }
   @Override
   public boolean hasLeftRoom() {
     return false;
