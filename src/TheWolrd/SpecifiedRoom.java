@@ -35,6 +35,10 @@ public class SpecifiedRoom implements Room {
     this.rightCorner = rightCorner;
     this.upperCorner = upperCorner;
     this.lowerCorner = lowerCorner;
+    this.leftRooms = new ArrayList<>();
+    this.rightRooms = new ArrayList<>();
+    this.upperRooms = new ArrayList<>();
+    this.leftRooms = new ArrayList<>();
     this.items = new ArrayList<>();
   }
 
