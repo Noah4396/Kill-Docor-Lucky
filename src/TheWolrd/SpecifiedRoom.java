@@ -38,7 +38,7 @@ public class SpecifiedRoom implements Room {
     this.leftRooms = new ArrayList<>();
     this.rightRooms = new ArrayList<>();
     this.upperRooms = new ArrayList<>();
-    this.leftRooms = new ArrayList<>();
+    this.lowerRooms = new ArrayList<>();
     this.items = new ArrayList<>();
   }
 
@@ -87,7 +87,7 @@ public class SpecifiedRoom implements Room {
     this.upperRooms.add(room);
   }
 
-  public void setLowerRooms(ArrayList<Room> lowerRooms) {
-    this.lowerRooms = lowerRooms;
+  public void addLowerRooms(Room room) {
+    this.lowerRooms.add(room);
   }
 }
