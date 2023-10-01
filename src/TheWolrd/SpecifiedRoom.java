@@ -75,19 +75,19 @@ public class SpecifiedRoom implements Room {
     return !lowerRooms.isEmpty();
   }
 
-  public void addLeftRooms(Room room) {
+  public void addLeftRoom(Room room) {
     this.leftRooms.add(room);
   }
 
-  public void addRightRooms(Room room) {
+  public void addRightRoom(Room room) {
     this.rightRooms.add(room);
   }
 
-  public void addUpperRooms(Room room) {
+  public void addUpperRoom(Room room) {
     this.upperRooms.add(room);
   }
 
-  public void addLowerRooms(Room room) {
+  public void addLowerRoom(Room room) {
     this.lowerRooms.add(room);
   }
 }
