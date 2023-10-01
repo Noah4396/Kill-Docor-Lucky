@@ -57,21 +57,37 @@ public class SpecifiedRoom implements Room {
   }
   @Override
   public boolean hasLeftRoom() {
-    return false;
+    return !leftRooms.isEmpty();
   }
 
   @Override
   public boolean hasRightRoom() {
-    return false;
+    return !rightRooms.isEmpty();
   }
 
   @Override
   public boolean hasUpperRoom() {
-    return false;
+    return !upperRooms.isEmpty();
   }
 
   @Override
   public boolean hasLowerRoom() {
-    return false;
+    return !lowerRooms.isEmpty();
+  }
+
+  public void addLeftRooms(Room room) {
+    this.leftRooms.add(room);
+  }
+
+  public void addRightRooms(Room room) {
+    this.rightRooms.add(room);
+  }
+
+  public void addUpperRooms(Room room) {
+    this.upperRooms.add(room);
+  }
+
+  public void setLowerRooms(ArrayList<Room> lowerRooms) {
+    this.lowerRooms = lowerRooms;
   }
 }

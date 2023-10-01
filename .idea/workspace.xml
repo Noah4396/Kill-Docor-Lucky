@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add getItem method to get a random item in the room">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/Item.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add methods to Item class">
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +77,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1696132341289</updated>
-      <workItem from="1696132342650" duration="11161000" />
+      <workItem from="1696132342650" duration="11832000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -137,7 +135,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696192386428</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Add methods to Item class">
+      <option name="closed" value="true" />
+      <created>1696194216935</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696194216935</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +192,7 @@
     <MESSAGE value="Create SpecifiedRoom.java and build its consturction function" />
     <MESSAGE value="Add private variable of adjacent rooms to SpecifiedRoom.java" />
     <MESSAGE value="Add getItem method to get a random item in the room" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add getItem method to get a random item in the room" />
+    <MESSAGE value="Add methods to Item class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add methods to Item class" />
   </component>
 </project>
