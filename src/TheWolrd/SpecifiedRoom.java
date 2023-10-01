@@ -13,10 +13,10 @@ public class SpecifiedRoom implements Room {
   private final int upperCorner;
   private final int lowerCorner;
   private ArrayList<Item> items;
-  private ArrayList<SpecifiedRoom> leftRooms;
-  private ArrayList<SpecifiedRoom> rightRooms;
-  private ArrayList<SpecifiedRoom> upperRooms;
-  private ArrayList<SpecifiedRoom> lowerRooms;
+  private ArrayList<Room> leftRooms;
+  private ArrayList<Room> rightRooms;
+  private ArrayList<Room> upperRooms;
+  private ArrayList<Room> lowerRooms;
   /**
    * Constructs a Specified object.
    *
@@ -40,6 +40,16 @@ public class SpecifiedRoom implements Room {
 
   public void addItem(Item item){
     this.items.add(item);
+  }
+
+  public Item getItem(){
+    if(items.isEmpty()){
+      return null;
+    }
+    else{
+      int itemIndex = (int)(Math.random() * items.size());
+      return items.remove(itemIndex);
+    }
   }
   @Override
   public boolean hasLeftRoom() {
