@@ -24,10 +24,22 @@ public class TargetCharacter implements Character{
 
   @Override
   public int getIndex() {
-    return -1;
+    return this.index;
   }
   @Override
   public void setRoom(Room room) {
     this.room = room;
+  }
+
+  public void setHealth(int health) {
+    this.health = health;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
   }
 }

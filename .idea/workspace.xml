@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Initially complete the parse function">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Parse the first line">
       <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamingConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" afterDir="false" />
     </list>
@@ -110,7 +109,7 @@
       <workItem from="1696382747173" duration="126000" />
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
-      <workItem from="1696383575219" duration="7370000" />
+      <workItem from="1696383575219" duration="7906000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -240,7 +239,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696454828027</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Parse the first line">
+      <option name="closed" value="true" />
+      <created>1696457251534</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696457251534</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,6 +306,7 @@
     <MESSAGE value="Create getIndex method in character" />
     <MESSAGE value="Create move method of GamingConsole.java" />
     <MESSAGE value="Initially complete the parse function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initially complete the parse function" />
+    <MESSAGE value="Parse the first line" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parse the first line" />
   </component>
 </project>

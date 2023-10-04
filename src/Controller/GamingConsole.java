@@ -42,6 +42,9 @@ public class GamingConsole {
       line = br.readLine();
       words = line.split(" ");
 
+      doctorLucky = new TargetCharacter();
+      doctorLucky.setHealth(Integer.parseInt(words[0]));
+      doctorLucky.setName(line.substring(line.indexOf(words[1])));
 
 
 
