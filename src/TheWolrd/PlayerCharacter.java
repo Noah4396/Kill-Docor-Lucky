@@ -30,4 +30,9 @@ public class PlayerCharacter implements Character{
   public int getIndex() {
     return this.index;
   }
+
+  @Override
+  public void setRoom(Room room) {
+    this.room = room;
+  }
 }

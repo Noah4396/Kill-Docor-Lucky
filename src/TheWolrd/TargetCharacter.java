@@ -24,5 +24,8 @@ public class TargetCharacter implements Character{
   public int getIndex() {
     return -1;
   }
-
+  @Override
+  public void setRoom(Room room) {
+    this.room = room;
+  }
 }
