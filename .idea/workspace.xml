@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Parse the second line">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Parse the rooms">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamingConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/Room.java" afterDir="false" />
@@ -111,7 +111,7 @@
       <workItem from="1696382747173" duration="126000" />
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
-      <workItem from="1696383575219" duration="12026000" />
+      <workItem from="1696383575219" duration="13261000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -257,7 +257,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696457523200</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Parse the rooms">
+      <option name="closed" value="true" />
+      <created>1696461736014</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1696461736014</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +326,7 @@
     <MESSAGE value="Initially complete the parse function" />
     <MESSAGE value="Parse the first line" />
     <MESSAGE value="Parse the second line" />
-    <option name="LAST_COMMIT_MESSAGE" value="Parse the second line" />
+    <MESSAGE value="Parse the rooms" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parse the rooms" />
   </component>
 </project>

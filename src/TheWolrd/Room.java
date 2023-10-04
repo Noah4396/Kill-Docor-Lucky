@@ -35,4 +35,5 @@ public interface Room {
   public void removeCharacter(Character character);
 
   public int isNeighbour(Room room);
+  public String getName();
 }

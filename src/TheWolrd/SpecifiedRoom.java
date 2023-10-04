@@ -6,6 +6,7 @@ import java.util.ArrayList;
  * Specified rooms, eg. Dining Hall, Billiard Room.
  */
 public class SpecifiedRoom implements Room {
+  private int numOfNeighbours;
   private final String name;
   private final int index;
   private final int leftCorner;
@@ -18,6 +19,7 @@ public class SpecifiedRoom implements Room {
   private ArrayList<Room> upperRooms;
   private ArrayList<Room> lowerRooms;
   private ArrayList<Character> characters;
+  private ArrayList<ArrayList<Room>> neighbours;
 
 
   /**
@@ -45,6 +47,12 @@ public class SpecifiedRoom implements Room {
     this.lowerRooms = new ArrayList<>();
     this.items = new ArrayList<>();
     this.characters = new ArrayList<>();
+    this.neighbours = new ArrayList<>();
+    this.neighbours.add(this.upperRooms);
+    this.neighbours.add(this.rightRooms);
+    this.neighbours.add(this.lowerRooms);
+    this.neighbours.add(this.leftRooms);
+    this.numOfNeighbours = 0;
   }
 
   public void addItem(Item item){
@@ -63,6 +71,10 @@ public class SpecifiedRoom implements Room {
 
   public int getIndex() {
     return index;
+  }
+  @Override
+  public String getName() {
+    return name;
   }
 
   @Override
@@ -97,14 +109,11 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public int isNeighbour(Room room) {
-    if(upperRooms.contains(room))
-      return 1;
-    if(rightRooms.contains(room))
-      return 2;
-    if(lowerRooms.contains(room))
-      return 3;
-    if(leftRooms.contains(room))
-      return 4;
+    for(int i = 0; i < 4; i++){
+      if(neighbours.get(i).contains(room)){
+        return i + 1;
+      }
+    }
     return 0;
   }
 
@@ -122,26 +131,38 @@ public class SpecifiedRoom implements Room {
 
   public void addLeftRoom(Room room) {
     this.leftRooms.add(room);
+    this.numOfNeighbours++;
   }
 
   public void addRightRoom(Room room) {
     this.rightRooms.add(room);
+    this.numOfNeighbours++;
   }
 
   public void addUpperRoom(Room room) {
     this.upperRooms.add(room);
+    this.numOfNeighbours++;
   }
 
   public void addLowerRoom(Room room) {
     this.lowerRooms.add(room);
+    this.numOfNeighbours++;
   }
 
   @Override
   public String toString() {
-    return "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
+    StringBuffer sb = new StringBuffer("SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
         + leftCorner + ", rightCorner=" + rightCorner + ", upperCorner=" + upperCorner
-        + ", lowerCorner=" + lowerCorner + ", items=" + items + ", leftRooms=" + leftRooms
-        + ", rightRooms=" + rightRooms + ", upperRooms=" + upperRooms + ", lowerRooms=" + lowerRooms
-        + ", characters=" + characters + '}';
+        + ", lowerCorner=" + lowerCorner + ", items=" + items + ", characters=" + characters + '}');
+    sb.append(", neighbours = ");
+    for(ArrayList<Room> list : neighbours){
+      sb.append("[");
+      for(Room room : list){
+        sb.append(room.getName());
+        sb.append(", ");
+      }
+      sb.append("]");
+    }
+    return sb.toString();
   }
 }

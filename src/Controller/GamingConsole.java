@@ -38,8 +38,8 @@ public class GamingConsole {
       for(int i = 0; i < numOfRooms; i++){
         parseRoom(br.readLine(), i);
       }
-      //for(Room room : rooms)
-        //System.out.println(room);
+      for(Room room : rooms)
+        System.out.println(room);
 
     } catch(IOException e){
       e.printStackTrace();
@@ -93,7 +93,7 @@ public class GamingConsole {
     String name = line.substring(line.indexOf(words[4]));
 
     Room room = new SpecifiedRoom(name, index, leftBound, rightBound, upperBound, lowerBound);
-    System.out.println(room);
+    //System.out.println(room);
     this.rooms.add(room);
     for(int i = upperBound; i <= lowerBound; i++){
       for(int j = leftBound; j <= rightBound; j++){
