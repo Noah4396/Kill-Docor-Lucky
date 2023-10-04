@@ -4,17 +4,25 @@ package TheWolrd;
  */
 public class TargetCharacter implements Character{
   private Room room;
-  private String name;
+  private int index;
   public TargetCharacter() {
     room = null;
+    index = -1;
   }
 
   public TargetCharacter(Room room) {
     this.room = room;
-    room.addCharacter(this);
+    index = -1;
+    this.room.addCharacter(this);
   }
   @Override
   public Room getRoom() {
     return room;
   }
+
+  @Override
+  public int getIndex() {
+    return -1;
+  }
+
 }
