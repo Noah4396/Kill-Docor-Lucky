@@ -17,6 +17,7 @@ public class SpecifiedRoom implements Room {
   private ArrayList<Room> rightRooms;
   private ArrayList<Room> upperRooms;
   private ArrayList<Room> lowerRooms;
+  private ArrayList<Character> characters;
   /**
    * Constructs a Specified object.
    *
@@ -55,6 +56,11 @@ public class SpecifiedRoom implements Room {
       return items.remove(itemIndex);
     }
   }
+
+  public int getIndex() {
+    return index;
+  }
+
   @Override
   public boolean hasLeftRoom() {
     return !leftRooms.isEmpty();
@@ -75,6 +81,16 @@ public class SpecifiedRoom implements Room {
     return !lowerRooms.isEmpty();
   }
 
+  @Override
+  public void addCharacter(Character character) {
+    this.characters.add(character);
+  }
+
+  @Override
+  public void removeCharacter(Character character) {
+    this.characters.remove(character);
+  }
+
   public void addLeftRoom(Room room) {
     this.leftRooms.add(room);
   }
@@ -90,4 +106,5 @@ public class SpecifiedRoom implements Room {
   public void addLowerRoom(Room room) {
     this.lowerRooms.add(room);
   }
+
 }

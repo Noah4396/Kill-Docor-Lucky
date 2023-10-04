@@ -29,4 +29,8 @@ public interface Room {
    * one people can enter the lower room from this room.
    */
   public boolean hasLowerRoom();
+
+  public void addCharacter(Character character);
+
+  public void removeCharacter(Character character);
 }
