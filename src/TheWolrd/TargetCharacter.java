@@ -4,7 +4,7 @@ package TheWolrd;
  */
 public class TargetCharacter implements Character{
   private Room room;
-
+  private String name;
   public TargetCharacter() {
     room = null;
   }

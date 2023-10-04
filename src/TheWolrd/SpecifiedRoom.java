@@ -41,6 +41,7 @@ public class SpecifiedRoom implements Room {
     this.upperRooms = new ArrayList<>();
     this.lowerRooms = new ArrayList<>();
     this.items = new ArrayList<>();
+    this.characters = new ArrayList<>();
   }
 
   public void addItem(Item item){
@@ -89,6 +90,18 @@ public class SpecifiedRoom implements Room {
   @Override
   public void removeCharacter(Character character) {
     this.characters.remove(character);
+  }
+
+  public int getNumberOfCharacter(){
+    return this.characters.size();
+  }
+  public Character getCharacter(int index) {
+    if(index >= 0 && index < characters.size()){
+      return characters.get(index);
+    }
+    else{
+      throw new IndexOutOfBoundsException("Index is out of bound");
+    }
   }
 
   public void addLeftRoom(Room room) {
