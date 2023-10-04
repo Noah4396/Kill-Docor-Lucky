@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create move method of GamingConsole.java">
-      <change afterPath="$PROJECT_DIR$/res/mansion.txt" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Initially complete the parse function">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamingConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,7 @@
       <workItem from="1696382747173" duration="126000" />
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
-      <workItem from="1696383575219" duration="5380000" />
+      <workItem from="1696383575219" duration="7370000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -232,7 +232,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696402187929</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Initially complete the parse function">
+      <option name="closed" value="true" />
+      <created>1696454828027</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696454828027</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -290,6 +298,7 @@
     <MESSAGE value="Create get character method in a room" />
     <MESSAGE value="Create getIndex method in character" />
     <MESSAGE value="Create move method of GamingConsole.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create move method of GamingConsole.java" />
+    <MESSAGE value="Initially complete the parse function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initially complete the parse function" />
   </component>
 </project>

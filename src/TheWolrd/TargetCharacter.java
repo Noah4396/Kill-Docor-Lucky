@@ -5,6 +5,8 @@ package TheWolrd;
 public class TargetCharacter implements Character{
   private Room room;
   private int index;
+  private int health;
+  private String name;
   public TargetCharacter() {
     room = null;
     index = -1;
