@@ -54,7 +54,7 @@ public class SpecifiedRoom implements Room {
     this.neighbours.add(this.leftRooms);
     this.numOfNeighbours = 0;
   }
-
+  @Override
   public void addItem(Item item){
     this.items.add(item);
   }
@@ -67,6 +67,10 @@ public class SpecifiedRoom implements Room {
       int itemIndex = (int)(Math.random() * items.size());
       return items.remove(itemIndex);
     }
+  }
+
+  public int getNumOfNeighbours() {
+    return numOfNeighbours;
   }
 
   public int getIndex() {

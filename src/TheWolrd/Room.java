@@ -36,4 +36,5 @@ public interface Room {
 
   public int isNeighbour(Room room);
   public String getName();
+  public void addItem(Item item);
 }

@@ -28,4 +28,10 @@ public class Item {
   public boolean isLargerThan(Item item){
     return damagePoint > item.getDamagePoint();
   }
+
+  @Override
+  public String toString() {
+    return "Item{" + "name='" + name + '\'' + ", damagePoint=" + damagePoint + ", indexOfRoom="
+        + indexOfRoom + '}';
+  }
 }

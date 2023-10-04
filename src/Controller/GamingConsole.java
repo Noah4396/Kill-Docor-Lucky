@@ -19,8 +19,11 @@ public class GamingConsole {
   private int height;
   private int width;
   private int numOfRooms;
+  private int numOfItems;
 
   public GamingConsole(String path) {
+    this.rooms = new ArrayList<>();
+    this.items = new ArrayList<>();
     parse(path);
   }
   private void parse(String path){
@@ -31,20 +34,26 @@ public class GamingConsole {
       // The second line reader: 50 Doctor Lucky
       parseSecondLine(br.readLine());
 
-      // The third line contains the number of rooms
-      parseThirdLine(br.readLine());
       // Start to parse Rooms
-      this.rooms = new ArrayList<>();
+      this.numOfRooms = parseNumber(br.readLine());
       for(int i = 0; i < numOfRooms; i++){
         parseRoom(br.readLine(), i);
       }
+
+      // Start to parse items
+      this.numOfItems = parseNumber(br.readLine());
+      for(int i = 0; i < numOfItems; i++){
+        parseItem(br.readLine(), i);
+      }
+
       for(Room room : rooms)
         System.out.println(room);
-
     } catch(IOException e){
       e.printStackTrace();
     }
   }
+
+
   public void move(Character character, Room room){
     Room prevRoom = character.getRoom();
     if(prevRoom == room)
@@ -77,10 +86,10 @@ public class GamingConsole {
 
   }
 
-  public  void parseThirdLine(String line){
+  public int parseNumber(String line){
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
-    this.numOfRooms = Integer.parseInt(words[0]);
+    return Integer.parseInt(words[0]);
   }
 
   public void parseRoom(String line, int index){
@@ -101,5 +110,14 @@ public class GamingConsole {
       }
     }
   }
+  private void parseItem(String line, int index) {
+    line = line.replaceFirst("^\\s*", "");
+    String[] words = line.split("\\s+");
+    int indexOfRoom = Integer.parseInt(words[0]);
+    int damagePoint = Integer.parseInt(words[1]);
+    String itemName = line.substring(line.indexOf(words[2]));
 
+    Item item = new Item(itemName, damagePoint, indexOfRoom);
+    rooms.get(indexOfRoom).addItem(item);
+  }
 }
