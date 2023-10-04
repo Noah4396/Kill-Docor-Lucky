@@ -18,6 +18,8 @@ public class SpecifiedRoom implements Room {
   private ArrayList<Room> upperRooms;
   private ArrayList<Room> lowerRooms;
   private ArrayList<Character> characters;
+
+
   /**
    * Constructs a Specified object.
    *
@@ -28,6 +30,7 @@ public class SpecifiedRoom implements Room {
    * @param upperCorner is the upper corner.
    * @param lowerCorner is the lower corner.
    */
+
   public SpecifiedRoom(String name, int index, int leftCorner, int rightCorner, int upperCorner,
       int lowerCorner) {
     this.name = name;
@@ -92,6 +95,19 @@ public class SpecifiedRoom implements Room {
     this.characters.remove(character);
   }
 
+  @Override
+  public int isNeighbour(Room room) {
+    if(upperRooms.contains(room))
+      return 1;
+    if(rightRooms.contains(room))
+      return 2;
+    if(lowerRooms.contains(room))
+      return 3;
+    if(leftRooms.contains(room))
+      return 4;
+    return 0;
+  }
+
   public int getNumberOfCharacter(){
     return this.characters.size();
   }
@@ -120,4 +136,12 @@ public class SpecifiedRoom implements Room {
     this.lowerRooms.add(room);
   }
 
+  @Override
+  public String toString() {
+    return "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
+        + leftCorner + ", rightCorner=" + rightCorner + ", upperCorner=" + upperCorner
+        + ", lowerCorner=" + lowerCorner + ", items=" + items + ", leftRooms=" + leftRooms
+        + ", rightRooms=" + rightRooms + ", upperRooms=" + upperRooms + ", lowerRooms=" + lowerRooms
+        + ", characters=" + characters + '}';
+  }
 }

@@ -33,4 +33,6 @@ public interface Room {
   public void addCharacter(Character character);
 
   public void removeCharacter(Character character);
+
+  public int isNeighbour(Room room);
 }
