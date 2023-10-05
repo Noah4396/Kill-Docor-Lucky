@@ -72,7 +72,6 @@ public class SpecifiedRoom implements Room {
   public int getNumOfNeighbours() {
     return numOfNeighbours;
   }
-
   public int getIndex() {
     return index;
   }
@@ -120,7 +119,22 @@ public class SpecifiedRoom implements Room {
     }
     return 0;
   }
-
+  @Override
+  public int getLeftCorner() {
+    return leftCorner;
+  }
+  @Override
+  public int getRightCorner() {
+    return rightCorner;
+  }
+  @Override
+  public int getUpperCorner() {
+    return upperCorner;
+  }
+  @Override
+  public int getLowerCorner() {
+    return lowerCorner;
+  }
   public int getNumberOfCharacter(){
     return this.characters.size();
   }
@@ -132,23 +146,31 @@ public class SpecifiedRoom implements Room {
       throw new IndexOutOfBoundsException("Index is out of bound");
     }
   }
-
+  @Override
   public void addLeftRoom(Room room) {
+    if(leftRooms.contains(room))
+      return;
     this.leftRooms.add(room);
     this.numOfNeighbours++;
   }
-
+  @Override
   public void addRightRoom(Room room) {
+    if(rightRooms.contains(room))
+      return;
     this.rightRooms.add(room);
     this.numOfNeighbours++;
   }
-
+  @Override
   public void addUpperRoom(Room room) {
+    if(upperRooms.contains(room))
+      return;
     this.upperRooms.add(room);
     this.numOfNeighbours++;
   }
-
+  @Override
   public void addLowerRoom(Room room) {
+    if(lowerRooms.contains(room))
+      return;
     this.lowerRooms.add(room);
     this.numOfNeighbours++;
   }

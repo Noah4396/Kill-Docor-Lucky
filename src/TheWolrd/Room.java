@@ -37,4 +37,12 @@ public interface Room {
   public int isNeighbour(Room room);
   public String getName();
   public void addItem(Item item);
+  public int getLeftCorner();
+  public int getRightCorner();
+  public int getUpperCorner();
+  public int getLowerCorner();
+  public void addLeftRoom(Room room);
+  public void addRightRoom(Room room);
+  public void addUpperRoom(Room room);
+  public void addLowerRoom(Room room);
 }

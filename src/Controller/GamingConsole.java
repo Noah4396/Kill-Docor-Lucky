@@ -25,6 +25,11 @@ public class GamingConsole {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
     parse(path);
+    for(Room room : rooms){
+      setNeighbour(room);
+    }
+    for(Room room : rooms)
+      System.out.println(room);
   }
   private void parse(String path){
     try(BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -46,8 +51,6 @@ public class GamingConsole {
         parseItem(br.readLine(), i);
       }
 
-      for(Room room : rooms)
-        System.out.println(room);
     } catch(IOException e){
       e.printStackTrace();
     }
@@ -119,5 +122,78 @@ public class GamingConsole {
 
     Item item = new Item(itemName, damagePoint, indexOfRoom);
     rooms.get(indexOfRoom).addItem(item);
+  }
+
+  public void setNeighbour(Room room){
+    int tmp;
+    Room tmpRoom;
+    int leftBound = room.getLeftCorner();
+    int rightBound = room.getRightCorner();
+    int upperBound = room.getUpperCorner();
+    int lowerBound = room.getLowerCorner();
+
+    if(leftBound > 0){
+      tmp = chessBoard[upperBound][leftBound - 1];
+      if(tmp != -1){
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addRightRoom(room);
+        room.addLeftRoom(tmpRoom);
+      }
+
+      tmp = chessBoard[lowerBound][leftBound - 1];
+      if(tmp != -1){
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addRightRoom(room);
+        room.addLeftRoom(tmpRoom);
+      }
+    }
+
+    if(upperBound > 0) {
+      tmp = chessBoard[upperBound - 1][leftBound];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addLowerRoom(room);
+        room.addUpperRoom(tmpRoom);
+      }
+
+      tmp = chessBoard[upperBound - 1][rightBound];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addLowerRoom(room);
+        room.addUpperRoom(tmpRoom);
+      }
+    }
+
+    if(rightBound < width - 1) {
+      tmp = chessBoard[upperBound][rightBound + 1];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addLeftRoom(room);
+        room.addRightRoom(tmpRoom);
+      }
+
+      tmp = chessBoard[lowerBound][rightBound + 1];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addLeftRoom(room);
+        room.addRightRoom(tmpRoom);
+      }
+    }
+
+    if(lowerBound < height - 1) {
+      tmp = chessBoard[lowerBound + 1][leftBound];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addUpperRoom(room);
+        room.addLowerRoom(tmpRoom);
+      }
+
+      tmp = chessBoard[lowerBound + 1][rightBound];
+      if (tmp != -1) {
+        tmpRoom = rooms.get(tmp);
+        tmpRoom.addUpperRoom(room);
+        room.addLowerRoom(tmpRoom);
+      }
+    }
   }
 }

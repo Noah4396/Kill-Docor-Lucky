@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add field neighbours to SpecifiedRoom.java and create the toString method">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Parse item">
       <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamingConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/Room.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" afterDir="false" />
@@ -110,7 +110,7 @@
       <workItem from="1696382747173" duration="126000" />
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
-      <workItem from="1696383575219" duration="14033000" />
+      <workItem from="1696383575219" duration="18791000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -272,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696462964910</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Parse item">
+      <option name="closed" value="true" />
+      <created>1696463714807</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1696463714807</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -335,6 +343,7 @@
     <MESSAGE value="Parse the second line" />
     <MESSAGE value="Parse the rooms" />
     <MESSAGE value="Add field neighbours to SpecifiedRoom.java and create the toString method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add field neighbours to SpecifiedRoom.java and create the toString method" />
+    <MESSAGE value="Parse item" />
+    <option name="LAST_COMMIT_MESSAGE" value="Parse item" />
   </component>
 </project>
