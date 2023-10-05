@@ -28,8 +28,10 @@ public class GamingConsole {
     for(Room room : rooms){
       setNeighbour(room);
     }
-    for(Room room : rooms)
-      System.out.println(room);
+    for(Room room : rooms) {
+      room.setVisibleRooms();
+      //System.out.println(room);
+    }
   }
   private void parse(String path){
     try(BufferedReader br = new BufferedReader(new FileReader(path))){
@@ -196,4 +198,5 @@ public class GamingConsole {
       }
     }
   }
+
 }

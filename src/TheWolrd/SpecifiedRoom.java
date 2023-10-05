@@ -1,6 +1,7 @@
 package TheWolrd;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 /**
  * Specified rooms, eg. Dining Hall, Billiard Room.
@@ -20,7 +21,7 @@ public class SpecifiedRoom implements Room {
   private ArrayList<Room> lowerRooms;
   private ArrayList<Character> characters;
   private ArrayList<ArrayList<Room>> neighbours;
-
+  private ArrayList<Room> visibleRooms;
 
   /**
    * Constructs a Specified object.
@@ -48,6 +49,7 @@ public class SpecifiedRoom implements Room {
     this.items = new ArrayList<>();
     this.characters = new ArrayList<>();
     this.neighbours = new ArrayList<>();
+    this.visibleRooms = new ArrayList<>();
     this.neighbours.add(this.upperRooms);
     this.neighbours.add(this.rightRooms);
     this.neighbours.add(this.lowerRooms);
@@ -175,6 +177,33 @@ public class SpecifiedRoom implements Room {
     this.numOfNeighbours++;
   }
 
+
+  @Override
+  public void setVisibleRooms() {
+    Stack<Room> stack = new Stack<>();
+    ArrayList<Room> list;
+    for(int i = 0; i < 4; i++){
+      list = neighbours.get(i);
+      for(Room room : list){
+        stack.push(room);
+        visibleRooms.add(room);
+      }
+      while(!stack.isEmpty()){
+        Room tmp = stack.pop();
+        list = tmp.getNeighbours(i);
+        for(Room room : list){
+          stack.push(room);
+          visibleRooms.add(room);
+        }
+      }
+    }
+  }
+
+  @Override
+  public ArrayList<Room> getNeighbours(int index) {
+    return new ArrayList<>(neighbours.get(index));
+  }
+
   @Override
   public String toString() {
     StringBuffer sb = new StringBuffer("SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
@@ -189,6 +218,12 @@ public class SpecifiedRoom implements Room {
       }
       sb.append("]");
     }
+    sb.append(", visibleRooms = [");
+    for(Room room : visibleRooms){
+      sb.append(room.getName());
+      sb.append(", ");
+    }
+    sb.append("]");
     return sb.toString();
   }
 }

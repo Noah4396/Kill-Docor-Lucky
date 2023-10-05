@@ -1,5 +1,7 @@
 package TheWolrd;
 
+import java.util.ArrayList;
+
 /**
  * Rooms represent the rooms in the game.
  */
@@ -45,4 +47,6 @@ public interface Room {
   public void addRightRoom(Room room);
   public void addUpperRoom(Room room);
   public void addLowerRoom(Room room);
+  public void setVisibleRooms();
+  public ArrayList<Room> getNeighbours(int index);
 }
