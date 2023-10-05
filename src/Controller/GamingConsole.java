@@ -3,7 +3,11 @@ package Controller;
 import TheWolrd.*;
 import TheWolrd.Character;
 
+import javax.imageio.ImageIO;
+import java.awt.*;
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,11 +24,23 @@ public class GamingConsole {
   private int width;
   private int numOfRooms;
   private int numOfItems;
+  private int amplifierDegree;
+  private BufferedImage image;
+  private Graphics2D g2d;
 
   public GamingConsole(String path) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
+    this.amplifierDegree = 30;
     parse(path);
+
+    this.image = new BufferedImage(width * amplifierDegree,
+        height * amplifierDegree, BufferedImage.TYPE_3BYTE_BGR);
+    g2d = image.createGraphics();
+    g2d.setColor(Color.WHITE);
+    g2d.fillRect(0, 0, this.width * amplifierDegree, this.height * amplifierDegree);
+    g2d.setFont(new Font("Arial", Font.BOLD, 12));
+
     for(Room room : rooms){
       setNeighbour(room);
     }
@@ -32,7 +48,35 @@ public class GamingConsole {
       room.setVisibleRooms();
       //System.out.println(room);
     }
+
+    for(Room room: rooms){
+      paintRoom(room);
+    }
+    outputImage();
   }
+  private void paintRoom(Room room){
+    g2d.setColor(Color.BLACK);
+    int x = room.getLeftCorner();
+    int y = room.getUpperCorner();
+    int width = room.getRightCorner() - room.getLeftCorner() + 1;
+    int height = room.getLowerCorner() - room.getUpperCorner() + 1;
+    x *= amplifierDegree;
+    y *= amplifierDegree;
+    width *= amplifierDegree;
+    height *= amplifierDegree;
+    g2d.drawRect(x, y, width, height);
+    g2d.drawString(room.getName(), x + width/3, y + height/2);
+  }
+  private void outputImage() {
+    try {
+      File output = new File("./res/example.png");
+      ImageIO.write(image, "png", output);
+      System.out.println("Image saved successfully.");
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
   private void parse(String path){
     try(BufferedReader br = new BufferedReader(new FileReader(path))){
       // The first line reader: 36 30 Doctor Lucky's Mansion;
@@ -111,6 +155,8 @@ public class GamingConsole {
     this.rooms.add(room);
     for(int i = upperBound; i <= lowerBound; i++){
       for(int j = leftBound; j <= rightBound; j++){
+        if(chessBoard[i][j] != -1)
+          throw new IllegalArgumentException("The Rooms overlap!");
         chessBoard[i][j] = index;
       }
     }
