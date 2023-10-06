@@ -14,6 +14,11 @@ public class TargetCharacter implements Character {
     this.index = -1;
   }
 
+  /**
+   * The constructor.
+   * @param room the initial room
+   * @param name the name of character
+   */
   public TargetCharacter(Room room, String name) {
     this.room = room;
     this.name = name;

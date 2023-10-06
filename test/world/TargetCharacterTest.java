@@ -3,13 +3,17 @@ package world;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
+import static org.junit.Assert.assertEquals;
+/**
+ * Test target Character.
+ */
 public class TargetCharacterTest {
 
   private TargetCharacter targetCharacter;
   private SpecifiedRoom specifiedRoom;
-
+  /**
+   * Initialize the tester.
+   */
   @Before
   public void setUp() {
     // Initialize a TargetCharacter object for testing
@@ -25,7 +29,7 @@ public class TargetCharacterTest {
   }
 
   @Test
-  public void testGetRoom(){
+  public void testGetRoom() {
     //targetCharacter.setRoom(specifiedRoom);
     assertEquals(specifiedRoom, targetCharacter.getRoom());
   }
@@ -33,7 +37,8 @@ public class TargetCharacterTest {
   @Test
   public void testToString() {
     // Check if the toString method returns the expected string representation
-    assertEquals("TargetCharacter{roomIndex=2, roomName = Left Room, index=-1, health=0, name='Test Target Character'}", targetCharacter.toString());
+    assertEquals("TargetCharacter{roomIndex=2, roomName = Left Room, index=-1, health=0"
+        + ", name='Test Target Character'}", targetCharacter.toString());
   }
 
   // You can add more test methods to cover other behaviors of the TargetCharacter class

@@ -6,105 +6,142 @@ import java.util.ArrayList;
  * Rooms represent the rooms in the game.
  */
 public interface Room {
-
-
   /**
-   * @Return true if it has another room on the left and
-   * one people can enter the left room from this room.
+   * Have left room or not.
+   * @return true if it has another room on the left.
    */
   public boolean hasLeftRoom();
 
   /**
-   * @Return true if it has another room on the right and
-   * one people can enter the right room from this room.
+   * Have right room or not.
+   * @return true if it has another room on the right.
    */
   public boolean hasRightRoom();
 
   /**
-   * @Return true if it has another room on the upper side and
-   * one people can enter the upper room from this room.
+   * Have upper room or not.
+   * @return true if it has another room on the upper side.
    */
   public boolean hasUpperRoom();
 
   /**
-   * @Return true if it has another room below it and
-   * one people can enter the lower room from this room.
+   * Have lower room or not.
+   * @return true if it has another room below it.
    */
   public boolean hasLowerRoom();
+
   /**
-   * Add character to the room.
+   * Add character.
+   * @param character added the room.
    */
   public void addCharacter(Character character);
+
   /**
-   * Remove character of the room.
+   * Remove character.
+   * @param character of the room.
    */
   public void removeCharacter(Character character);
+
   /**
-   * @Return true if a room is the neighbour.
+   * Judge if is neighbour.
+   * @param room another room
+   * @return 1,2,3,4 corresponding to which direction is room is
    */
   public int isNeighbour(Room room);
+
   /**
-   * Get name.
+   * Get the name.
+   * @return the name
    */
   public String getName();
+
   /**
-   * Get index.
+   * Get the index.
+   * @return the index
    */
   public int getIndex();
+
   /**
    * Get number of neighbours.
+   * @return number of neighbours.
    */
   public int getNumOfNeighbours();
+
   /**
    * Add item.
+   * @param item add to the room
    */
   public void addItem(Item item);
+
   /**
-   * Get the left corner.
+   * Get left corner.
+   * @return the left corner
    */
   public int getLeftCorner();
+
   /**
-   * Get the right corner.
+   * Get right corner.
+   * @return the right corner.
    */
   public int getRightCorner();
+
   /**
-   * Get the upper corner.
+   * Get upper corner.
+   * @return the upper corner.
    */
   public int getUpperCorner();
+
   /**
-   * Get the lower corner.
+   * Get lower corner.
+   * @return the lower corner.
    */
   public int getLowerCorner();
+
   /**
    * Add left room.
+   * @param room left room.
    */
   public void addLeftRoom(Room room);
+
   /**
-   * Add right room
+   * Add right room.
+   * @param room right room
    */
   public void addRightRoom(Room room);
+
   /**
    * Add upper room.
+   * @param room upper room.
    */
   public void addUpperRoom(Room room);
+
   /**
    * Add lower room.
+   * @param room lower room.
    */
   public void addLowerRoom(Room room);
+
   /**
    * Set the visible rooms fo this room.
    */
   public void setVisibleRooms();
+
   /**
-   * Get the neighbours.
+   * Get neighbours.
+   * @param index of neighbours.
+   * @return the neighbours.
    */
   public ArrayList<Room> getNeighbours(int index);
+
   /**
-   * Display all the neighbours.
+   * Display neighbours.
+   * @return all the neighbours.
    */
   public String displayNeighbours();
+
   /**
-   * Display all the vidible rooms.
+   * Display visible rooms.
+   * @return all the visible rooms.
    */
   public String displayVisibleRooms();
 }
