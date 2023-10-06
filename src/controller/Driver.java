@@ -1,10 +1,20 @@
 package controller;
+
 import java.util.Scanner;
+
+/**
+ * The driver.
+ */
+
 public class Driver {
+
+  /**
+   * The main function.
+   * @param args the arguments.
+   */
   public static void main(String[] args) {
     // Press Opt+Enter with your caret at the highlighted text to see how
     // IntelliJ IDEA suggests fixing it.
-    boolean flag = true;
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please enter the world specification file path:");
     String path = scanner.nextLine();
@@ -12,7 +22,8 @@ public class Driver {
     System.out.println("Mansion load successfully");
     System.out.println(gamingConsole);
     // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-    while(flag){
+    boolean flag = true;
+    while (flag) {
       System.out.println("Select option: ");
       System.out.println("1.Move target");
       System.out.println("2.Output image");
@@ -21,7 +32,7 @@ public class Driver {
       System.out.println("5. Visible rooms by index");
       System.out.println("6. Exit");
       int choice = scanner.nextInt();
-      switch (choice){
+      switch (choice) {
         case 1:
           gamingConsole.moveTarget();
           System.out.println("The status of Target Character: " + gamingConsole.getDoctorLucky());

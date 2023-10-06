@@ -1,10 +1,8 @@
 package controller;
 
-import world.*;
-import world.Character;
-
-import javax.imageio.ImageIO;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +10,18 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import javax.imageio.ImageIO;
+import world.Character;
+import world.Item;
+import world.PlayerCharacter;
+import world.Room;
+import world.SpecifiedRoom;
+import world.TargetCharacter;
 
+
+/**
+ * The Gaming console.
+ */
 public class GamingConsole {
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
@@ -28,6 +37,11 @@ public class GamingConsole {
   private BufferedImage image;
   private Graphics2D g2d;
 
+  /**
+   * The constructor.
+   *
+   * @param path is thr origin path of source file.
+   */
   public GamingConsole(String path) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
@@ -58,26 +72,31 @@ public class GamingConsole {
     //outputImage();
   }
 
+  /**
+   * Paint the rooms.
+   * @param room the painted room.
+   */
   private void paintRoom(Room room) {
     g2d.setColor(Color.BLACK);
-    int x = room.getLeftCorner();
-    int y = room.getUpperCorner();
-    int width = room.getRightCorner() - room.getLeftCorner() + 1;
-    int height = room.getLowerCorner() - room.getUpperCorner() + 1;
-    x *= amplifierDegree;
-    y *= amplifierDegree;
-    width *= amplifierDegree;
-    height *= amplifierDegree;
-    g2d.drawRect(x, y, width, height);
-    g2d.drawString(room.getName(), x + width / 3, y + height / 2);
+    int x = room.getLeftCorner() * amplifierDegree;
+    int y = room.getUpperCorner() * amplifierDegree;
+    int w = room.getRightCorner() - room.getLeftCorner() + 1;
+    w *= amplifierDegree;
+    int h = room.getLowerCorner() - room.getUpperCorner() + 1;
+    h *= amplifierDegree;
+    g2d.drawRect(x, y, w, h);
+    g2d.drawString(room.getName(), x + w / 3, y + h / 2);
   }
 
+  /**
+   * Output the image.
+   */
   public void outputImage() {
     try {
       File output = new File("./res/example.png");
       ImageIO.write(image, "png", output);
       System.out.println("Image saved successfully.");
-    } catch (Exception e) {
+    } catch (IOException e) {
       e.printStackTrace();
     }
   }
@@ -108,6 +127,12 @@ public class GamingConsole {
     }
   }
 
+  /**
+   * Move a character to a room.
+   *
+   * @param character the character.
+   * @param room      the room.
+   */
   public void move(Character character, Room room) {
     Room prevRoom = character.getRoom();
     if (prevRoom == room) {
@@ -119,11 +144,21 @@ public class GamingConsole {
     room.addCharacter(character);
     character.setRoom(room);
   }
+
+  /**
+   * Move the target.
+   */
   public void moveTarget() {
     int targetIndex = doctorLucky.getRoom().getIndex();
     targetIndex = (targetIndex + 1) % rooms.size();
     move(doctorLucky, rooms.get(targetIndex));
   }
+
+  /**
+   * Parse the first line.
+   *
+   * @param line the line.
+   */
   public void parseFirstLine(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
@@ -137,6 +172,11 @@ public class GamingConsole {
     this.name = line.substring(line.indexOf(words[2]));
   }
 
+  /**
+   * Parse the second line.
+   *
+   * @param line the second line.
+   */
   public void parseSecondLine(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
@@ -147,12 +187,24 @@ public class GamingConsole {
 
   }
 
+  /**
+   * Parse number.
+   *
+   * @param line the line.
+   * @return the int.
+   */
   public int parseNumber(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
     return Integer.parseInt(words[0]);
   }
 
+  /**
+   * Parse the room line.
+   *
+   * @param line  the line.
+   * @param index the index of the room.
+   */
   public void parseRoom(String line, int index) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
@@ -167,13 +219,20 @@ public class GamingConsole {
     this.rooms.add(room);
     for (int i = upperBound; i <= lowerBound; i++) {
       for (int j = leftBound; j <= rightBound; j++) {
-        if (chessBoard[i][j] != -1)
+        if (chessBoard[i][j] != -1) {
           throw new IllegalArgumentException("The Rooms overlap!");
+        }
         chessBoard[i][j] = index;
       }
     }
   }
 
+  /**
+   * Parse the items.
+   *
+   * @param line  the line.
+   * @param index the index of the item.
+   */
   private void parseItem(String line, int index) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
@@ -185,6 +244,11 @@ public class GamingConsole {
     rooms.get(indexOfRoom).addItem(item);
   }
 
+  /**
+   * Set neighbour of a room.
+   *
+   * @param room the room.
+   */
   public void setNeighbour(Room room) {
     int tmp;
     Room tmpRoom;
@@ -282,21 +346,37 @@ public class GamingConsole {
     return sb.toString();
   }
 
+  /**
+   * Get the target.
+   * @return the target.
+   */
   public TargetCharacter getDoctorLucky() {
     return doctorLucky;
   }
-  public void displayRooms(){
-    for(Room room : rooms){
+
+  /**
+   * Display all the rooms.
+   */
+  public void displayRooms() {
+    for (Room room : rooms) {
       System.out.println(room);
     }
   }
-  public void displayNeighbours(){
-    for(Room room : rooms){
+
+  /**
+   * Display all neighbours.
+   */
+  public void displayNeighbours() {
+    for (Room room : rooms) {
       System.out.println(room.displayNeighbours());
     }
   }
-  public void displayVisibleRooms(){
-    for(Room room : rooms){
+
+  /**
+   * Display all visible rooms.
+   */
+  public void displayVisibleRooms() {
+    for (Room room : rooms) {
       System.out.println(room.displayVisibleRooms());
     }
   }

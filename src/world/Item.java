@@ -1,12 +1,21 @@
 package world;
+
 /**
- * Item in the rooms
+ * Item in the rooms.
  */
+
 public class Item {
   private String name;
   private int damagePoint;
   private int indexOfRoom;
 
+  /**
+   * Constructor.
+   *
+   * @param name        is the name of item.
+   * @param damagePoint is the damage point.
+   * @param indexOfRoom is the index of room.
+   */
   public Item(String name, int damagePoint, int indexOfRoom) {
     this.name = name;
     this.damagePoint = damagePoint;
@@ -25,7 +34,7 @@ public class Item {
     return indexOfRoom;
   }
 
-  public boolean isLargerThan(Item item){
+  public boolean isLargerThan(Item item) {
     return damagePoint > item.getDamagePoint();
   }
 

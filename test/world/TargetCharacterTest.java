@@ -1,12 +1,14 @@
 package world;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 /**
  * Test target Character.
  */
+
 public class TargetCharacterTest {
 
   private TargetCharacter targetCharacter;
@@ -14,6 +16,7 @@ public class TargetCharacterTest {
   /**
    * Initialize the tester.
    */
+
   @Before
   public void setUp() {
     // Initialize a TargetCharacter object for testing

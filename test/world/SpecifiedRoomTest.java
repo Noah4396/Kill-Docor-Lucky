@@ -1,13 +1,23 @@
 package world;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+/**
+ * Test the specified room.
+ */
 
 public class SpecifiedRoomTest {
 
   private SpecifiedRoom room;
+
+  /**
+   * Initialize the test.
+   */
 
   @Before
   public void setUp() {
