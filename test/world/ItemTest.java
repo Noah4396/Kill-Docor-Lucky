@@ -1,6 +1,5 @@
-package TheWolrd;
+package world;
 
-import TheWolrd.Item;
 import org.junit.Before;
 import org.junit.Test;
 

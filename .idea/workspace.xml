@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create some getter method">
-      <change afterPath="$PROJECT_DIR$/test/TheWolrd/ItemTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TheWolrd/SpecifiedRoomTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TheWolrd/TargetCharacterTest.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create test">
+      <change afterPath="$PROJECT_DIR$/归档.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/TargetCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TheWolrd/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/ItemTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TheWolrd/SpecifiedRoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/SpecifiedRoomTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TheWolrd/TargetCharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/TargetCharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,34 +70,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="TheWolrd" />
@@ -100,21 +108,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="TheWolrd" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="TheWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="TheWorld" />
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,6 +122,7 @@
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
       <workItem from="1696383575219" duration="38296000" />
+      <workItem from="1696578571508" duration="3456000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -338,7 +332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696556649498</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Create test">
+      <option name="closed" value="true" />
+      <created>1696579046922</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1696579046923</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +384,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="initialize" />
     <MESSAGE value="set gitignore" />
     <MESSAGE value="Create" />
     <MESSAGE value="Create SpecifiedRoom.java and build its consturction function" />
@@ -407,6 +408,7 @@
     <MESSAGE value="Create paintRooms method" />
     <MESSAGE value="Finish the Driver.java" />
     <MESSAGE value="Create some getter method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create some getter method" />
+    <MESSAGE value="Create test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create test" />
   </component>
 </project>

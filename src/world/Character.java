@@ -1,4 +1,4 @@
-package TheWolrd;
+package world;
 
 public interface Character {
   public Room getRoom();

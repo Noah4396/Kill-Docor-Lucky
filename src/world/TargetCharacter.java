@@ -1,4 +1,4 @@
-package TheWolrd;
+package world;
 
 /**
  * The target character.

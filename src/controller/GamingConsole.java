@@ -1,7 +1,7 @@
-package Controller;
+package controller;
 
-import TheWolrd.*;
-import TheWolrd.Character;
+import world.*;
+import world.Character;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

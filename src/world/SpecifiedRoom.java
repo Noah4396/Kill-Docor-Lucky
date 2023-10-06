@@ -1,4 +1,4 @@
-package TheWolrd;
+package world;
 
 import java.util.ArrayList;
 import java.util.Stack;

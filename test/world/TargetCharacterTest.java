@@ -1,8 +1,5 @@
-package TheWolrd;
+package world;
 
-import TheWolrd.SpecifiedRoom;
-import TheWolrd.SpecifiedRoomTest;
-import TheWolrd.TargetCharacter;
 import org.junit.Before;
 import org.junit.Test;
 

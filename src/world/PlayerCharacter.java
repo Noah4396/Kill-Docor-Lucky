@@ -1,4 +1,4 @@
-package TheWolrd;
+package world;
 
 public class PlayerCharacter implements Character{
   private Room room;

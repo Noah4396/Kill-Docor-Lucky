@@ -1,8 +1,5 @@
-package TheWolrd;
+package world;
 
-import TheWolrd.Item;
-import TheWolrd.PlayerCharacter;
-import TheWolrd.SpecifiedRoom;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,6 +13,7 @@ public class SpecifiedRoomTest {
   public void setUp() {
     // Initialize a SpecifiedRoom object for testing
     room = new SpecifiedRoom("Test Room", 1, 0, 10, 0, 10);
+
   }
 
   @Test
@@ -97,12 +95,49 @@ public class SpecifiedRoomTest {
     assertTrue(room.getLowerRooms().contains(lowerRoom));
   }
 
-  // Placeholder for testing Character-related methods
   @Test
-  public void testCharacterMethods() {
-    // Implement tests for Character-related methods here
-    // Assuming there are methods like addCharacter, removeCharacter, etc.
+  public void isNeighbour() {
+    SpecifiedRoom lowerRoom = new SpecifiedRoom("Lower Room", 5, 0, 10, -10, 0);
+    room.addLowerRoom(lowerRoom);
+
+    assertEquals(3, room.isNeighbour(lowerRoom));
   }
+
+  @Test
+  public void hasLeftRoom() {
+    SpecifiedRoom leftRoom = new SpecifiedRoom("Left Room", 2, -10, 0, 0, 10);
+    room.addLeftRoom(leftRoom);
+
+    assertTrue(room.hasLeftRoom());
+  }
+
+  @Test
+  public void hasRightRoom() {
+    SpecifiedRoom rightRoom = new SpecifiedRoom("Right Room", 3, 10, 20, 0, 10);
+    room.addRightRoom(rightRoom);
+
+    assertTrue(room.hasRightRoom());
+  }
+
+  @Test
+  public void hasUpperRoom() {
+    SpecifiedRoom upperRoom = new SpecifiedRoom("Upper Room", 4, 0, 10, 10, 20);
+    room.addUpperRoom(upperRoom);
+
+    assertTrue(room.hasUpperRoom());
+  }
+
+  @Test
+  public void hasLowerRoom() {
+    SpecifiedRoom lowerRoom = new SpecifiedRoom("Lower Room", 5, 0, 10, -10, 0);
+    room.addLowerRoom(lowerRoom);
+
+    assertTrue(room.hasLowerRoom());
+  }
+
+
+  // Placeholder for testing Character-related methods
+
 
   // You can add more test methods to cover other methods and behaviors of the SpecifiedRoom class
 
