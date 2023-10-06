@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create paintRooms method">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Driver.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create some getter method">
+      <change afterPath="$PROJECT_DIR$/test/TheWolrd/ItemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TheWolrd/SpecifiedRoomTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TheWolrd/TargetCharacterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/GamingConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TheWolrd/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/PlayerCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TheWolrd/TargetCharacter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +22,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -63,9 +65,16 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "corretto-1.8",
     "last_opened_file_path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld",
@@ -83,6 +92,12 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="TheWolrd" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
       <recent name="TheWolrd" />
     </key>
   </component>
@@ -113,7 +128,7 @@
       <workItem from="1696382747173" duration="126000" />
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
-      <workItem from="1696383575219" duration="31431000" />
+      <workItem from="1696383575219" duration="38296000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -307,7 +322,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696548788128</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Finish the Driver.java">
+      <option name="closed" value="true" />
+      <created>1696554763350</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1696554763350</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Create some getter method">
+      <option name="closed" value="true" />
+      <created>1696556649498</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1696556649498</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +405,8 @@
     <MESSAGE value="Create setNeighbour method" />
     <MESSAGE value="Create setVisibleRooms method" />
     <MESSAGE value="Create paintRooms method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create paintRooms method" />
+    <MESSAGE value="Finish the Driver.java" />
+    <MESSAGE value="Create some getter method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create some getter method" />
   </component>
 </project>

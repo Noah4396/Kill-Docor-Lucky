@@ -10,19 +10,20 @@ public class TargetCharacter implements Character {
   private String name;
 
   public TargetCharacter() {
-    room = null;
-    index = -1;
+    this.room = null;
+    this.index = -1;
   }
 
-  public TargetCharacter(Room room) {
+  public TargetCharacter(Room room, String name) {
     this.room = room;
+    this.name = name;
     index = -1;
     this.room.addCharacter(this);
   }
 
   @Override
   public Room getRoom() {
-    return room;
+    return this.room;
   }
 
   @Override

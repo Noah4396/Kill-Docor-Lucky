@@ -5,16 +5,19 @@ public class PlayerCharacter implements Character{
   private String name;
   private int index;
 
-  public PlayerCharacter() {
+  public PlayerCharacter(String name) {
+    this.name = name;
   }
 
-  public PlayerCharacter(Room room) {
+  public PlayerCharacter(String name, Room room) {
     this.room = room;
     this.room.addCharacter(this);
+    this.name = name;
   }
-  public PlayerCharacter(Room room, int index) {
+  public PlayerCharacter(String name, Room room, int index) {
     this.room = room;
     this.index = index;
+    this.name = name;
     this.room.addCharacter(this);
   }
   public void setIndex(int index) {
