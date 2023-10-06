@@ -205,6 +205,34 @@ public class SpecifiedRoom implements Room {
     return new ArrayList<>(neighbours.get(index));
   }
 
+  public ArrayList<Item> getItems() {
+    return new ArrayList<>(items);
+  }
+
+  public ArrayList<Room> getLeftRooms() {
+    return new ArrayList<>(leftRooms);
+  }
+
+  public ArrayList<Room> getRightRooms() {
+    return new ArrayList<>(rightRooms);
+  }
+
+  public ArrayList<Room> getUpperRooms() {
+    return new ArrayList<>(upperRooms);
+  }
+
+  public ArrayList<Room> getLowerRooms() {
+    return new ArrayList<>(lowerRooms);
+  }
+
+  public ArrayList<Character> getCharacters() {
+    return new ArrayList<>(characters);
+  }
+
+  public ArrayList<Room> getVisibleRooms() {
+    return new ArrayList<>(visibleRooms);
+  }
+
   @Override
   public String toString() {
     StringBuffer sb = new StringBuffer("SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
