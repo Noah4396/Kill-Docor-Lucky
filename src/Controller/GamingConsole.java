@@ -32,29 +32,33 @@ public class GamingConsole {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
     this.amplifierDegree = 30;
-    parse(path);
+    try {
+      parse(path);
+    } catch (IllegalArgumentException e) {
+      System.err.println("Find rooms overlap");
+    }
+    move(doctorLucky, rooms.get(0));
 
-    this.image = new BufferedImage(width * amplifierDegree,
-        height * amplifierDegree, BufferedImage.TYPE_3BYTE_BGR);
+    this.image = new BufferedImage(width * amplifierDegree, height * amplifierDegree,
+        BufferedImage.TYPE_3BYTE_BGR);
     g2d = image.createGraphics();
     g2d.setColor(Color.WHITE);
     g2d.fillRect(0, 0, this.width * amplifierDegree, this.height * amplifierDegree);
     g2d.setFont(new Font("Arial", Font.BOLD, 12));
 
-    for(Room room : rooms){
+    for (Room room : rooms) {
       setNeighbour(room);
     }
-    for(Room room : rooms) {
+    for (Room room : rooms) {
       room.setVisibleRooms();
+      paintRoom(room);
       //System.out.println(room);
     }
 
-    for(Room room: rooms){
-      paintRoom(room);
-    }
-    outputImage();
+    //outputImage();
   }
-  private void paintRoom(Room room){
+
+  private void paintRoom(Room room) {
     g2d.setColor(Color.BLACK);
     int x = room.getLeftCorner();
     int y = room.getUpperCorner();
@@ -65,9 +69,10 @@ public class GamingConsole {
     width *= amplifierDegree;
     height *= amplifierDegree;
     g2d.drawRect(x, y, width, height);
-    g2d.drawString(room.getName(), x + width/3, y + height/2);
+    g2d.drawString(room.getName(), x + width / 3, y + height / 2);
   }
-  private void outputImage() {
+
+  public void outputImage() {
     try {
       File output = new File("./res/example.png");
       ImageIO.write(image, "png", output);
@@ -77,8 +82,8 @@ public class GamingConsole {
     }
   }
 
-  private void parse(String path){
-    try(BufferedReader br = new BufferedReader(new FileReader(path))){
+  private void parse(String path) {
+    try (BufferedReader br = new BufferedReader(new FileReader(path))) {
       // The first line reader: 36 30 Doctor Lucky's Mansion;
       parseFirstLine(br.readLine());
 
@@ -87,45 +92,52 @@ public class GamingConsole {
 
       // Start to parse Rooms
       this.numOfRooms = parseNumber(br.readLine());
-      for(int i = 0; i < numOfRooms; i++){
+      for (int i = 0; i < numOfRooms; i++) {
         parseRoom(br.readLine(), i);
       }
 
       // Start to parse items
       this.numOfItems = parseNumber(br.readLine());
-      for(int i = 0; i < numOfItems; i++){
+      for (int i = 0; i < numOfItems; i++) {
         parseItem(br.readLine(), i);
       }
 
-    } catch(IOException e){
-      e.printStackTrace();
+    } catch (IOException e) {
+      System.err.println("Invalid path");
+      //e.printStackTrace();
     }
   }
 
-
-  public void move(Character character, Room room){
+  public void move(Character character, Room room) {
     Room prevRoom = character.getRoom();
-    if(prevRoom == room)
+    if (prevRoom == room) {
       return;
-    prevRoom.removeCharacter(character);
+    }
+    if (prevRoom != null) {
+      prevRoom.removeCharacter(character);
+    }
     room.addCharacter(character);
     character.setRoom(room);
   }
-
-  public void parseFirstLine(String line){
+  public void moveTarget() {
+    int targetIndex = doctorLucky.getRoom().getIndex();
+    targetIndex = (targetIndex + 1) % rooms.size();
+    move(doctorLucky, rooms.get(targetIndex));
+  }
+  public void parseFirstLine(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
 
     height = Integer.parseInt(words[0]);
     width = Integer.parseInt(words[1]);
     chessBoard = new int[height][width];
-    for(int[] iter: chessBoard){
+    for (int[] iter : chessBoard) {
       Arrays.fill(iter, -1);
     }
     this.name = line.substring(line.indexOf(words[2]));
   }
 
-  public void parseSecondLine(String line){
+  public void parseSecondLine(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
 
@@ -135,13 +147,13 @@ public class GamingConsole {
 
   }
 
-  public int parseNumber(String line){
+  public int parseNumber(String line) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
     return Integer.parseInt(words[0]);
   }
 
-  public void parseRoom(String line, int index){
+  public void parseRoom(String line, int index) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
     int upperBound = Integer.parseInt(words[0]);
@@ -153,14 +165,15 @@ public class GamingConsole {
     Room room = new SpecifiedRoom(name, index, leftBound, rightBound, upperBound, lowerBound);
     //System.out.println(room);
     this.rooms.add(room);
-    for(int i = upperBound; i <= lowerBound; i++){
-      for(int j = leftBound; j <= rightBound; j++){
-        if(chessBoard[i][j] != -1)
+    for (int i = upperBound; i <= lowerBound; i++) {
+      for (int j = leftBound; j <= rightBound; j++) {
+        if (chessBoard[i][j] != -1)
           throw new IllegalArgumentException("The Rooms overlap!");
         chessBoard[i][j] = index;
       }
     }
   }
+
   private void parseItem(String line, int index) {
     line = line.replaceFirst("^\\s*", "");
     String[] words = line.split("\\s+");
@@ -172,7 +185,7 @@ public class GamingConsole {
     rooms.get(indexOfRoom).addItem(item);
   }
 
-  public void setNeighbour(Room room){
+  public void setNeighbour(Room room) {
     int tmp;
     Room tmpRoom;
     int leftBound = room.getLeftCorner();
@@ -180,23 +193,23 @@ public class GamingConsole {
     int upperBound = room.getUpperCorner();
     int lowerBound = room.getLowerCorner();
 
-    if(leftBound > 0){
+    if (leftBound > 0) {
       tmp = chessBoard[upperBound][leftBound - 1];
-      if(tmp != -1){
+      if (tmp != -1) {
         tmpRoom = rooms.get(tmp);
         tmpRoom.addRightRoom(room);
         room.addLeftRoom(tmpRoom);
       }
 
       tmp = chessBoard[lowerBound][leftBound - 1];
-      if(tmp != -1){
+      if (tmp != -1) {
         tmpRoom = rooms.get(tmp);
         tmpRoom.addRightRoom(room);
         room.addLeftRoom(tmpRoom);
       }
     }
 
-    if(upperBound > 0) {
+    if (upperBound > 0) {
       tmp = chessBoard[upperBound - 1][leftBound];
       if (tmp != -1) {
         tmpRoom = rooms.get(tmp);
@@ -212,7 +225,7 @@ public class GamingConsole {
       }
     }
 
-    if(rightBound < width - 1) {
+    if (rightBound < width - 1) {
       tmp = chessBoard[upperBound][rightBound + 1];
       if (tmp != -1) {
         tmpRoom = rooms.get(tmp);
@@ -228,7 +241,7 @@ public class GamingConsole {
       }
     }
 
-    if(lowerBound < height - 1) {
+    if (lowerBound < height - 1) {
       tmp = chessBoard[lowerBound + 1][leftBound];
       if (tmp != -1) {
         tmpRoom = rooms.get(tmp);
@@ -245,4 +258,46 @@ public class GamingConsole {
     }
   }
 
+  @Override
+  public String toString() {
+    StringBuffer sb = new StringBuffer("Mansion Name: ");
+    sb.append(this.name);
+    sb.append("\n");
+
+    sb.append("Target name: ");
+    sb.append(this.doctorLucky.getName());
+    sb.append("\n");
+
+    sb.append("Number of Rooms: ");
+    sb.append(this.numOfRooms);
+    sb.append("\n");
+
+    sb.append("Number of Items: ");
+    sb.append(this.numOfItems);
+    sb.append("\n");
+
+    sb.append("Target in the Room: ");
+    sb.append(this.doctorLucky.getRoom());
+    sb.append("\n");
+    return sb.toString();
+  }
+
+  public TargetCharacter getDoctorLucky() {
+    return doctorLucky;
+  }
+  public void displayRooms(){
+    for(Room room : rooms){
+      System.out.println(room);
+    }
+  }
+  public void displayNeighbours(){
+    for(Room room : rooms){
+      System.out.println(room.displayNeighbours());
+    }
+  }
+  public void displayVisibleRooms(){
+    for(Room room : rooms){
+      System.out.println(room.displayVisibleRooms());
+    }
+  }
 }

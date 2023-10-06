@@ -38,6 +38,8 @@ public interface Room {
 
   public int isNeighbour(Room room);
   public String getName();
+  public int getIndex();
+  public int getNumOfNeighbours();
   public void addItem(Item item);
   public int getLeftCorner();
   public int getRightCorner();
@@ -49,4 +51,7 @@ public interface Room {
   public void addLowerRoom(Room room);
   public void setVisibleRooms();
   public ArrayList<Room> getNeighbours(int index);
+  public String displayNeighbours();
+
+  public String displayVisibleRooms();
 }

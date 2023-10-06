@@ -1,12 +1,14 @@
 package TheWolrd;
+
 /**
  * The target character.
  */
-public class TargetCharacter implements Character{
+public class TargetCharacter implements Character {
   private Room room;
   private int index;
   private int health;
   private String name;
+
   public TargetCharacter() {
     room = null;
     index = -1;
@@ -17,6 +19,7 @@ public class TargetCharacter implements Character{
     index = -1;
     this.room.addCharacter(this);
   }
+
   @Override
   public Room getRoom() {
     return room;
@@ -26,6 +29,7 @@ public class TargetCharacter implements Character{
   public int getIndex() {
     return this.index;
   }
+
   @Override
   public void setRoom(Room room) {
     this.room = room;
@@ -41,5 +45,12 @@ public class TargetCharacter implements Character{
 
   public String getName() {
     return name;
+  }
+
+  @Override
+  public String toString() {
+    return "TargetCharacter{" + "roomIndex=" + room.getIndex() + ""
+        + ", roomName = " + room.getName() + ", index=" + index + ", health="
+        + health + ", name='" + name + '\'' + '}';
   }
 }

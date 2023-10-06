@@ -70,10 +70,11 @@ public class SpecifiedRoom implements Room {
       return items.remove(itemIndex);
     }
   }
-
+  @Override
   public int getNumOfNeighbours() {
     return numOfNeighbours;
   }
+  @Override
   public int getIndex() {
     return index;
   }
@@ -219,6 +220,30 @@ public class SpecifiedRoom implements Room {
       sb.append("]");
     }
     sb.append(", visibleRooms = [");
+    for(Room room : visibleRooms){
+      sb.append(room.getName());
+      sb.append(", ");
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+  @Override
+  public String displayNeighbours(){
+    StringBuffer sb = new StringBuffer("Neighbours of " + this.name + " in clockwise: ");
+    for(ArrayList<Room> list : neighbours){
+      sb.append("[");
+      for(Room room : list){
+        sb.append(room.getName());
+        sb.append(", ");
+      }
+      sb.append("]");
+    }
+    return sb.toString();
+  }
+
+  @Override
+  public String displayVisibleRooms() {
+    StringBuffer sb = new StringBuffer("Visible room of " + this.name + ": [");
     for(Room room : visibleRooms){
       sb.append(room.getName());
       sb.append(", ");
