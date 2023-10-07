@@ -1,5 +1,7 @@
 package world;
 
+import java.util.Objects;
+
 /**
  * Item in the rooms.
  */
@@ -42,5 +44,21 @@ public class Item {
   public String toString() {
     return "Item{" + "name='" + name + '\'' + ", damagePoint=" + damagePoint + ", indexOfRoom="
         + indexOfRoom + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    Item item = (Item) o;
+    return damagePoint == item.damagePoint && indexOfRoom == item.indexOfRoom && Objects.equals(
+        name, item.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(name, damagePoint, indexOfRoom);
   }
 }

@@ -1,5 +1,7 @@
 package world;
 
+import java.util.Objects;
+
 /**
  * The player character.
  */
@@ -15,6 +17,8 @@ public class PlayerCharacter implements Character {
    */
   public PlayerCharacter(String name) {
     this.name = name;
+    this.room = null;
+    this.index = -1;
   }
 
   /**
@@ -27,6 +31,7 @@ public class PlayerCharacter implements Character {
     this.room = room;
     this.room.addCharacter(this);
     this.name = name;
+    this.index = -1;
   }
 
   /**
@@ -60,5 +65,21 @@ public class PlayerCharacter implements Character {
   @Override
   public void setRoom(Room room) {
     this.room = room;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    PlayerCharacter that = (PlayerCharacter) o;
+    return index == that.index && Objects.equals(room, that.room) && Objects.equals(name,
+        that.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(room, name, index);
   }
 }

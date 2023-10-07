@@ -1,5 +1,7 @@
 package world;
 
+import java.util.Objects;
+
 /**
  * The target character.
  */
@@ -12,6 +14,8 @@ public class TargetCharacter implements Character {
   public TargetCharacter() {
     this.room = null;
     this.index = -1;
+    this.health = 0;
+    this.name = "";
   }
 
   /**
@@ -22,8 +26,9 @@ public class TargetCharacter implements Character {
   public TargetCharacter(Room room, String name) {
     this.room = room;
     this.name = name;
-    index = -1;
+    this.index = -1;
     this.room.addCharacter(this);
+    this.health = 0;
   }
 
   @Override
@@ -58,5 +63,21 @@ public class TargetCharacter implements Character {
     return "TargetCharacter{" + "roomIndex=" + room.getIndex() + ""
         + ", roomName = " + room.getName() + ", index=" + index + ", health="
         + health + ", name='" + name + '\'' + '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    TargetCharacter that = (TargetCharacter) o;
+    return index == that.index && health == that.health && Objects.equals(room, that.room)
+        && Objects.equals(name, that.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(room, index, health, name);
   }
 }

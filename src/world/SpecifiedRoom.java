@@ -1,6 +1,7 @@
 package world;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Stack;
 
 /**
@@ -338,5 +339,24 @@ public class SpecifiedRoom implements Room {
     }
     sb.append("]");
     return sb.toString();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    SpecifiedRoom that = (SpecifiedRoom) o;
+    return numOfNeighbours == that.numOfNeighbours && index == that.index
+        && leftCorner == that.leftCorner && rightCorner == that.rightCorner
+        && upperCorner == that.upperCorner && lowerCorner == that.lowerCorner && Objects.equals(
+        name, that.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(numOfNeighbours, name, index, leftCorner, rightCorner, upperCorner,
+        lowerCorner);
   }
 }

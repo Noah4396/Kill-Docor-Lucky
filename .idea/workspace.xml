@@ -1,20 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="TheWorld:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Change the style">
-      <change afterPath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Change the style and modify the readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/world/ItemTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/ItemTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/world/SpecifiedRoomTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/SpecifiedRoomTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/world/TargetCharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/world/TargetCharacterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" afterPath="$PROJECT_DIR$/归档.zip" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,34 +62,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "corretto-1.8",
-    "last_opened_file_path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="TheWolrd" />
@@ -101,21 +97,43 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="TheWolrd" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JAR Application.Driver.jar">
     <configuration name="DriverJar" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/TheWorld_jar/TheWorld.jar" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="BuildArtifacts" enabled="true">
-          <artifact name="TheWorld:jar" />
+          <artifact name="Driver:jar" />
         </option>
       </method>
     </configuration>
+    <configuration name="Driver.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/res/Driver.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TheWorld.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/res/TheWorld.jar" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JAR Application.DriverJar" />
+      <item itemvalue="JAR Application.Driver.jar" />
+      <item itemvalue="JAR Application.TheWorld.jar" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JAR Application.Driver.jar" />
+        <item itemvalue="JAR Application.TheWorld.jar" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -130,7 +148,8 @@
       <workItem from="1696382893426" duration="441000" />
       <workItem from="1696383343568" duration="210000" />
       <workItem from="1696383575219" duration="38296000" />
-      <workItem from="1696578571508" duration="10712000" />
+      <workItem from="1696578571508" duration="13000000" />
+      <workItem from="1696649927802" duration="145000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -364,7 +383,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696622162773</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Change the style and modify the readme">
+      <option name="closed" value="true" />
+      <created>1696630062235</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1696630062235</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Change the style and modify the readme">
+      <option name="closed" value="true" />
+      <created>1696648505879</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1696648505881</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +443,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create" />
     <MESSAGE value="Create SpecifiedRoom.java and build its consturction function" />
     <MESSAGE value="Add private variable of adjacent rooms to SpecifiedRoom.java" />
     <MESSAGE value="Add getItem method to get a random item in the room" />
@@ -433,6 +467,7 @@
     <MESSAGE value="Create some getter method" />
     <MESSAGE value="Create test" />
     <MESSAGE value="Change the style" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change the style" />
+    <MESSAGE value="Change the style and modify the readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the style and modify the readme" />
   </component>
 </project>
