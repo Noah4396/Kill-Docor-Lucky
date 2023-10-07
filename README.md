@@ -1,5 +1,5 @@
-# TheWorld
-Run TheWorld.jar to run the driver.
+# README
+**Run Driver.jar to run the driver.**
 
 It will show the following output at first:
 

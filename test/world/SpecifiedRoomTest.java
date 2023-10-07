@@ -146,9 +146,5 @@ public class SpecifiedRoomTest {
   }
 
 
-  // Placeholder for testing Character-related methods
-
-
-  // You can add more test methods to cover other methods and behaviors of the SpecifiedRoom class
 
 }
