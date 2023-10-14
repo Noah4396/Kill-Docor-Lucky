@@ -52,7 +52,7 @@ public class SpecifiedRoomTest {
 
   @Test
   public void testAddCharacter() {
-    PlayerCharacter character = new PlayerCharacter("Test Character");
+    TargetCharacter character = new TargetCharacter();
     room.addCharacter(character);
 
     // Check if the character was added to the room
@@ -61,7 +61,7 @@ public class SpecifiedRoomTest {
 
   @Test
   public void testRemoveCharacter() {
-    PlayerCharacter character = new PlayerCharacter("Test Character");
+    TargetCharacter character = new TargetCharacter();
     room.addCharacter(character);
     room.removeCharacter(character);
 

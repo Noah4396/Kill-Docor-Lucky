@@ -144,4 +144,21 @@ public interface Room {
    * @return all the visible rooms.
    */
   public String displayVisibleRooms();
+
+  /**
+   * Get the number of items left in this room.
+   */
+  public int getItemsNumber();
+
+  /**
+   * Get an item of the index.
+   */
+  public Item deleteItem(int index);
+
+  /**
+   * Get the neighbour of direction and index.
+   * @param direction stands for the direction
+   * @param index stands for the index of the neighbour
+   */
+  public Room getNeighbour(int direction, int index);
 }

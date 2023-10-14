@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Change the style and modify the readme">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add hashcode and equals">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/TargetCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +155,9 @@
       <workItem from="1696383575219" duration="38296000" />
       <workItem from="1696578571508" duration="13000000" />
       <workItem from="1696649927802" duration="145000" />
+      <workItem from="1696653096504" duration="1461000" />
+      <workItem from="1696739925568" duration="2581000" />
+      <workItem from="1697138117317" duration="3586000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -399,7 +407,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696648505881</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Add hashcode and equals">
+      <option name="closed" value="true" />
+      <created>1696654051115</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1696654051115</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -443,7 +459,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create SpecifiedRoom.java and build its consturction function" />
     <MESSAGE value="Add private variable of adjacent rooms to SpecifiedRoom.java" />
     <MESSAGE value="Add getItem method to get a random item in the room" />
     <MESSAGE value="Add methods to Item class" />
@@ -468,6 +483,7 @@
     <MESSAGE value="Create test" />
     <MESSAGE value="Change the style" />
     <MESSAGE value="Change the style and modify the readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change the style and modify the readme" />
+    <MESSAGE value="Add hashcode and equals" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add hashcode and equals" />
   </component>
 </project>

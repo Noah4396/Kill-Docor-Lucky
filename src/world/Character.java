@@ -10,4 +10,6 @@ public interface Character {
   public int getIndex();
 
   public void setRoom(Room room);
+
+  public String getName();
 }

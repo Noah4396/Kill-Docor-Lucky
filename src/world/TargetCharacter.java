@@ -11,6 +11,9 @@ public class TargetCharacter implements Character {
   private int health;
   private String name;
 
+  /**
+   * The constructor without parameter.
+   */
   public TargetCharacter() {
     this.room = null;
     this.index = -1;
@@ -20,6 +23,7 @@ public class TargetCharacter implements Character {
 
   /**
    * The constructor.
+   *
    * @param room the initial room
    * @param name the name of character
    */
@@ -54,23 +58,26 @@ public class TargetCharacter implements Character {
     this.name = name;
   }
 
+  @Override
   public String getName() {
     return name;
   }
 
   @Override
   public String toString() {
-    return "TargetCharacter{" + "roomIndex=" + room.getIndex() + ""
-        + ", roomName = " + room.getName() + ", index=" + index + ", health="
-        + health + ", name='" + name + '\'' + '}';
+    return "TargetCharacter{" + "roomIndex=" + room.getIndex() + "" + ", roomName = "
+        + room.getName() + ", index=" + index + ", health=" + health + ", name='" + name + '\''
+        + '}';
   }
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
-    if (o == null || getClass() != o.getClass())
+    }
+    if (o == null || getClass() != o.getClass()) {
       return false;
+    }
     TargetCharacter that = (TargetCharacter) o;
     return index == that.index && health == that.health && Objects.equals(room, that.room)
         && Objects.equals(name, that.name);

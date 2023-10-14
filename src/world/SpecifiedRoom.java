@@ -154,6 +154,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get the number of character in the room.
+   *
    * @return number of character.
    */
   public int getNumberOfCharacter() {
@@ -162,6 +163,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get the character with the index.
+   *
    * @param index of the character.
    * @return the character.
    */
@@ -237,6 +239,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get items.
+   *
    * @return all the items.
    */
   public ArrayList<Item> getItems() {
@@ -245,6 +248,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get left rooms.
+   *
    * @return all the left rooms.
    */
   public ArrayList<Room> getLeftRooms() {
@@ -253,6 +257,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get right rooms.
+   *
    * @return all right rooms.
    */
   public ArrayList<Room> getRightRooms() {
@@ -261,6 +266,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get upper rooms.
+   *
    * @return all upper rooms.
    */
   public ArrayList<Room> getUpperRooms() {
@@ -269,6 +275,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get lower rooms.
+   *
    * @return all lower rooms.
    */
   public ArrayList<Room> getLowerRooms() {
@@ -277,6 +284,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get characters.
+   *
    * @return all characters.
    */
   public ArrayList<Character> getCharacters() {
@@ -285,6 +293,7 @@ public class SpecifiedRoom implements Room {
 
   /**
    * Get visible rooms.
+   *
    * @return all of visible rooms.
    */
   public ArrayList<Room> getVisibleRooms() {
@@ -342,11 +351,31 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
+  public int getItemsNumber() {
+    return items.size();
+  }
+
+  @Override
+  public Item deleteItem(int index) {
+    return items.remove(index);
+  }
+
+  @Override
+  public Room getNeighbour(int direction, int index) {
+    if (direction < 0 || direction > 3 || index < 0 || index >= neighbours.get(direction).size()) {
+      throw new IllegalArgumentException("Cannot move to such room");
+    }
+    return neighbours.get(direction).get(index);
+  }
+
+  @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
-    if (o == null || getClass() != o.getClass())
+    }
+    if (o == null || getClass() != o.getClass()) {
       return false;
+    }
     SpecifiedRoom that = (SpecifiedRoom) o;
     return numOfNeighbours == that.numOfNeighbours && index == that.index
         && leftCorner == that.leftCorner && rightCorner == that.rightCorner

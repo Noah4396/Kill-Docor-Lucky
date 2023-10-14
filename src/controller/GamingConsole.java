@@ -11,13 +11,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
+
 import world.Character;
 import world.Item;
 import world.PlayerCharacter;
 import world.Room;
 import world.SpecifiedRoom;
 import world.TargetCharacter;
-
 
 /**
  * The Gaming console.
@@ -26,7 +26,7 @@ public class GamingConsole {
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
   private ArrayList<Item> items;
-  private ArrayList<Character> players;
+  private ArrayList<PlayerCharacter> players;
   private TargetCharacter doctorLucky;
   private String name;
   private int height;
@@ -74,6 +74,7 @@ public class GamingConsole {
 
   /**
    * Paint the rooms.
+   *
    * @param room the painted room.
    */
   private void paintRoom(Room room) {
@@ -348,6 +349,7 @@ public class GamingConsole {
 
   /**
    * Get the target.
+   *
    * @return the target.
    */
   public TargetCharacter getDoctorLucky() {
@@ -379,5 +381,44 @@ public class GamingConsole {
     for (Room room : rooms) {
       System.out.println(room.displayVisibleRooms());
     }
+  }
+
+  /**
+   * Add a player playing the game.
+   *
+   * @param p is the player added to the game.
+   */
+  public void addPlayer(PlayerCharacter p) {
+    if (p == null || p.getName().isEmpty()) {
+      throw new IllegalArgumentException("Invalid player");
+    } else {
+      players.add(p);
+    }
+  }
+
+  /**
+   * Let the player pick up an item from its room,
+   * if the room do not have an item or the player
+   * cannot pick more item, it will throw IllegalStateException.
+   *
+   * @param p the player that will pick item
+   * @param index the item index;
+   */
+  public void pickUpItem(PlayerCharacter p, int index) {
+    if (!p.isAbleToPick() || p.getRoom().getItemsNumber() == 0) {
+      throw new IllegalStateException("Cannot pick up item");
+    } else {
+      p.pickItem(p.getRoom().deleteItem(index));
+    }
+  }
+
+  /**
+   * Move character to neighbour.
+   * @param c the moved character.
+   * @param direction the moving direction.
+   * @param index the index of room in direction.
+   */
+  public void moveToNeighbour(Character c, int direction, int index){
+    move(c, c.getRoom().getNeighbour(direction, index));
   }
 }
