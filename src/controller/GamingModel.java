@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 import javax.imageio.ImageIO;
 
 import world.Character;
@@ -39,6 +40,8 @@ public class GamingModel {
   private int currentTurn;
   private int totalTurn;
   private int maxTurn;
+  private long seed;
+  private Random random;
 
   /**
    * The constructor.
@@ -53,6 +56,8 @@ public class GamingModel {
     this.totalTurn = 0;
     this.currentTurn = 0;
     this.maxTurn = maxTurn;
+    this.seed = 123;
+    this.random = new Random(seed);
     try {
       parse(path);
     } catch (IllegalArgumentException e) {
