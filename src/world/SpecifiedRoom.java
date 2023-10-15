@@ -303,11 +303,11 @@ public class SpecifiedRoom implements Room {
   @Override
   public String toString() {
     StringBuffer sb = new StringBuffer(
-        "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", leftCorner="
+        "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", \nleftCorner="
             + leftCorner + ", rightCorner=" + rightCorner + ", upperCorner=" + upperCorner
-            + ", lowerCorner=" + lowerCorner + ", items=" + items + ", characters=" + characters
+            + ", lowerCorner=" + lowerCorner + ", \nitems in the room =" + items + ", \ncharacters=" + characters
             + '}');
-    sb.append(", neighbours = ");
+    sb.append(", \nneighbours = ");
     for (ArrayList<Room> list : neighbours) {
       sb.append("[");
       for (Room room : list) {
@@ -316,7 +316,7 @@ public class SpecifiedRoom implements Room {
       }
       sb.append("]");
     }
-    sb.append(", visibleRooms = [");
+    sb.append(", \nvisibleRooms = [");
     for (Room room : visibleRooms) {
       sb.append(room.getName());
       sb.append(", ");

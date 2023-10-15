@@ -18,8 +18,24 @@ public class PlayerCharacter implements Character {
    * Construct a PlayerCharacter class.
    *
    * @param name  is the name of the object.
+   * @param index is the index of the character.
+   * @param itemCapacity the capacity of carrying items
+   */
+  public PlayerCharacter(String name, int index, int itemCapacity) {
+    this.room = null;
+    this.index = index;
+    this.name = name;
+    this.itemCapacity = itemCapacity;
+    this.itemNumber = 0;
+    this.items = new ArrayList<>();
+  }
+  /**
+   * Construct a PlayerCharacter class.
+   *
+   * @param name  is the name of the object.
    * @param room  is the room the character stands in.
    * @param index is the index of the character.
+   * @param itemCapacity the capacity of carrying items
    */
   public PlayerCharacter(String name, Room room, int index, int itemCapacity) {
     this.room = room;
@@ -75,5 +91,14 @@ public class PlayerCharacter implements Character {
 
   public void pickItem(Item item){
     this.items.add(item);
+  }
+
+  @Override
+  public String toString(){
+    StringBuffer sb = new StringBuffer();
+    sb.append("Character name: " + name);
+    sb.append(", Current room: " + room.getName());
+    sb.append(", items: " + items);
+    return sb.toString();
   }
 }

@@ -45,6 +45,7 @@ public class GamingConsole {
   public GamingConsole(String path) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
+    this.players = new ArrayList<>();
     this.amplifierDegree = 30;
     try {
       parse(path);
@@ -358,29 +359,57 @@ public class GamingConsole {
 
   /**
    * Display all the rooms.
+   *
+   * @return the displayedRooms.
    */
-  public void displayRooms() {
+  public String displayRooms() {
+    StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      System.out.println(room);
+      sb.append(room);
     }
+    return sb.toString();
+  }
+
+  public String displayers(){
+    return players.toString();
+  }
+
+  /**
+   * Display room of index.
+   * @param index the index of room
+   * @return the display.
+   */
+  public String displayRoom(int index) {
+    if (index >= rooms.size() || index < 0) {
+      throw new IllegalArgumentException("Index out of bound");
+    }
+    return rooms.get(index).toString();
   }
 
   /**
    * Display all neighbours.
+   *
+   * @return the displayed neighbours.
    */
-  public void displayNeighbours() {
+  public String displayNeighbours() {
+    StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      System.out.println(room.displayNeighbours());
+      sb.append(room.displayNeighbours());
     }
+    return sb.toString();
   }
 
   /**
    * Display all visible rooms.
+   *
+   * @return to the String of displayed rooms
    */
-  public void displayVisibleRooms() {
+  public String displayVisibleRooms() {
+    StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      System.out.println(room.displayVisibleRooms());
+      sb.append(room.displayVisibleRooms());
     }
+    return sb.toString();
   }
 
   /**
@@ -388,37 +417,60 @@ public class GamingConsole {
    *
    * @param p is the player added to the game.
    */
-  public void addPlayer(PlayerCharacter p) {
+  public void addPlayer(PlayerCharacter p, int roomIndex) {
     if (p == null || p.getName().isEmpty()) {
       throw new IllegalArgumentException("Invalid player");
     } else {
       players.add(p);
+      move(p, rooms.get(roomIndex));
     }
   }
 
   /**
-   * Let the player pick up an item from its room,
-   * if the room do not have an item or the player
+   * Let the player pick up an item from its room, if the room do not have an item or the player
    * cannot pick more item, it will throw IllegalStateException.
    *
-   * @param p the player that will pick item
+   * @param p     the player that will pick item
    * @param index the item index;
    */
   public void pickUpItem(PlayerCharacter p, int index) {
-    if (!p.isAbleToPick() || p.getRoom().getItemsNumber() == 0) {
+    if (!p.isAbleToPick() || p.getRoom() == null || p.getRoom().getItemsNumber() == 0) {
       throw new IllegalStateException("Cannot pick up item");
-    } else {
-      p.pickItem(p.getRoom().deleteItem(index));
+    }
+    else if (index > p.getRoom().getItemsNumber() || index < 1){
+      throw new IllegalArgumentException("Invalid index");
+    }
+      else {
+      p.pickItem(p.getRoom().deleteItem(index - 1));
     }
   }
 
   /**
    * Move character to neighbour.
-   * @param c the moved character.
+   *
+   * @param c         the moved character.
    * @param direction the moving direction.
-   * @param index the index of room in direction.
+   * @param index     the index of room in direction.
    */
-  public void moveToNeighbour(Character c, int direction, int index){
+  public void moveToNeighbour(Character c, int direction, int index) {
     move(c, c.getRoom().getNeighbour(direction, index));
+  }
+
+  /**
+   * Look around.
+   *
+   * @param c the character that looks around.
+   * @return
+   */
+  public String lookAround(Character c) {
+    StringBuffer sb = new StringBuffer();
+    for (PlayerCharacter character : players) {
+      if (!c.equals(character)) {
+        sb.append(character.toString());
+        sb.append("\nVisible Rooms: ");
+        sb.append(character.getRoom().displayVisibleRooms() + "\n\n");
+      }
+    }
+    return sb.toString();
   }
 }

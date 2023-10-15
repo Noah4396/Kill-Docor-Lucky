@@ -9,12 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add hashcode and equals">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add addPlayer, pickUpItem, moveToNeighbour method.">
+      <change afterPath="$PROJECT_DIR$/test/controller/GamingConsoleTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/TargetCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -106,10 +107,42 @@
       <recent name="$PROJECT_DIR$/res" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="controller" />
       <recent name="TheWolrd" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.Driver.jar">
+  <component name="RunManager" selected="JUnit.GamingConsoleTest">
+    <configuration name="GamingConsoleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GamingConsoleTest.addPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleTest" />
+      <option name="METHOD_NAME" value="addPlayer" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DriverJar" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/TheWorld_jar/TheWorld.jar" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -132,9 +165,13 @@
       <item itemvalue="JAR Application.DriverJar" />
       <item itemvalue="JAR Application.Driver.jar" />
       <item itemvalue="JAR Application.TheWorld.jar" />
+      <item itemvalue="JUnit.GamingConsoleTest" />
+      <item itemvalue="JUnit.GamingConsoleTest.addPlayer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingConsoleTest" />
+        <item itemvalue="JUnit.GamingConsoleTest.addPlayer" />
         <item itemvalue="JAR Application.Driver.jar" />
         <item itemvalue="JAR Application.TheWorld.jar" />
       </list>
@@ -158,6 +195,7 @@
       <workItem from="1696653096504" duration="1461000" />
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
+      <workItem from="1697257371787" duration="11629000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -415,7 +453,15 @@
       <option name="project" value="LOCAL" />
       <updated>1696654051115</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Add addPlayer, pickUpItem, moveToNeighbour method.">
+      <option name="closed" value="true" />
+      <created>1697262465762</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1697262465763</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,7 +505,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add private variable of adjacent rooms to SpecifiedRoom.java" />
     <MESSAGE value="Add getItem method to get a random item in the room" />
     <MESSAGE value="Add methods to Item class" />
     <MESSAGE value="Add addRooms method" />
@@ -484,6 +529,7 @@
     <MESSAGE value="Change the style" />
     <MESSAGE value="Change the style and modify the readme" />
     <MESSAGE value="Add hashcode and equals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add hashcode and equals" />
+    <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add addPlayer, pickUpItem, moveToNeighbour method." />
   </component>
 </project>

@@ -42,8 +42,7 @@ public class Item {
 
   @Override
   public String toString() {
-    return "Item{" + "name='" + name + '\'' + ", damagePoint=" + damagePoint + ", indexOfRoom="
-        + indexOfRoom + '}';
+    return name;
   }
 
   @Override
