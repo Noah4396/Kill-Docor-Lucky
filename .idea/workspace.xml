@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create test for the new methods">
-      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create controller and interface">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -196,7 +196,7 @@
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
       <workItem from="1697257371787" duration="12033000" />
-      <workItem from="1697403730342" duration="448000" />
+      <workItem from="1697403730342" duration="1810000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -470,7 +470,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697338560635</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Create controller and interface">
+      <option name="closed" value="true" />
+      <created>1697404394939</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1697404394939</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +522,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add methods to Item class" />
     <MESSAGE value="Add addRooms method" />
     <MESSAGE value="Fix some bugs" />
     <MESSAGE value="Create GamingConsole.java" />
@@ -539,6 +546,7 @@
     <MESSAGE value="Add hashcode and equals" />
     <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
     <MESSAGE value="Create test for the new methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create test for the new methods" />
+    <MESSAGE value="Create controller and interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create controller and interface" />
   </component>
 </project>

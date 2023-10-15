@@ -36,17 +36,23 @@ public class GamingModel {
   private int amplifierDegree;
   private BufferedImage image;
   private Graphics2D g2d;
+  private int currentTurn;
+  private int totalTurn;
+  private int maxTurn;
 
   /**
    * The constructor.
    *
    * @param path is thr origin path of source file.
    */
-  public GamingModel(String path) {
+  public GamingModel(String path, int maxTurn) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
     this.players = new ArrayList<>();
     this.amplifierDegree = 30;
+    this.totalTurn = 0;
+    this.currentTurn = 0;
+    this.maxTurn = maxTurn;
     try {
       parse(path);
     } catch (IllegalArgumentException e) {
@@ -472,5 +478,9 @@ public class GamingModel {
       }
     }
     return sb.toString();
+  }
+
+  public PlayerCharacter getCurrentPlayer(){
+    return players.get(currentTurn);
   }
 }

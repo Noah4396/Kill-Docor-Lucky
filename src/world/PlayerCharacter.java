@@ -13,6 +13,7 @@ public class PlayerCharacter implements Character {
   private int itemCapacity;
   private int itemNumber;
   private ArrayList<Item> items;
+  private boolean isComputer;
 
   /**
    * Construct a PlayerCharacter class.
@@ -22,6 +23,7 @@ public class PlayerCharacter implements Character {
    * @param itemCapacity the capacity of carrying items
    */
   public PlayerCharacter(String name, int index, int itemCapacity) {
+    this.isComputer = false;
     this.room = null;
     this.index = index;
     this.name = name;
@@ -38,6 +40,7 @@ public class PlayerCharacter implements Character {
    * @param itemCapacity the capacity of carrying items
    */
   public PlayerCharacter(String name, Room room, int index, int itemCapacity) {
+    this.isComputer = false;
     this.room = room;
     this.index = index;
     this.name = name;
@@ -76,6 +79,26 @@ public class PlayerCharacter implements Character {
     return this.name.equals(o.getName());
   }
 
+  /**
+   * Set the player as a computer controlled
+   */
+  public void setAsComputer(){
+    this.isComputer = true;
+  }
+
+  /**
+   * Set the player as a human controlled
+   */
+  public void setAsHumanControl(){
+    this.isComputer = false;
+  }
+
+  /**
+   * Check if the player is computer controlled.
+   */
+  public boolean isComputer(){
+    return this.isComputer;
+  }
   @Override
   public String getName(){
     return this.name;

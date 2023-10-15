@@ -18,7 +18,7 @@ public class Driver {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please enter the world specification file path:");
     String path = scanner.nextLine();
-    GamingModel gamingModel = new GamingModel(path);
+    GamingModel gamingModel = new GamingModel(path, 100);
     System.out.println("Mansion load successfully");
     System.out.println(gamingModel);
     // Press Ctrl+R or click the green arrow button in the gutter to run the code.
