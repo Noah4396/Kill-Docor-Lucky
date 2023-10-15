@@ -22,7 +22,7 @@ import world.TargetCharacter;
 /**
  * The Gaming console.
  */
-public class GamingConsole {
+public class GamingModel {
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
   private ArrayList<Item> items;
@@ -42,7 +42,7 @@ public class GamingConsole {
    *
    * @param path is thr origin path of source file.
    */
-  public GamingConsole(String path) {
+  public GamingModel(String path) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
     this.players = new ArrayList<>();

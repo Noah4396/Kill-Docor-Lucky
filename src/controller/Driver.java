@@ -18,9 +18,9 @@ public class Driver {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Please enter the world specification file path:");
     String path = scanner.nextLine();
-    GamingConsole gamingConsole = new GamingConsole(path);
+    GamingModel gamingModel = new GamingModel(path);
     System.out.println("Mansion load successfully");
-    System.out.println(gamingConsole);
+    System.out.println(gamingModel);
     // Press Ctrl+R or click the green arrow button in the gutter to run the code.
     boolean flag = true;
     while (flag) {
@@ -34,22 +34,22 @@ public class Driver {
       int choice = scanner.nextInt();
       switch (choice) {
         case 1:
-          gamingConsole.moveTarget();
-          System.out.println("The status of Target Character: " + gamingConsole.getDoctorLucky());
+          gamingModel.moveTarget();
+          System.out.println("The status of Target Character: " + gamingModel.getDoctorLucky());
           break;
         case 2:
-          gamingConsole.outputImage();
+          gamingModel.outputImage();
           System.out.println("The output image is res/example.png");
           break;
         case 3:
           System.out.println("All details of the rooms are displayed as follow:");
-          gamingConsole.displayRooms();
+          gamingModel.displayRooms();
           break;
         case 4:
-          gamingConsole.displayNeighbours();
+          gamingModel.displayNeighbours();
           break;
         case 5:
-          gamingConsole.displayVisibleRooms();
+          gamingModel.displayVisibleRooms();
           break;
         case 6:
           return;

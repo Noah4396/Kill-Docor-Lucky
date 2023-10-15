@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add addPlayer, pickUpItem, moveToNeighbour method.">
-      <change afterPath="$PROJECT_DIR$/test/controller/GamingConsoleTest.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create test for the new methods">
+      <change afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,10 +26,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -111,8 +111,8 @@
       <recent name="TheWolrd" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingConsoleTest">
-    <configuration name="GamingConsoleTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="GamingModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -121,13 +121,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleTest" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingConsoleTest.addPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingModelTest.addPlayer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -136,7 +136,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleTest" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
       <option name="METHOD_NAME" value="addPlayer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -165,13 +165,13 @@
       <item itemvalue="JAR Application.DriverJar" />
       <item itemvalue="JAR Application.Driver.jar" />
       <item itemvalue="JAR Application.TheWorld.jar" />
-      <item itemvalue="JUnit.GamingConsoleTest" />
-      <item itemvalue="JUnit.GamingConsoleTest.addPlayer" />
+      <item itemvalue="JUnit.GamingModelTest" />
+      <item itemvalue="JUnit.GamingModelTest.addPlayer" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GamingConsoleTest" />
-        <item itemvalue="JUnit.GamingConsoleTest.addPlayer" />
+        <item itemvalue="JUnit.GamingModelTest" />
+        <item itemvalue="JUnit.GamingModelTest.addPlayer" />
         <item itemvalue="JAR Application.Driver.jar" />
         <item itemvalue="JAR Application.TheWorld.jar" />
       </list>
@@ -195,7 +195,8 @@
       <workItem from="1696653096504" duration="1461000" />
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
-      <workItem from="1697257371787" duration="11629000" />
+      <workItem from="1697257371787" duration="12033000" />
+      <workItem from="1697403730342" duration="448000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -461,7 +462,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697262465763</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Create test for the new methods">
+      <option name="closed" value="true" />
+      <created>1697338560635</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1697338560635</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -505,7 +514,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add getItem method to get a random item in the room" />
     <MESSAGE value="Add methods to Item class" />
     <MESSAGE value="Add addRooms method" />
     <MESSAGE value="Fix some bugs" />
@@ -530,6 +538,7 @@
     <MESSAGE value="Change the style and modify the readme" />
     <MESSAGE value="Add hashcode and equals" />
     <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add addPlayer, pickUpItem, moveToNeighbour method." />
+    <MESSAGE value="Create test for the new methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create test for the new methods" />
   </component>
 </project>
