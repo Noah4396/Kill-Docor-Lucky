@@ -93,9 +93,7 @@ public class PlayerCharacter implements Character {
     this.isComputer = false;
   }
 
-  /**
-   * Check if the player is computer controlled.
-   */
+  @Override
   public boolean isComputer(){
     return this.isComputer;
   }

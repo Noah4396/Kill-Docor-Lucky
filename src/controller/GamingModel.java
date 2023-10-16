@@ -149,6 +149,9 @@ public class GamingModel {
    * @param room      the room.
    */
   public void move(Character character, Room room) {
+    if (character == null || room == null) {
+      throw new IllegalArgumentException("Invalid input of move");
+    }
     Room prevRoom = character.getRoom();
     if (prevRoom == room) {
       return;
@@ -450,6 +453,12 @@ public class GamingModel {
    * @param index the item index;
    */
   public void pickUpItem(PlayerCharacter p, int index) {
+    if (p.isComputer()) {
+      int rand = random.nextInt();
+      rand = rand % p.getRoom().getItemsNumber();
+      p.pickItem(p.getRoom().deleteItem(rand));
+      return;
+    }
     if (!p.isAbleToPick() || p.getRoom() == null || p.getRoom().getItemsNumber() == 0) {
       throw new IllegalStateException("Cannot pick up item");
     } else if (index > p.getRoom().getItemsNumber() || index < 1) {
@@ -457,6 +466,7 @@ public class GamingModel {
     } else {
       p.pickItem(p.getRoom().deleteItem(index - 1));
     }
+    passTurn();
   }
 
   /**
@@ -467,7 +477,16 @@ public class GamingModel {
    * @param index     the index of room in direction.
    */
   public void moveToNeighbour(Character c, int direction, int index) {
-    move(c, c.getRoom().getNeighbour(direction, index));
+    if (c.isComputer()) {
+      move(c, c.getRoom().getRandNeighbour(random.nextInt()));
+      return;
+    }
+    try {
+      move(c, c.getRoom().getNeighbour(direction, index));
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException("Invalid input");
+    }
+    passTurn();
   }
 
   /**
@@ -488,6 +507,7 @@ public class GamingModel {
         sb.append(character.getRoom().displayVisibleRooms() + "\n");
       }
     }
+    passTurn();
     return sb.toString();
   }
 
@@ -514,9 +534,10 @@ public class GamingModel {
 
   /**
    * check if it is game over.
+   *
    * @return true if game over.
    */
-  public boolean isGameOver(){
+  public boolean isGameOver() {
     return gameOver;
   }
 }

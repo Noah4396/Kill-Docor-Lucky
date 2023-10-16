@@ -64,6 +64,11 @@ public class TargetCharacter implements Character {
   }
 
   @Override
+  public boolean isComputer() {
+    return true;
+  }
+
+  @Override
   public String toString() {
     return "TargetCharacter{" + "roomIndex=" + room.getIndex() + "" + ", roomName = "
         + room.getName() + ", index=" + index + ", health=" + health + ", name='" + name + '\''

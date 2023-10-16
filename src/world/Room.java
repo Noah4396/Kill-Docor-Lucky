@@ -162,4 +162,11 @@ public interface Room {
    * @param index stands for the index of the neighbour
    */
   public Room getNeighbour(int direction, int index);
+
+  /**
+   * Get the random neighbour.
+   * @param index the index of neighbour.
+   * @return the random neighobur.
+   */
+  public Room getRandNeighbour(int index);
 }

@@ -372,6 +372,21 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
+  public Room getRandNeighbour(int index) {
+    index = index % this.numOfNeighbours;
+    int i = 0;
+    for (ArrayList<Room> list : neighbours) {
+      for (Room room : list) {
+        if (i == index) {
+          return room;
+        }
+        i++;
+      }
+    }
+    return null;
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;

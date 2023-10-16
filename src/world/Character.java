@@ -12,4 +12,9 @@ public interface Character {
   public void setRoom(Room room);
 
   public String getName();
+
+  /**
+   * Check if the character is computer controlled.
+   */
+  public boolean isComputer();
 }
