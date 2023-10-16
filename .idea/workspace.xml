@@ -9,11 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add random to the constructor">
-      <change afterPath="$PROJECT_DIR$/src/command/GamingCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/command/LookAround.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add look around command">
+      <change afterPath="$PROJECT_DIR$/src/command/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/world/Direction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/LookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/LookAround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,6 +32,7 @@
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -194,7 +199,7 @@
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
       <workItem from="1697257371787" duration="12033000" />
-      <workItem from="1697403730342" duration="4531000" />
+      <workItem from="1697403730342" duration="8520000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -492,7 +497,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697409891481</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Add look around command">
+      <option name="closed" value="true" />
+      <created>1697418224654</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1697418224654</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +549,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create GamingConsole.java" />
     <MESSAGE value="Create Character and some implement to it." />
     <MESSAGE value="Create get character method in a room" />
     <MESSAGE value="Create getIndex method in character" />
@@ -561,6 +573,7 @@
     <MESSAGE value="Create controller and interface" />
     <MESSAGE value="Create initial content of controller" />
     <MESSAGE value="Add random to the constructor" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add random to the constructor" />
+    <MESSAGE value="Add look around command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add look around command" />
   </component>
 </project>

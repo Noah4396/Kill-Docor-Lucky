@@ -381,12 +381,13 @@ public class GamingModel {
     return sb.toString();
   }
 
-  public String displayers(){
+  public String displayers() {
     return players.toString();
   }
 
   /**
    * Display room of index.
+   *
    * @param index the index of room
    * @return the display.
    */
@@ -405,10 +406,13 @@ public class GamingModel {
   public String displayNeighbours() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      sb.append(room.displayNeighbours());
+      for (int i = 0; i < 4; i++) {
+        sb.append(room.displayNeighbours(i));
+      }
     }
     return sb.toString();
   }
+
 
   /**
    * Display all visible rooms.
@@ -447,11 +451,9 @@ public class GamingModel {
   public void pickUpItem(PlayerCharacter p, int index) {
     if (!p.isAbleToPick() || p.getRoom() == null || p.getRoom().getItemsNumber() == 0) {
       throw new IllegalStateException("Cannot pick up item");
-    }
-    else if (index > p.getRoom().getItemsNumber() || index < 1){
+    } else if (index > p.getRoom().getItemsNumber() || index < 1) {
       throw new IllegalArgumentException("Invalid index");
-    }
-      else {
+    } else {
       p.pickItem(p.getRoom().deleteItem(index - 1));
     }
   }
@@ -474,18 +476,21 @@ public class GamingModel {
    * @return
    */
   public String lookAround(Character c) {
+    if(c == null){
+      throw new IllegalArgumentException("Invalid player");
+    }
     StringBuffer sb = new StringBuffer();
     for (PlayerCharacter character : players) {
       if (!c.equals(character)) {
         sb.append(character.toString());
         sb.append("\nVisible Rooms: ");
-        sb.append(character.getRoom().displayVisibleRooms() + "\n\n");
+        sb.append(character.getRoom().displayVisibleRooms() + "\n");
       }
     }
     return sb.toString();
   }
 
-  public PlayerCharacter getCurrentPlayer(){
+  public PlayerCharacter getCurrentPlayer() {
     return players.get(currentTurn);
   }
 }

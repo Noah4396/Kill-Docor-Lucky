@@ -46,10 +46,10 @@ public class Driver {
           gamingModel.displayRooms();
           break;
         case 4:
-          gamingModel.displayNeighbours();
+          System.out.println(gamingModel.displayNeighbours());
           break;
         case 5:
-          gamingModel.displayVisibleRooms();
+          System.out.println(gamingModel.displayVisibleRooms());
           break;
         case 6:
           return;

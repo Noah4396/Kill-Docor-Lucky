@@ -135,9 +135,10 @@ public interface Room {
 
   /**
    * Display neighbours.
+   * @param direction the direction of the neighbours.
    * @return all the neighbours.
    */
-  public String displayNeighbours();
+  public String displayNeighbours(int direction);
 
   /**
    * Display visible rooms.

@@ -305,8 +305,8 @@ public class SpecifiedRoom implements Room {
     StringBuffer sb = new StringBuffer(
         "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", \nleftCorner="
             + leftCorner + ", rightCorner=" + rightCorner + ", upperCorner=" + upperCorner
-            + ", lowerCorner=" + lowerCorner + ", \nitems in the room =" + items + ", \ncharacters=" + characters
-            + '}');
+            + ", lowerCorner=" + lowerCorner + ", \nitems in the room =" + items + ", \ncharacters="
+            + characters + '}');
     sb.append(", \nneighbours = ");
     for (ArrayList<Room> list : neighbours) {
       sb.append("[");
@@ -326,16 +326,19 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
-  public String displayNeighbours() {
-    StringBuffer sb = new StringBuffer("Neighbours of " + this.name + " in clockwise: ");
-    for (ArrayList<Room> list : neighbours) {
-      sb.append("[");
-      for (Room room : list) {
-        sb.append(room.getName());
-        sb.append(", ");
-      }
-      sb.append("]");
+  public String displayNeighbours(int direction) {
+    StringBuffer sb = new StringBuffer();
+    sb.append(Direction.values()[direction] + " neighbours of " + this.name + ": ");
+    sb.append("[");
+    int i = 0;
+    for (Room room : neighbours.get(direction)) {
+      sb.append(i + ".");
+      sb.append(room.getName());
+      sb.append(", ");
+      i++;
     }
+    sb.append("]\n");
+
     return sb.toString();
   }
 
