@@ -46,7 +46,7 @@ public class Driver {
           gamingModel.displayRooms();
           break;
         case 4:
-          System.out.println(gamingModel.displayNeighbours());
+          System.out.println(gamingModel.displayNAllNeighbours());
           break;
         case 5:
           System.out.println(gamingModel.displayVisibleRooms());

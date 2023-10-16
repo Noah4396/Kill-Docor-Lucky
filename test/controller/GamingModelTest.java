@@ -84,8 +84,7 @@ public class GamingModelTest {
     gamingModel.addPlayer(p3, 15);
     assertEquals("Character name: p2, Current room: Carriage House, items: []\n"
         + "Visible Rooms: Visible room of Carriage House: [Winter Garden, Piazza, Hedge Maze, Green House, ]\n"
-        + "\n" + "Character name: p3, Current room: Piazza, items: []\n"
-        + "Visible Rooms: Visible room of Piazza: [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n"
-        + "\n", gamingModel.lookAround(p1));
+        + "Character name: p3, Current room: Piazza, items: []\n"
+        + "Visible Rooms: Visible room of Piazza: [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n", gamingModel.lookAround(p1));
   }
 }

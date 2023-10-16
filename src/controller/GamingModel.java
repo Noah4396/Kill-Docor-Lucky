@@ -42,6 +42,7 @@ public class GamingModel {
   private int maxTurn;
   private long seed;
   private Random random;
+  private Boolean gameOver;
 
   /**
    * The constructor.
@@ -58,6 +59,7 @@ public class GamingModel {
     this.maxTurn = maxTurn;
     this.seed = 123;
     this.random = new Random(seed);
+    gameOver = false;
     try {
       parse(path);
     } catch (IllegalArgumentException e) {
@@ -403,7 +405,7 @@ public class GamingModel {
    *
    * @return the displayed neighbours.
    */
-  public String displayNeighbours() {
+  public String displayNAllNeighbours() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
       for (int i = 0; i < 4; i++) {
@@ -412,7 +414,6 @@ public class GamingModel {
     }
     return sb.toString();
   }
-
 
   /**
    * Display all visible rooms.
@@ -473,10 +474,10 @@ public class GamingModel {
    * Look around.
    *
    * @param c the character that looks around.
-   * @return
+   * @return information of other players.
    */
   public String lookAround(Character c) {
-    if(c == null){
+    if (c == null) {
       throw new IllegalArgumentException("Invalid player");
     }
     StringBuffer sb = new StringBuffer();
@@ -490,7 +491,32 @@ public class GamingModel {
     return sb.toString();
   }
 
+  /**
+   * Get the current turn.
+   *
+   * @return the current player.
+   */
   public PlayerCharacter getCurrentPlayer() {
     return players.get(currentTurn);
+  }
+
+  /**
+   * Pass the turn.
+   */
+  public void passTurn() {
+    currentTurn++;
+    currentTurn = currentTurn % players.size();
+    totalTurn++;
+    if (totalTurn >= maxTurn) {
+      gameOver = true;
+    }
+  }
+
+  /**
+   * check if it is game over.
+   * @return true if game over.
+   */
+  public boolean isGameOver(){
+    return gameOver;
   }
 }
