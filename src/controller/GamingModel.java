@@ -512,6 +512,32 @@ public class GamingModel {
   }
 
   /**
+   * Execute computer command.
+   * @param player the computer player.
+   */
+  public void computerCommand(PlayerCharacter player) {
+    int choice = 3;
+    if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {
+      choice = 2;
+    }
+    choice = random.nextInt(choice);
+    switch (choice){
+      case 0:
+        moveToNeighbour(player, 0, 0);
+        break;
+      case 1:
+        lookAround(player);
+        break;
+      case 2:
+        pickUpItem(player, 0);
+        break;
+      default:
+        break;
+    }
+    passTurn();
+  }
+
+  /**
    * Get the current turn.
    *
    * @return the current player.
