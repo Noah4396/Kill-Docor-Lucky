@@ -2,6 +2,7 @@ package controller;
 
 import world.PlayerCharacter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -29,5 +30,13 @@ public class GamingConsoleController implements Controller{
   @Override
   public void playGame(GamingModel m) {
 
+  }
+
+  private void printPrompt(){
+    try{
+      out.append("");
+    } catch (IOException ioe){
+      throw new IllegalStateException("Append failed", ioe);
+    }
   }
 }

@@ -9,13 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create controller and interface">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add random to the constructor">
+      <change afterPath="$PROJECT_DIR$/src/command/GamingCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/command/LookAround.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Driver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/归档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +26,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -196,7 +194,7 @@
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
       <workItem from="1697257371787" duration="12033000" />
-      <workItem from="1697403730342" duration="1810000" />
+      <workItem from="1697403730342" duration="4531000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -478,7 +476,23 @@
       <option name="project" value="LOCAL" />
       <updated>1697404394939</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Create initial content of controller">
+      <option name="closed" value="true" />
+      <created>1697408193344</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1697408193345</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add random to the constructor">
+      <option name="closed" value="true" />
+      <created>1697409891481</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1697409891481</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -522,8 +536,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add addRooms method" />
-    <MESSAGE value="Fix some bugs" />
     <MESSAGE value="Create GamingConsole.java" />
     <MESSAGE value="Create Character and some implement to it." />
     <MESSAGE value="Create get character method in a room" />
@@ -547,6 +559,8 @@
     <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
     <MESSAGE value="Create test for the new methods" />
     <MESSAGE value="Create controller and interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create controller and interface" />
+    <MESSAGE value="Create initial content of controller" />
+    <MESSAGE value="Add random to the constructor" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add random to the constructor" />
   </component>
 </project>
