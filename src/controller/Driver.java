@@ -1,5 +1,7 @@
 package controller;
 
+import model.GamingModel;
+
 import java.util.Scanner;
 
 /**

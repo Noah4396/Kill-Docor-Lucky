@@ -1,5 +1,6 @@
 package controller;
 
+import model.GamingModel;
 import org.junit.Before;
 import org.junit.Test;
 import world.PlayerCharacter;

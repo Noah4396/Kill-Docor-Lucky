@@ -1,4 +1,4 @@
-package controller;
+package model;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -23,7 +23,7 @@ import world.TargetCharacter;
 /**
  * The Gaming console.
  */
-public class GamingModel {
+public class GamingModel implements Model{
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
   private ArrayList<Item> items;
@@ -431,11 +431,7 @@ public class GamingModel {
     return sb.toString();
   }
 
-  /**
-   * Add a player playing the game.
-   *
-   * @param p is the player added to the game.
-   */
+  @Override
   public void addPlayer(PlayerCharacter p, int roomIndex) {
     if (p == null || p.getName().isEmpty()) {
       throw new IllegalArgumentException("Invalid player");
@@ -445,13 +441,7 @@ public class GamingModel {
     }
   }
 
-  /**
-   * Let the player pick up an item from its room, if the room do not have an item or the player
-   * cannot pick more item, it will throw IllegalStateException.
-   *
-   * @param p     the player that will pick item
-   * @param index the item index;
-   */
+  @Override
   public void pickUpItem(PlayerCharacter p, int index) {
     if (p.isComputer()) {
       int rand = random.nextInt();
@@ -469,13 +459,7 @@ public class GamingModel {
     passTurn();
   }
 
-  /**
-   * Move character to neighbour.
-   *
-   * @param c         the moved character.
-   * @param direction the moving direction.
-   * @param index     the index of room in direction.
-   */
+  @Override
   public void moveToNeighbour(Character c, int direction, int index) {
     if (c.isComputer()) {
       move(c, c.getRoom().getRandNeighbour(random.nextInt()));
@@ -489,12 +473,7 @@ public class GamingModel {
     passTurn();
   }
 
-  /**
-   * Look around.
-   *
-   * @param c the character that looks around.
-   * @return information of other players.
-   */
+  @Override
   public String lookAround(Character c) {
     if (c == null) {
       throw new IllegalArgumentException("Invalid player");
@@ -511,10 +490,7 @@ public class GamingModel {
     return sb.toString();
   }
 
-  /**
-   * Execute computer command.
-   * @param player the computer player.
-   */
+  @Override
   public void computerCommand(PlayerCharacter player) {
     int choice = 3;
     if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {

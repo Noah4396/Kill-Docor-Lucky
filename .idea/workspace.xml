@@ -9,11 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add PickUp.java, and add computer performance">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish ComputerCommand.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/ComputerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ComputerCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/PickUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/PickUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/GamingCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/GamingCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,7 +192,7 @@
       <workItem from="1696739925568" duration="2581000" />
       <workItem from="1697138117317" duration="3586000" />
       <workItem from="1697257371787" duration="12033000" />
-      <workItem from="1697403730342" duration="13569000" />
+      <workItem from="1697403730342" duration="17246000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -524,7 +522,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697432669764</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="Finish ComputerCommand.java">
+      <option name="closed" value="true" />
+      <created>1697433400004</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1697433400004</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -568,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create move method of GamingConsole.java" />
     <MESSAGE value="Initially complete the parse function" />
     <MESSAGE value="Parse the first line" />
     <MESSAGE value="Parse the second line" />
@@ -593,6 +598,7 @@
     <MESSAGE value="Add move command and enum Direction.java" />
     <MESSAGE value="Add pass turn method and judge if it is game over." />
     <MESSAGE value="Add PickUp.java, and add computer performance" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add PickUp.java, and add computer performance" />
+    <MESSAGE value="Finish ComputerCommand.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish ComputerCommand.java" />
   </component>
 </project>

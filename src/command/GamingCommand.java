@@ -1,6 +1,6 @@
 package command;
 
-import controller.GamingModel;
+import model.GamingModel;
 
 /**
  * A gaming command interface.

@@ -1,5 +1,6 @@
 package controller;
 
+import model.GamingModel;
 import world.PlayerCharacter;
 
 import java.io.IOException;

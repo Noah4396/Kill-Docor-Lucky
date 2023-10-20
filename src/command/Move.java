@@ -1,6 +1,6 @@
 package command;
 
-import controller.GamingModel;
+import model.GamingModel;
 import world.Character;
 import world.PlayerCharacter;
 import world.Room;

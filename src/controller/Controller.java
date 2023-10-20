@@ -1,5 +1,7 @@
 package controller;
 
+import model.GamingModel;
+
 /**
  * Represents a Controller for Kill Doctor Lucky: handle user moves by executing them using the model;
  * convey outcomes to the user in some form.

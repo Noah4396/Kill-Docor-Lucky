@@ -1,6 +1,6 @@
 package command;
 
-import controller.GamingModel;
+import model.GamingModel;
 import world.PlayerCharacter;
 
 import java.io.IOException;
