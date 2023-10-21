@@ -14,7 +14,7 @@ public class GamingModelTest {
   PlayerCharacter p2;
   PlayerCharacter p3;
   @Before
-  public void setUp() throws Exception {
+  public void setUp() {
     gamingModel = new GamingModel("res/mansion.txt", 100);
     p1 = new PlayerCharacter("p1", 0, 2);
     p2 = new PlayerCharacter("p2", 1, 4);
