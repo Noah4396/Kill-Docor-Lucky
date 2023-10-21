@@ -475,6 +475,9 @@ public class GamingModel implements Model{
 
   @Override
   public void moveToNeighbour(Character c, int direction, int index) {
+    if(c == null || !players.contains(c)){
+      throw new IllegalArgumentException("Invalid Player");
+    }
     if (c.isComputer()) {
       move(c, c.getRoom().getRandNeighbour(random.nextInt(100)));
       return;
@@ -489,7 +492,7 @@ public class GamingModel implements Model{
 
   @Override
   public String lookAround(Character c) {
-    if (c == null) {
+    if (c == null || !players.contains(c)) {
       throw new IllegalArgumentException("Invalid player");
     }
     StringBuffer sb = new StringBuffer();

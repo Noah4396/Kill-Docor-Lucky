@@ -5,7 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import world.PlayerCharacter;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class GamingModelTest {
 
@@ -32,6 +32,16 @@ public class GamingModelTest {
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Armory, items: [], player type: human\n", gamingModel.displayers());
 
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void addInvalidPlayer(){
+    gamingModel.addPlayer(null, 1);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void addPlayerInvalidIndex(){
+    gamingModel.addPlayer(p1, 100);
   }
 
   @Test
@@ -80,6 +90,19 @@ public class GamingModelTest {
         + "visibleRooms = [Tennessee Room, Lilac Room, Master Suite, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, Kitchen, ]", gamingModel.displayRoom(3));
   }
 
+  @Test(expected = IllegalArgumentException.class)
+  public void moveToInvalidNeighbour(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.moveToNeighbour(p1, 1, 0);
+    gamingModel.moveToNeighbour(p1, 100, 0);
+    gamingModel.moveToNeighbour(p1, 1, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void moveInvalidPlayer(){
+    gamingModel.moveToNeighbour(p1, 0, 0);
+    gamingModel.moveToNeighbour(null, 0, 0);
+  }
 
   @Test
   public void lookAround() {
@@ -90,5 +113,11 @@ public class GamingModelTest {
         + "Visible Rooms: Visible room of Carriage House: [Winter Garden, Piazza, Hedge Maze, Green House, ]\n"
         + "Character name: p3, Current room: Piazza, items: [], player type: human\n"
         + "Visible Rooms: Visible room of Piazza: [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n", gamingModel.lookAround(p1));
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void lookAroundInvalidPlayer(){
+    gamingModel.lookAround(p1);
+    gamingModel.lookAround(null);
   }
 }
