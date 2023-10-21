@@ -6,6 +6,7 @@ import world.PlayerCharacter;
 public interface Model {
   /**
    * Execute computer command.
+   *
    * @param player the computer player.
    */
   public void computerCommand(PlayerCharacter player, Appendable out);
@@ -31,6 +32,7 @@ public interface Model {
 
   /**
    * Get the current turn number.
+   *
    * @return the current turn.
    */
   int getTotalTurn();
@@ -53,6 +55,7 @@ public interface Model {
 
   /**
    * Get the current turn.
+   *
    * @return the player that is in the turn.
    */
   public PlayerCharacter getTurn();
@@ -66,6 +69,7 @@ public interface Model {
 
   /**
    * Display all players.
+   *
    * @return the player information.
    */
   public String displayers();

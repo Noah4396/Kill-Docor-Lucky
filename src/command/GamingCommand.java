@@ -9,6 +9,7 @@ import model.Model;
 public interface GamingCommand {
   /**
    * Execute the command.
+   *
    * @param m the gaming model.
    */
   void execute(Model m);

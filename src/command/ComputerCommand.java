@@ -13,6 +13,7 @@ public class ComputerCommand implements GamingCommand {
 
   /**
    * Constructor.
+   *
    * @param player the computer player.
    */
   public ComputerCommand(PlayerCharacter player, Appendable out) {

@@ -12,6 +12,7 @@ public class Driver {
 
   /**
    * The main function.
+   *
    * @param args the arguments.
    */
   public static void main(String[] args) {

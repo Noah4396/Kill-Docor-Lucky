@@ -11,8 +11,9 @@ import static org.junit.Assert.*;
 public class GamingConsoleControllerTest {
   private GamingModel gamingModel;
   private StringBuffer expectOutput;
+
   @Before
-  public void setUp()  {
+  public void setUp() {
     gamingModel = new GamingModel("res/mansion.txt", 100);
     expectOutput = new StringBuffer();
     expectOutput.append("Welcome to the kill doctor lucky game\n");
@@ -21,7 +22,7 @@ public class GamingConsoleControllerTest {
   }
 
   @Test(expected = IllegalStateException.class)
-  public void testFailingAppendable(){
+  public void testFailingAppendable() {
     StringReader input = new StringReader("2 p1 1 0 2 p2 1 1 2 p3 2 2 2 p4 1 4 3");
     Appendable gamelog = new FailingAppendable();
     Controller c = new GamingConsoleController(input, gamelog);
@@ -29,18 +30,98 @@ public class GamingConsoleControllerTest {
   }
 
   @Test
-  public void testInvalidCommand(){
-    StringReader input = new StringReader("wofj fpslf lgwkg");
+  public void testInvalidCommand() {
+    StringReader input = new StringReader("wofj 5 3 4");
     StringBuffer gamelog = new StringBuffer();
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
-    expectOutput.append("Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
-        + "Invalid option, please enter again\n"
-        + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
-        + "Invalid option, please enter again\n"
-        + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
-        + "Invalid option, please enter again\n"
-        + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n");
+    expectOutput.append(
+        "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Invalid option, please enter again\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Invalid option, please enter again\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "There are no player in the game, please create at least one player\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Ending game....\n");
+    assertEquals(expectOutput.toString(), gamelog.toString());
+  }
+
+  @Test
+  public void testAddPlayer() {
+    StringReader input = new StringReader("1 p1 1 0 2 p2 1 1 1 p3 1 1 3 q");
+    StringBuffer gamelog = new StringBuffer();
+    Controller c = new GamingConsoleController(input, gamelog);
+    c.playGame(gamingModel);
+    expectOutput.append(
+        "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: human\n" + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: human\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: human\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Billiard Room, items: [], player type: human\n"
+            + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Game start! The players are listed as follow: \n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: human\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Billiard Room, items: [], player type: human\n"
+            + "Now we are in the 1 turn\n" + "The player in current turn is: p1\n"
+            + "The information of the room that the player is in:\n"
+            + "---------------------------------\n" + "SpecifiedRoom{name='Armory', index=0, \n"
+            + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
+            + "items in the room =[Revolver], \n"
+            + "characters=[Target name: Doctor Lucky, Current room: Armory, Character name: p1, Current room: Armory, items: [], player type: human]}, \n"
+            + "neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ], \n"
+            + "visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]\n"
+            + "---------------------------------\n"
+            + "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n"
+            + "Enter 2 to pick up an item in the room. Then enter the index of the item\n"
+            + "Enter 3 to look around\n" + "Game quit!\n");
+    assertEquals(expectOutput.toString(), gamelog.toString());
+  }
+
+  @Test
+  public void testAddInvalidPlayer() {
+    StringReader input = new StringReader("1 p1 1 100 1 p1 1 1 2 p1 1 1 4");
+    StringBuffer gamelog = new StringBuffer();
+    Controller c = new GamingConsoleController(input, gamelog);
+    c.playGame(gamingModel);
+    expectOutput.append(
+        "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Invalid room index or name duplicated!\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Billiard Room, items: [], player type: human\n\n");
+    expectOutput.append(
+        "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Invalid room index or name duplicated!\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Ending game....\n");
     assertEquals(expectOutput.toString(), gamelog.toString());
   }
 }

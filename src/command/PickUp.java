@@ -8,14 +8,15 @@ import world.PlayerCharacter;
 /**
  * The pickup command.
  */
-public class PickUp implements GamingCommand{
+public class PickUp implements GamingCommand {
   private PlayerCharacter player;
   private int index;
 
   /**
    * The constructor.
+   *
    * @param player the player.
-   * @param index the index of item.
+   * @param index  the index of item.
    */
   public PickUp(PlayerCharacter player, int index) {
     if (player == null) {

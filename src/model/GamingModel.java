@@ -23,7 +23,7 @@ import world.TargetCharacter;
 /**
  * The Gaming console.
  */
-public class GamingModel implements Model{
+public class GamingModel implements Model {
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
   private ArrayList<Item> items;
@@ -388,7 +388,7 @@ public class GamingModel implements Model{
     StringBuffer sb = new StringBuffer();
     sb.append(doctorLucky.toString());
     sb.append("\n");
-    for(PlayerCharacter p : players){
+    for (PlayerCharacter p : players) {
       sb.append(p.toString());
       sb.append("\n");
     }
@@ -436,8 +436,8 @@ public class GamingModel implements Model{
     if (p == null || p.getName().isEmpty() || roomIndex < 0 || roomIndex >= rooms.size()) {
       throw new IllegalArgumentException("Invalid input");
     }
-    for(PlayerCharacter tmp : players){
-      if(tmp.getName().equals(p.getName())){
+    for (PlayerCharacter tmp : players) {
+      if (tmp.getName().equals(p.getName())) {
         throw new IllegalArgumentException("Invalid input");
       }
     }
@@ -451,7 +451,7 @@ public class GamingModel implements Model{
   }
 
   @Override
-  public int getTotalTurn(){
+  public int getTotalTurn() {
     return totalTurn;
   }
 
@@ -475,7 +475,7 @@ public class GamingModel implements Model{
 
   @Override
   public void moveToNeighbour(Character c, int direction, int index) {
-    if(c == null || !players.contains(c)){
+    if (c == null || !players.contains(c)) {
       throw new IllegalArgumentException("Invalid Player");
     }
     if (c.isComputer()) {
@@ -516,7 +516,7 @@ public class GamingModel implements Model{
       choice = 2;
     }
     choice = random.nextInt(choice);
-    switch (choice){
+    switch (choice) {
       case 0:
         outputString("Computer " + player.getName() + " moves to the neighbour!\n", out);
         moveToNeighbour(player, 0, 0);
