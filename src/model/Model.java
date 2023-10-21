@@ -8,7 +8,7 @@ public interface Model {
    * Execute computer command.
    * @param player the computer player.
    */
-  public void computerCommand(PlayerCharacter player);
+  public void computerCommand(PlayerCharacter player, Appendable out);
 
   /**
    * Look around.
@@ -61,10 +61,19 @@ public interface Model {
    * @return the player information.
    */
   public String displayers();
+
   /**
    * check if it is game over.
    *
    * @return true if game over.
    */
   public boolean isGameOver();
+
+  /**
+   * Display room of index.
+   *
+   * @param index the index of room
+   * @return the display.
+   */
+  public String displayRoom(int index);
 }

@@ -1,6 +1,7 @@
 package command;
 
 import model.GamingModel;
+import model.Model;
 import world.Character;
 import world.PlayerCharacter;
 import world.Room;
@@ -28,7 +29,7 @@ public class Move implements GamingCommand{
     this.index = index;
   }
   @Override
-  public void execute(GamingModel m) {
+  public void execute(Model m) {
     m.moveToNeighbour(player, direction, index);
   }
 }

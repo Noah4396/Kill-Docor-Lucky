@@ -2,7 +2,7 @@ package command;
 
 import model.GamingModel;
 import world.PlayerCharacter;
-
+import model.Model;
 import java.io.IOException;
 
 /**
@@ -21,7 +21,7 @@ public class LookAround implements GamingCommand {
   }
 
   @Override
-  public void execute(GamingModel m) {
+  public void execute(Model m) {
     try {
       out.append(m.lookAround(player));
     } catch (IOException ioe) {

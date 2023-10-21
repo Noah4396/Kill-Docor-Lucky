@@ -387,12 +387,7 @@ public class MockModel implements Model{
     return players.toString();
   }
 
-  /**
-   * Display room of index.
-   *
-   * @param index the index of room
-   * @return the display.
-   */
+  @Override
   public String displayRoom(int index) {
     if (index >= rooms.size() || index < 0) {
       throw new IllegalArgumentException("Index out of bound");
@@ -494,7 +489,7 @@ public class MockModel implements Model{
   }
 
   @Override
-  public void computerCommand(PlayerCharacter player) {
+  public void computerCommand(PlayerCharacter player, Appendable out) {
     int choice = 3;
     if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {
       choice = 2;

@@ -393,12 +393,7 @@ public class GamingModel implements Model{
     return sb.toString();
   }
 
-  /**
-   * Display room of index.
-   *
-   * @param index the index of room
-   * @return the display.
-   */
+  @Override
   public String displayRoom(int index) {
     if (index >= rooms.size() || index < 0) {
       throw new IllegalArgumentException("Index out of bound");
@@ -503,7 +498,7 @@ public class GamingModel implements Model{
   }
 
   @Override
-  public void computerCommand(PlayerCharacter player) {
+  public void computerCommand(PlayerCharacter player, Appendable out) {
     int choice = 3;
     if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {
       choice = 2;
@@ -511,18 +506,29 @@ public class GamingModel implements Model{
     choice = random.nextInt(choice);
     switch (choice){
       case 0:
+        outputString("Computer moves to the neighbour!\n", out);
         moveToNeighbour(player, 0, 0);
         break;
       case 1:
+        outputString("Computer Look around!\n", out);
         lookAround(player);
         break;
       case 2:
+        outputString("Computer pick up an item!\n", out);
         pickUpItem(player, 0);
         break;
       default:
         break;
     }
     passTurn();
+  }
+
+  private void outputString(String s, Appendable out) {
+    try {
+      out.append(s);
+    } catch (IOException ioe) {
+      throw new IllegalStateException("Append failed", ioe);
+    }
   }
 
   /**

@@ -1,6 +1,6 @@
 package controller;
 
-import command.GamingCommand;
+import command.*;
 import model.GamingModel;
 import model.Model;
 import world.PlayerCharacter;
@@ -31,6 +31,11 @@ public class GamingConsoleController implements Controller {
 
   @Override
   public void playGame(Model m) {
+    Map<String, Function<Scanner, GamingCommand>> knownCommands = new HashMap<>();
+    Stack<GamingCommand> commands = new Stack<>();
+    knownCommands.put("1", s -> new Move(m.getTurn(), s.nextInt(), s.nextInt()));
+    knownCommands.put("2", s -> new PickUp(m.getTurn(), s.nextInt()));
+    knownCommands.put("3", s -> new LookAround(m.getTurn(), this.out));
     if (m == null) {
       throw new IllegalArgumentException("Invalid Model");
     }
@@ -39,8 +44,38 @@ public class GamingConsoleController implements Controller {
     }
     outputString("Game start! The players are listed as follow: \n");
     outputString(m.displayers());
-    while (!m.isGameOver() && scan.hasNext()){
 
+    printPrompt(m);
+    while (!m.isGameOver()) {
+      GamingCommand c;
+      if (m.getTurn().isComputer()) {
+        c = new ComputerCommand(m.getTurn(), this.out);
+      } else {
+        if (!scan.hasNext()) {
+          outputString("No input ang longer, game over\n");
+          return;
+        }
+        String in = scan.next();
+        if (in.equalsIgnoreCase("q") || in.equalsIgnoreCase("quit")) {
+          outputString("Game quit!\n");
+          return;
+        }
+        Function<Scanner, GamingCommand> cmd = knownCommands.getOrDefault(in, null);
+        if (cmd == null) {
+          outputString("Invalid option, please enter again.\n");
+        } else {
+          try{
+            c = cmd.apply(scan);
+            commands.add(c);
+            c.execute(m);
+            outputString("Now the status of players are shown as follow:\n");
+            outputString(m.displayers() + "\n");
+            printPrompt(m);
+          } catch (IllegalArgumentException | IllegalStateException e){
+            outputString(e.getMessage());
+          }
+        }
+      }
     }
   }
 
@@ -52,8 +87,13 @@ public class GamingConsoleController implements Controller {
     }
   }
 
-  private void printPrompt() {
-
+  private void printPrompt(Model m) {
+    outputString("The player in current turn is: " + m.getTurn().getName() + "\n");
+    outputString("The information of the room that the player is in:\n");
+    outputString(m.getTurn().getRoom().toString());
+    outputString("Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
+    outputString("Enter 2 to pick up an item in the room. Then enter the index of the item\n");
+    outputString("Enter 3 to look around]n");
   }
 
   private boolean gameInitialize(Model m) {

@@ -1,6 +1,7 @@
 package command;
 
 import model.GamingModel;
+import model.Model;
 import world.Character;
 import world.PlayerCharacter;
 
@@ -25,7 +26,7 @@ public class PickUp implements GamingCommand{
   }
 
   @Override
-  public void execute(GamingModel m) {
+  public void execute(Model m) {
     m.pickUpItem(player, index);
   }
 }
