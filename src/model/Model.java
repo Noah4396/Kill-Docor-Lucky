@@ -42,4 +42,23 @@ public interface Model {
    * @param p is the player added to the game.
    */
   public void addPlayer(PlayerCharacter p, int roomIndex);
+
+  /**
+   * Get the current turn.
+   * @return the player that is in the turn.
+   */
+  public PlayerCharacter getTurn();
+
+  /**
+   * Display all the rooms.
+   *
+   * @return the displayedRooms.
+   */
+  public String displayRooms();
+
+  /**
+   * Display all players.
+   * @return the players information.
+   */
+  public String displayers();
 }

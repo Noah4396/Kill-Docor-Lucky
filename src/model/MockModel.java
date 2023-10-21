@@ -373,11 +373,7 @@ public class MockModel implements Model{
     return doctorLucky;
   }
 
-  /**
-   * Display all the rooms.
-   *
-   * @return the displayedRooms.
-   */
+  @Override
   public String displayRooms() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
@@ -386,6 +382,7 @@ public class MockModel implements Model{
     return sb.toString();
   }
 
+  @Override
   public String displayers() {
     return players.toString();
   }
@@ -440,6 +437,12 @@ public class MockModel implements Model{
       move(p, rooms.get(roomIndex));
     }
   }
+
+  @Override
+  public PlayerCharacter getTurn() {
+    return players.get(currentTurn);
+  }
+
 
   @Override
   public void pickUpItem(PlayerCharacter p, int index) {

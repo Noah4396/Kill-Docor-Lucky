@@ -1,6 +1,7 @@
 package controller;
 
 import model.GamingModel;
+import model.Model;
 
 /**
  * Represents a Controller for Kill Doctor Lucky: handle user moves by executing them using the model;
@@ -13,5 +14,5 @@ public interface Controller {
    *
    * @param m a non-null kill doctor lucky Model
    */
-  void playGame(GamingModel m);
+  void playGame(Model m);
 }

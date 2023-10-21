@@ -373,21 +373,24 @@ public class GamingModel implements Model{
     return doctorLucky;
   }
 
-  /**
-   * Display all the rooms.
-   *
-   * @return the displayedRooms.
-   */
+  @Override
   public String displayRooms() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
       sb.append(room);
+      sb.append("\n\n");
     }
     return sb.toString();
   }
 
+  @Override
   public String displayers() {
-    return players.toString();
+    StringBuffer sb = new StringBuffer();
+    for(PlayerCharacter p : players){
+      sb.append(p.toString());
+      sb.append("\n");
+    }
+    return sb.toString();
   }
 
   /**
@@ -433,12 +436,21 @@ public class GamingModel implements Model{
 
   @Override
   public void addPlayer(PlayerCharacter p, int roomIndex) {
-    if (p == null || p.getName().isEmpty()) {
-      throw new IllegalArgumentException("Invalid player");
-    } else {
-      players.add(p);
-      move(p, rooms.get(roomIndex));
+    if (p == null || p.getName().isEmpty() || roomIndex < 0 || roomIndex >= rooms.size()) {
+      throw new IllegalArgumentException("Invalid input");
     }
+    for(PlayerCharacter tmp : players){
+      if(tmp.getName().equals(p.getName())){
+        throw new IllegalArgumentException("Invalid input");
+      }
+    }
+    players.add(p);
+    move(p, rooms.get(roomIndex));
+  }
+
+  @Override
+  public PlayerCharacter getTurn() {
+    return players.get(currentTurn);
   }
 
   @Override
