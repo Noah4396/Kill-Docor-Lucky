@@ -386,6 +386,8 @@ public class GamingModel implements Model{
   @Override
   public String displayers() {
     StringBuffer sb = new StringBuffer();
+    sb.append(doctorLucky.toString());
+    sb.append("\n");
     for(PlayerCharacter p : players){
       sb.append(p.toString());
       sb.append("\n");
@@ -449,19 +451,24 @@ public class GamingModel implements Model{
   }
 
   @Override
+  public int getTotalTurn(){
+    return totalTurn;
+  }
+
+  @Override
   public void pickUpItem(PlayerCharacter p, int index) {
     if (p.isComputer()) {
-      int rand = random.nextInt();
+      int rand = random.nextInt(100);
       rand = rand % p.getRoom().getItemsNumber();
       p.pickItem(p.getRoom().deleteItem(rand));
       return;
     }
     if (!p.isAbleToPick() || p.getRoom() == null || p.getRoom().getItemsNumber() == 0) {
       throw new IllegalStateException("Cannot pick up item");
-    } else if (index > p.getRoom().getItemsNumber() || index < 1) {
+    } else if (index >= p.getRoom().getItemsNumber() || index < 0) {
       throw new IllegalArgumentException("Invalid index");
     } else {
-      p.pickItem(p.getRoom().deleteItem(index - 1));
+      p.pickItem(p.getRoom().deleteItem(index));
     }
     passTurn();
   }
@@ -469,7 +476,7 @@ public class GamingModel implements Model{
   @Override
   public void moveToNeighbour(Character c, int direction, int index) {
     if (c.isComputer()) {
-      move(c, c.getRoom().getRandNeighbour(random.nextInt()));
+      move(c, c.getRoom().getRandNeighbour(random.nextInt(100)));
       return;
     }
     try {
@@ -493,7 +500,9 @@ public class GamingModel implements Model{
         sb.append(character.getRoom().displayVisibleRooms() + "\n");
       }
     }
-    passTurn();
+    if (!c.isComputer()) {
+      passTurn();
+    }
     return sb.toString();
   }
 
@@ -506,15 +515,15 @@ public class GamingModel implements Model{
     choice = random.nextInt(choice);
     switch (choice){
       case 0:
-        outputString("Computer moves to the neighbour!\n", out);
+        outputString("Computer " + player.getName() + " moves to the neighbour!\n", out);
         moveToNeighbour(player, 0, 0);
         break;
       case 1:
-        outputString("Computer Look around!\n", out);
+        outputString("Computer " + player.getName() + " Look around!\n", out);
         lookAround(player);
         break;
       case 2:
-        outputString("Computer pick up an item!\n", out);
+        outputString("Computer " + player.getName() + " pick up an item!\n", out);
         pickUpItem(player, 0);
         break;
       default:

@@ -27,6 +27,14 @@ public interface Model {
    */
   public void moveToNeighbour(Character c, int direction, int index);
 
+  void moveTarget();
+
+  /**
+   * Get the current turn number.
+   * @return the current turn.
+   */
+  int getTotalTurn();
+
   /**
    * Let the player pick up an item from its room, if the room do not have an item or the player
    * cannot pick more item, it will throw IllegalStateException.

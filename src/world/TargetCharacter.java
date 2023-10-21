@@ -70,9 +70,10 @@ public class TargetCharacter implements Character {
 
   @Override
   public String toString() {
-    return "TargetCharacter{" + "roomIndex=" + room.getIndex() + "" + ", roomName = "
-        + room.getName() + ", index=" + index + ", health=" + health + ", name='" + name + '\''
-        + '}';
+    StringBuffer sb = new StringBuffer();
+    sb.append("Target name: " + name);
+    sb.append(", Current room: " + room.getName());
+    return sb.toString();
   }
 
   @Override

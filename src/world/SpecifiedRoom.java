@@ -23,6 +23,7 @@ public class SpecifiedRoom implements Room {
   private ArrayList<Character> characters;
   private ArrayList<ArrayList<Room>> neighbours;
   private ArrayList<Room> visibleRooms;
+  private ArrayList<Room> neighbourInOneSet;
 
   /**
    * Constructs a Specified object.
@@ -51,6 +52,7 @@ public class SpecifiedRoom implements Room {
     this.characters = new ArrayList<>();
     this.neighbours = new ArrayList<>();
     this.visibleRooms = new ArrayList<>();
+    this.neighbourInOneSet = new ArrayList<>();
     this.neighbours.add(this.upperRooms);
     this.neighbours.add(this.rightRooms);
     this.neighbours.add(this.lowerRooms);
@@ -181,6 +183,7 @@ public class SpecifiedRoom implements Room {
       return;
     }
     this.leftRooms.add(room);
+    this.neighbourInOneSet.add(room);
     this.numOfNeighbours++;
   }
 
@@ -190,6 +193,7 @@ public class SpecifiedRoom implements Room {
       return;
     }
     this.rightRooms.add(room);
+    this.neighbourInOneSet.add(room);
     this.numOfNeighbours++;
   }
 
@@ -199,6 +203,7 @@ public class SpecifiedRoom implements Room {
       return;
     }
     this.upperRooms.add(room);
+    this.neighbourInOneSet.add(room);
     this.numOfNeighbours++;
   }
 
@@ -208,6 +213,7 @@ public class SpecifiedRoom implements Room {
       return;
     }
     this.lowerRooms.add(room);
+    this.neighbourInOneSet.add(room);
     this.numOfNeighbours++;
   }
 
@@ -373,17 +379,8 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public Room getRandNeighbour(int index) {
-    index = index % this.numOfNeighbours;
-    int i = 0;
-    for (ArrayList<Room> list : neighbours) {
-      for (Room room : list) {
-        if (i == index) {
-          return room;
-        }
-        i++;
-      }
-    }
-    return null;
+    int rand = index % this.neighbourInOneSet.size();
+    return neighbourInOneSet.get(rand);
   }
 
   @Override

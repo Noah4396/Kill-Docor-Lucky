@@ -23,7 +23,7 @@ import world.TargetCharacter;
 /**
  * The Gaming console.
  */
-public class MockModel implements Model{
+public class MockModel implements Model {
   private int[][] chessBoard;
   private ArrayList<Room> rooms;
   private ArrayList<Item> items;
@@ -163,9 +163,7 @@ public class MockModel implements Model{
     character.setRoom(room);
   }
 
-  /**
-   * Move the target.
-   */
+  @Override
   public void moveTarget() {
     int targetIndex = doctorLucky.getRoom().getIndex();
     targetIndex = (targetIndex + 1) % rooms.size();
@@ -243,6 +241,11 @@ public class MockModel implements Model{
         chessBoard[i][j] = index;
       }
     }
+  }
+
+  @Override
+  public int getTotalTurn() {
+    return totalTurn;
   }
 
   /**
@@ -438,7 +441,6 @@ public class MockModel implements Model{
     return players.get(currentTurn);
   }
 
-
   @Override
   public void pickUpItem(PlayerCharacter p, int index) {
     if (p.isComputer()) {
@@ -484,7 +486,9 @@ public class MockModel implements Model{
         sb.append(character.getRoom().displayVisibleRooms() + "\n");
       }
     }
-    passTurn();
+    if (!c.isComputer()) {
+      passTurn();
+    }
     return sb.toString();
   }
 
@@ -495,7 +499,7 @@ public class MockModel implements Model{
       choice = 2;
     }
     choice = random.nextInt(choice);
-    switch (choice){
+    switch (choice) {
       case 0:
         moveToNeighbour(player, 0, 0);
         break;

@@ -1,7 +1,6 @@
 package controller;
 
 import command.*;
-import model.GamingModel;
 import model.Model;
 import world.PlayerCharacter;
 
@@ -45,12 +44,15 @@ public class GamingConsoleController implements Controller {
     outputString("Game start! The players are listed as follow: \n");
     outputString(m.displayers());
 
-    printPrompt(m);
     while (!m.isGameOver()) {
       GamingCommand c;
       if (m.getTurn().isComputer()) {
         c = new ComputerCommand(m.getTurn(), this.out);
+        printDivider();
+        c.execute(m);
+        printDivider();
       } else {
+        printPrompt(m);
         if (!scan.hasNext()) {
           outputString("No input ang longer, game over\n");
           return;
@@ -64,19 +66,23 @@ public class GamingConsoleController implements Controller {
         if (cmd == null) {
           outputString("Invalid option, please enter again.\n");
         } else {
-          try{
+          try {
             c = cmd.apply(scan);
             commands.add(c);
             c.execute(m);
-            outputString("Now the status of players are shown as follow:\n");
-            outputString(m.displayers() + "\n");
-            printPrompt(m);
-          } catch (IllegalArgumentException | IllegalStateException e){
-            outputString(e.getMessage());
+          } catch (IllegalArgumentException | IllegalStateException | InputMismatchException e) {
+            outputString(e.getMessage() + ", please enter again\n");
           }
         }
       }
+      m.moveTarget();
+      outputString("Now the status of players are shown as follow:\n");
+      outputString(m.displayers() + "\n");
     }
+  }
+
+  private void printDivider() {
+    outputString("---------------------------------\n");
   }
 
   private void outputString(String s) {
@@ -88,12 +94,16 @@ public class GamingConsoleController implements Controller {
   }
 
   private void printPrompt(Model m) {
+    outputString("Now we are in the " + (m.getTotalTurn() + 1) + " turn\n");
     outputString("The player in current turn is: " + m.getTurn().getName() + "\n");
     outputString("The information of the room that the player is in:\n");
-    outputString(m.getTurn().getRoom().toString());
-    outputString("Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
+    printDivider();
+    outputString(m.getTurn().getRoom().toString() + "\n");
+    printDivider();
+    outputString(
+        "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
     outputString("Enter 2 to pick up an item in the room. Then enter the index of the item\n");
-    outputString("Enter 3 to look around]n");
+    outputString("Enter 3 to look around\n");
   }
 
   private boolean gameInitialize(Model m) {
