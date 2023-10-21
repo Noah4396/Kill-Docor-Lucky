@@ -58,7 +58,13 @@ public interface Model {
 
   /**
    * Display all players.
-   * @return the players information.
+   * @return the player information.
    */
   public String displayers();
+  /**
+   * check if it is game over.
+   *
+   * @return true if game over.
+   */
+  public boolean isGameOver();
 }

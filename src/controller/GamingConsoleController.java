@@ -37,6 +37,11 @@ public class GamingConsoleController implements Controller {
     if (!gameInitialize(m)) {
       return;
     }
+    outputString("Game start! The players are listed as follow: \n");
+    outputString(m.displayers());
+    while (!m.isGameOver() && scan.hasNext()){
+
+    }
   }
 
   private void outputString(String s) {
@@ -55,30 +60,36 @@ public class GamingConsoleController implements Controller {
     outputString("Welcome to the kill doctor lucky game\n");
     outputString("The rooms are initialized as:\n");
     outputString(m.displayRooms());
-    while (true) {
-      outputString(
-          "Enter 1 to add a player; Enter 2 to start the game; Enter 3 to quit the game\n");
+    outputString("Enter 1 to add a player; Enter 2 to add a computer player; "
+        + "Enter 3 to start the game; Enter 4 to quit the game\n");
+    while (scan.hasNext()) {
       switch (scan.next()) {
         case "1":
-          getPlayerInput(m);
+          getPlayerInput(m, false);
           break;
         case "2":
+          getPlayerInput(m, true);
+          break;
+        case "3":
           if (players.isEmpty()) {
             outputString("There are no player in the game, please create at least one player\n");
           } else {
             return true;
           }
           break;
-        case "3":
+        case "4":
           outputString("Ending game....\n");
           return false;
         default:
           outputString("Invalid option, please enter again\n");
       }
+      outputString("Enter 1 to add a player; Enter 2 to add a computer player; "
+          + "Enter 3 to start the game; Enter 4 to quit the game\n");
     }
+    return false;
   }
 
-  private void getPlayerInput(Model m) {
+  private void getPlayerInput(Model m, boolean isComputer) {
     outputString("Please enter the name of the player:\n");
     String name = scan.next();
     outputString("Please enter the capacity:\n");
@@ -96,11 +107,14 @@ public class GamingConsoleController implements Controller {
     PlayerCharacter player = new PlayerCharacter(name, players.size(), capacity);
     try {
       roomIndex = scan.nextInt();
-      m.addPlayer(player,roomIndex);
+      m.addPlayer(player, roomIndex);
       players.add(player);
     } catch (InputMismatchException | IllegalArgumentException e) {
       outputString("Invalid room index or name duplicated!\n");
       return;
+    }
+    if (isComputer) {
+      player.setAsComputer();
     }
     outputString("Add player successfully, the current player information:\n");
     outputString(m.displayers() + "\n");

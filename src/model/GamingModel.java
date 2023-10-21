@@ -546,11 +546,7 @@ public class GamingModel implements Model{
     }
   }
 
-  /**
-   * check if it is game over.
-   *
-   * @return true if game over.
-   */
+  @Override
   public boolean isGameOver() {
     return gameOver;
   }
