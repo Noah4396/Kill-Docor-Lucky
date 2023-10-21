@@ -9,15 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Nearly finish the controller">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish the program">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/TargetCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/TargetCharacter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +106,7 @@
       <recent name="TheWolrd" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GamingModelTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TheWorld" />
@@ -180,8 +173,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingModelTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingModelTest.addPlayer" />
         <item itemvalue="JAR Application.Driver.jar" />
         <item itemvalue="JAR Application.TheWorld.jar" />
@@ -208,7 +201,8 @@
       <workItem from="1697138117317" duration="3586000" />
       <workItem from="1697257371787" duration="12033000" />
       <workItem from="1697403730342" duration="17246000" />
-      <workItem from="1697832012517" duration="19306000" />
+      <workItem from="1697832012517" duration="19604000" />
+      <workItem from="1697919528408" duration="458000" />
     </task>
     <task id="LOCAL-00001" summary="initialize">
       <option name="closed" value="true" />
@@ -578,7 +572,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697861746952</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Finish the program">
+      <option name="closed" value="true" />
+      <created>1697867329360</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1697867329360</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add field neighbours to SpecifiedRoom.java and create the toString method" />
     <MESSAGE value="Parse item" />
     <MESSAGE value="Create setNeighbour method" />
     <MESSAGE value="Create setVisibleRooms method" />
@@ -647,6 +648,7 @@
     <MESSAGE value="Realized add player" />
     <MESSAGE value="Finish the initialization of player" />
     <MESSAGE value="Nearly finish the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Nearly finish the controller" />
+    <MESSAGE value="Finish the program" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish the program" />
   </component>
 </project>

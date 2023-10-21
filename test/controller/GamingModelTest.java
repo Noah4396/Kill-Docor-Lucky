@@ -26,24 +26,26 @@ public class GamingModelTest {
     assertEquals("SpecifiedRoom{name='Armory', index=0, \n"
         + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[Revolver], \n"
-        + "characters=[TargetCharacter{roomIndex=0, roomName = Armory, index=-1, health=50, name='Doctor Lucky'}, Character name: p1, Current room: Armory, items: []]}, \n"
+        + "characters=[Target name: Doctor Lucky, Current room: Armory, Character name: p1, Current room: Armory, items: [], player type: human]}, \n"
         + "neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ], \n"
         + "visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]", gamingModel.displayRoom(0));
-    assertEquals("[Character name: p1, Current room: Armory, items: []]", gamingModel.displayers());
+    assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
+        + "Character name: p1, Current room: Armory, items: [], player type: human\n", gamingModel.displayers());
 
   }
 
   @Test
   public void pickUpItem() {
     gamingModel.addPlayer(p1, 0);
-    gamingModel.pickUpItem(p1, 1);
+    gamingModel.pickUpItem(p1, 0);
     assertEquals("SpecifiedRoom{name='Armory', index=0, \n"
         + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[], \n"
-        + "characters=[TargetCharacter{roomIndex=0, roomName = Armory, index=-1, health=50, name='Doctor Lucky'}, Character name: p1, Current room: Armory, items: [Revolver]]}, \n"
+        + "characters=[Target name: Doctor Lucky, Current room: Armory, Character name: p1, Current room: Armory, items: [Revolver], player type: human]}, \n"
         + "neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ], \n"
         + "visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]", gamingModel.displayRoom(0));
-    assertEquals("[Character name: p1, Current room: Armory, items: [Revolver]]", gamingModel.displayers());
+    assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
+        + "Character name: p1, Current room: Armory, items: [Revolver], player type: human\n", gamingModel.displayers());
   }
 
   @Test(expected = IllegalStateException.class)
@@ -61,18 +63,19 @@ public class GamingModelTest {
   public void moveToNeighbour() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.moveToNeighbour(p1, 0, 0);
-    assertEquals("[Character name: p1, Current room: Dining Hall, items: []]", gamingModel.displayers());
+    assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
+        + "Character name: p1, Current room: Dining Hall, items: [], player type: human\n", gamingModel.displayers());
     assertEquals(3, p1.getRoom().getIndex());
     assertEquals("SpecifiedRoom{name='Armory', index=0, \n"
         + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[Revolver], \n"
-        + "characters=[TargetCharacter{roomIndex=0, roomName = Armory, index=-1, health=50, name='Doctor Lucky'}]}, \n"
+        + "characters=[Target name: Doctor Lucky, Current room: Armory]}, \n"
         + "neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ], \n"
         + "visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]", gamingModel.displayRoom(0));
     assertEquals("SpecifiedRoom{name='Dining Hall', index=3, \n"
         + "leftCorner=11, rightCorner=20, upperCorner=12, lowerCorner=21, \n"
         + "items in the room =[], \n"
-        + "characters=[Character name: p1, Current room: Dining Hall, items: []]}, \n"
+        + "characters=[Character name: p1, Current room: Dining Hall, items: [], player type: human]}, \n"
         + "neighbours = [Tennessee Room, ][Billiard Room, Trophy Room, ][Armory, Wine Cellar, Drawing Room, ][Parlor, Kitchen, ], \n"
         + "visibleRooms = [Tennessee Room, Lilac Room, Master Suite, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, Kitchen, ]", gamingModel.displayRoom(3));
   }
@@ -83,9 +86,9 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 2);
     gamingModel.addPlayer(p3, 15);
-    assertEquals("Character name: p2, Current room: Carriage House, items: []\n"
+    assertEquals("Character name: p2, Current room: Carriage House, items: [], player type: human\n"
         + "Visible Rooms: Visible room of Carriage House: [Winter Garden, Piazza, Hedge Maze, Green House, ]\n"
-        + "Character name: p3, Current room: Piazza, items: []\n"
+        + "Character name: p3, Current room: Piazza, items: [], player type: human\n"
         + "Visible Rooms: Visible room of Piazza: [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n", gamingModel.lookAround(p1));
   }
 }
