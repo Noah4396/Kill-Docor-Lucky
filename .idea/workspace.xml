@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test add invalid player">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test computer player.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -202,10 +201,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.GamingConsoleControllerTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingModelTest" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.testAddInvalidPlayer" />
         <item itemvalue="JUnit.GamingModelTest.lookAroundInvalidPlayer" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -231,15 +230,7 @@
       <workItem from="1697403730342" duration="17246000" />
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
-      <workItem from="1697925999605" duration="3855000" />
-    </task>
-    <task id="LOCAL-00003" summary="set gitignore">
-      <option name="closed" value="true" />
-      <created>1696136145417</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1696136145417</updated>
+      <workItem from="1697925999605" duration="4849000" />
     </task>
     <task id="LOCAL-00004" summary="Create">
       <option name="closed" value="true" />
@@ -625,7 +616,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697929489345</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Test computer player.">
+      <option name="closed" value="true" />
+      <created>1697932838955</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1697932838956</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +668,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finish the Driver.java" />
     <MESSAGE value="Create some getter method" />
     <MESSAGE value="Create test" />
     <MESSAGE value="Change the style" />
@@ -694,6 +692,7 @@
     <MESSAGE value="Finish the model test." />
     <MESSAGE value="Test invalid command" />
     <MESSAGE value="Test add invalid player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test add invalid player" />
+    <MESSAGE value="Test computer player." />
+    <option name="LAST_COMMIT_MESSAGE" value="Test computer player." />
   </component>
 </project>
