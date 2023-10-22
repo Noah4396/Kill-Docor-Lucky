@@ -475,6 +475,7 @@ public class MockModel implements Model {
       p.pickItem(p.getRoom().deleteItem(index));
     }
     passTurn();
+    log.append("Input: " + p.toString() + " " + index + "\n");
   }
 
   @Override
@@ -492,6 +493,7 @@ public class MockModel implements Model {
       throw new IllegalArgumentException("Invalid input");
     }
     passTurn();
+    log.append("Input: " + c.toString() + " " + direction + " " + index + "\n");
   }
 
   @Override
@@ -511,7 +513,8 @@ public class MockModel implements Model {
     if (!c.isComputer()) {
       passTurn();
     }
-    return sb.toString();
+    log.append("Input: " + c.toString() + "\n");
+    return uniqueCode;
   }
 
   @Override
@@ -538,6 +541,7 @@ public class MockModel implements Model {
         break;
     }
     passTurn();
+    log.append("Input: " + player.toString() + "\n");
   }
 
   private void outputString(String s, Appendable out) {
