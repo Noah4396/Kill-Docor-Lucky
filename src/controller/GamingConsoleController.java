@@ -79,6 +79,7 @@ public class GamingConsoleController implements Controller {
       outputString("Now the status of players are shown as follow:\n");
       outputString(m.displayers() + "\n");
     }
+    outputString("Reach the max turn, and the game end!\n");
   }
 
   private void printDivider() {

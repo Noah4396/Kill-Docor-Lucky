@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test invalid command">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test add invalid player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,7 +111,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingModelTest">
+  <component name="RunManager" selected="JUnit.GamingConsoleControllerTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="TheWorld" />
@@ -200,9 +201,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingConsoleControllerTest" />
         <item itemvalue="JUnit.GamingModelTest" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.testAddInvalidPlayer" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest" />
         <item itemvalue="JUnit.GamingModelTest.lookAroundInvalidPlayer" />
         <item itemvalue="Application.Main" />
       </list>
@@ -230,15 +231,7 @@
       <workItem from="1697403730342" duration="17246000" />
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
-      <workItem from="1697925999605" duration="2764000" />
-    </task>
-    <task id="LOCAL-00002" summary="initialize">
-      <option name="closed" value="true" />
-      <created>1696135518714</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1696135518716</updated>
+      <workItem from="1697925999605" duration="3855000" />
     </task>
     <task id="LOCAL-00003" summary="set gitignore">
       <option name="closed" value="true" />
@@ -624,7 +617,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697928229531</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Test add invalid player">
+      <option name="closed" value="true" />
+      <created>1697929489345</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1697929489345</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +669,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create paintRooms method" />
     <MESSAGE value="Finish the Driver.java" />
     <MESSAGE value="Create some getter method" />
     <MESSAGE value="Create test" />
@@ -693,6 +693,7 @@
     <MESSAGE value="Modify the model test." />
     <MESSAGE value="Finish the model test." />
     <MESSAGE value="Test invalid command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test invalid command" />
+    <MESSAGE value="Test add invalid player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test add invalid player" />
   </component>
 </project>

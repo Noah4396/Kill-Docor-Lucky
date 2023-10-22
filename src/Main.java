@@ -19,11 +19,12 @@ public class Main {
     if (args.length == 0) {
       System.out.println("Please enter the path of the world file:");
       path = scan.next();
+      System.out.println("Please enter the turn number:");
+      turnNumber = scan.nextInt();
     } else {
       path = args[0];
+      turnNumber = Integer.parseInt(args[1]);
     }
-    System.out.println("Please enter the turn number:");
-    turnNumber = scan.nextInt();
     new GamingConsoleController(input, output).playGame(new GamingModel(path, turnNumber));
   }
 }

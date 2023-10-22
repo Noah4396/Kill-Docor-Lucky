@@ -14,7 +14,7 @@ public class GamingConsoleControllerTest {
 
   @Before
   public void setUp() {
-    gamingModel = new GamingModel("res/mansion.txt", 100);
+    gamingModel = new GamingModel("res/mansion.txt", 5);
     expectOutput = new StringBuffer();
     expectOutput.append("Welcome to the kill doctor lucky game\n");
     expectOutput.append("The rooms are initialized as:\n");
@@ -124,4 +124,96 @@ public class GamingConsoleControllerTest {
             + "Ending game....\n");
     assertEquals(expectOutput.toString(), gamelog.toString());
   }
+
+  @Test
+  public void testComputerPlayer() {
+    StringReader input = new StringReader("2 p1 1 0 2 p2 1 1 2 p3 2 2 2 p4 1 4 3");
+    StringBuffer gamelog = new StringBuffer();
+    Controller c = new GamingConsoleController(input, gamelog);
+    c.playGame(gamingModel);
+    expectOutput.append(
+        "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: computer\n" + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Carriage House, items: [], player type: computer\n"
+            + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+            + "Please enter the index of the room that the player is in:\n"
+            + "Add player successfully, the current player information:\n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Carriage House, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Drawing Room, items: [], player type: computer\n"
+            + "\n"
+            + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game\n"
+            + "Game start! The players are listed as follow: \n"
+            + "Target name: Doctor Lucky, Current room: Armory\n"
+            + "Character name: p1, Current room: Armory, items: [], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Carriage House, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Drawing Room, items: [], player type: computer\n"
+            + "---------------------------------\n" + "Computer p1 pick up an item!\n"
+            + "---------------------------------\n"
+            + "Now the status of players are shown as follow:\n"
+            + "Target name: Doctor Lucky, Current room: Billiard Room\n"
+            + "Character name: p1, Current room: Armory, items: [Revolver], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [], player type: computer\n"
+            + "Character name: p3, Current room: Carriage House, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Drawing Room, items: [], player type: computer\n"
+            + "\n" + "---------------------------------\n" + "Computer p2 pick up an item!\n"
+            + "---------------------------------\n"
+            + "Now the status of players are shown as follow:\n"
+            + "Target name: Doctor Lucky, Current room: Carriage House\n"
+            + "Character name: p1, Current room: Armory, items: [Revolver], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer\n"
+            + "Character name: p3, Current room: Carriage House, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Drawing Room, items: [], player type: computer\n"
+            + "\n" + "---------------------------------\n" + "Computer p3 moves to the neighbour!\n"
+            + "---------------------------------\n"
+            + "Now the status of players are shown as follow:\n"
+            + "Target name: Doctor Lucky, Current room: Dining Hall\n"
+            + "Character name: p1, Current room: Armory, items: [Revolver], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer\n"
+            + "Character name: p3, Current room: Winter Garden, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Drawing Room, items: [], player type: computer\n"
+            + "\n" + "---------------------------------\n" + "Computer p4 moves to the neighbour!\n"
+            + "---------------------------------\n"
+            + "Now the status of players are shown as follow:\n"
+            + "Target name: Doctor Lucky, Current room: Drawing Room\n"
+            + "Character name: p1, Current room: Armory, items: [Revolver], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer\n"
+            + "Character name: p3, Current room: Winter Garden, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Wine Cellar, items: [], player type: computer\n"
+            + "\n" + "---------------------------------\n" + "Computer p1 Look around!\n"
+            + "---------------------------------\n"
+            + "Now the status of players are shown as follow:\n"
+            + "Target name: Doctor Lucky, Current room: Foyer\n"
+            + "Character name: p1, Current room: Armory, items: [Revolver], player type: computer\n"
+            + "Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer\n"
+            + "Character name: p3, Current room: Winter Garden, items: [], player type: computer\n"
+            + "Character name: p4, Current room: Wine Cellar, items: [], player type: computer\n"
+            + "\n" + "Reach the max turn, and the game end!\n");
+    assertEquals(expectOutput.toString(), gamelog.toString());
+  }
+
 }
