@@ -43,13 +43,14 @@ public class MockModel implements Model {
   private long seed;
   private Random random;
   private Boolean gameOver;
-
+  private StringBuilder log;
+  private final String uniqueCode;
   /**
    * The constructor.
    *
    * @param path is thr origin path of source file.
    */
-  public MockModel(String path, int maxTurn) {
+  public MockModel(String path, int maxTurn, StringBuilder log, String uniqueCode) {
     this.rooms = new ArrayList<>();
     this.items = new ArrayList<>();
     this.players = new ArrayList<>();
@@ -59,6 +60,8 @@ public class MockModel implements Model {
     this.maxTurn = maxTurn;
     this.seed = 123;
     this.random = new Random(seed);
+    this.log = log;
+    this.uniqueCode = uniqueCode;
     gameOver = false;
     try {
       parse(path);
@@ -163,7 +166,9 @@ public class MockModel implements Model {
     character.setRoom(room);
   }
 
-  @Override
+  /**
+   * Move the target.
+   */
   public void moveTarget() {
     int targetIndex = doctorLucky.getRoom().getIndex();
     targetIndex = (targetIndex + 1) % rooms.size();
@@ -241,11 +246,6 @@ public class MockModel implements Model {
         chessBoard[i][j] = index;
       }
     }
-  }
-
-  @Override
-  public int getTotalTurn() {
-    return totalTurn;
   }
 
   /**
@@ -381,13 +381,21 @@ public class MockModel implements Model {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
       sb.append(room);
+      sb.append("\n\n");
     }
     return sb.toString();
   }
 
   @Override
   public String displayers() {
-    return players.toString();
+    StringBuffer sb = new StringBuffer();
+    sb.append(doctorLucky.toString());
+    sb.append("\n");
+    for (PlayerCharacter p : players) {
+      sb.append(p.toString());
+      sb.append("\n");
+    }
+    return sb.toString();
   }
 
   @Override
@@ -428,12 +436,17 @@ public class MockModel implements Model {
 
   @Override
   public void addPlayer(PlayerCharacter p, int roomIndex) {
-    if (p == null || p.getName().isEmpty()) {
-      throw new IllegalArgumentException("Invalid player");
-    } else {
-      players.add(p);
-      move(p, rooms.get(roomIndex));
+    if (p == null || p.getName().isEmpty() || roomIndex < 0 || roomIndex >= rooms.size()) {
+      throw new IllegalArgumentException("Invalid input");
     }
+    for (PlayerCharacter tmp : players) {
+      if (tmp.getName().equals(p.getName())) {
+        throw new IllegalArgumentException("Invalid input");
+      }
+    }
+    players.add(p);
+    move(p, rooms.get(roomIndex));
+    log.append("Input: " + p.toString() + " " + roomIndex + "\n");
   }
 
   @Override
@@ -442,27 +455,35 @@ public class MockModel implements Model {
   }
 
   @Override
+  public int getTotalTurn() {
+    return totalTurn;
+  }
+
+  @Override
   public void pickUpItem(PlayerCharacter p, int index) {
     if (p.isComputer()) {
-      int rand = random.nextInt();
+      int rand = random.nextInt(100);
       rand = rand % p.getRoom().getItemsNumber();
       p.pickItem(p.getRoom().deleteItem(rand));
       return;
     }
     if (!p.isAbleToPick() || p.getRoom() == null || p.getRoom().getItemsNumber() == 0) {
       throw new IllegalStateException("Cannot pick up item");
-    } else if (index > p.getRoom().getItemsNumber() || index < 1) {
+    } else if (index >= p.getRoom().getItemsNumber() || index < 0) {
       throw new IllegalArgumentException("Invalid index");
     } else {
-      p.pickItem(p.getRoom().deleteItem(index - 1));
+      p.pickItem(p.getRoom().deleteItem(index));
     }
     passTurn();
   }
 
   @Override
   public void moveToNeighbour(Character c, int direction, int index) {
+    if (c == null || !players.contains(c)) {
+      throw new IllegalArgumentException("Invalid Player");
+    }
     if (c.isComputer()) {
-      move(c, c.getRoom().getRandNeighbour(random.nextInt()));
+      move(c, c.getRoom().getRandNeighbour(random.nextInt(100)));
       return;
     }
     try {
@@ -475,10 +496,11 @@ public class MockModel implements Model {
 
   @Override
   public String lookAround(Character c) {
-    if (c == null) {
+    if (c == null || !players.contains(c)) {
       throw new IllegalArgumentException("Invalid player");
     }
     StringBuffer sb = new StringBuffer();
+    sb.append(c.getName() + "looks around!\n");
     for (PlayerCharacter character : players) {
       if (!c.equals(character)) {
         sb.append(character.toString());
@@ -501,18 +523,29 @@ public class MockModel implements Model {
     choice = random.nextInt(choice);
     switch (choice) {
       case 0:
+        outputString("Computer " + player.getName() + " moves to the neighbour!\n", out);
         moveToNeighbour(player, 0, 0);
         break;
       case 1:
+        outputString("Computer " + player.getName() + " Look around!\n", out);
         lookAround(player);
         break;
       case 2:
+        outputString("Computer " + player.getName() + " pick up an item!\n", out);
         pickUpItem(player, 0);
         break;
       default:
         break;
     }
     passTurn();
+  }
+
+  private void outputString(String s, Appendable out) {
+    try {
+      out.append(s);
+    } catch (IOException ioe) {
+      throw new IllegalStateException("Append failed", ioe);
+    }
   }
 
   /**

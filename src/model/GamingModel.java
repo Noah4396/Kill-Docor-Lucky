@@ -496,6 +496,7 @@ public class GamingModel implements Model {
       throw new IllegalArgumentException("Invalid player");
     }
     StringBuffer sb = new StringBuffer();
+    sb.append(c.getName() + "looks around!\n");
     for (PlayerCharacter character : players) {
       if (!c.equals(character)) {
         sb.append(character.toString());
