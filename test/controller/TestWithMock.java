@@ -2,10 +2,10 @@ package controller;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.StringReader;
 import model.GamingModel;
 import model.MockModel;
 import model.Model;
-import java.io.StringReader;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -148,7 +148,8 @@ public class TestWithMock {
         + "neighbours = [Tennessee Room, ][Billiard Room, Trophy Room, ][Arm"
         + "ory, Wine Cellar, Drawing Room, ][Parlor, Kitchen, ], \n"
         + "visibleRooms = [Tennessee Room, Lilac Room, Master Suite, Billiar"
-        + "d Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, Kitchen, ]\n"
+        + "d Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer,"
+        + " Piazza, Parlor, Kitchen, ]\n"
         + "\n" + "SpecifiedRoom{name='Drawing Room', index=4, \n"
         + "leftCorner=13, rightCorner=18, upperCorner=22, lowerCorner=25, \n"
         + "items in the room =[Letter Opener], \n" + "characters=[]}, \n"
@@ -327,7 +328,8 @@ public class TestWithMock {
         + "---------------------------------\n" + "SpecifiedRoom{name='Armory', index=0, \n"
         + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[Revolver], \n"
-        + "characters=[Character name: p1, Current room: Armory, items: [], player type: human]}, \n"
+        + "characters=[Character name: p1, Current room: Armory, i"
+        + "tems: [], player type: human]}, \n"
         + "neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ], \n"
         + "visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery"
         + ", Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]\n"

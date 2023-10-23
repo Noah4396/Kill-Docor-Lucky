@@ -135,8 +135,8 @@ public class GamingModelTest {
     gamingModel.addPlayer(p2, 2);
     gamingModel.addPlayer(p3, 15);
     assertEquals(
-        "Character name: p2, Current room: Carriage House, items: [], " +
-            "player type: human\n"
+        "Character name: p2, Current room: Carriage House, items: [], "
+            + "player type: human\n"
             + "Visible Rooms: Visible room of Carriage House: [Winter Garden, Piazza, Hedge "
             + "Maze, Green House, ]\n"
             + "Character name: p3, Current room: Piazza, items: [], player type: human\n"
