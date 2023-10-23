@@ -2,18 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Driver:jar" />
+      <artifact name="TheWorld:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add Mock test.">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish Mock Test">
+      <change afterPath="$PROJECT_DIR$/res/runningExample1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/TestWithMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/TestWithMock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/res/META-INF/MANIFEST.MF" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Driver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,34 +68,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit4&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "jdk.selected.JAVA_MODULE": "corretto-1.8",
+    "last_opened_file_path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/nimingyi/Downloads/CS5010/project/TheWorld/src/Main.java",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="TheWolrd" />
@@ -112,9 +115,9 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestWithMock">
+  <component name="RunManager" selected="JAR Application.TheWorld.jar (1)">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -124,7 +127,7 @@
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="driver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,48 +138,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestWithMock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="controller.*" />
+          <option name="PATTERN" value="driver.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.TestWithMock" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestWithMock.testAddPlayerWithMock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.TestWithMock" />
-      <option name="METHOD_NAME" value="testAddPlayerWithMock" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,26 +158,32 @@
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="Driver:jar" />
-        </option>
+        <option name="BuildArtifacts" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="TheWorld.jar (1)" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/Driver_jar/TheWorld.jar" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TheWorld.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/res/TheWorld.jar" />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
+      <item itemvalue="JAR Application.TheWorld.jar" />
+      <item itemvalue="JAR Application.TheWorld.jar (1)" />
       <item itemvalue="JUnit.GamingConsoleControllerTest" />
       <item itemvalue="JUnit.TestWithMock" />
-      <item itemvalue="JUnit.TestWithMock.testAddPlayerWithMock" />
-      <item itemvalue="JUnit.GamingModelTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JAR Application.TheWorld.jar (1)" />
+        <item itemvalue="JAR Application.TheWorld.jar" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestWithMock" />
         <item itemvalue="JUnit.GamingConsoleControllerTest" />
-        <item itemvalue="JUnit.TestWithMock.testAddPlayerWithMock" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GamingModelTest" />
       </list>
     </recent_temporary>
   </component>
@@ -231,15 +209,8 @@
       <workItem from="1697403730342" duration="17246000" />
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
-      <workItem from="1697925999605" duration="9095000" />
-    </task>
-    <task id="LOCAL-00006" summary="Add private variable of adjacent rooms to SpecifiedRoom.java">
-      <option name="closed" value="true" />
-      <created>1696142858801</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1696142858803</updated>
+      <workItem from="1697925999605" duration="9614000" />
+      <workItem from="1698006013408" duration="3627000" />
     </task>
     <task id="LOCAL-00007" summary="Add getItem method to get a random item in the room">
       <option name="closed" value="true" />
@@ -625,7 +596,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697948168959</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Finish Mock Test">
+      <option name="closed" value="true" />
+      <created>1697949489140</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1697949489140</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -669,7 +648,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Change the style" />
     <MESSAGE value="Change the style and modify the readme" />
     <MESSAGE value="Add hashcode and equals" />
     <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
@@ -694,6 +672,7 @@
     <MESSAGE value="Test computer player." />
     <MESSAGE value="Test move" />
     <MESSAGE value="Add Mock test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Mock test." />
+    <MESSAGE value="Finish Mock Test" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish Mock Test" />
   </component>
 </project>
