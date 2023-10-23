@@ -70,8 +70,6 @@ public class PlayerCharacter implements Character {
     this.room = room;
   }
 
-
-
   /**
    * Set the player as a computer controlled.
    */
@@ -98,10 +96,12 @@ public class PlayerCharacter implements Character {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
-    if (o == null || getClass() != o.getClass())
+    }
+    if (o == null || getClass() != o.getClass()) {
       return false;
+    }
     PlayerCharacter character = (PlayerCharacter) o;
     return index == character.index && itemCapacity == character.itemCapacity
         && itemNumber == character.itemNumber && Objects.equals(name, character.name);

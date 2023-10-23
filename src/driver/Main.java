@@ -1,8 +1,8 @@
 package driver;
 
+import controller.GamingConsoleController;
 import java.io.InputStreamReader;
 import java.util.Scanner;
-import controller.GamingConsoleController;
 import model.GamingModel;
 
 /**

@@ -2,18 +2,18 @@ package controller;
 
 import command.ComputerCommand;
 import command.GamingCommand;
-import command.Move;
 import command.LookAround;
+import command.Move;
 import command.PickUp;
-import model.Model;
 import java.io.IOException;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Stack;
-import java.util.Map;
+import java.util.function.Function;
 import java.util.HashMap;
 import java.util.InputMismatchException;
-import java.util.function.Function;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Stack;
+import model.Model;
 import world.PlayerCharacter;
 
 /**
