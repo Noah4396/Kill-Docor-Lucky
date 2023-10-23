@@ -15,7 +15,7 @@ public class Move implements GamingCommand {
   private int index;
 
   /**
-   * The constructor
+   * The constructor.
    *
    * @param player    is the player to be moved.
    * @param direction is the direction of the moving.

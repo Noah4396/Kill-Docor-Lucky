@@ -1,14 +1,16 @@
 package driver;
 
+import java.io.InputStreamReader;
+import java.util.Scanner;
 import controller.GamingConsoleController;
 import model.GamingModel;
 
-import java.io.InputStreamReader;
-import java.util.Scanner;
-
+/**
+ * The driver of milestone2.
+ */
 public class Main {
   /**
-   * Run a TicTacToe game interactively on the console.
+   * Run a Kill doctor lucky game interactively on the console.
    *
    * @param args the arguments
    */

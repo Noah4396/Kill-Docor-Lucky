@@ -3,11 +3,15 @@ package model;
 import world.Character;
 import world.PlayerCharacter;
 
+/**
+ * The model of game.
+ */
 public interface Model {
   /**
    * Execute computer command.
    *
    * @param player the computer player.
+   * @param out the output.
    */
   public void computerCommand(PlayerCharacter player, Appendable out);
 
@@ -50,6 +54,7 @@ public interface Model {
    * Add a player playing the game.
    *
    * @param p is the player added to the game.
+   * @param roomIndex is the index of the room that the player is added to.
    */
   public void addPlayer(PlayerCharacter p, int roomIndex);
 

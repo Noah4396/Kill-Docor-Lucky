@@ -1,9 +1,9 @@
 package command;
 
 import model.GamingModel;
-import world.PlayerCharacter;
 import model.Model;
 import java.io.IOException;
+import world.PlayerCharacter;
 
 /**
  * Look around command.

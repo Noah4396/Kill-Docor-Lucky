@@ -1,13 +1,24 @@
 package controller;
 
-import command.*;
+import command.ComputerCommand;
+import command.GamingCommand;
+import command.Move;
+import command.LookAround;
+import command.PickUp;
 import model.Model;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.function.Function;
 import world.PlayerCharacter;
 
-import java.io.IOException;
-import java.util.*;
-import java.util.function.Function;
-
+/**
+ * The gaming console controller.
+ */
 public class GamingConsoleController implements Controller {
   private final Appendable out;
   private final Scanner scan;
@@ -58,7 +69,7 @@ public class GamingConsoleController implements Controller {
           return;
         }
         String in = scan.next();
-        if (in.equalsIgnoreCase("q") || in.equalsIgnoreCase("quit")) {
+        if ("q".equalsIgnoreCase(in) || "quit".equalsIgnoreCase(in)) {
           outputString("Game quit!\n");
           return;
         }
@@ -142,7 +153,7 @@ public class GamingConsoleController implements Controller {
 
   private void getPlayerInput(Model m, boolean isComputer) {
     outputString("Please enter the name of the player:\n");
-    String name = scan.next();
+    final String name = scan.next();
     outputString("Please enter the capacity:\n");
 
     int capacity = 1;

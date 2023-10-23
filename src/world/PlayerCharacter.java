@@ -70,25 +70,17 @@ public class PlayerCharacter implements Character {
     this.room = room;
   }
 
-  public boolean equals(Character o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    return this.name.equals(o.getName());
-  }
+
 
   /**
-   * Set the player as a computer controlled
+   * Set the player as a computer controlled.
    */
   public void setAsComputer() {
     this.isComputer = true;
   }
 
   /**
-   * Set the player as a human controlled
+   * Set the player as a human controlled.
    */
   public void setAsHumanControl() {
     this.isComputer = false;
@@ -105,8 +97,19 @@ public class PlayerCharacter implements Character {
   }
 
   @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    PlayerCharacter character = (PlayerCharacter) o;
+    return index == character.index && itemCapacity == character.itemCapacity
+        && itemNumber == character.itemNumber && Objects.equals(name, character.name);
+  }
+
+  @Override
   public int hashCode() {
-    return Objects.hash(room, name, index);
+    return Objects.hash(name, index, itemCapacity, itemNumber);
   }
 
   public boolean isAbleToPick() {

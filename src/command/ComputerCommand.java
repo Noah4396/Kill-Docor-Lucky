@@ -15,6 +15,7 @@ public class ComputerCommand implements GamingCommand {
    * Constructor.
    *
    * @param player the computer player.
+   * @param out the output.
    */
   public ComputerCommand(PlayerCharacter player, Appendable out) {
     if (!player.isComputer()) {

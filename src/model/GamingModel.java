@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import javax.imageio.ImageIO;
-
 import world.Character;
 import world.Item;
 import world.PlayerCharacter;
@@ -48,6 +47,7 @@ public class GamingModel implements Model {
    * The constructor.
    *
    * @param path is thr origin path of source file.
+   * @param maxTurn is the max turn of the game.
    */
   public GamingModel(String path, int maxTurn) {
     this.rooms = new ArrayList<>();
@@ -408,7 +408,7 @@ public class GamingModel implements Model {
    *
    * @return the displayed neighbours.
    */
-  public String displayNAllNeighbours() {
+  public String displayAllNeighbours() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
       for (int i = 0; i < 4; i++) {

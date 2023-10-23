@@ -1,8 +1,7 @@
 package driver;
 
-import model.GamingModel;
-
 import java.util.Scanner;
+import model.GamingModel;
 
 /**
  * The driver.
@@ -49,7 +48,7 @@ public class Driver {
           gamingModel.displayRooms();
           break;
         case 4:
-          System.out.println(gamingModel.displayNAllNeighbours());
+          System.out.println(gamingModel.displayAllNeighbours());
           break;
         case 5:
           System.out.println(gamingModel.displayVisibleRooms());

@@ -148,11 +148,14 @@ public interface Room {
 
   /**
    * Get the number of items left in this room.
+   * @return the item number.
    */
   public int getItemsNumber();
 
   /**
    * Get an item of the index.
+   * @param index the index of item.
+   * @return the deleted item.
    */
   public Item deleteItem(int index);
 
@@ -160,6 +163,7 @@ public interface Room {
    * Get the neighbour of direction and index.
    * @param direction stands for the direction
    * @param index stands for the index of the neighbour
+   * @return the neighbour.
    */
   public Room getNeighbour(int direction, int index);
 

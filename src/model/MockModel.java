@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import javax.imageio.ImageIO;
-
 import world.Character;
 import world.Item;
 import world.PlayerCharacter;
@@ -45,10 +44,14 @@ public class MockModel implements Model {
   private Boolean gameOver;
   private StringBuilder log;
   private final String uniqueCode;
+
   /**
    * The constructor.
    *
    * @param path is thr origin path of source file.
+   * @param maxTurn is the max turn.
+   * @param log is the game log.
+   * @param uniqueCode is the unique code.
    */
   public MockModel(String path, int maxTurn, StringBuilder log, String uniqueCode) {
     this.rooms = new ArrayList<>();
@@ -411,7 +414,7 @@ public class MockModel implements Model {
    *
    * @return the displayed neighbours.
    */
-  public String displayNAllNeighbours() {
+  public String displayAllNeighbours() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
       for (int i = 0; i < 4; i++) {

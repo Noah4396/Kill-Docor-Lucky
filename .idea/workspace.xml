@@ -9,9 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish README.md">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Modify README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ComputerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ComputerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/LookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/LookAround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Driver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Direction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Direction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,15 +218,7 @@
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
       <workItem from="1697925999605" duration="9614000" />
-      <workItem from="1698006013408" duration="4642000" />
-    </task>
-    <task id="LOCAL-00008" summary="Add methods to Item class">
-      <option name="closed" value="true" />
-      <created>1696194216935</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1696194216935</updated>
+      <workItem from="1698006013408" duration="6199000" />
     </task>
     <task id="LOCAL-00009" summary="Add addRooms method">
       <option name="closed" value="true" />
@@ -600,7 +604,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698029805983</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="Modify README.md">
+      <option name="closed" value="true" />
+      <created>1698030936563</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1698030936563</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -644,7 +656,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add hashcode and equals" />
     <MESSAGE value="Add addPlayer, pickUpItem, moveToNeighbour method." />
     <MESSAGE value="Create test for the new methods" />
     <MESSAGE value="Create controller and interface" />
@@ -669,6 +680,7 @@
     <MESSAGE value="Add Mock test." />
     <MESSAGE value="Finish Mock Test" />
     <MESSAGE value="Finish README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish README.md" />
+    <MESSAGE value="Modify README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify README.md" />
   </component>
 </project>
