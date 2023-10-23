@@ -1,5 +1,26 @@
 # README
-**Run TheWorld.jar to run the main function.**  
+**Assumption of the program**
+1. Every room can access to its neighbours.
+2. If one room can be seen by someone standing in the other, this means that the path between the two rooms is straight
+   , meaning that the character can walk from one room to the other without turning around.
+3. The computer player just do everything randomly.
+
+**Limitations**
+1. The game can only played in the terminal.
+2. It only contains the world and 3 simple actions that players can take.
+
+**Design changes**  
+Add the computer command class. The revised UML is res/revisedUML.pdf.
+
+**Citations**
+1. CS5010 Milestone 2 - Synchronous Controller instruction.
+2. Java tutorial https://docs.oracle.com/javase/tutorial/
+
+**Run explanation**  
+Two example running is in the /res. They are runningExample1.txt and runningExample2.txt.  
+And res/example.png shows the layout of the world.  
+Here is the run explanation: 
+
 Adding arguments or not adding arguments are both OK
 > java -jar TheWorld.jar  
 > java -jar TheWorld.jar [filePath] [MaxTurnNumber]
@@ -63,6 +84,5 @@ To quit the game, just enter quit or q to finish it.
 >q  
 Game quit!
 
-Two example running is in the /res. They are runningExample1.txt and runningExample2.txt.
 
 
