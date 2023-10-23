@@ -10,7 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Check style">
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,15 +205,7 @@
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
       <workItem from="1697925999605" duration="9614000" />
-      <workItem from="1698006013408" duration="7263000" />
-    </task>
-    <task id="LOCAL-00011" summary="Create GamingConsole.java">
-      <option name="closed" value="true" />
-      <created>1696196391702</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1696196391702</updated>
+      <workItem from="1698006013408" duration="7577000" />
     </task>
     <task id="LOCAL-00012" summary="Create Character and some implement to it.">
       <option name="closed" value="true" />
@@ -599,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698033089028</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="Check style">
+      <option name="closed" value="true" />
+      <created>1698033422920</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1698033422920</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
