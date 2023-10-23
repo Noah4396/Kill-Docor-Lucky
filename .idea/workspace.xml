@@ -10,11 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Check style">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/LookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/LookAround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -115,7 +110,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.TheWorld.jar (1)">
+  <component name="RunManager" selected="JUnit.GamingConsoleControllerTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -179,11 +174,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingConsoleControllerTest" />
         <item itemvalue="JAR Application.TheWorld.jar (1)" />
         <item itemvalue="JAR Application.TheWorld.jar" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.TestWithMock" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -210,15 +205,7 @@
       <workItem from="1697832012517" duration="19604000" />
       <workItem from="1697919528408" duration="2975000" />
       <workItem from="1697925999605" duration="9614000" />
-      <workItem from="1698006013408" duration="6922000" />
-    </task>
-    <task id="LOCAL-00010" summary="Fix some bugs">
-      <option name="closed" value="true" />
-      <created>1696195297160</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1696195297161</updated>
+      <workItem from="1698006013408" duration="7263000" />
     </task>
     <task id="LOCAL-00011" summary="Create GamingConsole.java">
       <option name="closed" value="true" />
@@ -604,7 +591,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698032506398</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Check style">
+      <option name="closed" value="true" />
+      <created>1698033089028</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1698033089028</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
