@@ -83,7 +83,7 @@ public class GamingModel implements Model {
       //System.out.println(room);
     }
 
-    //outputImage();
+    outputImage("./res/example.png");
   }
 
   /**
@@ -106,9 +106,9 @@ public class GamingModel implements Model {
   /**
    * Output the image.
    */
-  public void outputImage() {
+  public void outputImage(String path) {
     try {
-      File output = new File("./res/example.png");
+      File output = new File(path);
       ImageIO.write(image, "png", output);
       System.out.println("Image saved successfully.");
     } catch (IOException e) {
@@ -496,14 +496,17 @@ public class GamingModel implements Model {
       throw new IllegalArgumentException("Invalid player");
     }
     StringBuffer sb = new StringBuffer();
-    sb.append(c.getName() + "looks around!\n");
-    for (PlayerCharacter character : players) {
-      if (!c.equals(character)) {
-        sb.append(character.toString());
-        sb.append("\nVisible Rooms: ");
-        sb.append(character.getRoom().displayVisibleRooms() + "\n");
-      }
-    }
+    sb.append(c.getName() + " looks around!\n");
+//    for (PlayerCharacter character : players) {
+//      if (!c.equals(character)) {
+//        sb.append(character.toString());
+//        sb.append("\nVisible Rooms: ");
+//        sb.append(character.getRoom().displayVisibleRooms() + "\n");
+//      }
+//    }
+    sb.append("Information of the current room:\n");
+    sb.append(c.getRoom().toString() + "\n\n");
+    sb.append(c.getRoom().displayVisibleRooms());
     if (!c.isComputer()) {
       passTurn();
     }

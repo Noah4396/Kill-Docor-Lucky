@@ -219,21 +219,28 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public void setVisibleRooms() {
-    Stack<Room> stack = new Stack<>();
+//    Stack<Room> stack = new Stack<>();
+//    ArrayList<Room> list;
+//    for (int i = 0; i < 4; i++) {
+//      list = neighbours.get(i);
+//      for (Room room : list) {
+//        stack.push(room);
+//        visibleRooms.add(room);
+//      }
+//      while (!stack.isEmpty()) {
+//        Room tmp = stack.pop();
+//        list = tmp.getNeighbours(i);
+//        for (Room room : list) {
+//          stack.push(room);
+//          visibleRooms.add(room);
+//        }
+//      }
+//    }
     ArrayList<Room> list;
-    for (int i = 0; i < 4; i++) {
+    for(int i = 0; i < 4; i++){
       list = neighbours.get(i);
-      for (Room room : list) {
-        stack.push(room);
+      for(Room room : list){
         visibleRooms.add(room);
-      }
-      while (!stack.isEmpty()) {
-        Room tmp = stack.pop();
-        list = tmp.getNeighbours(i);
-        for (Room room : list) {
-          stack.push(room);
-          visibleRooms.add(room);
-        }
       }
     }
   }
@@ -308,26 +315,22 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public String toString() {
-    StringBuffer sb = new StringBuffer(
-        "SpecifiedRoom{" + "name='" + name + '\'' + ", index=" + index + ", \nleftCorner="
-            + leftCorner + ", rightCorner=" + rightCorner + ", upperCorner=" + upperCorner
-            + ", lowerCorner=" + lowerCorner + ", \nitems in the room =" + items + ", \ncharacters="
-            + characters + '}');
-    sb.append(", \nneighbours = ");
-    for (ArrayList<Room> list : neighbours) {
-      sb.append("[");
-      for (Room room : list) {
-        sb.append(room.getName());
-        sb.append(", ");
-      }
-      sb.append("]");
+    StringBuffer sb = new StringBuffer();
+    sb.append("Room name:" + name + "\n");
+    sb.append("Characters: ");
+    for(Character character : this.characters){
+      sb.append(character.getName() + ", ");
     }
-    sb.append(", \nvisibleRooms = [");
-    for (Room room : visibleRooms) {
-      sb.append(room.getName());
-      sb.append(", ");
+    sb.append("\n");
+    sb.append("Items: ");
+    for(Item item : items){
+      sb.append(item.getName() + ", ");
     }
-    sb.append("]");
+    sb.append("\n");
+    sb.append("Visible rooms: ");
+    for(Room room : visibleRooms){
+      sb.append(room.getName() + ", ");
+    }
     return sb.toString();
   }
 
@@ -350,12 +353,11 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public String displayVisibleRooms() {
-    StringBuffer sb = new StringBuffer("Visible room of " + this.name + ": [");
+    StringBuffer sb = new StringBuffer("Visible room of " + this.name + ":\n");
     for (Room room : visibleRooms) {
-      sb.append(room.getName());
-      sb.append(", ");
+      sb.append(room.toString());
+      sb.append("\n\n");
     }
-    sb.append("]");
     return sb.toString();
   }
 

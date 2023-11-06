@@ -40,7 +40,7 @@ public class Driver {
           System.out.println("The status of Target Character: " + gamingModel.getDoctorLucky());
           break;
         case 2:
-          gamingModel.outputImage();
+          gamingModel.outputImage("./res/example.png");
           System.out.println("The output image is res/example.png");
           break;
         case 3:

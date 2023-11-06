@@ -16,6 +16,7 @@ public class GamingModelTest {
   private PlayerCharacter p1;
   private PlayerCharacter p2;
   private PlayerCharacter p3;
+  private PlayerCharacter p4;
 
   /**
    * Set up.
@@ -26,6 +27,7 @@ public class GamingModelTest {
     p1 = new PlayerCharacter("p1", 0, 2);
     p2 = new PlayerCharacter("p2", 1, 4);
     p3 = new PlayerCharacter("p3", 2, 1);
+    p4 = new PlayerCharacter("p3", 4, 0);
   }
 
   @Test
@@ -56,6 +58,7 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 100);
   }
 
+
   @Test
   public void pickUpItem() {
     gamingModel.addPlayer(p1, 0);
@@ -80,6 +83,11 @@ public class GamingModelTest {
     gamingModel.pickUpItem(p2, 2);
   }
 
+  @Test(expected = IllegalStateException.class)
+  public void morethanCapacity() {
+    gamingModel.addPlayer(p4, 0);
+    gamingModel.pickUpItem(p4, 0);
+  }
   @Test(expected = IllegalArgumentException.class)
   public void pickupInvalidItem() {
     gamingModel.addPlayer(p1, 0);
@@ -135,14 +143,16 @@ public class GamingModelTest {
     gamingModel.addPlayer(p2, 2);
     gamingModel.addPlayer(p3, 15);
     assertEquals(
-        "Character name: p2, Current room: Carriage House, items: [], "
-            + "player type: human\n"
-            + "Visible Rooms: Visible room of Carriage House: [Winter Garden, Piazza, Hedge "
-            + "Maze, Green House, ]\n"
-            + "Character name: p3, Current room: Piazza, items: [], player type: human\n"
-            + "Visible Rooms: Visible room of Piazza: [Foyer, Drawing Room, Dining Hall, Tennesse"
-            + "e Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriag"
-            + "e House, ]\n", gamingModel.lookAround(p1));
+        "p1 looks around!\n" + "Information of the current room:\n" + "Room name:Armory\n"
+            + "Characters: Doctor Lucky, p1, \n" + "Items: Revolver, \n"
+            + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
+            + "Visible room of Armory:\n" + "Room name:Dining Hall\n" + "Characters: \n"
+            + "Items: \n"
+            + "Visible rooms: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Parlor, Kitchen, \n"
+            + "\n" + "Room name:Billiard Room\n" + "Characters: \n" + "Items: Billiard Cue, \n"
+            + "Visible rooms: Trophy Room, Armory, Dining Hall, \n" + "\n"
+            + "Room name:Drawing Room\n" + "Characters: \n" + "Items: Letter Opener, \n"
+            + "Visible rooms: Dining Hall, Armory, Foyer, Wine Cellar, ", gamingModel.lookAround(p1));
   }
 
   @Test(expected = IllegalArgumentException.class)
