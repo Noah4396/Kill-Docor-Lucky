@@ -14,6 +14,7 @@ import java.util.Random;
 import javax.imageio.ImageIO;
 import world.Character;
 import world.Item;
+import world.Pet;
 import world.PlayerCharacter;
 import world.Room;
 import world.SpecifiedRoom;
@@ -28,6 +29,7 @@ public class GamingModel implements Model {
   private ArrayList<Item> items;
   private ArrayList<PlayerCharacter> players;
   private TargetCharacter doctorLucky;
+  private Pet pet;
   private String name;
   private int height;
   private int width;

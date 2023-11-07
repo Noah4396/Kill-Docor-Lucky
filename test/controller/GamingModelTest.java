@@ -148,11 +148,13 @@ public class GamingModelTest {
             + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
             + "Visible room of Armory:\n" + "Room name:Dining Hall\n" + "Characters: \n"
             + "Items: \n"
-            + "Visible rooms: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Parlor, Kitchen, \n"
+            + "Visible rooms: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
+            + "Drawing Room, Parlor, Kitchen, \n"
             + "\n" + "Room name:Billiard Room\n" + "Characters: \n" + "Items: Billiard Cue, \n"
             + "Visible rooms: Trophy Room, Armory, Dining Hall, \n" + "\n"
             + "Room name:Drawing Room\n" + "Characters: \n" + "Items: Letter Opener, \n"
-            + "Visible rooms: Dining Hall, Armory, Foyer, Wine Cellar, ", gamingModel.lookAround(p1));
+            + "Visible rooms: Dining Hall, Armory, Foyer, Wine Cellar, \n" + "\n",
+        gamingModel.lookAround(p1));
   }
 
   @Test(expected = IllegalArgumentException.class)
