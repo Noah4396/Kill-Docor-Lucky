@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Scanner;
 import javax.imageio.ImageIO;
+
 import world.Character;
 import world.Item;
 import world.Pet;
@@ -48,7 +50,7 @@ public class GamingModel implements Model {
   /**
    * The constructor.
    *
-   * @param path is thr origin path of source file.
+   * @param path    is thr origin path of source file.
    * @param maxTurn is the max turn of the game.
    */
   public GamingModel(String path, int maxTurn) {
@@ -68,6 +70,7 @@ public class GamingModel implements Model {
       System.err.println("Find rooms overlap");
     }
     move(doctorLucky, rooms.get(0));
+    move(pet, rooms.get(0));
 
     this.image = new BufferedImage(width * amplifierDegree, height * amplifierDegree,
         BufferedImage.TYPE_3BYTE_BGR);
@@ -126,6 +129,7 @@ public class GamingModel implements Model {
       // The second line reader: 50 Doctor Lucky
       parseSecondLine(br.readLine());
 
+      parseThirdLine(br.readLine());
       // Start to parse Rooms
       this.numOfRooms = parseNumber(br.readLine());
       for (int i = 0; i < numOfRooms; i++) {
@@ -142,6 +146,15 @@ public class GamingModel implements Model {
       System.err.println("Invalid path");
       //e.printStackTrace();
     }
+  }
+
+  /**
+   * Parse the pet.
+   *
+   * @param s the line.
+   */
+  private void parseThirdLine(String s) {
+    this.pet = new Pet(s);
   }
 
   /**
@@ -499,13 +512,13 @@ public class GamingModel implements Model {
     }
     StringBuffer sb = new StringBuffer();
     sb.append(c.getName() + " looks around!\n");
-//    for (PlayerCharacter character : players) {
-//      if (!c.equals(character)) {
-//        sb.append(character.toString());
-//        sb.append("\nVisible Rooms: ");
-//        sb.append(character.getRoom().displayVisibleRooms() + "\n");
-//      }
-//    }
+    //    for (PlayerCharacter character : players) {
+    //      if (!c.equals(character)) {
+    //        sb.append(character.toString());
+    //        sb.append("\nVisible Rooms: ");
+    //        sb.append(character.getRoom().displayVisibleRooms() + "\n");
+    //      }
+    //    }
     sb.append("Information of the current room:\n");
     sb.append(c.getRoom().toString() + "\n\n");
     sb.append(c.getRoom().displayVisibleRooms());

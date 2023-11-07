@@ -3,6 +3,12 @@ package world;
 public class Pet implements Character{
   private Room room;
   private String name;
+
+  public Pet(String name) {
+    this.room = null;
+    this.name = name;
+  }
+
   @Override
   public Room getRoom() {
     return this.room;
