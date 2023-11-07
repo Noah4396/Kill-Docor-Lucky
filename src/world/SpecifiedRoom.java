@@ -2,7 +2,6 @@ package world;
 
 import java.util.ArrayList;
 import java.util.Objects;
-import java.util.Stack;
 
 /**
  * Specified rooms, eg. Dining Hall, Billiard Room.
@@ -219,27 +218,27 @@ public class SpecifiedRoom implements Room {
 
   @Override
   public void setVisibleRooms() {
-//    Stack<Room> stack = new Stack<>();
-//    ArrayList<Room> list;
-//    for (int i = 0; i < 4; i++) {
-//      list = neighbours.get(i);
-//      for (Room room : list) {
-//        stack.push(room);
-//        visibleRooms.add(room);
-//      }
-//      while (!stack.isEmpty()) {
-//        Room tmp = stack.pop();
-//        list = tmp.getNeighbours(i);
-//        for (Room room : list) {
-//          stack.push(room);
-//          visibleRooms.add(room);
-//        }
-//      }
-//    }
+    //    Stack<Room> stack = new Stack<>();
+    //    ArrayList<Room> list;
+    //    for (int i = 0; i < 4; i++) {
+    //      list = neighbours.get(i);
+    //      for (Room room : list) {
+    //        stack.push(room);
+    //        visibleRooms.add(room);
+    //      }
+    //      while (!stack.isEmpty()) {
+    //        Room tmp = stack.pop();
+    //        list = tmp.getNeighbours(i);
+    //        for (Room room : list) {
+    //          stack.push(room);
+    //          visibleRooms.add(room);
+    //        }
+    //      }
+    //    }
     ArrayList<Room> list;
-    for(int i = 0; i < 4; i++){
+    for (int i = 0; i < 4; i++) {
       list = neighbours.get(i);
-      for(Room room : list){
+      for (Room room : list) {
         visibleRooms.add(room);
       }
     }
@@ -318,17 +317,17 @@ public class SpecifiedRoom implements Room {
     StringBuffer sb = new StringBuffer();
     sb.append("Room name:" + name + "\n");
     sb.append("Characters: ");
-    for(Character character : this.characters){
+    for (Character character : this.characters) {
       sb.append(character.getName() + ", ");
     }
     sb.append("\n");
     sb.append("Items: ");
-    for(Item item : items){
+    for (Item item : items) {
       sb.append(item.getName() + ", ");
     }
     sb.append("\n");
-    sb.append("Visible rooms: ");
-    for(Room room : visibleRooms){
+    sb.append("Neighbours: ");
+    for (Room room : visibleRooms) {
       sb.append(room.getName() + ", ");
     }
     return sb.toString();
@@ -352,9 +351,12 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
-  public String displayVisibleRooms() {
+  public String displayVisibleRooms(int index) {
     StringBuffer sb = new StringBuffer("Visible room of " + this.name + ":\n");
     for (Room room : visibleRooms) {
+      if (room.getIndex() == index) {
+        continue;
+      }
       sb.append(room.toString());
       sb.append("\n\n");
     }
@@ -384,6 +386,8 @@ public class SpecifiedRoom implements Room {
     int rand = index % this.neighbourInOneSet.size();
     return neighbourInOneSet.get(rand);
   }
+
+
 
   @Override
   public boolean equals(Object o) {

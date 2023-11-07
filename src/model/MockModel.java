@@ -432,7 +432,7 @@ public class MockModel implements Model {
   public String displayVisibleRooms() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      sb.append(room.displayVisibleRooms());
+      sb.append(room.displayVisibleRooms(0));
     }
     return sb.toString();
   }
@@ -510,7 +510,7 @@ public class MockModel implements Model {
       if (!c.equals(character)) {
         sb.append(character.toString());
         sb.append("\nVisible Rooms: ");
-        sb.append(character.getRoom().displayVisibleRooms() + "\n");
+        sb.append(character.getRoom().displayVisibleRooms(0) + "\n");
       }
     }
     if (!c.isComputer()) {

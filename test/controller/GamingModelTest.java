@@ -1,11 +1,11 @@
 package controller;
 
-import static org.junit.Assert.assertEquals;
-
 import model.GamingModel;
 import org.junit.Before;
 import org.junit.Test;
 import world.PlayerCharacter;
+
+import static org.junit.Assert.*;
 
 /**
  * Test the game model.
@@ -34,7 +34,7 @@ public class GamingModelTest {
   public void addPlayer() {
     gamingModel.addPlayer(p1, 0);
     assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, p1, \n"
-            + "Items: Revolver, \n" + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, ",
+            + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
             + "Character name: p1, Current room: Armory, items: [], player type: human\n",
@@ -58,7 +58,7 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.pickUpItem(p1, 0);
     assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, p1, \n"
-            + "Items: \n" + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, ",
+            + "Items: \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
             + "Character name: p1, Current room: Armory, items: [Revolver], player type: human\n",
@@ -90,10 +90,11 @@ public class GamingModelTest {
         gamingModel.displayers());
     assertEquals(3, p1.getRoom().getIndex());
     assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, \n"
-            + "Items: Revolver, \n" + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, ",
+            + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
     assertEquals("Room name:Dining Hall\n" + "Characters: p1, \n" + "Items: \n"
-            + "Visible rooms: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Parlor, Kitchen, ",
+            + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
+            + "Drawing Room, Parlor, Kitchen, ",
         gamingModel.displayRoom(3));
   }
 
@@ -114,20 +115,31 @@ public class GamingModelTest {
   @Test
   public void lookAround() {
     gamingModel.addPlayer(p1, 0);
-    gamingModel.addPlayer(p2, 2);
+    gamingModel.addPlayer(p2, 1);
     gamingModel.addPlayer(p3, 15);
     assertEquals(
         "p1 looks around!\n" + "Information of the current room:\n" + "Room name:Armory\n"
             + "Characters: Doctor Lucky, Fortune the Cat, p1, \n" + "Items: Revolver, \n"
-            + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
+            + "Neighbours: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
             + "Visible room of Armory:\n" + "Room name:Dining Hall\n" + "Characters: \n"
             + "Items: \n"
-            + "Visible rooms: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Parlor, Kitchen, \n"
-            + "\n" + "Room name:Billiard Room\n" + "Characters: \n" + "Items: Billiard Cue, \n"
-            + "Visible rooms: Trophy Room, Armory, Dining Hall, \n" + "\n"
-            + "Room name:Drawing Room\n" + "Characters: \n" + "Items: Letter Opener, \n"
-            + "Visible rooms: Dining Hall, Armory, Foyer, Wine Cellar, \n\n",
+            + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar,"
+            + " Drawing Room, Parlor, Kitchen, \n"
+            + "\n" + "Room name:Billiard Room\n" + "Characters: p2, \n" + "Items: Billiard Cue, \n"
+            + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n" + "Room name:Drawing Room\n"
+            + "Characters: \n" + "Items: Letter Opener, \n"
+            + "Neighbours: Dining Hall, Armory, Foyer, Wine Cellar, \n\n",
         gamingModel.lookAround(p1));
+    assertEquals("p2 looks around!\n" + "Information of the current room:\n"
+        + "Room name:Billiard Room\n" + "Characters: p2, \n" + "Items: Billiard Cue, \n"
+        + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n"
+        + "Visible room of Billiard Room:\n" + "Room name:Trophy Room\n" + "Characters: \n"
+        + "Items: Duck Decoy, Monkey Hand, \n"
+        + "Neighbours: Library, Billiard Room, Dining Hall, Tennessee Room, \n" + "\n"
+        + "Room name:Dining Hall\n" + "Characters: \n" + "Items: \n"
+        + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
+        + "Drawing Room, Parlor, Kitchen, \n"
+        + "\n", gamingModel.lookAround(p2));
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -139,6 +151,15 @@ public class GamingModelTest {
   @Test
   public void initializePet(){
     assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, \n"
-        + "Items: Revolver, \n" + "Visible rooms: Dining Hall, Billiard Room, Drawing Room, ", gamingModel.displayRoom(0));
+        + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
+        gamingModel.displayRoom(0));
+  }
+
+  @Test
+  public void isVisible(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p2, 1);
+    assertTrue(gamingModel.isVisibleBy(p1, p2));
+    assertFalse(gamingModel.isVisibleBy(p2, p1));
   }
 }

@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create Pet">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add Pet to the gaming model">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/mansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/mansion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,15 +238,7 @@
       <workItem from="1698006013408" duration="9434000" />
       <workItem from="1698104795284" duration="5000" />
       <workItem from="1698338110290" duration="7541000" />
-      <workItem from="1699229820337" duration="5274000" />
-    </task>
-    <task id="LOCAL-00016" summary="Initially complete the parse function">
-      <option name="closed" value="true" />
-      <created>1696454828027</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1696454828027</updated>
+      <workItem from="1699229820337" duration="7993000" />
     </task>
     <task id="LOCAL-00017" summary="Parse the first line">
       <option name="closed" value="true" />
@@ -631,7 +624,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699320077835</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Add Pet to the gaming model">
+      <option name="closed" value="true" />
+      <created>1699320991647</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1699320991647</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +676,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create initial content of controller" />
     <MESSAGE value="Add random to the constructor" />
     <MESSAGE value="Add look around command" />
     <MESSAGE value="Add move command and enum Direction.java" />
@@ -700,6 +700,7 @@
     <MESSAGE value="Check style" />
     <MESSAGE value="Modify look around" />
     <MESSAGE value="Create Pet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Pet" />
+    <MESSAGE value="Add Pet to the gaming model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Pet to the gaming model" />
   </component>
 </project>

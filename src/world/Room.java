@@ -13,7 +13,6 @@ public interface Room {
   public boolean hasLeftRoom();
 
   /**
-   * Have right room or not.
    * @return true if it has another room on the right.
    */
   public boolean hasRightRoom();
@@ -142,9 +141,10 @@ public interface Room {
 
   /**
    * Display visible rooms.
+   * @param index the index of room the pet is in.
    * @return all the visible rooms.
    */
-  public String displayVisibleRooms();
+  String displayVisibleRooms(int index);
 
   /**
    * Get the number of items left in this room.
@@ -173,4 +173,5 @@ public interface Room {
    * @return the random neighobur.
    */
   public Room getRandNeighbour(int index);
+
 }

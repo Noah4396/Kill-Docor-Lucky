@@ -441,9 +441,19 @@ public class GamingModel implements Model {
   public String displayVisibleRooms() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      sb.append(room.displayVisibleRooms());
+      sb.append(room.displayVisibleRooms(pet.getRoom().getIndex()));
     }
     return sb.toString();
+  }
+
+  public boolean isVisibleBy(Character observer, Character killer) {
+    if (observer == null || killer == null) {
+      throw new IllegalArgumentException("");
+    }
+    if (pet.getRoom().getIndex() == killer.getRoom().getIndex()) {
+      return false;
+    }
+    return killer.getRoom().isNeighbour(observer.getRoom()) != 0;
   }
 
   @Override
@@ -521,7 +531,7 @@ public class GamingModel implements Model {
     //    }
     sb.append("Information of the current room:\n");
     sb.append(c.getRoom().toString() + "\n\n");
-    sb.append(c.getRoom().displayVisibleRooms());
+    sb.append(c.getRoom().displayVisibleRooms(pet.getRoom().getIndex()));
     if (!c.isComputer()) {
       passTurn();
     }
