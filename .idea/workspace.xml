@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add Pet to the gaming model">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="The pet will make the room invisible">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Pet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,25 +116,10 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingModelTest">
+  <component name="RunManager" selected="JUnit.GamingModelTest.petMove">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GamingConsoleControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="driver.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,6 +171,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GamingModelTest.petMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
+      <option name="METHOD_NAME" value="petMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DriverJar" type="JarApplication">
       <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/TheWorld_jar/TheWorld.jar" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -197,18 +198,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
+      <item itemvalue="JUnit.GamingModelTest.petMove" />
       <item itemvalue="JUnit.GamingModelTest" />
       <item itemvalue="JUnit.GamingModelTest.lookAround" />
       <item itemvalue="JUnit.GamingModelTest.morethanCapacity" />
-      <item itemvalue="JUnit.GamingConsoleControllerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingModelTest.petMove" />
         <item itemvalue="JUnit.GamingModelTest" />
         <item itemvalue="JUnit.GamingModelTest.lookAround" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingModelTest.morethanCapacity" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -238,15 +239,8 @@
       <workItem from="1698006013408" duration="9434000" />
       <workItem from="1698104795284" duration="5000" />
       <workItem from="1698338110290" duration="7541000" />
-      <workItem from="1699229820337" duration="7993000" />
-    </task>
-    <task id="LOCAL-00017" summary="Parse the first line">
-      <option name="closed" value="true" />
-      <created>1696457251534</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1696457251534</updated>
+      <workItem from="1699229820337" duration="9202000" />
+      <workItem from="1699484505979" duration="2823000" />
     </task>
     <task id="LOCAL-00018" summary="Parse the second line">
       <option name="closed" value="true" />
@@ -632,7 +626,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699320991647</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="The pet will make the room invisible">
+      <option name="closed" value="true" />
+      <created>1699333978241</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1699333978241</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +678,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Add random to the constructor" />
     <MESSAGE value="Add look around command" />
     <MESSAGE value="Add move command and enum Direction.java" />
     <MESSAGE value="Add pass turn method and judge if it is game over." />
@@ -701,6 +702,7 @@
     <MESSAGE value="Modify look around" />
     <MESSAGE value="Create Pet" />
     <MESSAGE value="Add Pet to the gaming model" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Pet to the gaming model" />
+    <MESSAGE value="The pet will make the room invisible" />
+    <option name="LAST_COMMIT_MESSAGE" value="The pet will make the room invisible" />
   </component>
 </project>

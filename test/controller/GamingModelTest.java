@@ -162,4 +162,28 @@ public class GamingModelTest {
     assertTrue(gamingModel.isVisibleBy(p1, p2));
     assertFalse(gamingModel.isVisibleBy(p2, p1));
   }
+
+  @Test
+  public void petMove(){
+    gamingModel.movePetDepthFirst();
+    assertEquals("Dining Hall", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Tennessee Room", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Lilac Room", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Master Suite", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Library", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Trophy Room", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Billiard Room", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Armory", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Drawing Room", gamingModel.petInfo());
+    gamingModel.movePetDepthFirst();
+    assertEquals("Wine Cellar", gamingModel.petInfo());
+  }
 }

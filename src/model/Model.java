@@ -32,7 +32,15 @@ public interface Model {
    */
   public void moveToNeighbour(Character c, int direction, int index);
 
-  void moveTarget();
+  /**
+   * Move the target.
+   */
+  public void moveTarget();
+
+  /**
+   * Move the pet.
+   */
+  public void movePetDepthFirst();
 
   /**
    * Get the current turn number.

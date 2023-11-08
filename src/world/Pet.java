@@ -3,10 +3,12 @@ package world;
 public class Pet implements Character{
   private Room room;
   private String name;
+  private int direction;
 
   public Pet(String name) {
     this.room = null;
     this.name = name;
+    this.direction = 0;
   }
 
   @Override
@@ -27,6 +29,14 @@ public class Pet implements Character{
   @Override
   public String getName() {
     return this.name;
+  }
+
+  public int getDirection() {
+    return direction;
+  }
+
+  public void setDirection(int direction) {
+    this.direction = direction;
   }
 
   @Override

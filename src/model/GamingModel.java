@@ -178,13 +178,25 @@ public class GamingModel implements Model {
     character.setRoom(room);
   }
 
-  /**
-   * Move the target.
-   */
+  @Override
   public void moveTarget() {
     int targetIndex = doctorLucky.getRoom().getIndex();
     targetIndex = (targetIndex + 1) % rooms.size();
     move(doctorLucky, rooms.get(targetIndex));
+  }
+
+  @Override
+  public void movePetDepthFirst(){
+    int direction = pet.getDirection();
+    while(pet.getRoom().getNeighbours(direction).isEmpty()){
+      direction = (direction + 1) % 4;
+      pet.setDirection(direction);
+    }
+    move(pet, pet.getRoom().getNeighbour(direction, 0));
+  }
+
+  public String petInfo(){
+    return pet.getRoom().getName();
   }
 
   /**
@@ -449,6 +461,9 @@ public class GamingModel implements Model {
   public boolean isVisibleBy(Character observer, Character killer) {
     if (observer == null || killer == null) {
       throw new IllegalArgumentException("");
+    }
+    if (observer.getRoom().getIndex() == killer.getRoom().getIndex()) {
+      return true;
     }
     if (pet.getRoom().getIndex() == killer.getRoom().getIndex()) {
       return false;
