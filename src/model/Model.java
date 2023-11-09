@@ -33,6 +33,13 @@ public interface Model {
   public void moveToNeighbour(Character c, int direction, int index);
 
   /**
+   * Move the pet to the neighbour.
+   * @param c the character who move pet
+   * @param direction the direction
+   * @param index the index
+   */
+  public void movePet(Character c, int direction, int index);
+  /**
    * Move the target.
    */
   public void moveTarget();

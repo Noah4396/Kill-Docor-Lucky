@@ -486,6 +486,10 @@ public class MockModel implements Model {
 
   }
   @Override
+  public void movePet(Character c, int direction, int index){
+
+  }
+  @Override
   public void moveToNeighbour(Character c, int direction, int index) {
     if (c == null || !players.contains(c)) {
       throw new IllegalArgumentException("Invalid Player");

@@ -531,6 +531,22 @@ public class GamingModel implements Model {
   }
 
   @Override
+  public void movePet(Character c, int direction, int index){
+    if(c.getRoom().getIndex() != pet.getRoom().getIndex()){
+      throw new IllegalArgumentException("Not in the same romm");
+    }
+    if (c.isComputer()) {
+      move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
+      return;
+    }
+    try {
+      move(pet, c.getRoom().getNeighbour(direction, index));
+    } catch (IllegalArgumentException e) {
+      throw new IllegalArgumentException("Invalid input");
+    }
+    passTurn();
+  }
+  @Override
   public String lookAround(Character c) {
     if (c == null || !players.contains(c)) {
       throw new IllegalArgumentException("Invalid player");
