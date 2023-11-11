@@ -27,5 +27,6 @@ public class MovePet implements GamingCommand{
   @Override
   public void execute(Model m) {
     m.movePet(player, direction, index);
+    m.passTurn();
   }
 }

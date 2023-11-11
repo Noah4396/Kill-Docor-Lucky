@@ -29,5 +29,6 @@ public class PickUp implements GamingCommand {
   @Override
   public void execute(Model m) {
     m.pickUpItem(player, index);
+    m.passTurn();
   }
 }

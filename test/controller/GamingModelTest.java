@@ -183,8 +183,17 @@ public class GamingModelTest {
 
   @Test
   public void movePet(){
+    StringBuffer sb = new StringBuffer();
+    sb.append(gamingModel.petInfo() + "\n");
     gamingModel.addPlayer(p1, 0);
-    gamingModel.addPlayer(p2, 1);
+    gamingModel.movePet(p1, 0, 0);
+    sb.append(gamingModel.petInfo() + "\n");
+    assertEquals("Armory\n" + "Dining Hall\n", sb.toString());
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void movePetInvalid(){
+    gamingModel.addPlayer(p1, 1);
     gamingModel.movePet(p1, 0, 0);
   }
 }

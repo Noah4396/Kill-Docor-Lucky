@@ -536,7 +536,6 @@ public class GamingModel implements Model {
     } else {
       p.pickItem(p.getRoom().deleteItem(index));
     }
-    passTurn();
   }
 
   @Override
@@ -553,13 +552,12 @@ public class GamingModel implements Model {
     } catch (IllegalArgumentException e) {
       throw new IllegalArgumentException("Invalid input");
     }
-    passTurn();
   }
 
   @Override
   public void movePet(Character c, int direction, int index) {
     if (c.getRoom().getIndex() != pet.getRoom().getIndex()) {
-      throw new IllegalArgumentException("Not in the same room");
+      throw new IllegalStateException("Not in the same room");
     }
     if (c.isComputer()) {
       move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
@@ -569,7 +567,6 @@ public class GamingModel implements Model {
       } catch (IllegalArgumentException e) {
         throw new IllegalArgumentException("Invalid input");
       }
-      passTurn();
     }
     Arrays.fill(visited, 0);
     visited[pet.getRoom().getIndex()] = 1;
@@ -593,9 +590,6 @@ public class GamingModel implements Model {
     sb.append("Information of the current room:\n");
     sb.append(c.getRoom().toString() + "\n\n");
     sb.append(c.getRoom().displayVisibleRooms(pet.getRoom().getIndex()));
-    if (!c.isComputer()) {
-      passTurn();
-    }
     return sb.toString();
   }
 
@@ -622,7 +616,6 @@ public class GamingModel implements Model {
       default:
         break;
     }
-    passTurn();
   }
 
   private void outputString(String s, Appendable out) {

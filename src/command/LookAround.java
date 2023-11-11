@@ -29,6 +29,7 @@ public class LookAround implements GamingCommand {
   public void execute(Model m) {
     try {
       out.append(m.lookAround(player));
+      m.passTurn();
     } catch (IOException ioe) {
       throw new IllegalStateException("Append failed", ioe);
     }

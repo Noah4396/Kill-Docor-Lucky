@@ -28,5 +28,6 @@ public class ComputerCommand implements GamingCommand {
   @Override
   public void execute(Model m) {
     m.computerCommand(player, out);
+    m.passTurn();
   }
 }

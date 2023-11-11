@@ -33,5 +33,6 @@ public class Move implements GamingCommand {
   @Override
   public void execute(Model m) {
     m.moveToNeighbour(player, direction, index);
+    m.passTurn();
   }
 }
