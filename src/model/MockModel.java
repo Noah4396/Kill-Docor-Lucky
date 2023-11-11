@@ -409,6 +409,11 @@ public class MockModel implements Model {
     return rooms.get(index).toString();
   }
 
+  @Override
+  public String displayTargetAndPet() {
+    return null;
+  }
+
   /**
    * Display all neighbours.
    *

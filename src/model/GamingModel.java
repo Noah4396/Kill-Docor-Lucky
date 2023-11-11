@@ -70,10 +70,8 @@ public class GamingModel implements Model {
     }
     visited = new int[rooms.size()];
     stack = new Stack<>();
-    Arrays.fill(visited, 0);
-    visited[0] = 1;
+    petInitialize(0);
     move(doctorLucky, rooms.get(0));
-    move(pet, rooms.get(0));
 
     this.image = new BufferedImage(width * amplifierDegree, height * amplifierDegree,
         BufferedImage.TYPE_3BYTE_BGR);
@@ -188,28 +186,30 @@ public class GamingModel implements Model {
     move(doctorLucky, rooms.get(targetIndex));
   }
 
-
   @Override
-  public void movePetDepthFirst(){
+  public void movePetDepthFirst() {
     ArrayList<Room> neighbours = pet.getRoom().getVisibleRooms();
-    for(Room room : neighbours){
-      if(visited[room.getIndex()] == 0){
+    for (Room room : neighbours) {
+      if (visited[room.getIndex()] == 0) {
         stack.push(room.getIndex());
         visited[room.getIndex()] = 1;
       }
     }
-    if(stack.isEmpty()){
-      Arrays.fill(visited, 0);
-      visited[0] = 1;
-      move(pet, rooms.get(0));
+    if (stack.isEmpty()) {
+      petInitialize(0);
       return;
     }
     int index = stack.pop();
     move(pet, rooms.get(index));
-    //visited[index] = 1;
   }
 
-  public String petInfo(){
+  private void petInitialize(int index) {
+    Arrays.fill(visited, 0);
+    visited[index] = 1;
+    move(pet, rooms.get(index));
+  }
+
+  public String petInfo() {
     return pet.getRoom().getName();
   }
 
@@ -444,6 +444,18 @@ public class GamingModel implements Model {
     return rooms.get(index).toString();
   }
 
+  @Override
+  public String displayTargetAndPet() {
+    StringBuffer sb = new StringBuffer();
+    sb.append("Target room: ");
+    sb.append(doctorLucky.getRoom().getName());
+    sb.append("\n");
+    sb.append("Pet room: ");
+    sb.append(pet.getRoom().getName());
+    sb.append("\n");
+    return sb.toString();
+  }
+
   /**
    * Display all neighbours.
    *
@@ -545,14 +557,13 @@ public class GamingModel implements Model {
   }
 
   @Override
-  public void movePet(Character c, int direction, int index){
-    if(c.getRoom().getIndex() != pet.getRoom().getIndex()){
-      throw new IllegalArgumentException("Not in the same romm");
+  public void movePet(Character c, int direction, int index) {
+    if (c.getRoom().getIndex() != pet.getRoom().getIndex()) {
+      throw new IllegalArgumentException("Not in the same room");
     }
     if (c.isComputer()) {
       move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
-    }
-    else {
+    } else {
       try {
         move(pet, c.getRoom().getNeighbour(direction, index));
       } catch (IllegalArgumentException e) {
@@ -564,6 +575,7 @@ public class GamingModel implements Model {
     visited[pet.getRoom().getIndex()] = 1;
     stack.clear();
   }
+
   @Override
   public String lookAround(Character c) {
     if (c == null || !players.contains(c)) {
@@ -633,10 +645,13 @@ public class GamingModel implements Model {
   /**
    * Pass the turn.
    */
+  @Override
   public void passTurn() {
     currentTurn++;
     currentTurn = currentTurn % players.size();
     totalTurn++;
+    moveTarget();
+    movePetDepthFirst();
     if (totalTurn >= maxTurn) {
       gameOver = true;
     }

@@ -813,4 +813,5 @@ public class GamingConsoleControllerTest {
             + "Enter 3 to look around\n" + "Game quit!\n");
     assertEquals(expectOutput.toString(), gamelog.toString());
   }
+
 }

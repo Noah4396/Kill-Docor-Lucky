@@ -96,6 +96,11 @@ public interface Model {
   public String displayers();
 
   /**
+   * Pass the turn to next player.
+   */
+  public void passTurn();
+
+  /**
    * check if it is game over.
    *
    * @return true if game over.
@@ -109,4 +114,11 @@ public interface Model {
    * @return the display.
    */
   public String displayRoom(int index);
+
+  /**
+   * Display the target and pet.
+   *
+   * @return the display.
+   */
+  public String displayTargetAndPet();
 }

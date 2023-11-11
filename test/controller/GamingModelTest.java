@@ -164,12 +164,11 @@ public class GamingModelTest {
   }
 
   @Test
-  public void petMove(){
+  public void petDepthFirstMove(){
     StringBuffer sb = new StringBuffer();
     for(int i = 0; i < 40; i++){
       sb.append(gamingModel.petInfo() + "\n");
       gamingModel.movePetDepthFirst();
-
     }
     assertEquals("Armory\n" + "Drawing Room\n" + "Wine Cellar\n" + "Kitchen\n" + "Parlor\n"
         + "Tennessee Room\n" + "Trophy Room\n" + "Library\n" + "Nursery\n" + "Master Suite\n"
@@ -180,5 +179,12 @@ public class GamingModelTest {
         + "Nursery\n" + "Master Suite\n" + "Lilac Room\n" + "Lancaster Room\n"
         + "Servants' Quarters\n" + "Foyer\n" + "Piazza\n" + "Winter Garden\n" + "Carriage House\n"
         + "Hedge Maze\n" + "Green House\n", sb.toString());
+  }
+
+  @Test
+  public void movePet(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p2, 1);
+    gamingModel.movePet(p1, 0, 0);
   }
 }

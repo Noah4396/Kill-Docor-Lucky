@@ -86,9 +86,10 @@ public class GamingConsoleController implements Controller {
           }
         }
       }
-      m.moveTarget();
       outputString("Now the status of players are shown as follow:\n");
       outputString(m.displayers() + "\n");
+      outputString("Now the status of target and pet are shown as follow:\n");
+      outputString(m.displayTargetAndPet() + "\n");
     }
     outputString("Reach the max turn, and the game end!\n");
   }
