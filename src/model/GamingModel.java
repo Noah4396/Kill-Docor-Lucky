@@ -618,6 +618,11 @@ public class GamingModel implements Model {
     }
   }
 
+  @Override
+  public void attempt(PlayerCharacter player, int index){
+
+  }
+
   private void outputString(String s, Appendable out) {
     try {
       out.append(s);

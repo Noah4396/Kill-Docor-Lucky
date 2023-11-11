@@ -96,6 +96,14 @@ public interface Model {
   public String displayers();
 
   /**
+   * Attempt to kill the target.
+   *
+   * @param player the player who attempt to kill.
+   * @param index  the index of weapon.
+   */
+  void attempt(PlayerCharacter player, int index);
+
+  /**
    * Pass the turn to next player.
    */
   public void passTurn();

@@ -402,6 +402,11 @@ public class MockModel implements Model {
   }
 
   @Override
+  public void attempt(PlayerCharacter player, int index) {
+
+  }
+
+  @Override
   public String displayRoom(int index) {
     if (index >= rooms.size() || index < 0) {
       throw new IllegalArgumentException("Index out of bound");

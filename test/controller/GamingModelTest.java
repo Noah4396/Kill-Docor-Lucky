@@ -192,8 +192,14 @@ public class GamingModelTest {
   }
 
   @Test(expected = IllegalStateException.class)
-  public void movePetInvalid(){
+  public void movePetNotInTheSameRoom(){
     gamingModel.addPlayer(p1, 1);
     gamingModel.movePet(p1, 0, 0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void movePetInvalidDirection(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.movePet(p1, 100, 0);
   }
 }
