@@ -211,4 +211,36 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.movePet(p1, 100, 0);
   }
+
+  @Test
+  public void attempt(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p2, 1);
+    gamingModel.pickUpItem(p1, 0);
+    assertEquals(50, gamingModel.getDoctorLucky().getHealth());
+    gamingModel.attempt(p1, 0);
+    assertEquals(47, gamingModel.getDoctorLucky().getHealth());
+    gamingModel.attempt(p1, 100);
+    assertEquals(46, gamingModel.getDoctorLucky().getHealth());
+
+    gamingModel.movePetDepthFirst();
+    gamingModel.moveToNeighbour(p2, 0, 0);
+    gamingModel.attempt(p1, 0);
+    assertEquals(45, gamingModel.getDoctorLucky().getHealth());
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void failAttempt(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.moveTarget();
+    gamingModel.addPlayer(p2, 1);
+    gamingModel.attempt(p2, 0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void invalidAttempt(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p2, 1);
+    gamingModel.attempt(p2, 0);
+  }
 }
