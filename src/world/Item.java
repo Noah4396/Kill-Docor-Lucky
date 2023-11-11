@@ -6,7 +6,7 @@ import java.util.Objects;
  * Item in the rooms.
  */
 
-public class Item {
+public class Item implements Comparable<Item>{
   private String name;
   private int damagePoint;
   private int indexOfRoom;
@@ -61,5 +61,10 @@ public class Item {
   @Override
   public int hashCode() {
     return Objects.hash(name, damagePoint, indexOfRoom);
+  }
+
+  @Override
+  public int compareTo(Item item) {
+    return this.damagePoint - item.getDamagePoint();
   }
 }

@@ -1,10 +1,7 @@
 package controller;
 
-import command.ComputerCommand;
-import command.GamingCommand;
-import command.LookAround;
-import command.Move;
-import command.PickUp;
+import command.*;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,6 +43,8 @@ public class GamingConsoleController implements Controller {
     knownCommands.put("1", s -> new Move(m.getTurn(), s.nextInt(), s.nextInt()));
     knownCommands.put("2", s -> new PickUp(m.getTurn(), s.nextInt()));
     knownCommands.put("3", s -> new LookAround(m.getTurn(), this.out));
+    knownCommands.put("4", s -> new MovePet(m.getTurn(), s.nextInt(), s.nextInt()));
+    knownCommands.put("5", s -> new Attempt(m.getTurn(), s.nextInt()));
     if (m == null) {
       throw new IllegalArgumentException("Invalid Model");
     }
@@ -73,6 +72,7 @@ public class GamingConsoleController implements Controller {
           outputString("Game quit!\n");
           return;
         }
+
         Function<Scanner, GamingCommand> cmd = knownCommands.getOrDefault(in, null);
         if (cmd == null) {
           outputString("Invalid option, please enter again.\n");
@@ -82,7 +82,7 @@ public class GamingConsoleController implements Controller {
             commands.add(c);
             c.execute(m);
           } catch (IllegalArgumentException | IllegalStateException | InputMismatchException e) {
-            outputString(e.getMessage() + ", please enter again\n");
+            outputString(e.getMessage() + "\n");
           }
         }
       }

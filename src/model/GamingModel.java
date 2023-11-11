@@ -557,7 +557,7 @@ public class GamingModel implements Model {
   @Override
   public void movePet(Character c, int direction, int index) {
     if (c.getRoom().getIndex() != pet.getRoom().getIndex()) {
-      throw new IllegalStateException("Not in the same room");
+      throw new IllegalStateException("Pet and player in the same room");
     }
     if (c.isComputer()) {
       move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
@@ -620,9 +620,38 @@ public class GamingModel implements Model {
 
   @Override
   public void attempt(PlayerCharacter player, int index){
+    if(player == null || !players.contains(player)){
+      throw new IllegalArgumentException("Invalid player");
+    }
+    if(player.getRoom() != doctorLucky.getRoom()){
+      throw new IllegalArgumentException("Cannot attempt, not in the same room");
+    }
+    for(PlayerCharacter p : players){
+      if(p == player){
+        continue;
+      }
+      else{
+        if(isVisibleBy(p, player)){
+          throw new IllegalStateException("Cannot attempt, be seen by other player");
+        }
+      }
+    }
 
+    if(!player.hasItem()){
+      dealDamage(1);
+    }
+    else{
+      int damage = player.useItem(index);
+      dealDamage(damage);
+    }
   }
 
+  private void dealDamage(int damage) {
+    doctorLucky.setHealth(doctorLucky.getHealth() - damage);
+    if(doctorLucky.getHealth() <= 0){
+      gameOver = true;
+    }
+  }
   private void outputString(String s, Appendable out) {
     try {
       out.append(s);

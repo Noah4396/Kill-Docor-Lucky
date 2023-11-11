@@ -55,14 +55,23 @@ public class GamingModelTest {
 
   @Test
   public void pickUpItem() {
-    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p1, 1);
     gamingModel.pickUpItem(p1, 0);
-    assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, p1, \n"
+    assertEquals("Room name:Billiard Room\n" + "Characters: p1, \n" + "Items: \n"
+            + "Neighbours: Trophy Room, Armory, Dining Hall, ",
+        gamingModel.displayRoom(1));
+    assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
+        + "Character name: p1, Current room: Billiard Room, items: [Billiard Cue], "
+        + "player type: human\n", gamingModel.displayers());
+
+    gamingModel.moveToNeighbour(p1, 2, 0);
+    gamingModel.pickUpItem(p1, 0);
+    assertEquals("Room name:Armory\n" + "Characters: Fortune the Cat, Doctor Lucky, p1, \n"
             + "Items: \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
-            + "Character name: p1, Current room: Armory, items: [Revolver], player type: human\n",
-        gamingModel.displayers());
+        + "Character name: p1, Current room: Armory, items: [Revolver, Billiard Cue],"
+        + " player type: human", gamingModel.displayers());
   }
 
   @Test(expected = IllegalStateException.class)

@@ -1,6 +1,7 @@
 package world;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Objects;
 
 /**
@@ -78,6 +79,21 @@ public class PlayerCharacter implements Character {
   }
 
   /**
+   * Sort the items.
+   */
+  public void sortItems() {
+    items.sort(Collections.reverseOrder());
+  }
+
+  /**
+   * Get the item list.
+   *
+   * @return the item list.
+   */
+  public boolean hasItem() {
+    return !items.isEmpty();
+  }
+  /**
    * Set the player as a human controlled.
    */
   public void setAsHumanControl() {
@@ -118,6 +134,7 @@ public class PlayerCharacter implements Character {
 
   public void pickItem(Item item) {
     this.items.add(item);
+    sortItems();
   }
 
   @Override
@@ -133,5 +150,14 @@ public class PlayerCharacter implements Character {
       sb.append("human");
     }
     return sb.toString();
+  }
+
+  public int useItem(int index) {
+    if (index < 0 || index >= items.size()) {
+      throw new IllegalArgumentException("Invalid index.");
+    }
+    Item item = items.get(index);
+    items.remove(index);
+    return item.getDamagePoint();
   }
 }

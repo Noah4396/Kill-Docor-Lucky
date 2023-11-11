@@ -54,6 +54,10 @@ public class TargetCharacter implements Character {
     this.health = health;
   }
 
+  public int getHealth() {
+    return health;
+  }
+
   public void setName(String name) {
     this.name = name;
   }
