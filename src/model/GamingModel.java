@@ -8,10 +8,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 import javax.imageio.ImageIO;
 
 import world.Character;
@@ -46,6 +43,8 @@ public class GamingModel implements Model {
   private long seed;
   private Random random;
   private Boolean gameOver;
+  private int[] visited;
+  private Stack<Integer> stack;
 
   /**
    * The constructor.
@@ -69,6 +68,10 @@ public class GamingModel implements Model {
     } catch (IllegalArgumentException e) {
       System.err.println("Find rooms overlap");
     }
+    visited = new int[rooms.size()];
+    stack = new Stack<>();
+    Arrays.fill(visited, 0);
+    visited[0] = 1;
     move(doctorLucky, rooms.get(0));
     move(pet, rooms.get(0));
 
@@ -185,14 +188,25 @@ public class GamingModel implements Model {
     move(doctorLucky, rooms.get(targetIndex));
   }
 
+
   @Override
   public void movePetDepthFirst(){
-    int direction = pet.getDirection();
-    while(pet.getRoom().getNeighbours(direction).isEmpty()){
-      direction = (direction + 1) % 4;
-      pet.setDirection(direction);
+    ArrayList<Room> neighbours = pet.getRoom().getVisibleRooms();
+    for(Room room : neighbours){
+      if(visited[room.getIndex()] == 0){
+        stack.push(room.getIndex());
+        visited[room.getIndex()] = 1;
+      }
     }
-    move(pet, pet.getRoom().getNeighbour(direction, 0));
+    if(stack.isEmpty()){
+      Arrays.fill(visited, 0);
+      visited[0] = 1;
+      move(pet, rooms.get(0));
+      return;
+    }
+    int index = stack.pop();
+    move(pet, rooms.get(index));
+    //visited[index] = 1;
   }
 
   public String petInfo(){
@@ -537,14 +551,18 @@ public class GamingModel implements Model {
     }
     if (c.isComputer()) {
       move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
-      return;
     }
-    try {
-      move(pet, c.getRoom().getNeighbour(direction, index));
-    } catch (IllegalArgumentException e) {
-      throw new IllegalArgumentException("Invalid input");
+    else {
+      try {
+        move(pet, c.getRoom().getNeighbour(direction, index));
+      } catch (IllegalArgumentException e) {
+        throw new IllegalArgumentException("Invalid input");
+      }
+      passTurn();
     }
-    passTurn();
+    Arrays.fill(visited, 0);
+    visited[pet.getRoom().getIndex()] = 1;
+    stack.clear();
   }
   @Override
   public String lookAround(Character c) {

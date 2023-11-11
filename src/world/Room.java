@@ -133,6 +133,13 @@ public interface Room {
   public ArrayList<Room> getNeighbours(int index);
 
   /**
+   * Get visible rooms.
+   *
+   * @return all of visible rooms.
+   */
+  ArrayList<Room> getVisibleRooms();
+
+  /**
    * Display neighbours.
    * @param direction the direction of the neighbours.
    * @return all the neighbours.

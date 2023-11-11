@@ -44,6 +44,7 @@ public interface Model {
    */
   public void moveTarget();
 
+
   /**
    * Move the pet.
    */

@@ -303,11 +303,7 @@ public class SpecifiedRoom implements Room {
     return new ArrayList<>(characters);
   }
 
-  /**
-   * Get visible rooms.
-   *
-   * @return all of visible rooms.
-   */
+  @Override
   public ArrayList<Room> getVisibleRooms() {
     return new ArrayList<>(visibleRooms);
   }

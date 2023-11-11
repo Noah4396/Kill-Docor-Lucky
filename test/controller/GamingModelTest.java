@@ -165,25 +165,20 @@ public class GamingModelTest {
 
   @Test
   public void petMove(){
-    gamingModel.movePetDepthFirst();
-    assertEquals("Dining Hall", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Tennessee Room", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Lilac Room", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Master Suite", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Library", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Trophy Room", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Billiard Room", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Armory", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Drawing Room", gamingModel.petInfo());
-    gamingModel.movePetDepthFirst();
-    assertEquals("Wine Cellar", gamingModel.petInfo());
+    StringBuffer sb = new StringBuffer();
+    for(int i = 0; i < 40; i++){
+      sb.append(gamingModel.petInfo() + "\n");
+      gamingModel.movePetDepthFirst();
+
+    }
+    assertEquals("Armory\n" + "Drawing Room\n" + "Wine Cellar\n" + "Kitchen\n" + "Parlor\n"
+        + "Tennessee Room\n" + "Trophy Room\n" + "Library\n" + "Nursery\n" + "Master Suite\n"
+        + "Lilac Room\n" + "Lancaster Room\n" + "Servants' Quarters\n" + "Foyer\n" + "Piazza\n"
+        + "Winter Garden\n" + "Carriage House\n" + "Hedge Maze\n" + "Green House\n"
+        + "Billiard Room\n" + "Dining Hall\n" + "Armory\n" + "Drawing Room\n" + "Wine Cellar\n"
+        + "Kitchen\n" + "Parlor\n" + "Tennessee Room\n" + "Trophy Room\n" + "Library\n"
+        + "Nursery\n" + "Master Suite\n" + "Lilac Room\n" + "Lancaster Room\n"
+        + "Servants' Quarters\n" + "Foyer\n" + "Piazza\n" + "Winter Garden\n" + "Carriage House\n"
+        + "Hedge Maze\n" + "Green House\n", sb.toString());
   }
 }
