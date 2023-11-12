@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish attempt">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test attempt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,15 +245,8 @@
       <workItem from="1699484505979" duration="4106000" />
       <workItem from="1699501282554" duration="2861000" />
       <workItem from="1699677056665" duration="6425000" />
-      <workItem from="1699732774435" duration="4709000" />
-    </task>
-    <task id="LOCAL-00025" summary="Finish the Driver.java">
-      <option name="closed" value="true" />
-      <created>1696554763350</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1696554763350</updated>
+      <workItem from="1699732774435" duration="5527000" />
+      <workItem from="1699772346453" duration="566000" />
     </task>
     <task id="LOCAL-00026" summary="Create some getter method">
       <option name="closed" value="true" />
@@ -640,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699736906987</updated>
     </task>
-    <option name="localTasksCounter" value="74" />
+    <task id="LOCAL-00074" summary="Test attempt">
+      <option name="closed" value="true" />
+      <created>1699737706597</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1699737706598</updated>
+    </task>
+    <option name="localTasksCounter" value="75" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +684,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finish the initialization of player" />
     <MESSAGE value="Nearly finish the controller" />
     <MESSAGE value="Finish the program" />
     <MESSAGE value="Modify the model test." />
@@ -709,6 +708,7 @@
     <MESSAGE value="Test move pet" />
     <MESSAGE value="Add attempt" />
     <MESSAGE value="Finish attempt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish attempt" />
+    <MESSAGE value="Test attempt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test attempt" />
   </component>
 </project>

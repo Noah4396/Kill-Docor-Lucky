@@ -595,11 +595,23 @@ public class GamingModel implements Model {
 
   @Override
   public void computerCommand(PlayerCharacter player, Appendable out) {
-    int choice = 3;
-    if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {
-      choice = 2;
+    if(player.getRoom() == doctorLucky.getRoom()){
+      outputString("Computer " + player.getName() + " attempts to kill the target!\n", out);
+      attempt(player, 0);
+      return;
     }
-    choice = random.nextInt(choice);
+
+    ArrayList<Integer> deniedChoice = new ArrayList<>();
+    if (!player.isAbleToPick() || player.getRoom().getItemsNumber() <= 0) {
+      deniedChoice.add(2);
+    }
+    if (player.getRoom() != pet.getRoom()) {
+      deniedChoice.add(3);
+    }
+    int choice = random.nextInt(4);
+    while (deniedChoice.contains(choice)) {
+      choice = random.nextInt(4);
+    }
     switch (choice) {
       case 0:
         outputString("Computer " + player.getName() + " moves to the neighbour!\n", out);
@@ -613,34 +625,36 @@ public class GamingModel implements Model {
         outputString("Computer " + player.getName() + " pick up an item!\n", out);
         pickUpItem(player, 0);
         break;
+      case 3:
+        outputString("Computer " + player.getName() + " move pet!\n", out);
+        movePet(player, 0, 0);
+        break;
       default:
         break;
     }
   }
 
   @Override
-  public void attempt(PlayerCharacter player, int index){
-    if(player == null || !players.contains(player)){
+  public void attempt(PlayerCharacter player, int index) {
+    if (player == null || !players.contains(player)) {
       throw new IllegalArgumentException("Invalid player");
     }
-    if(player.getRoom() != doctorLucky.getRoom()){
+    if (player.getRoom() != doctorLucky.getRoom()) {
       throw new IllegalArgumentException("Cannot attempt, not in the same room");
     }
-    for(PlayerCharacter p : players){
-      if(p == player){
+    for (PlayerCharacter p : players) {
+      if (p == player) {
         continue;
-      }
-      else{
-        if(isVisibleBy(p, player)){
+      } else {
+        if (isVisibleBy(p, player)) {
           throw new IllegalStateException("Cannot attempt, be seen by other player");
         }
       }
     }
 
-    if(!player.hasItem()){
+    if (!player.hasItem()) {
       dealDamage(1);
-    }
-    else{
+    } else {
       int damage = player.useItem(index);
       dealDamage(damage);
     }
@@ -648,10 +662,11 @@ public class GamingModel implements Model {
 
   private void dealDamage(int damage) {
     doctorLucky.setHealth(doctorLucky.getHealth() - damage);
-    if(doctorLucky.getHealth() <= 0){
+    if (doctorLucky.getHealth() <= 0) {
       gameOver = true;
     }
   }
+
   private void outputString(String s, Appendable out) {
     try {
       out.append(s);
