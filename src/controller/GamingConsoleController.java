@@ -86,10 +86,10 @@ public class GamingConsoleController implements Controller {
           }
         }
       }
-      outputString("Now the status of players are shown as follow:\n");
-      outputString(m.displayers() + "\n");
-      outputString("Now the status of target and pet are shown as follow:\n");
-      outputString(m.displayTargetAndPet() + "\n");
+//      outputString("Now the status of players are shown as follow:\n");
+//      outputString(m.displayers() + "\n");
+//      outputString("After player operation, the status of target and pet are shown as follow:\n");
+//      outputString(m.displayTargetAndPet() + "\n");
     }
     outputString("Reach the max turn, and the game end!\n");
   }
@@ -107,16 +107,22 @@ public class GamingConsoleController implements Controller {
   }
 
   private void printPrompt(Model m) {
+    printDivider();
     outputString("Now we are in the " + (m.getTotalTurn() + 1) + " turn\n");
-    outputString("The player in current turn is: " + m.getTurn().getName() + "\n");
+    outputString("The player in current turn is: " + m.getTurn().getName() + "\n\n");
+    outputString("The status of target and pet are:\n");
+    outputString(m.displayTargetAndPet() + "\n");
     outputString("The information of the room that the player is in:\n");
-    printDivider();
-    outputString(m.getTurn().getRoom().toString() + "\n");
-    printDivider();
+    outputString(m.getTurn().getRoom().toString() + "\n\n");
     outputString(
         "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
     outputString("Enter 2 to pick up an item in the room. Then enter the index of the item\n");
     outputString("Enter 3 to look around\n");
+    outputString(
+        "Enter 4 to move the pet. Then enter the direction and index of the neighbour\n");
+    outputString("Enter 5 to attempt to kill the target. Then enter the "
+        + "index of item you want to use(enter 0 if you do not have any item)\n");
+    printDivider();
   }
 
   private boolean gameInitialize(Model m) {

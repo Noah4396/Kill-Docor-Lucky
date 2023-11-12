@@ -389,6 +389,7 @@ public class GamingModel implements Model {
 
     sb.append("Target name: ");
     sb.append(this.doctorLucky.getName());
+    sb.append(", health" + this.doctorLucky.getHealth());
     sb.append("\n");
 
     sb.append("Number of Rooms: ");
@@ -418,8 +419,8 @@ public class GamingModel implements Model {
   public String displayRooms() {
     StringBuffer sb = new StringBuffer();
     for (Room room : rooms) {
-      sb.append(room);
-      sb.append("\n\n");
+      sb.append(room.getIndex() + ". " + room.getName());
+      sb.append("\n");
     }
     return sb.toString();
   }
@@ -449,6 +450,8 @@ public class GamingModel implements Model {
     StringBuffer sb = new StringBuffer();
     sb.append("Target room: ");
     sb.append(doctorLucky.getRoom().getName());
+    sb.append(", health: ");
+    sb.append(doctorLucky.getHealth());
     sb.append("\n");
     sb.append("Pet room: ");
     sb.append(pet.getRoom().getName());

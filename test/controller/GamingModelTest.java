@@ -249,15 +249,18 @@ public class GamingModelTest {
   public void testComputer(){
     p1.setAsComputer();
     p2.setAsComputer();
+    p3.setAsComputer();
     StringBuffer sb = new StringBuffer();
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
+    gamingModel.addPlayer(p3, 2);
     while(!gamingModel.isGameOver()){
       gamingModel.computerCommand(p1, sb);
       gamingModel.passTurn();
       gamingModel.computerCommand(p2, sb);
       gamingModel.passTurn();
     }
+    assertEquals(14, gamingModel.getDoctorLucky().getHealth());
     assertEquals("Computer p1 attempts to kill the target!\n"
         + "Computer p2 attempts to kill the target!\n" + "Computer p1 pick up an item!\n"
         + "Computer p2 Look around!\n" + "Computer p1 Look around!\n"
