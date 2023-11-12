@@ -9,8 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test attempt">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="fix computer logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +114,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingModelTest.attempt">
+  <component name="RunManager" selected="JUnit.GamingModelTest.testComputer">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -173,7 +176,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.pickUpItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingModelTest.testComputer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -183,7 +186,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="pickUpItem" />
+      <option name="METHOD_NAME" value="testComputer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,18 +203,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
+      <item itemvalue="JUnit.GamingModelTest.testComputer" />
       <item itemvalue="JUnit.GamingModelTest.attempt" />
       <item itemvalue="JUnit.GamingModelTest.failAttempt" />
       <item itemvalue="JUnit.GamingModelTest.invalidAttempt" />
-      <item itemvalue="JUnit.GamingModelTest.pickUpItem" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingModelTest.testComputer" />
+        <item itemvalue="JUnit.GamingModelTest.failAttempt" />
         <item itemvalue="JUnit.GamingModelTest.attempt" />
         <item itemvalue="JUnit.GamingModelTest.invalidAttempt" />
-        <item itemvalue="JUnit.GamingModelTest.failAttempt" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GamingModelTest.pickUpItem" />
       </list>
     </recent_temporary>
   </component>
@@ -246,15 +249,7 @@
       <workItem from="1699501282554" duration="2861000" />
       <workItem from="1699677056665" duration="6425000" />
       <workItem from="1699732774435" duration="5527000" />
-      <workItem from="1699772346453" duration="566000" />
-    </task>
-    <task id="LOCAL-00026" summary="Create some getter method">
-      <option name="closed" value="true" />
-      <created>1696556649498</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1696556649498</updated>
+      <workItem from="1699772346453" duration="1942000" />
     </task>
     <task id="LOCAL-00027" summary="Create test">
       <option name="closed" value="true" />
@@ -640,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699737706598</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="fix computer logic">
+      <option name="closed" value="true" />
+      <created>1699773445668</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1699773445668</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +687,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Nearly finish the controller" />
     <MESSAGE value="Finish the program" />
     <MESSAGE value="Modify the model test." />
     <MESSAGE value="Finish the model test." />
@@ -709,6 +711,7 @@
     <MESSAGE value="Add attempt" />
     <MESSAGE value="Finish attempt" />
     <MESSAGE value="Test attempt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test attempt" />
+    <MESSAGE value="fix computer logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix computer logic" />
   </component>
 </project>

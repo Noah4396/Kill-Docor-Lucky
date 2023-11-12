@@ -14,15 +14,7 @@ public class Attempt implements GamingCommand{
 
   @Override
   public void execute(Model m) {
-    try {
-      m.attempt(player, index);
-    } catch (IllegalStateException e) {
-      m.passTurn();
-      return;
-    }
-
-    if(!m.isGameOver()) {
-      m.passTurn();
-    }
+    m.attempt(player, index);
+    m.passTurn();
   }
 }

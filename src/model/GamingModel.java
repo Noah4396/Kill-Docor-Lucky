@@ -647,7 +647,7 @@ public class GamingModel implements Model {
         continue;
       } else {
         if (isVisibleBy(p, player)) {
-          throw new IllegalStateException("Cannot attempt, be seen by other player");
+          return;
         }
       }
     }

@@ -23,7 +23,7 @@ public class GamingModelTest {
    */
   @Before
   public void setUp() {
-    gamingModel = new GamingModel("res/mansion.txt", 100);
+    gamingModel = new GamingModel("res/mansion.txt", 10);
     p1 = new PlayerCharacter("p1", 0, 2);
     p2 = new PlayerCharacter("p2", 1, 4);
     p3 = new PlayerCharacter("p3", 2, 1);
@@ -229,12 +229,13 @@ public class GamingModelTest {
     assertEquals(45, gamingModel.getDoctorLucky().getHealth());
   }
 
-  @Test(expected = IllegalStateException.class)
+  @Test
   public void failAttempt(){
     gamingModel.addPlayer(p1, 0);
     gamingModel.moveTarget();
     gamingModel.addPlayer(p2, 1);
     gamingModel.attempt(p2, 0);
+    assertEquals(50, gamingModel.getDoctorLucky().getHealth());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -242,5 +243,26 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.attempt(p2, 0);
+  }
+
+  @Test
+  public void testComputer(){
+    p1.setAsComputer();
+    p2.setAsComputer();
+    StringBuffer sb = new StringBuffer();
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.addPlayer(p2, 1);
+    while(!gamingModel.isGameOver()){
+      gamingModel.computerCommand(p1, sb);
+      gamingModel.passTurn();
+      gamingModel.computerCommand(p2, sb);
+      gamingModel.passTurn();
+    }
+    assertEquals("Computer p1 attempts to kill the target!\n"
+        + "Computer p2 attempts to kill the target!\n" + "Computer p1 pick up an item!\n"
+        + "Computer p2 Look around!\n" + "Computer p1 Look around!\n"
+        + "Computer p2 pick up an item!\n" + "Computer p1 Look around!\n"
+        + "Computer p2 moves to the neighbour!\n" + "Computer p1 Look around!\n"
+        + "Computer p2 moves to the neighbour!\n", sb.toString());
   }
 }
