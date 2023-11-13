@@ -100,6 +100,9 @@ public class PlayerCharacter implements Character {
     this.isComputer = false;
   }
 
+  public int getItemNumber() {
+    return items.size();
+  }
   @Override
   public boolean isComputer() {
     return this.isComputer;
@@ -152,6 +155,13 @@ public class PlayerCharacter implements Character {
     return sb.toString();
   }
 
+  public String displayItems(){
+    StringBuffer sb = new StringBuffer();
+    for (int i = 0; i < items.size(); i++) {
+      sb.append(items.get(i).toString() + "\n");
+    }
+    return sb.toString();
+  }
   public int useItem(int index) {
     if (index < 0 || index >= items.size()) {
       throw new IllegalArgumentException("Invalid index.");

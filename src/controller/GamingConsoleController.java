@@ -90,6 +90,10 @@ public class GamingConsoleController implements Controller {
 //      outputString(m.displayers() + "\n");
 //      outputString("After player operation, the status of target and pet are shown as follow:\n");
 //      outputString(m.displayTargetAndPet() + "\n");
+      if(m.isGameOver()){
+        outputString("The game is over, the winner is: " + m.getTurn().getName() + "\n");
+        return;
+      }
     }
     outputString("Reach the max turn, and the game end!\n");
   }
@@ -110,10 +114,12 @@ public class GamingConsoleController implements Controller {
     printDivider();
     outputString("Now we are in the " + (m.getTotalTurn() + 1) + " turn\n");
     outputString("The player in current turn is: " + m.getTurn().getName() + "\n\n");
-    outputString("The status of target and pet are:\n");
-    outputString(m.displayTargetAndPet() + "\n");
+    outputString("The items of the player are:\n");
+    outputString(m.getTurn().displayItems() + "\n\n");
     outputString("The information of the room that the player is in:\n");
     outputString(m.getTurn().getRoom().toString() + "\n\n");
+    outputString("The status of target and pet are:\n");
+    outputString(m.displayTargetAndPet() + "\n");
     outputString(
         "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
     outputString("Enter 2 to pick up an item in the room. Then enter the index of the item\n");

@@ -42,7 +42,9 @@ public class Item implements Comparable<Item>{
 
   @Override
   public String toString() {
-    return name;
+    StringBuffer sb = new StringBuffer();
+    sb.append(name).append(", damage point: ").append(damagePoint);
+    return sb.toString();
   }
 
   @Override

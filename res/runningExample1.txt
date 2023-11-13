@@ -1,161 +1,40 @@
-nimingyideMBP:res nimingyi$ java -jar TheWorld.jar mansion.txt 5
+/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/bin/java -javaagent:/Users/nimingyi/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.9921.47/IntelliJ IDEA.app/Contents/lib/idea_rt.jar=64124:/Users/nimingyi/Library/Application Support/JetBrains/Toolbox/apps/IDEA-U/ch-0/232.9921.47/IntelliJ IDEA.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/charsets.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/cldrdata.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/dnsns.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/jaccess.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/jfxrt.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/localedata.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/nashorn.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/sunec.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/sunjce_provider.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/sunpkcs11.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/ext/zipfs.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/jce.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/jfr.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/jfxswt.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/jsse.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/management-agent.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/resources.jar:/Users/nimingyi/Library/Java/JavaVirtualMachines/corretto-1.8.0_382/Contents/Home/jre/lib/rt.jar:/Users/nimingyi/Downloads/CS5010/project/TheWorld/out/production/TheWorld driver.Main
+Please enter the path of the world file:
+res/mansion.txt
+Please enter the turn number:
+30
+Image saved successfully.
 Welcome to the kill doctor lucky game
 The rooms are initialized as:
-SpecifiedRoom{name='Armory', index=0,
-leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23,
-items in the room =[Revolver],
-characters=[Target name: Doctor Lucky, Current room: Armory]},
-neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ],
-visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]
-
-SpecifiedRoom{name='Billiard Room', index=1,
-leftCorner=21, rightCorner=28, upperCorner=16, lowerCorner=21,
-items in the room =[Billiard Cue],
-characters=[]},
-neighbours = [Trophy Room, ][][Armory, ][Dining Hall, ],
-visibleRooms = [Trophy Room, Library, Nursery, Armory, Dining Hall, Parlor, Kitchen, ]
-
-SpecifiedRoom{name='Carriage House', index=2,
-leftCorner=0, rightCorner=5, upperCorner=28, lowerCorner=35,
-items in the room =[Chain Saw, Big Red Hammer],
-characters=[]},
-neighbours = [][Winter Garden, ][][],
-visibleRooms = [Winter Garden, Piazza, Hedge Maze, Green House, ]
-
-SpecifiedRoom{name='Dining Hall', index=3,
-leftCorner=11, rightCorner=20, upperCorner=12, lowerCorner=21,
-items in the room =[],
-characters=[]},
-neighbours = [Tennessee Room, ][Billiard Room, Trophy Room, ][Armory, Wine Cellar, Drawing Room, ][Parlor, Kitchen, ],
-visibleRooms = [Tennessee Room, Lilac Room, Master Suite, Billiard Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, Kitchen, ]
-
-SpecifiedRoom{name='Drawing Room', index=4,
-leftCorner=13, rightCorner=18, upperCorner=22, lowerCorner=25,
-items in the room =[Letter Opener],
-characters=[]},
-neighbours = [Dining Hall, ][Armory, ][Foyer, ][Wine Cellar, ],
-visibleRooms = [Dining Hall, Tennessee Room, Lilac Room, Master Suite, Armory, Foyer, Piazza, Wine Cellar, ]
-
-SpecifiedRoom{name='Foyer', index=5,
-leftCorner=13, rightCorner=18, upperCorner=26, lowerCorner=27,
-items in the room =[],
-characters=[]},
-neighbours = [Drawing Room, ][][Piazza, ][],
-visibleRooms = [Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Piazza, ]
-
-SpecifiedRoom{name='Green House', index=6,
-leftCorner=26, rightCorner=29, upperCorner=28, lowerCorner=35,
-items in the room =[Trowel, Pinking Shears],
-characters=[]},
-neighbours = [][][][Hedge Maze, ],
-visibleRooms = [Hedge Maze, Piazza, Winter Garden, Carriage House, ]
-
-SpecifiedRoom{name='Hedge Maze', index=7,
-leftCorner=20, rightCorner=25, upperCorner=30, lowerCorner=35,
-items in the room =[Loud Noise],
-characters=[]},
-neighbours = [][Green House, ][][Piazza, ],
-visibleRooms = [Green House, Piazza, Winter Garden, Carriage House, ]
-
-SpecifiedRoom{name='Kitchen', index=8,
-leftCorner=3, rightCorner=10, upperCorner=16, lowerCorner=21,
-items in the room =[Crepe Pan, Sharp Knife],
-characters=[]},
-neighbours = [Parlor, ][Dining Hall, ][Wine Cellar, ][],
-visibleRooms = [Parlor, Servants' Quarters, Lancaster Room, Dining Hall, Billiard Room, Trophy Room, Wine Cellar, ]
-
-SpecifiedRoom{name='Lancaster Room', index=9,
-leftCorner=3, rightCorner=8, upperCorner=0, lowerCorner=5,
-items in the room =[Silken Cord],
-characters=[]},
-neighbours = [][Lilac Room, ][Servants' Quarters, ][],
-visibleRooms = [Lilac Room, Master Suite, Library, Nursery, Servants' Quarters, Parlor, Kitchen, Wine Cellar, ]
-
-SpecifiedRoom{name='Library', index=10,
-leftCorner=23, rightCorner=28, upperCorner=4, lowerCorner=9,
-items in the room =[],
-characters=[]},
-neighbours = [Nursery, ][][Trophy Room, ][Master Suite, ],
-visibleRooms = [Nursery, Trophy Room, Billiard Room, Armory, Master Suite, Lilac Room, Lancaster Room, Servants' Quarters, ]
-
-SpecifiedRoom{name='Lilac Room', index=11,
-leftCorner=9, rightCorner=14, upperCorner=2, lowerCorner=7,
-items in the room =[Tight Hat],
-characters=[]},
-neighbours = [][Master Suite, ][Tennessee Room, ][Lancaster Room, Servants' Quarters, ],
-visibleRooms = [Master Suite, Library, Nursery, Tennessee Room, Dining Hall, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Lancaster Room, Servants' Quarters, ]
-
-SpecifiedRoom{name='Master Suite', index=12,
-leftCorner=15, rightCorner=22, upperCorner=2, lowerCorner=7,
-items in the room =[Shoe Horn],
-characters=[]},
-neighbours = [][Library, Nursery, ][Tennessee Room, ][Lilac Room, ],
-visibleRooms = [Library, Nursery, Tennessee Room, Dining Hall, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Lilac Room, Lancaster Room, Servants' Quarters, ]
-
-SpecifiedRoom{name='Nursery', index=13,
-leftCorner=23, rightCorner=28, upperCorner=0, lowerCorner=3,
-items in the room =[Bad Cream],
-characters=[]},
-neighbours = [][][Library, ][Master Suite, ],
-visibleRooms = [Library, Trophy Room, Billiard Room, Armory, Master Suite, Lilac Room, Lancaster Room, Servants' Quarters, ]
-
-SpecifiedRoom{name='Parlor', index=14,
-leftCorner=5, rightCorner=10, upperCorner=10, lowerCorner=15,
-items in the room =[],
-characters=[]},
-neighbours = [Servants' Quarters, ][Dining Hall, Tennessee Room, ][Kitchen, ][],
-visibleRooms = [Servants' Quarters, Lancaster Room, Dining Hall, Tennessee Room, Trophy Room, Billiard Room, Trophy Room, Kitchen, Wine Cellar, ]
-
-SpecifiedRoom{name='Piazza', index=15,
-leftCorner=12, rightCorner=19, upperCorner=28, lowerCorner=35,
-items in the room =[Civil War Cannon],
-characters=[]},
-neighbours = [Foyer, ][Hedge Maze, ][][Winter Garden, ],
-visibleRooms = [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]
-
-SpecifiedRoom{name='Servants' Quarters', index=16,
-leftCorner=3, rightCorner=8, upperCorner=6, lowerCorner=9,
-items in the room =[Broom Stick],
-characters=[]},
-neighbours = [Lancaster Room, ][Lilac Room, ][Parlor, ][],
-visibleRooms = [Lancaster Room, Lilac Room, Master Suite, Library, Nursery, Parlor, Kitchen, Wine Cellar, ]
-
-SpecifiedRoom{name='Tennessee Room', index=17,
-leftCorner=11, rightCorner=20, upperCorner=8, lowerCorner=11,
-items in the room =[],
-characters=[]},
-neighbours = [Lilac Room, Master Suite, ][Trophy Room, ][Dining Hall, ][Parlor, ],
-visibleRooms = [Lilac Room, Master Suite, Trophy Room, Dining Hall, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, ]
-
-SpecifiedRoom{name='Trophy Room', index=18,
-leftCorner=21, rightCorner=26, upperCorner=10, lowerCorner=15,
-items in the room =[Duck Decoy, Monkey Hand],
-characters=[]},
-neighbours = [Library, ][][Billiard Room, ][Dining Hall, Tennessee Room, ],
-visibleRooms = [Library, Nursery, Billiard Room, Armory, Dining Hall, Tennessee Room, Parlor, Parlor, Kitchen, ]
-
-SpecifiedRoom{name='Wine Cellar', index=19,
-leftCorner=5, rightCorner=12, upperCorner=22, lowerCorner=23,
-items in the room =[Rat Poison, Piece of Rope],
-characters=[]},
-neighbours = [Dining Hall, Kitchen, ][Drawing Room, ][][],
-visibleRooms = [Dining Hall, Kitchen, Parlor, Servants' Quarters, Lancaster Room, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Armory, ]
-
-SpecifiedRoom{name='Winter Garden', index=20,
-leftCorner=6, rightCorner=11, upperCorner=30, lowerCorner=35,
-items in the room =[],
-characters=[]},
-neighbours = [][Piazza, ][][Carriage House, ],
-visibleRooms = [Piazza, Hedge Maze, Green House, Carriage House, ]
-
+0. Armory
+1. Billiard Room
+2. Carriage House
+3. Dining Hall
+4. Drawing Room
+5. Foyer
+6. Green House
+7. Hedge Maze
+8. Kitchen
+9. Lancaster Room
+10. Library
+11. Lilac Room
+12. Master Suite
+13. Nursery
+14. Parlor
+15. Piazza
+16. Servants' Quarters
+17. Tennessee Room
+18. Trophy Room
+19. Wine Cellar
+20. Winter Garden
 Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game
-1 p1 1 0 2 p2 1 1 1 p3 1 2 2 p4 1 4 3
+1 p1 3 4 2 p2 3 2 1 p3 3 10 1 p4 3 11
 Please enter the name of the player:
 Please enter the capacity:
 Please enter the index of the room that the player is in:
 Add player successfully, the current player information:
 Target name: Doctor Lucky, Current room: Armory
-Character name: p1, Current room: Armory, items: [], player type: human
+Character name: p1, Current room: Drawing Room, items: [], player type: human
 
 Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game
 Please enter the name of the player:
@@ -163,8 +42,8 @@ Please enter the capacity:
 Please enter the index of the room that the player is in:
 Add player successfully, the current player information:
 Target name: Doctor Lucky, Current room: Armory
-Character name: p1, Current room: Armory, items: [], player type: human
-Character name: p2, Current room: Billiard Room, items: [], player type: computer
+Character name: p1, Current room: Drawing Room, items: [], player type: human
+Character name: p2, Current room: Carriage House, items: [], player type: computer
 
 Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game
 Please enter the name of the player:
@@ -172,9 +51,9 @@ Please enter the capacity:
 Please enter the index of the room that the player is in:
 Add player successfully, the current player information:
 Target name: Doctor Lucky, Current room: Armory
-Character name: p1, Current room: Armory, items: [], player type: human
-Character name: p2, Current room: Billiard Room, items: [], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
+Character name: p1, Current room: Drawing Room, items: [], player type: human
+Character name: p2, Current room: Carriage House, items: [], player type: computer
+Character name: p3, Current room: Library, items: [], player type: human
 
 Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game
 Please enter the name of the player:
@@ -182,111 +61,420 @@ Please enter the capacity:
 Please enter the index of the room that the player is in:
 Add player successfully, the current player information:
 Target name: Doctor Lucky, Current room: Armory
-Character name: p1, Current room: Armory, items: [], player type: human
-Character name: p2, Current room: Billiard Room, items: [], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
+Character name: p1, Current room: Drawing Room, items: [], player type: human
+Character name: p2, Current room: Carriage House, items: [], player type: computer
+Character name: p3, Current room: Library, items: [], player type: human
+Character name: p4, Current room: Lilac Room, items: [], player type: human
 
 Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start the game; Enter 4 to quit the game
+3
 Game start! The players are listed as follow:
 Target name: Doctor Lucky, Current room: Armory
-Character name: p1, Current room: Armory, items: [], player type: human
-Character name: p2, Current room: Billiard Room, items: [], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
+Character name: p1, Current room: Drawing Room, items: [], player type: human
+Character name: p2, Current room: Carriage House, items: [], player type: computer
+Character name: p3, Current room: Library, items: [], player type: human
+Character name: p4, Current room: Lilac Room, items: [], player type: human
+---------------------------------
 Now we are in the 1 turn
 The player in current turn is: p1
+
+The items of the player are:
+
+
 The information of the room that the player is in:
----------------------------------
-SpecifiedRoom{name='Armory', index=0,
-leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23,
-items in the room =[Revolver],
-characters=[Target name: Doctor Lucky, Current room: Armory, Character name: p1, Current room: Armory, items: [], player type: human]},
-neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ],
-visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]
----------------------------------
+Room name:Drawing Room
+Characters: p1,
+Items: Letter Opener,
+Neighbours: [Dining Hall, ], [Armory, ], [Foyer, ], [Wine Cellar, ],
+
+The status of target and pet are:
+Target room: Armory, health: 5
+Pet room: Armory
+
 Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
 Enter 2 to pick up an item in the room. Then enter the index of the item
 Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
 2 0
-Now the status of players are shown as follow:
-Target name: Doctor Lucky, Current room: Billiard Room
-Character name: p1, Current room: Armory, items: [Revolver], player type: human
-Character name: p2, Current room: Billiard Room, items: [], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
-
 ---------------------------------
 Computer p2 pick up an item!
 ---------------------------------
-Now the status of players are shown as follow:
-Target name: Doctor Lucky, Current room: Carriage House
-Character name: p1, Current room: Armory, items: [Revolver], player type: human
-Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
-
+---------------------------------
 Now we are in the 3 turn
 The player in current turn is: p3
+
+The items of the player are:
+
+
 The information of the room that the player is in:
----------------------------------
-SpecifiedRoom{name='Carriage House', index=2,
-leftCorner=0, rightCorner=5, upperCorner=28, lowerCorner=35,
-items in the room =[Chain Saw, Big Red Hammer],
-characters=[Character name: p3, Current room: Carriage House, items: [], player type: human, Target name: Doctor Lucky, Current room: Carriage House]},
-neighbours = [][Winter Garden, ][][],
-visibleRooms = [Winter Garden, Piazza, Hedge Maze, Green House, ]
----------------------------------
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+The status of target and pet are:
+Target room: Carriage House, health: 5
+Pet room: Wine Cellar
+
 Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
 Enter 2 to pick up an item in the room. Then enter the index of the item
 Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+2 0
+Cannot pick up item
+---------------------------------
+Now we are in the 3 turn
+The player in current turn is: p3
+
+The items of the player are:
+
+
+The information of the room that the player is in:
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+The status of target and pet are:
+Target room: Carriage House, health: 5
+Pet room: Wine Cellar
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
 3
-p3looks around!
-Character name: p1, Current room: Armory, items: [Revolver], player type: human
-Visible Rooms: Visible room of Armory: [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]
-Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer
-Visible Rooms: Visible room of Billiard Room: [Trophy Room, Library, Nursery, Armory, Dining Hall, Parlor, Kitchen, ]
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
-Visible Rooms: Visible room of Drawing Room: [Dining Hall, Tennessee Room, Lilac Room, Master Suite, Armory, Foyer, Piazza, Wine Cellar, ]
-Now the status of players are shown as follow:
-Target name: Doctor Lucky, Current room: Dining Hall
-Character name: p1, Current room: Armory, items: [Revolver], player type: human
-Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [], player type: computer
+p3 looks around!
+Information of the current room:
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+Visible room of Library:
+Room name:Nursery
+Characters:
+Items: Bad Cream,
+Neighbours: [], [], [Library, ], [Master Suite, ],
+
+Room name:Trophy Room
+Characters:
+Items: Duck Decoy, Monkey Hand,
+Neighbours: [Library, ], [], [Billiard Room, ], [Dining Hall, Tennessee Room, ],
+
+Room name:Master Suite
+Characters:
+Items: Shoe Horn,
+Neighbours: [], [Library, Nursery, ], [Tennessee Room, ], [Lilac Room, ],
 
 ---------------------------------
-Computer p4 pick up an item!
----------------------------------
-Now the status of players are shown as follow:
-Target name: Doctor Lucky, Current room: Drawing Room
-Character name: p1, Current room: Armory, items: [Revolver], player type: human
-Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [Letter Opener], player type: computer
+Now we are in the 4 turn
+The player in current turn is: p4
 
+The items of the player are:
+
+
+The information of the room that the player is in:
+Room name:Lilac Room
+Characters: p4,
+Items: Tight Hat,
+Neighbours: [], [Master Suite, ], [Tennessee Room, ], [Lancaster Room, Servants' Quarters, ],
+
+The status of target and pet are:
+Target room: Dining Hall, health: 5
+Pet room: Kitchen
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+2 0
+---------------------------------
 Now we are in the 5 turn
 The player in current turn is: p1
+
+The items of the player are:
+Letter Opener, damage point: 2
+
+
 The information of the room that the player is in:
----------------------------------
-SpecifiedRoom{name='Armory', index=0,
-leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23,
-items in the room =[],
-characters=[Character name: p1, Current room: Armory, items: [Revolver], player type: human]},
-neighbours = [Dining Hall, Billiard Room, ][][][Drawing Room, ],
-visibleRooms = [Dining Hall, Billiard Room, Trophy Room, Library, Nursery, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Wine Cellar, ]
----------------------------------
+Room name:Drawing Room
+Characters: p1, Doctor Lucky,
+Items:
+Neighbours: [Dining Hall, ], [Armory, ], [Foyer, ], [Wine Cellar, ],
+
+The status of target and pet are:
+Target room: Drawing Room, health: 5
+Pet room: Parlor
+
 Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
 Enter 2 to pick up an item in the room. Then enter the index of the item
 Enter 3 to look around
-1 0 0
-Now the status of players are shown as follow:
-Target name: Doctor Lucky, Current room: Foyer
-Character name: p1, Current room: Dining Hall, items: [Revolver], player type: human
-Character name: p2, Current room: Billiard Room, items: [Billiard Cue], player type: computer
-Character name: p3, Current room: Carriage House, items: [], player type: human
-Character name: p4, Current room: Drawing Room, items: [Letter Opener], player type: computer
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+5 0
+---------------------------------
+Computer p2 Look around!
+---------------------------------
+---------------------------------
+Now we are in the 7 turn
+The player in current turn is: p3
 
-Reach the max turn, and the game end!
-nimingyideMBP:res nimingyi$
+The items of the player are:
 
+
+The information of the room that the player is in:
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+The status of target and pet are:
+Target room: Green House, health: 3
+Pet room: Trophy Room
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+5 0
+Cannot attempt, not in the same room
+---------------------------------
+Now we are in the 7 turn
+The player in current turn is: p3
+
+The items of the player are:
+
+
+The information of the room that the player is in:
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+The status of target and pet are:
+Target room: Green House, health: 3
+Pet room: Trophy Room
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+3
+p3 looks around!
+Information of the current room:
+Room name:Library
+Characters: p3,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+Visible room of Library:
+Room name:Nursery
+Characters:
+Items: Bad Cream,
+Neighbours: [], [], [Library, ], [Master Suite, ],
+
+Room name:Master Suite
+Characters:
+Items: Shoe Horn,
+Neighbours: [], [Library, Nursery, ], [Tennessee Room, ], [Lilac Room, ],
+
+---------------------------------
+Now we are in the 8 turn
+The player in current turn is: p4
+
+The items of the player are:
+Tight Hat, damage point: 2
+
+
+The information of the room that the player is in:
+Room name:Lilac Room
+Characters: p4,
+Items:
+Neighbours: [], [Master Suite, ], [Tennessee Room, ], [Lancaster Room, Servants' Quarters, ],
+
+The status of target and pet are:
+Target room: Hedge Maze, health: 3
+Pet room: Library
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+5 0
+Cannot attempt, not in the same room
+---------------------------------
+Now we are in the 8 turn
+The player in current turn is: p4
+
+The items of the player are:
+Tight Hat, damage point: 2
+
+
+The information of the room that the player is in:
+Room name:Lilac Room
+Characters: p4,
+Items:
+Neighbours: [], [Master Suite, ], [Tennessee Room, ], [Lancaster Room, Servants' Quarters, ],
+
+The status of target and pet are:
+Target room: Hedge Maze, health: 3
+Pet room: Library
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+3
+p4 looks around!
+Information of the current room:
+Room name:Lilac Room
+Characters: p4,
+Items:
+Neighbours: [], [Master Suite, ], [Tennessee Room, ], [Lancaster Room, Servants' Quarters, ],
+
+Visible room of Lilac Room:
+Room name:Master Suite
+Characters:
+Items: Shoe Horn,
+Neighbours: [], [Library, Nursery, ], [Tennessee Room, ], [Lilac Room, ],
+
+Room name:Tennessee Room
+Characters:
+Items:
+Neighbours: [Lilac Room, Master Suite, ], [Trophy Room, ], [Dining Hall, ], [Parlor, ],
+
+Room name:Lancaster Room
+Characters:
+Items: Silken Cord,
+Neighbours: [], [Lilac Room, ], [Servants' Quarters, ], [],
+
+Room name:Servants' Quarters
+Characters:
+Items: Broom Stick,
+Neighbours: [Lancaster Room, ], [Lilac Room, ], [Parlor, ], [],
+
+---------------------------------
+Now we are in the 9 turn
+The player in current turn is: p1
+
+The items of the player are:
+
+
+The information of the room that the player is in:
+Room name:Drawing Room
+Characters: p1,
+Items:
+Neighbours: [Dining Hall, ], [Armory, ], [Foyer, ], [Wine Cellar, ],
+
+The status of target and pet are:
+Target room: Kitchen, health: 3
+Pet room: Nursery
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+3
+p1 looks around!
+Information of the current room:
+Room name:Drawing Room
+Characters: p1,
+Items:
+Neighbours: [Dining Hall, ], [Armory, ], [Foyer, ], [Wine Cellar, ],
+
+Visible room of Drawing Room:
+Room name:Dining Hall
+Characters:
+Items:
+Neighbours: [Tennessee Room, ], [Billiard Room, Trophy Room, ], [Armory, Wine Cellar, Drawing Room, ], [Parlor, Kitchen, ],
+
+Room name:Armory
+Characters:
+Items: Revolver,
+Neighbours: [Dining Hall, Billiard Room, ], [], [], [Drawing Room, ],
+
+Room name:Foyer
+Characters:
+Items:
+Neighbours: [Drawing Room, ], [], [Piazza, ], [],
+
+Room name:Wine Cellar
+Characters:
+Items: Rat Poison, Piece of Rope,
+Neighbours: [Dining Hall, Kitchen, ], [Drawing Room, ], [], [],
+
+---------------------------------
+Computer p2 Look around!
+---------------------------------
+---------------------------------
+Now we are in the 11 turn
+The player in current turn is: p3
+
+The items of the player are:
+
+
+The information of the room that the player is in:
+Room name:Library
+Characters: p3, Doctor Lucky,
+Items:
+Neighbours: [Nursery, ], [], [Trophy Room, ], [Master Suite, ],
+
+The status of target and pet are:
+Target room: Library, health: 3
+Pet room: Lilac Room
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+5 0
+---------------------------------
+Now we are in the 12 turn
+The player in current turn is: p4
+
+The items of the player are:
+Tight Hat, damage point: 2
+
+
+The information of the room that the player is in:
+Room name:Lilac Room
+Characters: p4, Doctor Lucky,
+Items:
+Neighbours: [], [Master Suite, ], [Tennessee Room, ], [Lancaster Room, Servants' Quarters, ],
+
+The status of target and pet are:
+Target room: Lilac Room, health: 2
+Pet room: Lancaster Room
+
+Enter 1 to move to neighbour. Then enter the direction and index of the neighbour
+Enter 2 to pick up an item in the room. Then enter the index of the item
+Enter 3 to look around
+Enter 4 to move the pet. Then enter the direction and index of the neighbour
+Enter 5 to attempt to kill the target. Then enter the index of item you want to use(enter 0 if you do not have any item)
+---------------------------------
+5 0
+The game is over, the winner is: p1
+
+Process finished with exit code 0

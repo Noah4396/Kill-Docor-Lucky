@@ -3,7 +3,7 @@ package command;
 import model.Model;
 import world.PlayerCharacter;
 
-public class Attempt implements GamingCommand{
+public class Attempt implements GamingCommand {
   private PlayerCharacter player;
   private int index;
 
@@ -14,7 +14,13 @@ public class Attempt implements GamingCommand{
 
   @Override
   public void execute(Model m) {
-    m.attempt(player, index);
+    try {
+      m.attempt(player, index);
+    } catch (IllegalStateException e){
+      m.passTurn();
+      throw new IllegalStateException("Attempt failed, be seen by others.");
+    }
+
     m.passTurn();
   }
 }

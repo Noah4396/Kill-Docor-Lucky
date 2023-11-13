@@ -245,6 +245,14 @@ public class GamingModelTest {
     gamingModel.attempt(p2, 0);
   }
 
+  @Test(expected =  IllegalArgumentException.class)
+  public void invalidAttemptItem(){
+    gamingModel.addPlayer(p1, 0);
+    gamingModel.pickUpItem(p1, 0);
+    gamingModel.attempt(p1, 2);
+    assertEquals(5, gamingModel.getDoctorLucky().getHealth());
+  }
+
   @Test
   public void testComputer(){
     p1.setAsComputer();

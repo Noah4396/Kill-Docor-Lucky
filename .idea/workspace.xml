@@ -9,10 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="change life of target">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix the controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/mansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/mansion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -114,7 +119,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingModelTest.testComputer">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -160,7 +165,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.invalidAttempt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingModelTest.invalidAttemptItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -170,7 +175,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
       <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="invalidAttempt" />
+      <option name="METHOD_NAME" value="invalidAttemptItem" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -203,18 +208,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
+      <item itemvalue="JUnit.GamingModelTest.invalidAttemptItem" />
       <item itemvalue="JUnit.GamingModelTest.testComputer" />
       <item itemvalue="JUnit.GamingModelTest.attempt" />
       <item itemvalue="JUnit.GamingModelTest.failAttempt" />
-      <item itemvalue="JUnit.GamingModelTest.invalidAttempt" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GamingModelTest.testComputer" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GamingModelTest.invalidAttemptItem" />
+        <item itemvalue="JUnit.GamingModelTest.testComputer" />
         <item itemvalue="JUnit.GamingModelTest.failAttempt" />
         <item itemvalue="JUnit.GamingModelTest.attempt" />
-        <item itemvalue="JUnit.GamingModelTest.invalidAttempt" />
       </list>
     </recent_temporary>
   </component>
@@ -250,15 +255,7 @@
       <workItem from="1699677056665" duration="6425000" />
       <workItem from="1699732774435" duration="5527000" />
       <workItem from="1699772346453" duration="3276000" />
-      <workItem from="1699830675454" duration="2080000" />
-    </task>
-    <task id="LOCAL-00030" summary="Change the style and modify the readme">
-      <option name="closed" value="true" />
-      <created>1696630062235</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1696630062235</updated>
+      <workItem from="1699830675454" duration="6780000" />
     </task>
     <task id="LOCAL-00031" summary="Change the style and modify the readme">
       <option name="closed" value="true" />
@@ -644,7 +641,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699774737296</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Fix the controller">
+      <option name="closed" value="true" />
+      <created>1699833007581</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1699833007581</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +693,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finish the model test." />
     <MESSAGE value="Test invalid command" />
     <MESSAGE value="Test add invalid player" />
     <MESSAGE value="Test computer player." />
@@ -713,22 +717,7 @@
     <MESSAGE value="fix computer logic" />
     <MESSAGE value="fix the attempt" />
     <MESSAGE value="change life of target" />
-    <option name="LAST_COMMIT_MESSAGE" value="change life of target" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/controller/GamingModelTest.java</url>
-          <line>260</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/test/controller/GamingModelTest.java</url>
-          <line>259</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Fix the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the controller" />
   </component>
 </project>

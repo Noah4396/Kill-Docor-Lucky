@@ -560,7 +560,7 @@ public class GamingModel implements Model {
   @Override
   public void movePet(Character c, int direction, int index) {
     if (c.getRoom().getIndex() != pet.getRoom().getIndex()) {
-      throw new IllegalStateException("Pet and player in the same room");
+      throw new IllegalStateException("Pet and player are not in the same room");
     }
     if (c.isComputer()) {
       move(pet, c.getRoom().getRandNeighbour(random.nextInt(100)));
@@ -598,7 +598,7 @@ public class GamingModel implements Model {
 
   @Override
   public void computerCommand(PlayerCharacter player, Appendable out) {
-    if(player.getRoom() == doctorLucky.getRoom()){
+    if (player.getRoom() == doctorLucky.getRoom()) {
       outputString("Computer " + player.getName() + " attempts to kill the target!\n", out);
       attempt(player, 0);
       return;
@@ -645,12 +645,15 @@ public class GamingModel implements Model {
     if (player.getRoom() != doctorLucky.getRoom()) {
       throw new IllegalArgumentException("Cannot attempt, not in the same room");
     }
+    if ((index < 0 || index >= player.getItemNumber()) && player.hasItem()) {
+      throw new IllegalArgumentException("Invalid item index");
+    }
     for (PlayerCharacter p : players) {
       if (p == player) {
         continue;
       } else {
         if (isVisibleBy(p, player)) {
-          return;
+          throw new IllegalStateException("Attempt failed, be seen by others.");
         }
       }
     }

@@ -323,8 +323,12 @@ public class SpecifiedRoom implements Room {
     }
     sb.append("\n");
     sb.append("Neighbours: ");
-    for (Room room : visibleRooms) {
-      sb.append(room.getName() + ", ");
+    for (ArrayList<Room> list : neighbours) {
+      sb.append("[");
+      for (Room room : list) {
+        sb.append(room.getName() + ", ");
+      }
+      sb.append("], ");
     }
     return sb.toString();
   }
@@ -382,8 +386,6 @@ public class SpecifiedRoom implements Room {
     int rand = index % this.neighbourInOneSet.size();
     return neighbourInOneSet.get(rand);
   }
-
-
 
   @Override
   public boolean equals(Object o) {
