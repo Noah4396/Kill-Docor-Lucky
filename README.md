@@ -23,6 +23,9 @@ Adding arguments or not adding arguments are both OK
 > java -jar TheWorld.jar  
 > java -jar TheWorld.jar [filePath] [MaxTurnNumber]
 > 
+For example:
+> java -jar TheWorld.jar mansion.txt 100
+
 If you choose to run without arguments, It will show the following output at first:
 
 >Please enter the path of the world file:  
