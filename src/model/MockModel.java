@@ -499,6 +499,12 @@ public class MockModel implements Model {
   public void movePet(Character c, int direction, int index){
 
   }
+
+  @Override
+  public PlayerCharacter getWinner() {
+    return null;
+  }
+
   @Override
   public void moveToNeighbour(Character c, int direction, int index) {
     if (c == null || !players.contains(c)) {

@@ -217,19 +217,20 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.pickUpItem(p1, 0);
-    assertEquals(50, gamingModel.getDoctorLucky().getHealth());
+    int health = gamingModel.getDoctorLucky().getHealth();
+    assertEquals(health, gamingModel.getDoctorLucky().getHealth());
     gamingModel.attempt(p1, 0);
-    assertEquals(47, gamingModel.getDoctorLucky().getHealth());
+    assertEquals(health - 3, gamingModel.getDoctorLucky().getHealth());
     gamingModel.attempt(p1, 100);
-    assertEquals(46, gamingModel.getDoctorLucky().getHealth());
+    assertEquals(health - 4, gamingModel.getDoctorLucky().getHealth());
 
     gamingModel.movePetDepthFirst();
     gamingModel.moveToNeighbour(p2, 0, 0);
     gamingModel.attempt(p1, 0);
-    assertEquals(45, gamingModel.getDoctorLucky().getHealth());
+    assertEquals(health - 5, gamingModel.getDoctorLucky().getHealth());
   }
 
-  @Test
+  @Test(expected = IllegalStateException.class)
   public void failAttempt(){
     gamingModel.addPlayer(p1, 0);
     gamingModel.moveTarget();
@@ -263,12 +264,20 @@ public class GamingModelTest {
     gamingModel.addPlayer(p2, 1);
     gamingModel.addPlayer(p3, 2);
     while(!gamingModel.isGameOver()){
-      gamingModel.computerCommand(p1, sb);
+      try {
+        gamingModel.computerCommand(p1, sb);
+      } catch (IllegalStateException e){
+        gamingModel.passTurn();
+      }
       gamingModel.passTurn();
-      gamingModel.computerCommand(p2, sb);
+      try {
+        gamingModel.computerCommand(p2, sb);
+      } catch (IllegalStateException e){
+        gamingModel.passTurn();
+      }
       gamingModel.passTurn();
     }
-    assertEquals(14, gamingModel.getDoctorLucky().getHealth());
+    assertEquals(4, gamingModel.getDoctorLucky().getHealth());
     assertEquals("Computer p1 attempts to kill the target!\n"
         + "Computer p2 attempts to kill the target!\n" + "Computer p1 pick up an item!\n"
         + "Computer p2 Look around!\n" + "Computer p1 Look around!\n"

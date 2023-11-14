@@ -11,13 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix the controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/mansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/res/mansion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +117,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.GamingConsoleControllerTest.endWithKill">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -133,7 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.attempt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingConsoleControllerTest.endWithKill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -142,14 +140,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="attempt" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
+      <option name="METHOD_NAME" value="endWithKill" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.failAttempt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingConsoleControllerTest.endWithMaxTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -158,14 +156,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="failAttempt" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
+      <option name="METHOD_NAME" value="endWithMaxTurn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.invalidAttemptItem" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingConsoleControllerTest.testAttempt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -174,14 +172,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="invalidAttemptItem" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
+      <option name="METHOD_NAME" value="testAttempt" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingModelTest.testComputer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GamingConsoleControllerTest.testMovePet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -190,8 +188,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
-      <option name="METHOD_NAME" value="testComputer" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
+      <option name="METHOD_NAME" value="testMovePet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,18 +206,18 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
-      <item itemvalue="JUnit.GamingModelTest.invalidAttemptItem" />
-      <item itemvalue="JUnit.GamingModelTest.testComputer" />
-      <item itemvalue="JUnit.GamingModelTest.attempt" />
-      <item itemvalue="JUnit.GamingModelTest.failAttempt" />
+      <item itemvalue="JUnit.GamingConsoleControllerTest.endWithKill" />
+      <item itemvalue="JUnit.GamingConsoleControllerTest.endWithMaxTurn" />
+      <item itemvalue="JUnit.GamingConsoleControllerTest.testAttempt" />
+      <item itemvalue="JUnit.GamingConsoleControllerTest.testMovePet" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingConsoleControllerTest.endWithKill" />
+        <item itemvalue="JUnit.GamingConsoleControllerTest.endWithMaxTurn" />
+        <item itemvalue="JUnit.GamingConsoleControllerTest.testAttempt" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GamingModelTest.invalidAttemptItem" />
-        <item itemvalue="JUnit.GamingModelTest.testComputer" />
-        <item itemvalue="JUnit.GamingModelTest.failAttempt" />
-        <item itemvalue="JUnit.GamingModelTest.attempt" />
+        <item itemvalue="JUnit.GamingConsoleControllerTest.testMovePet" />
       </list>
     </recent_temporary>
   </component>
@@ -255,15 +253,8 @@
       <workItem from="1699677056665" duration="6425000" />
       <workItem from="1699732774435" duration="5527000" />
       <workItem from="1699772346453" duration="3276000" />
-      <workItem from="1699830675454" duration="6780000" />
-    </task>
-    <task id="LOCAL-00031" summary="Change the style and modify the readme">
-      <option name="closed" value="true" />
-      <created>1696648505879</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1696648505881</updated>
+      <workItem from="1699830675454" duration="8158000" />
+      <workItem from="1699914208846" duration="4236000" />
     </task>
     <task id="LOCAL-00032" summary="Add hashcode and equals">
       <option name="closed" value="true" />
@@ -649,7 +640,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699833007581</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Fix the controller">
+      <option name="closed" value="true" />
+      <created>1699841423136</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1699841423136</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

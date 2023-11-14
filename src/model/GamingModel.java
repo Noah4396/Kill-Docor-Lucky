@@ -45,6 +45,7 @@ public class GamingModel implements Model {
   private Boolean gameOver;
   private int[] visited;
   private Stack<Integer> stack;
+  private PlayerCharacter winner;
 
   /**
    * The constructor.
@@ -63,6 +64,7 @@ public class GamingModel implements Model {
     this.seed = 123;
     this.random = new Random(seed);
     gameOver = false;
+    winner = null;
     try {
       parse(path);
     } catch (IllegalArgumentException e) {
@@ -122,6 +124,10 @@ public class GamingModel implements Model {
     }
   }
 
+  @Override
+  public PlayerCharacter getWinner(){
+    return this.winner;
+  }
   private void parse(String path) {
     try (BufferedReader br = new BufferedReader(new FileReader(path))) {
       // The first line reader: 36 30 Doctor Lucky's Mansion;
@@ -600,7 +606,11 @@ public class GamingModel implements Model {
   public void computerCommand(PlayerCharacter player, Appendable out) {
     if (player.getRoom() == doctorLucky.getRoom()) {
       outputString("Computer " + player.getName() + " attempts to kill the target!\n", out);
-      attempt(player, 0);
+      try {
+        attempt(player, 0);
+      } catch (IllegalStateException e) {
+        outputString("Computer " + player.getName() + " attempts failed, be seen by others!\n", out);
+      }
       return;
     }
 
@@ -670,6 +680,7 @@ public class GamingModel implements Model {
     doctorLucky.setHealth(doctorLucky.getHealth() - damage);
     if (doctorLucky.getHealth() <= 0) {
       gameOver = true;
+      winner = getTurn();
     }
   }
 

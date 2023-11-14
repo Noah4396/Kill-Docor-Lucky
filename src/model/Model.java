@@ -39,6 +39,14 @@ public interface Model {
    * @param index the index
    */
   public void movePet(Character c, int direction, int index);
+
+  /**
+   * Get the winner of the game.
+   *
+   * @return the winner.
+   */
+  public PlayerCharacter getWinner();
+
   /**
    * Move the target.
    */
