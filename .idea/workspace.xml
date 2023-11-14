@@ -9,14 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix the controller">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test the controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +112,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GamingConsoleControllerTest.endWithKill">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -213,10 +208,10 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.endWithKill" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.endWithMaxTurn" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.testAttempt" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.GamingConsoleControllerTest.testMovePet" />
       </list>
     </recent_temporary>
@@ -254,15 +249,7 @@
       <workItem from="1699732774435" duration="5527000" />
       <workItem from="1699772346453" duration="3276000" />
       <workItem from="1699830675454" duration="8158000" />
-      <workItem from="1699914208846" duration="4236000" />
-    </task>
-    <task id="LOCAL-00032" summary="Add hashcode and equals">
-      <option name="closed" value="true" />
-      <created>1696654051115</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1696654051115</updated>
+      <workItem from="1699914208846" duration="5651000" />
     </task>
     <task id="LOCAL-00033" summary="Add addPlayer, pickUpItem, moveToNeighbour method.">
       <option name="closed" value="true" />
@@ -648,7 +635,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699841423136</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Test the controller">
+      <option name="closed" value="true" />
+      <created>1699934459771</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1699934459773</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -692,7 +687,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test invalid command" />
     <MESSAGE value="Test add invalid player" />
     <MESSAGE value="Test computer player." />
     <MESSAGE value="Test move" />
@@ -717,6 +711,7 @@
     <MESSAGE value="fix the attempt" />
     <MESSAGE value="change life of target" />
     <MESSAGE value="Fix the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the controller" />
+    <MESSAGE value="Test the controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test the controller" />
   </component>
 </project>
