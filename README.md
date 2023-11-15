@@ -8,7 +8,7 @@
 1. The game can only played in the terminal.
 
 **Design changes**  
-No
+I add some methods to the game model that my previous design does not have.
 
 **Citations**
 1. CS5010 Milestone 3 - GamePlay
