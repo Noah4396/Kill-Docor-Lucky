@@ -6,7 +6,7 @@ import java.util.Objects;
  * Item in the rooms.
  */
 
-public class Item implements Comparable<Item>{
+public class Item implements Comparable<Item> {
   private String name;
   private int damagePoint;
   private int indexOfRoom;

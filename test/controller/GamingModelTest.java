@@ -1,13 +1,14 @@
 package controller;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 import model.GamingModel;
 import org.junit.Before;
 import org.junit.Test;
 import world.PlayerCharacter;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
 
 /**
  * Test the game model.
