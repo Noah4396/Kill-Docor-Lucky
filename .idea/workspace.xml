@@ -9,9 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Test the controller">
-      <change afterPath="$PROJECT_DIR$/res/example.png" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="modify README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/revisedUML.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/controller/TestWithMock.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/TestWithMock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +114,7 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JAR Application.main">
+  <component name="RunManager" selected="JUnit.TestWithMock">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="driver.Main" />
       <module name="TheWorld" />
@@ -126,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingConsoleControllerTest.endWithKill" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestWithMock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -135,14 +137,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
-      <option name="METHOD_NAME" value="endWithKill" />
+      <option name="MAIN_CLASS_NAME" value="controller.TestWithMock" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestWithMock.AttemptMock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="TheWorld" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.TestWithMock" />
+      <option name="METHOD_NAME" value="AttemptMock" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GamingConsoleControllerTest.endWithMaxTurn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestWithMock.MovePetMock" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
@@ -151,24 +168,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
-      <option name="METHOD_NAME" value="endWithMaxTurn" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GamingConsoleControllerTest.testAttempt" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="TheWorld" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="controller" />
-      <option name="MAIN_CLASS_NAME" value="controller.GamingConsoleControllerTest" />
-      <option name="METHOD_NAME" value="testAttempt" />
+      <option name="MAIN_CLASS_NAME" value="controller.TestWithMock" />
+      <option name="METHOD_NAME" value="MovePetMock" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -196,17 +197,17 @@
       <item itemvalue="JAR Application.DriverJar" />
       <item itemvalue="JAR Application.main" />
       <item itemvalue="JAR Application.TheWorld.jar" />
-      <item itemvalue="JUnit.GamingConsoleControllerTest.endWithKill" />
-      <item itemvalue="JUnit.GamingConsoleControllerTest.endWithMaxTurn" />
-      <item itemvalue="JUnit.GamingConsoleControllerTest.testAttempt" />
+      <item itemvalue="JUnit.TestWithMock" />
+      <item itemvalue="JUnit.TestWithMock.AttemptMock" />
+      <item itemvalue="JUnit.TestWithMock.MovePetMock" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestWithMock" />
+        <item itemvalue="JUnit.TestWithMock.AttemptMock" />
+        <item itemvalue="JUnit.TestWithMock.MovePetMock" />
         <item itemvalue="JAR Application.TheWorld.jar" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest.endWithKill" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest.endWithMaxTurn" />
-        <item itemvalue="JUnit.GamingConsoleControllerTest.testAttempt" />
       </list>
     </recent_temporary>
   </component>
@@ -244,22 +245,7 @@
       <workItem from="1699772346453" duration="3276000" />
       <workItem from="1699830675454" duration="8158000" />
       <workItem from="1699914208846" duration="5651000" />
-    </task>
-    <task id="LOCAL-00033" summary="Add addPlayer, pickUpItem, moveToNeighbour method.">
-      <option name="closed" value="true" />
-      <created>1697262465762</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1697262465763</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Create test for the new methods">
-      <option name="closed" value="true" />
-      <created>1697338560635</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1697338560635</updated>
+      <workItem from="1700082590002" duration="1067000" />
     </task>
     <task id="LOCAL-00035" summary="Create controller and interface">
       <option name="closed" value="true" />
@@ -637,7 +623,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699934459773</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="modify README.md">
+      <option name="closed" value="true" />
+      <created>1699937664315</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1699937664315</updated>
+    </task>
+    <task id="LOCAL-00083" summary="modify README.md">
+      <option name="closed" value="true" />
+      <created>1699937811548</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1699937811548</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +683,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test add invalid player" />
     <MESSAGE value="Test computer player." />
     <MESSAGE value="Test move" />
     <MESSAGE value="Add Mock test." />
@@ -706,6 +707,7 @@
     <MESSAGE value="change life of target" />
     <MESSAGE value="Fix the controller" />
     <MESSAGE value="Test the controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test the controller" />
+    <MESSAGE value="modify README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="modify README.md" />
   </component>
 </project>

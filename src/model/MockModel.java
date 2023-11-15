@@ -12,12 +12,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import javax.imageio.ImageIO;
+
+import world.*;
 import world.Character;
-import world.Item;
-import world.PlayerCharacter;
-import world.Room;
-import world.SpecifiedRoom;
-import world.TargetCharacter;
 
 /**
  * The Gaming console.
@@ -38,6 +35,7 @@ public class MockModel implements Model {
   private Graphics2D g2d;
   private int currentTurn;
   private int totalTurn;
+  private Pet pet;
   private int maxTurn;
   private long seed;
   private Random random;
@@ -130,6 +128,7 @@ public class MockModel implements Model {
       // The second line reader: 50 Doctor Lucky
       parseSecondLine(br.readLine());
 
+      parseThirdLine(br.readLine());
       // Start to parse Rooms
       this.numOfRooms = parseNumber(br.readLine());
       for (int i = 0; i < numOfRooms; i++) {
@@ -146,6 +145,15 @@ public class MockModel implements Model {
       System.err.println("Invalid path");
       //e.printStackTrace();
     }
+  }
+
+  /**
+   * Parse the pet.
+   *
+   * @param s the line.
+   */
+  private void parseThirdLine(String s) {
+    this.pet = new Pet(s);
   }
 
   /**
@@ -403,7 +411,7 @@ public class MockModel implements Model {
 
   @Override
   public void attempt(PlayerCharacter player, int index) {
-
+    log.append("Input: " + player.toString() + " " + index + "\n");
   }
 
   @Override
@@ -497,7 +505,7 @@ public class MockModel implements Model {
   }
   @Override
   public void movePet(Character c, int direction, int index){
-
+    log.append("Input: " + c.toString() + " " + direction + " " + index + "\n");
   }
 
   @Override

@@ -3,6 +3,7 @@ package controller;
 import static org.junit.Assert.assertEquals;
 
 import java.io.StringReader;
+
 import model.GamingModel;
 import model.MockModel;
 import model.Model;
@@ -32,13 +33,12 @@ public class TestWithMock {
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
     assertEquals(
-        "Input: Character name: p1, Current room: Armory, items:"
-            + " [], player type: human 0\n"
+        "Input: Character name: p1, Current room: Armory, items:" + " [], player"
+            + " type: human 0\n"
             + "Input: Character name: p2, Current room: Billiard Room, items: "
             + "[], player type: human 1\n"
             + "Input: Character name: p3, Current room: Billiard Room, items: "
-            + "[], player type: human 1\n",
-        log.toString());
+            + "[], player type: human 1\n", log.toString());
   }
 
   @Test
@@ -48,8 +48,8 @@ public class TestWithMock {
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
     assertEquals(
-        "Input: Character name: p1, Current room: Armory, items: [], "
-            + "player type: human 0\n"
+        "Input: Character name: p1, Current room: Armory, items: [], " + "play"
+            + "er type: human 0\n"
             + "Input: Character name: p2, Current room: Billiard Room, items: ["
             + "], player type: human 1\n"
             + "Input: Character name: p3, Current room: Carriage House, items: "
@@ -67,8 +67,7 @@ public class TestWithMock {
             + "Input: Character name: p1, Current room: Armory, items: [Revolver],"
             + " player type: computer\n"
             + "Input: Character name: p1, Current room: Armory, items: [Revolver], "
-            + "player type: computer\n",
-        log.toString());
+            + "player type: computer\n", log.toString());
   }
 
   @Test
@@ -77,12 +76,10 @@ public class TestWithMock {
     StringBuffer gamelog = new StringBuffer();
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
-    assertEquals(
-        "Input: Character name: p1, Current room: Dining Hall, items: [],"
-            + " player type: human 3\n"
-            + "Input: Character name: p1, Current room: Tennessee Room, items: [],"
-            + " player type: human 0 0\n",
-        log.toString());
+    assertEquals("Input: Character name: p1, Current room: Dining Hall, items: [],"
+        + " player type: human 3\n"
+        + "Input: Character name: p1, Current room: Tennessee Room, items: [],"
+        + " player type: human 0 0\n", log.toString());
   }
 
   @Test
@@ -92,11 +89,10 @@ public class TestWithMock {
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
     assertEquals(
-        "Input: Character name: p1, Current room: Armory, items: [], "
-            + "player type: human 0\n"
+        "Input: Character name: p1, Current room: Armory, items: [], " + "playe"
+            + "r type: human 0\n"
             + "Input: Character name: p1, Current room: Armory, items: [Revolver],"
-            + " player type: human 0\n",
-        log.toString());
+            + " player type: human 0\n", log.toString());
   }
 
   @Test
@@ -106,8 +102,8 @@ public class TestWithMock {
     Controller c = new GamingConsoleController(input, gamelog);
     c.playGame(gamingModel);
     assertEquals(
-        "Input: Character name: p1, Current room: Armory, items: [], "
-            + "player type: human 0\n"
+        "Input: Character name: p1, Current room: Armory, items: [], " + "player"
+            + " type: human 0\n"
             + "Input: Character name: p2, Current room: Billiard Room, items: "
             + "[], player type: human 1\n"
             + "Input: Character name: p3, Current room: Library, items: [], pl"
@@ -121,10 +117,9 @@ public class TestWithMock {
             + "Input: Character name: p3, Current room: Library, items: [], p"
             + "layer type: computer\n"
             + "Input: Character name: p1, Current room: Armory, items: [], pl"
-            + "ayer type: human\n",
-        log.toString());
-    assertEquals("Welcome to the kill doctor lucky game\n" + "The roo"
-        + "ms are initialized as:\n"
+            + "ayer type: human\n", log.toString());
+    assertEquals("Welcome to the kill doctor lucky game\n" + "The roo" + "ms are "
+        + "initialized as:\n"
         + "SpecifiedRoom{name='Armory', index=0, \n"
         + "leftCorner=19, rightCorner=26, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[Revolver], \n"
@@ -149,20 +144,18 @@ public class TestWithMock {
         + "ory, Wine Cellar, Drawing Room, ][Parlor, Kitchen, ], \n"
         + "visibleRooms = [Tennessee Room, Lilac Room, Master Suite, Billiar"
         + "d Room, Trophy Room, Armory, Wine Cellar, Drawing Room, Foyer,"
-        + " Piazza, Parlor, Kitchen, ]\n"
-        + "\n" + "SpecifiedRoom{name='Drawing Room', index=4, \n"
+        + " Piazza, Parlor, Kitchen, ]\n" + "\n" + "SpecifiedRoom{name='Drawing Room', index=4, \n"
         + "leftCorner=13, rightCorner=18, upperCorner=22, lowerCorner=25, \n"
         + "items in the room =[Letter Opener], \n" + "characters=[]}, \n"
         + "neighbours = [Dining Hall, ][Armory, ][Foyer, ][Wine Cellar, ], \n"
         + "visibleRooms = [Dining Hall, Tennessee Room, Lilac Room, Master S"
-        + "uite, Armory, Foyer, Piazza, Wine Cellar, ]\n"
-        + "\n" + "SpecifiedRoom{name='Foyer', index=5, \n"
+        + "uite, Armory, Foyer, Piazza, Wine Cellar, ]\n" + "\n"
+        + "SpecifiedRoom{name='Foyer', index=5, \n"
         + "leftCorner=13, rightCorner=18, upperCorner=26, lowerCorner=27, \n"
         + "items in the room =[], \n" + "characters=[]}, \n"
         + "neighbours = [Drawing Room, ][][Piazza, ][], \n"
         + "visibleRooms = [Drawing Room, Dining Hall, Tennessee Room, Lilac Roo"
-        + "m, Master Suite, Piazza, ]\n"
-        + "\n" + "SpecifiedRoom{name='Green House', index=6, \n"
+        + "m, Master Suite, Piazza, ]\n" + "\n" + "SpecifiedRoom{name='Green House', index=6, \n"
         + "leftCorner=26, rightCorner=29, upperCorner=28, lowerCorner=35, \n"
         + "items in the room =[Trowel, Pinking Shears], \n" + "characters=[]}, \n"
         + "neighbours = [][][][Hedge Maze, ], \n"
@@ -177,28 +170,27 @@ public class TestWithMock {
         + "items in the room =[Crepe Pan, Sharp Knife], \n" + "characters=[]}, \n"
         + "neighbours = [Parlor, ][Dining Hall, ][Wine Cellar, ][], \n"
         + "visibleRooms = [Parlor, Servants' Quarters, Lancaster Room, Dining Ha"
-        + "ll, Billiard Room, Trophy Room, Wine Cellar, ]\n"
-        + "\n" + "SpecifiedRoom{name='Lancaster Room', index=9, \n"
+        + "ll, Billiard Room, Trophy Room, Wine Cellar, ]\n" + "\n"
+        + "SpecifiedRoom{name='Lancaster Room', index=9, \n"
         + "leftCorner=3, rightCorner=8, upperCorner=0, lowerCorner=5, \n"
         + "items in the room =[Silken Cord], \n" + "characters=[]}, \n"
         + "neighbours = [][Lilac Room, ][Servants' Quarters, ][], \n"
         + "visibleRooms = [Lilac Room, Master Suite, Library, Nursery, Servants' Qu"
-        + "arters, Parlor, Kitchen, Wine Cellar, ]\n"
-        + "\n" + "SpecifiedRoom{name='Library', index=10, \n"
+        + "arters, Parlor, Kitchen, Wine Cellar, ]\n" + "\n"
+        + "SpecifiedRoom{name='Library', index=10, \n"
         + "leftCorner=23, rightCorner=28, upperCorner=4, lowerCorner=9, \n"
         + "items in the room =[], \n" + "characters=[]}, \n"
         + "neighbours = [Nursery, ][][Trophy Room, ][Master Suite, ], \n"
         + "visibleRooms = [Nursery, Trophy Room, Billiard Room, Armory, Master S"
-        + "uite, Lilac Room, Lancaster Room, Servants' Quarters, ]\n"
-        + "\n" + "SpecifiedRoom{name='Lilac Room', index=11, \n"
+        + "uite, Lilac Room, Lancaster Room, Servants' Quarters, ]\n" + "\n"
+        + "SpecifiedRoom{name='Lilac Room', index=11, \n"
         + "leftCorner=9, rightCorner=14, upperCorner=2, lowerCorner=7, \n"
         + "items in the room =[Tight Hat], \n" + "characters=[]}, \n"
         + "neighbours = [][Master Suite, ][Tennessee Room, ][Lancaster Room, Servan"
         + "ts' Quarters, ], \n"
         + "visibleRooms = [Master Suite, Library, Nursery, Tennessee Room, Dining H"
         + "all, Armory, Wine Cellar, Drawing Room, Foyer, Piazza, Lancaster Room, "
-        + "Servants' Quarters, ]\n"
-        + "\n" + "SpecifiedRoom{name='Master Suite', index=12, \n"
+        + "Servants' Quarters, ]\n" + "\n" + "SpecifiedRoom{name='Master Suite', index=12, \n"
         + "leftCorner=15, rightCorner=22, upperCorner=2, lowerCorner=7, \n"
         + "items in the room =[Shoe Horn], \n" + "characters=[]}, \n"
         + "neighbours = [][Library, Nursery, ][Tennessee Room, ][Lilac Room, ], \n"
@@ -209,66 +201,66 @@ public class TestWithMock {
         + "items in the room =[Bad Cream], \n" + "characters=[]}, \n"
         + "neighbours = [][][Library, ][Master Suite, ], \n"
         + "visibleRooms = [Library, Trophy Room, Billiard Room, Armory, Master Suite,"
-        + " Lilac Room, Lancaster Room, Servants' Quarters, ]\n"
-        + "\n" + "SpecifiedRoom{name='Parlor', index=14, \n"
+        + " Lilac Room, Lancaster Room, Servants' Quarters, ]\n" + "\n"
+        + "SpecifiedRoom{name='Parlor', index=14, \n"
         + "leftCorner=5, rightCorner=10, upperCorner=10, lowerCorner=15, \n"
         + "items in the room =[], \n" + "characters=[]}, \n"
         + "neighbours = [Servants' Quarters, ][Dining Hall, Tennessee Room, ][Kitchen, ][], \n"
         + "visibleRooms = [Servants' Quarters, Lancaster Room, Dining Hall, Tennessee R"
-        + "oom, Trophy Room, Billiard Room, Trophy Room, Kitchen, Wine Cellar, ]\n"
-        + "\n" + "SpecifiedRoom{name='Piazza', index=15, \n"
+        + "oom, Trophy Room, Billiard Room, Trophy Room, Kitchen, Wine Cellar, ]\n" + "\n"
+        + "SpecifiedRoom{name='Piazza', index=15, \n"
         + "leftCorner=12, rightCorner=19, upperCorner=28, lowerCorner=35, \n"
         + "items in the room =[Civil War Cannon], \n" + "characters=[]}, \n"
         + "neighbours = [Foyer, ][Hedge Maze, ][][Winter Garden, ], \n"
         + "visibleRooms = [Foyer, Drawing Room, Dining Hall, Tennessee Room, Lilac"
-        + " Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n"
-        + "\n" + "SpecifiedRoom{name='Servants' Quarters', index=16, \n"
+        + " Room, Master Suite, Hedge Maze, Green House, Winter Garden, Carriage House, ]\n" + "\n"
+        + "SpecifiedRoom{name='Servants' Quarters', index=16, \n"
         + "leftCorner=3, rightCorner=8, upperCorner=6, lowerCorner=9, \n"
         + "items in the room =[Broom Stick], \n" + "characters=[]}, \n"
         + "neighbours = [Lancaster Room, ][Lilac Room, ][Parlor, ][], \n"
         + "visibleRooms = [Lancaster Room, Lilac Room, Master Suite, Library, Nursery, P"
-        + "arlor, Kitchen, Wine Cellar, ]\n"
-        + "\n" + "SpecifiedRoom{name='Tennessee Room', index=17, \n"
+        + "arlor, Kitchen, Wine Cellar, ]\n" + "\n"
+        + "SpecifiedRoom{name='Tennessee Room', index=17, \n"
         + "leftCorner=11, rightCorner=20, upperCorner=8, lowerCorner=11, \n"
         + "items in the room =[], \n" + "characters=[]}, \n"
         + "neighbours = [Lilac Room, Master Suite, ][Trophy Room, ][Dining Hall, ][Parlor, ], \n"
         + "visibleRooms = [Lilac Room, Master Suite, Trophy Room, Dining Hall, Armor"
-        + "y, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, ]\n"
-        + "\n" + "SpecifiedRoom{name='Trophy Room', index=18, \n"
+        + "y, Wine Cellar, Drawing Room, Foyer, Piazza, Parlor, ]\n" + "\n"
+        + "SpecifiedRoom{name='Trophy Room', index=18, \n"
         + "leftCorner=21, rightCorner=26, upperCorner=10, lowerCorner=15, \n"
         + "items in the room =[Duck Decoy, Monkey Hand], \n" + "characters=[]}, \n"
         + "neighbours = [Library, ][][Billiard Room, ][Dining Hall, Tennessee Room, ], \n"
         + "visibleRooms = [Library, Nursery, Billiard Room, Armory, Dining Hall, Tennessee "
-        + "Room, Parlor, Parlor, Kitchen, ]\n"
-        + "\n" + "SpecifiedRoom{name='Wine Cellar', index=19, \n"
+        + "Room, Parlor, Parlor, Kitchen, ]\n" + "\n"
+        + "SpecifiedRoom{name='Wine Cellar', index=19, \n"
         + "leftCorner=5, rightCorner=12, upperCorner=22, lowerCorner=23, \n"
         + "items in the room =[Rat Poison, Piece of Rope], \n" + "characters=[]}, \n"
         + "neighbours = [Dining Hall, Kitchen, ][Drawing Room, ][][], \n"
         + "visibleRooms = [Dining Hall, Kitchen, Parlor, Servants' Quarters, Lancaster Ro"
-        + "om, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Armory, ]\n"
-        + "\n" + "SpecifiedRoom{name='Winter Garden', index=20, \n"
+        + "om, Tennessee Room, Lilac Room, Master Suite, Drawing Room, Armory, ]\n" + "\n"
+        + "SpecifiedRoom{name='Winter Garden', index=20, \n"
         + "leftCorner=6, rightCorner=11, upperCorner=30, lowerCorner=35, \n"
         + "items in the room =[], \n" + "characters=[]}, \n"
         + "neighbours = [][Piazza, ][][Carriage House, ], \n"
         + "visibleRooms = [Piazza, Hedge Maze, Green House, Carriage House, ]\n" + "\n"
         + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start th"
-        + "e game; Enter 4 to quit the game\n"
-        + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+        + "e game; Enter 4 to quit the game\n" + "Please enter the name of the player:\n"
+        + "Please enter the capacity:\n"
         + "Please enter the index of the room that the player is in:\n"
         + "Add player successfully, the current player information:\n"
         + "Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Armory, items: [], player type: human\n" + "\n"
         + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start th"
-        + "e game; Enter 4 to quit the game\n"
-        + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+        + "e game; Enter 4 to quit the game\n" + "Please enter the name of the player:\n"
+        + "Please enter the capacity:\n"
         + "Please enter the index of the room that the player is in:\n"
         + "Add player successfully, the current player information:\n"
         + "Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Armory, items: [], player type: human\n"
         + "Character name: p2, Current room: Billiard Room, items: [], player type: human\n" + "\n"
         + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start t"
-        + "he game; Enter 4 to quit the game\n"
-        + "Please enter the name of the player:\n" + "Please enter the capacity:\n"
+        + "he game; Enter 4 to quit the game\n" + "Please enter the name of the player:\n"
+        + "Please enter the capacity:\n"
         + "Please enter the index of the room that the player is in:\n"
         + "Add player successfully, the current player information:\n"
         + "Target name: Doctor Lucky, Current room: Armory\n"
@@ -276,8 +268,7 @@ public class TestWithMock {
         + "Character name: p2, Current room: Billiard Room, items: [], player type: human\n"
         + "Character name: p3, Current room: Library, items: [], player type: computer\n" + "\n"
         + "Enter 1 to add a player; Enter 2 to add a computer player; Enter 3 to start th"
-        + "e game; Enter 4 to quit the game\n"
-        + "Game start! The players are listed as follow: \n"
+        + "e game; Enter 4 to quit the game\n" + "Game start! The players are listed as follow: \n"
         + "Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Armory, items: [], player type: human\n"
         + "Character name: p2, Current room: Billiard Room, items: [], player type: human\n"
@@ -347,12 +338,39 @@ public class TestWithMock {
         + "leftCorner=21, rightCorner=28, upperCorner=16, lowerCorner=21, \n"
         + "items in the room =[Billiard Cue], \n"
         + "characters=[Character name: p2, Current room: Billiard Room, items: [], p"
-        + "layer type: human]}, \n"
-        + "neighbours = [Trophy Room, ][][Armory, ][Dining Hall, ], \n"
+        + "layer type: human]}, \n" + "neighbours = [Trophy Room, ][][Armory, ][Dining Hall, ], \n"
         + "visibleRooms = [Trophy Room, Library, Nursery, Armory, Dining Hall, Parlor, Kitchen, ]\n"
         + "---------------------------------\n"
         + "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n"
         + "Enter 2 to pick up an item in the room. Then enter the index of the item\n"
         + "Enter 3 to look around\n" + "Game quit!\n", gamelog.toString());
+  }
+
+  @Test
+  public void AttemptMock() {
+    StringReader input = new StringReader("1 p1 1 3 3 5 0 q");
+    StringBuffer gamelog = new StringBuffer();
+    Controller c = new GamingConsoleController(input, gamelog);
+    c.playGame(gamingModel);
+    assertEquals(
+        "Input: Character name: p1, Current room: Dining Hall, items: [], player type:"
+            + " human 3\n"
+            + "Input: Character name: p1, Current room: Dining Hall, items: [], player type"
+            + ": human 0\n",
+        log.toString());
+  }
+
+  @Test
+  public void MovePetMock() {
+    StringReader input = new StringReader("1 p1 1 0 3 4 0 0 q");
+    StringBuffer gamelog = new StringBuffer();
+    Controller c = new GamingConsoleController(input, gamelog);
+    c.playGame(gamingModel);
+    assertEquals(
+        "Input: Character name: p1, Current room: Armory, items: [], player type:"
+            + " human 0\n"
+            + "Input: Character name: p1, Current room: Armory, items: [], player type: human 0 "
+            + "0\n",
+        log.toString());
   }
 }
