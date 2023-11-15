@@ -9,10 +9,11 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Stack;
-import java.util.Arrays;
 import javax.imageio.ImageIO;
+
 import world.Character;
 import world.Item;
 import world.Pet;
@@ -20,7 +21,6 @@ import world.PlayerCharacter;
 import world.Room;
 import world.SpecifiedRoom;
 import world.TargetCharacter;
-
 
 /**
  * The Gaming console.
@@ -128,7 +128,7 @@ public class GamingModel implements Model {
   }
 
   @Override
-  public PlayerCharacter getWinner(){
+  public PlayerCharacter getWinner() {
     return this.winner;
   }
 
@@ -221,6 +221,7 @@ public class GamingModel implements Model {
 
   /**
    * Get the pet information.
+   *
    * @return information
    */
   public String petInfo() {
@@ -503,8 +504,9 @@ public class GamingModel implements Model {
 
   /**
    * Define if killer is visible by observer.
+   *
    * @param observer the observer
-   * @param killer  the killer
+   * @param killer   the killer
    * @return true if visible, false otherwise
    */
   public boolean isVisibleBy(Character observer, Character killer) {
@@ -623,7 +625,8 @@ public class GamingModel implements Model {
       try {
         attempt(player, 0);
       } catch (IllegalStateException e) {
-        outputString("Computer " + player.getName() + " attempts failed, be seen by others!\n", out);
+        outputString("Computer " + player.getName() + " attempts failed, be seen by others!\n",
+            out);
       }
       return;
     }

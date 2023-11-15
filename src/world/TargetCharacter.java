@@ -52,7 +52,7 @@ public class TargetCharacter implements Character {
 
   /**
    * Set the health of the character.
-   * @param health
+   * @param health the health.
    */
   public void setHealth(int health) {
     this.health = health;
@@ -68,7 +68,7 @@ public class TargetCharacter implements Character {
 
   /**
    * Set the name of the character.
-   * @param name
+   * @param name the name.
    */
   public void setName(String name) {
     this.name = name;

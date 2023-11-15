@@ -11,10 +11,16 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
+import java.util.Stack;
 import javax.imageio.ImageIO;
 
-import world.*;
 import world.Character;
+import world.Item;
+import world.Pet;
+import world.PlayerCharacter;
+import world.Room;
+import world.SpecifiedRoom;
+import world.TargetCharacter;
 
 /**
  * The Gaming console.
@@ -46,9 +52,9 @@ public class MockModel implements Model {
   /**
    * The constructor.
    *
-   * @param path is thr origin path of source file.
-   * @param maxTurn is the max turn.
-   * @param log is the game log.
+   * @param path       is thr origin path of source file.
+   * @param maxTurn    is the max turn.
+   * @param log        is the game log.
    * @param uniqueCode is the unique code.
    */
   public MockModel(String path, int maxTurn, StringBuilder log, String uniqueCode) {
@@ -500,11 +506,12 @@ public class MockModel implements Model {
   }
 
   @Override
-  public void movePetDepthFirst(){
+  public void movePetDepthFirst() {
 
   }
+
   @Override
-  public void movePet(Character c, int direction, int index){
+  public void movePet(Character c, int direction, int index) {
     log.append("Input: " + c.toString() + " " + direction + " " + index + "\n");
   }
 

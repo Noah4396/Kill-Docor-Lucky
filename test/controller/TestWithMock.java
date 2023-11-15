@@ -3,7 +3,6 @@ package controller;
 import static org.junit.Assert.assertEquals;
 
 import java.io.StringReader;
-
 import model.GamingModel;
 import model.MockModel;
 import model.Model;
@@ -347,7 +346,7 @@ public class TestWithMock {
   }
 
   @Test
-  public void AttemptMock() {
+  public void attemptMock() {
     StringReader input = new StringReader("1 p1 1 3 3 5 0 q");
     StringBuffer gamelog = new StringBuffer();
     Controller c = new GamingConsoleController(input, gamelog);
@@ -361,7 +360,7 @@ public class TestWithMock {
   }
 
   @Test
-  public void MovePetMock() {
+  public void movePetMock() {
     StringReader input = new StringReader("1 p1 1 0 3 4 0 0 q");
     StringBuffer gamelog = new StringBuffer();
     Controller c = new GamingConsoleController(input, gamelog);
