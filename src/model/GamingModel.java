@@ -8,9 +8,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Stack;
+import java.util.Arrays;
 import javax.imageio.ImageIO;
-
 import world.Character;
 import world.Item;
 import world.Pet;
@@ -18,6 +20,7 @@ import world.PlayerCharacter;
 import world.Room;
 import world.SpecifiedRoom;
 import world.TargetCharacter;
+
 
 /**
  * The Gaming console.
@@ -128,6 +131,7 @@ public class GamingModel implements Model {
   public PlayerCharacter getWinner(){
     return this.winner;
   }
+
   private void parse(String path) {
     try (BufferedReader br = new BufferedReader(new FileReader(path))) {
       // The first line reader: 36 30 Doctor Lucky's Mansion;
@@ -215,6 +219,10 @@ public class GamingModel implements Model {
     move(pet, rooms.get(index));
   }
 
+  /**
+   * Get the pet information.
+   * @return information
+   */
   public String petInfo() {
     return pet.getRoom().getName();
   }
@@ -493,6 +501,12 @@ public class GamingModel implements Model {
     return sb.toString();
   }
 
+  /**
+   * Define if killer is visible by observer.
+   * @param observer the observer
+   * @param killer  the killer
+   * @return true if visible, false otherwise
+   */
   public boolean isVisibleBy(Character observer, Character killer) {
     if (observer == null || killer == null) {
       throw new IllegalArgumentException("");

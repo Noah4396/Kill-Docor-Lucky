@@ -1,10 +1,18 @@
 package world;
 
-public class Pet implements Character{
+/**
+ * The pet.
+ */
+public class Pet implements Character {
   private Room room;
   private String name;
   private int direction;
 
+  /**
+   * The constructor.
+   *
+   * @param name is the name of the pet.
+   */
   public Pet(String name) {
     this.room = null;
     this.name = name;
@@ -31,10 +39,20 @@ public class Pet implements Character{
     return this.name;
   }
 
+  /**
+   * Get the direction of the pet.
+   *
+   * @return the direction.
+   */
   public int getDirection() {
     return direction;
   }
 
+  /**
+   * Set the direction of the pet.
+   *
+   * @param direction is the direction.
+   */
   public void setDirection(int direction) {
     this.direction = direction;
   }

@@ -52,23 +52,21 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 100);
   }
 
-
   @Test
   public void pickUpItem() {
     gamingModel.addPlayer(p1, 1);
     gamingModel.pickUpItem(p1, 0);
     assertEquals("Room name:Billiard Room\n" + "Characters: p1, \n" + "Items: \n"
-            + "Neighbours: Trophy Room, Armory, Dining Hall, ",
-        gamingModel.displayRoom(1));
+        + "Neighbours: Trophy Room, Armory, Dining Hall, ", gamingModel.displayRoom(1));
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Billiard Room, items: [Billiard Cue], "
         + "player type: human\n", gamingModel.displayers());
 
     gamingModel.moveToNeighbour(p1, 2, 0);
     gamingModel.pickUpItem(p1, 0);
-    assertEquals("Room name:Armory\n" + "Characters: Fortune the Cat, Doctor Lucky, p1, \n"
-            + "Items: \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
-        gamingModel.displayRoom(0));
+    assertEquals(
+        "Room name:Armory\n" + "Characters: Fortune the Cat, Doctor Lucky, p1, \n" + "Items: \n"
+            + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ", gamingModel.displayRoom(0));
     assertEquals("Target name: Doctor Lucky, Current room: Armory\n"
         + "Character name: p1, Current room: Armory, items: [Revolver, Billiard Cue],"
         + " player type: human", gamingModel.displayers());
@@ -84,6 +82,7 @@ public class GamingModelTest {
     gamingModel.addPlayer(p4, 0);
     gamingModel.pickUpItem(p4, 0);
   }
+
   @Test(expected = IllegalArgumentException.class)
   public void pickupInvalidItem() {
     gamingModel.addPlayer(p1, 0);
@@ -102,9 +101,8 @@ public class GamingModelTest {
             + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
     assertEquals("Room name:Dining Hall\n" + "Characters: p1, \n" + "Items: \n"
-            + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
-            + "Drawing Room, Parlor, Kitchen, ",
-        gamingModel.displayRoom(3));
+        + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
+        + "Drawing Room, Parlor, Kitchen, ", gamingModel.displayRoom(3));
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -126,29 +124,26 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.addPlayer(p3, 15);
+    assertEquals("p1 looks around!\n" + "Information of the current room:\n" + "Room name:Armory\n"
+        + "Characters: Doctor Lucky, Fortune the Cat, p1, \n" + "Items: Revolver, \n"
+        + "Neighbours: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
+        + "Visible room of Armory:\n" + "Room name:Dining Hall\n" + "Characters: \n" + "Items: \n"
+        + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar,"
+        + " Drawing Room, Parlor, Kitchen, \n" + "\n" + "Room name:Billiard Room\n"
+        + "Characters: p2, \n" + "Items: Billiard Cue, \n"
+        + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n" + "Room name:Drawing Room\n"
+        + "Characters: \n" + "Items: Letter Opener, \n"
+        + "Neighbours: Dining Hall, Armory, Foyer, Wine Cellar, \n\n", gamingModel.lookAround(p1));
     assertEquals(
-        "p1 looks around!\n" + "Information of the current room:\n" + "Room name:Armory\n"
-            + "Characters: Doctor Lucky, Fortune the Cat, p1, \n" + "Items: Revolver, \n"
-            + "Neighbours: Dining Hall, Billiard Room, Drawing Room, \n" + "\n"
-            + "Visible room of Armory:\n" + "Room name:Dining Hall\n" + "Characters: \n"
-            + "Items: \n"
-            + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar,"
-            + " Drawing Room, Parlor, Kitchen, \n"
-            + "\n" + "Room name:Billiard Room\n" + "Characters: p2, \n" + "Items: Billiard Cue, \n"
-            + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n" + "Room name:Drawing Room\n"
-            + "Characters: \n" + "Items: Letter Opener, \n"
-            + "Neighbours: Dining Hall, Armory, Foyer, Wine Cellar, \n\n",
-        gamingModel.lookAround(p1));
-    assertEquals("p2 looks around!\n" + "Information of the current room:\n"
-        + "Room name:Billiard Room\n" + "Characters: p2, \n" + "Items: Billiard Cue, \n"
-        + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n"
-        + "Visible room of Billiard Room:\n" + "Room name:Trophy Room\n" + "Characters: \n"
-        + "Items: Duck Decoy, Monkey Hand, \n"
-        + "Neighbours: Library, Billiard Room, Dining Hall, Tennessee Room, \n" + "\n"
-        + "Room name:Dining Hall\n" + "Characters: \n" + "Items: \n"
-        + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
-        + "Drawing Room, Parlor, Kitchen, \n"
-        + "\n", gamingModel.lookAround(p2));
+        "p2 looks around!\n" + "Information of the current room:\n" + "Room name:Billiard Room\n"
+            + "Characters: p2, \n" + "Items: Billiard Cue, \n"
+            + "Neighbours: Trophy Room, Armory, Dining Hall, \n" + "\n"
+            + "Visible room of Billiard Room:\n" + "Room name:Trophy Room\n" + "Characters: \n"
+            + "Items: Duck Decoy, Monkey Hand, \n"
+            + "Neighbours: Library, Billiard Room, Dining Hall, Tennessee Room, \n" + "\n"
+            + "Room name:Dining Hall\n" + "Characters: \n" + "Items: \n"
+            + "Neighbours: Tennessee Room, Billiard Room, Trophy Room, Armory, Wine Cellar, "
+            + "Drawing Room, Parlor, Kitchen, \n" + "\n", gamingModel.lookAround(p2));
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -158,14 +153,14 @@ public class GamingModelTest {
   }
 
   @Test
-  public void initializePet(){
+  public void initializePet() {
     assertEquals("Room name:Armory\n" + "Characters: Doctor Lucky, Fortune the Cat, \n"
-        + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
+            + "Items: Revolver, \n" + "Neighbours: Dining Hall, Billiard Room, Drawing Room, ",
         gamingModel.displayRoom(0));
   }
 
   @Test
-  public void isVisible(){
+  public void isVisible() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     assertTrue(gamingModel.isVisibleBy(p1, p2));
@@ -173,9 +168,9 @@ public class GamingModelTest {
   }
 
   @Test
-  public void petDepthFirstMove(){
+  public void petDepthFirstMove() {
     StringBuffer sb = new StringBuffer();
-    for(int i = 0; i < 40; i++){
+    for (int i = 0; i < 40; i++) {
       sb.append(gamingModel.petInfo() + "\n");
       gamingModel.movePetDepthFirst();
     }
@@ -191,7 +186,7 @@ public class GamingModelTest {
   }
 
   @Test
-  public void movePet(){
+  public void movePet() {
     StringBuffer sb = new StringBuffer();
     sb.append(gamingModel.petInfo() + "\n");
     gamingModel.addPlayer(p1, 0);
@@ -201,19 +196,19 @@ public class GamingModelTest {
   }
 
   @Test(expected = IllegalStateException.class)
-  public void movePetNotInTheSameRoom(){
+  public void movePetNotInTheSameRoom() {
     gamingModel.addPlayer(p1, 1);
     gamingModel.movePet(p1, 0, 0);
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void movePetInvalidDirection(){
+  public void movePetInvalidDirection() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.movePet(p1, 100, 0);
   }
 
   @Test
-  public void attempt(){
+  public void attempt() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.pickUpItem(p1, 0);
@@ -231,7 +226,7 @@ public class GamingModelTest {
   }
 
   @Test(expected = IllegalStateException.class)
-  public void failAttempt(){
+  public void failAttempt() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.moveTarget();
     gamingModel.addPlayer(p2, 1);
@@ -240,14 +235,14 @@ public class GamingModelTest {
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void invalidAttempt(){
+  public void invalidAttempt() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.attempt(p2, 0);
   }
 
-  @Test(expected =  IllegalArgumentException.class)
-  public void invalidAttemptItem(){
+  @Test(expected = IllegalArgumentException.class)
+  public void invalidAttemptItem() {
     gamingModel.addPlayer(p1, 0);
     gamingModel.pickUpItem(p1, 0);
     gamingModel.attempt(p1, 2);
@@ -255,7 +250,7 @@ public class GamingModelTest {
   }
 
   @Test
-  public void testComputer(){
+  public void testComputer() {
     p1.setAsComputer();
     p2.setAsComputer();
     p3.setAsComputer();
@@ -263,26 +258,27 @@ public class GamingModelTest {
     gamingModel.addPlayer(p1, 0);
     gamingModel.addPlayer(p2, 1);
     gamingModel.addPlayer(p3, 2);
-    while(!gamingModel.isGameOver()){
+    while (!gamingModel.isGameOver()) {
       try {
         gamingModel.computerCommand(p1, sb);
-      } catch (IllegalStateException e){
+      } catch (IllegalStateException e) {
         gamingModel.passTurn();
       }
       gamingModel.passTurn();
       try {
         gamingModel.computerCommand(p2, sb);
-      } catch (IllegalStateException e){
+      } catch (IllegalStateException e) {
         gamingModel.passTurn();
       }
       gamingModel.passTurn();
     }
     assertEquals(4, gamingModel.getDoctorLucky().getHealth());
-    assertEquals("Computer p1 attempts to kill the target!\n"
-        + "Computer p2 attempts to kill the target!\n" + "Computer p1 pick up an item!\n"
-        + "Computer p2 Look around!\n" + "Computer p1 Look around!\n"
-        + "Computer p2 pick up an item!\n" + "Computer p1 Look around!\n"
-        + "Computer p2 moves to the neighbour!\n" + "Computer p1 Look around!\n"
-        + "Computer p2 moves to the neighbour!\n", sb.toString());
+    assertEquals(
+        "Computer p1 attempts to kill the target!\n" + "Computer p2 attempts to kill the target!\n"
+            + "Computer p1 pick up an item!\n" + "Computer p2 Look around!\n"
+            + "Computer p1 Look around!\n" + "Computer p2 pick up an item!\n"
+            + "Computer p1 Look around!\n" + "Computer p2 moves to the neighbour!\n"
+            + "Computer p1 Look around!\n" + "Computer p2 moves to the neighbour!\n",
+        sb.toString());
   }
 }

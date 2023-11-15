@@ -50,14 +50,26 @@ public class TargetCharacter implements Character {
     this.room = room;
   }
 
+  /**
+   * Set the health of the character.
+   * @param health
+   */
   public void setHealth(int health) {
     this.health = health;
   }
 
+  /**
+   * Get the health of the character.
+   * @return the health.
+   */
   public int getHealth() {
     return health;
   }
 
+  /**
+   * Set the name of the character.
+   * @param name
+   */
   public void setName(String name) {
     this.name = name;
   }

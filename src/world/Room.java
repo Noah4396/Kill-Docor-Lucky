@@ -13,6 +13,7 @@ public interface Room {
   public boolean hasLeftRoom();
 
   /**
+   * Have right room or not.
    * @return true if it has another room on the right.
    */
   public boolean hasRightRoom();

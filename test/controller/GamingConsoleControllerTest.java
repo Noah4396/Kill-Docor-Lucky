@@ -3,7 +3,6 @@ package controller;
 import static org.junit.Assert.assertEquals;
 
 import java.io.StringReader;
-
 import model.GamingModel;
 import model.Model;
 import org.junit.Before;

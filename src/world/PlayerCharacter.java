@@ -52,6 +52,11 @@ public class PlayerCharacter implements Character {
     this.items = new ArrayList<>();
   }
 
+  /**
+   * Get the item capacity.
+   *
+   * @return the item capacity.
+   */
   public void setIndex(int index) {
     this.index = index;
   }
@@ -93,6 +98,7 @@ public class PlayerCharacter implements Character {
   public boolean hasItem() {
     return !items.isEmpty();
   }
+
   /**
    * Set the player as a human controlled.
    */
@@ -100,9 +106,15 @@ public class PlayerCharacter implements Character {
     this.isComputer = false;
   }
 
+  /**
+   * Get the item capacity.
+   *
+   * @return the item capacity.
+   */
   public int getItemNumber() {
     return items.size();
   }
+
   @Override
   public boolean isComputer() {
     return this.isComputer;
@@ -131,10 +143,20 @@ public class PlayerCharacter implements Character {
     return Objects.hash(name, index, itemCapacity, itemNumber);
   }
 
+  /**
+   * Check if the player is able to pick item.
+   *
+   * @return if the player is able to pick item.
+   */
   public boolean isAbleToPick() {
     return itemNumber < itemCapacity;
   }
 
+  /**
+   * Pick an item.
+   *
+   * @param item is the item.
+   */
   public void pickItem(Item item) {
     this.items.add(item);
     sortItems();
@@ -155,13 +177,25 @@ public class PlayerCharacter implements Character {
     return sb.toString();
   }
 
-  public String displayItems(){
+  /**
+   * Display the items.
+   *
+   * @return the items.
+   */
+  public String displayItems() {
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < items.size(); i++) {
       sb.append(items.get(i).toString() + "\n");
     }
     return sb.toString();
   }
+
+  /**
+   * Use an item.
+   *
+   * @param index is the index of the item.
+   * @return the damage point of the item.
+   */
   public int useItem(int index) {
     if (index < 0 || index >= items.size()) {
       throw new IllegalArgumentException("Invalid index.");

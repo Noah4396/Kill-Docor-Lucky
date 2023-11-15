@@ -1,7 +1,12 @@
 package controller;
 
-import command.*;
-
+import command.Attempt;
+import command.ComputerCommand;
+import command.GamingCommand;
+import command.LookAround;
+import command.Move;
+import command.MovePet;
+import command.PickUp;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +15,6 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.function.Function;
-
 import model.Model;
 import world.PlayerCharacter;
 
@@ -89,7 +93,8 @@ public class GamingConsoleController implements Controller {
       }
       //      outputString("Now the status of players are shown as follow:\n");
       //      outputString(m.displayers() + "\n");
-      //      outputString("After player operation, the status of target and pet are shown as follow:\n");
+      //      outputString("After player operation, the status of target and pet ar
+      //      e shown as follow:\n");
       //      outputString(m.displayTargetAndPet() + "\n");
     }
     if (m.getWinner() != null) {
@@ -126,7 +131,8 @@ public class GamingConsoleController implements Controller {
         "Enter 1 to move to neighbour. Then enter the direction and index of the neighbour\n");
     outputString("Enter 2 to pick up an item in the room. Then enter the index of the item\n");
     outputString("Enter 3 to look around\n");
-    outputString("Enter 4 to move the pet. Then enter the direction and index of the neighbour\n");
+    outputString("Enter 4 to move the pet. Then enter the direction and index of "
+        + "the neighbour\n");
     outputString("Enter 5 to attempt to kill the target. Then enter the "
         + "index of item you want to use(enter 0 if you do not have any item)\n");
     printDivider();
