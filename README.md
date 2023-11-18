@@ -2,13 +2,14 @@
 **Assumption of the program**
 1. Every room can access to its neighbours.
 2. If one room can be seen by someone standing in the other, this means that they are neighbour and there is no pet in the room
+3. A player can only move the pet when the pet is in the same room with the player
 4. The pet moves follow the DFS
 
 **Limitations**
 1. The game can only played in the terminal.
 
 **Design changes**  
-I add some methods to the game model that my previous design does not have.
+I add some methods to the game model that my previous design does not have, eg. movePetDepthFirst, petInitialize, etc.
 
 **Citations**
 1. CS5010 Milestone 3 - GamePlay
