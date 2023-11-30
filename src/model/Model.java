@@ -6,135 +6,64 @@ import world.PlayerCharacter;
 /**
  * The model of game.
  */
-public interface Model {
-  /**
-   * Execute computer command.
-   *
-   * @param player the computer player.
-   * @param out the output.
-   */
-  public void computerCommand(PlayerCharacter player, Appendable out);
+public interface Model extends ReadOnlyModel {
 
   /**
-   * Look around.
-   *
-   * @param c the character that looks around.
-   * @return information of other players.
+   * Computer command.
+   * @param player the player
+   * @param out the appendable
    */
-  public String lookAround(Character c);
+  void computerCommand(PlayerCharacter player, Appendable out);
 
   /**
-   * Move character to neighbour.
-   *
-   * @param c         the moved character.
-   * @param direction the moving direction.
-   * @param index     the index of room in direction.
-   */
-  public void moveToNeighbour(Character c, int direction, int index);
-
-  /**
-   * Move the pet to the neighbour.
-   * @param c the character who move pet
+   * Move to neighbour.
+   * @param c the character
    * @param direction the direction
-   * @param index the index
+   * @param index the index of room
    */
-  public void movePet(Character c, int direction, int index);
+  void moveToNeighbour(Character c, int direction, int index);
 
   /**
-   * Get the winner of the game.
-   *
-   * @return the winner.
+   * Move to neighbour.
+   * @param c the character
+   * @param direction the direction
+   * @param index the index of room
    */
-  public PlayerCharacter getWinner();
+  void movePet(Character c, int direction, int index);
 
   /**
-   * Move the target.
+   * MoveTarget.
    */
-  public void moveTarget();
-
+  void moveTarget();
 
   /**
-   * Move the pet.
+   * Move pet depth first.
    */
-  public void movePetDepthFirst();
+  void movePetDepthFirst();
 
   /**
-   * Get the current turn number.
-   *
-   * @return the current turn.
+   * pick up item.
+   * @param p the player
+   * @param index the index of item
    */
-  int getTotalTurn();
+  void pickUpItem(PlayerCharacter p, int index);
 
   /**
-   * Let the player pick up an item from its room, if the room do not have an item or the player
-   * cannot pick more item, it will throw IllegalStateException.
-   *
-   * @param p     the player that will pick item
-   * @param index the item index;
+   * add player.
+   * @param p the player
+   * @param roomIndex the index of room
    */
-  public void pickUpItem(PlayerCharacter p, int index);
+  void addPlayer(PlayerCharacter p, int roomIndex);
 
   /**
-   * Add a player playing the game.
-   *
-   * @param p is the player added to the game.
-   * @param roomIndex is the index of the room that the player is added to.
-   */
-  public void addPlayer(PlayerCharacter p, int roomIndex);
-
-  /**
-   * Get the current turn.
-   *
-   * @return the player that is in the turn.
-   */
-  public PlayerCharacter getTurn();
-
-  /**
-   * Display all the rooms.
-   *
-   * @return the displayedRooms.
-   */
-  public String displayRooms();
-
-  /**
-   * Display all players.
-   *
-   * @return the player information.
-   */
-  public String displayers();
-
-  /**
-   * Attempt to kill the target.
-   *
-   * @param player the player who attempt to kill.
-   * @param index  the index of weapon.
+   * attempt.
+   * @param player the player
+   * @param index the index of item
    */
   void attempt(PlayerCharacter player, int index);
 
   /**
-   * Pass the turn to next player.
+   * pass turn.
    */
-  public void passTurn();
-
-  /**
-   * check if it is game over.
-   *
-   * @return true if game over.
-   */
-  public boolean isGameOver();
-
-  /**
-   * Display room of index.
-   *
-   * @param index the index of room
-   * @return the display.
-   */
-  public String displayRoom(int index);
-
-  /**
-   * Display the target and pet.
-   *
-   * @return the display.
-   */
-  public String displayTargetAndPet();
+  void passTurn();
 }

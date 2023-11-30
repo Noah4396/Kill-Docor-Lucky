@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="check style" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="check style">
+      <change afterPath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +26,9 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -109,16 +115,19 @@
       <recent name="controller" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestWithMock">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="driver.Main" />
+  <component name="RunManager" selected="JUnit.GamingModelTest.testComputer">
+    <configuration name="GamingModelTest.testComputer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="TheWorld" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="driver.*" />
+          <option name="PATTERN" value="controller.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="controller" />
+      <option name="MAIN_CLASS_NAME" value="controller.GamingModelTest" />
+      <option name="METHOD_NAME" value="testComputer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -188,21 +197,21 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="JAR Application.DriverJar" />
       <item itemvalue="JAR Application.main" />
       <item itemvalue="JAR Application.TheWorld.jar" />
+      <item itemvalue="JUnit.GamingModelTest.testComputer" />
       <item itemvalue="JUnit.TestWithMock" />
       <item itemvalue="JUnit.TestWithMock.AttemptMock" />
       <item itemvalue="JUnit.TestWithMock.MovePetMock" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GamingModelTest.testComputer" />
         <item itemvalue="JUnit.TestWithMock" />
         <item itemvalue="JUnit.TestWithMock.AttemptMock" />
         <item itemvalue="JUnit.TestWithMock.MovePetMock" />
         <item itemvalue="JAR Application.TheWorld.jar" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -241,22 +250,12 @@
       <workItem from="1699830675454" duration="8158000" />
       <workItem from="1699914208846" duration="5651000" />
       <workItem from="1700082590002" duration="2712000" />
-    </task>
-    <task id="LOCAL-00039" summary="Add move command and enum Direction.java">
-      <option name="closed" value="true" />
-      <created>1697428220000</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1697428220000</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Add pass turn method and judge if it is game over.">
-      <option name="closed" value="true" />
-      <created>1697429023245</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1697429023245</updated>
+      <workItem from="1700085577085" duration="598000" />
+      <workItem from="1700275402674" duration="640000" />
+      <workItem from="1700609029308" duration="5391000" />
+      <workItem from="1701150350939" duration="1112000" />
+      <workItem from="1701229017008" duration="1196000" />
+      <workItem from="1701297436588" duration="2853000" />
     </task>
     <task id="LOCAL-00041" summary="Add PickUp.java, and add computer performance">
       <option name="closed" value="true" />
@@ -634,7 +633,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700085197993</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="check style">
+      <option name="closed" value="true" />
+      <created>1700085689769</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1700085689769</updated>
+    </task>
+    <task id="LOCAL-00089" summary="check style">
+      <option name="closed" value="true" />
+      <created>1700275949360</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1700275949361</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
