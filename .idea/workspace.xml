@@ -9,13 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="add view and refractor">
-      <change afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create GamingView and Panel">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/GamingConsoleControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,15 +263,8 @@
       <workItem from="1700609029308" duration="5391000" />
       <workItem from="1701150350939" duration="1112000" />
       <workItem from="1701229017008" duration="1196000" />
-      <workItem from="1701297436588" duration="7733000" />
-    </task>
-    <task id="LOCAL-00042" summary="Finish ComputerCommand.java">
-      <option name="closed" value="true" />
-      <created>1697433400004</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1697433400004</updated>
+      <workItem from="1701297436588" duration="8579000" />
+      <workItem from="1701375575146" duration="9845000" />
     </task>
     <task id="LOCAL-00043" summary="Refactor and add MockModel.java">
       <option name="closed" value="true" />
@@ -657,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701306096704</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="Create GamingView and Panel">
+      <option name="closed" value="true" />
+      <created>1701321320705</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1701321320706</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +702,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Finish Mock Test" />
     <MESSAGE value="Finish README.md" />
     <MESSAGE value="Modify README.md" />
     <MESSAGE value="Check style" />
@@ -726,6 +726,7 @@
     <MESSAGE value="mock model" />
     <MESSAGE value="check style" />
     <MESSAGE value="add view and refractor" />
-    <option name="LAST_COMMIT_MESSAGE" value="add view and refractor" />
+    <MESSAGE value="Create GamingView and Panel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create GamingView and Panel" />
   </component>
 </project>

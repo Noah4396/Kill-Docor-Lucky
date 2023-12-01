@@ -2,6 +2,9 @@ package model;
 
 import world.Character;
 import world.PlayerCharacter;
+import world.Room;
+
+import java.util.ArrayList;
 
 /**
  * The read-only model of the game.
@@ -70,4 +73,10 @@ public interface ReadOnlyModel {
    * @return the player character
    */
   String displayTargetAndPet();
+
+  /**
+   * Get all rooms.
+   * @return the array list of rooms
+   */
+  ArrayList<Room> getRooms();
 }

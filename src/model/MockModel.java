@@ -432,6 +432,11 @@ public class MockModel implements Model {
     return null;
   }
 
+  @Override
+  public ArrayList<Room> getRooms() {
+    return rooms;
+  }
+
   /**
    * Display all neighbours.
    *

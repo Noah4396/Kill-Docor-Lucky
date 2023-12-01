@@ -473,6 +473,11 @@ public class GamingModel implements Model {
     return sb.toString();
   }
 
+  @Override
+  public ArrayList<Room> getRooms() {
+    return rooms;
+  }
+
   /**
    * Display all neighbours.
    *
