@@ -48,6 +48,7 @@ public class GamingModel implements Model {
   private int[] visited;
   private Stack<Integer> stack;
   private PlayerCharacter winner;
+  private boolean gameStart;
 
   /**
    * The constructor.
@@ -65,6 +66,7 @@ public class GamingModel implements Model {
     this.maxTurn = maxTurn;
     this.seed = 123;
     this.random = new Random(seed);
+    this.gameStart = false;
     gameOver = false;
     winner = null;
     try {
@@ -94,6 +96,16 @@ public class GamingModel implements Model {
     }
 
     outputImage("./res/example.png");
+  }
+
+  @Override
+  public void setGameStart(boolean gameStart) {
+    this.gameStart = gameStart;
+  }
+
+  @Override
+  public boolean isGameStart() {
+    return gameStart;
   }
 
   /**

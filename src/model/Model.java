@@ -66,4 +66,10 @@ public interface Model extends ReadOnlyModel {
    * pass turn.
    */
   void passTurn();
+
+  /**
+   * set game start.
+   * @param gameStart the game start
+   */
+  void setGameStart(boolean gameStart);
 }

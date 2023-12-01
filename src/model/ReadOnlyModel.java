@@ -79,4 +79,10 @@ public interface ReadOnlyModel {
    * @return the array list of rooms
    */
   ArrayList<Room> getRooms();
+
+  /**
+   * Get if the game start.
+   * @return the boolean
+   */
+  boolean isGameStart();
 }

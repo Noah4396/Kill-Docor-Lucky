@@ -47,6 +47,7 @@ public class MockModel implements Model {
   private Boolean gameOver;
   private StringBuilder log;
   private final String uniqueCode;
+  boolean gameStart = false;
 
   /**
    * The constructor.
@@ -95,6 +96,15 @@ public class MockModel implements Model {
     //outputImage();
   }
 
+  @Override
+  public void setGameStart(boolean gameStart) {
+    this.gameStart = gameStart;
+  }
+
+  @Override
+  public boolean isGameStart() {
+    return gameStart;
+  }
   /**
    * Paint the rooms.
    *

@@ -3,6 +3,7 @@ package view;
 import java.awt.*;
 import java.util.ArrayList;
 import javax.swing.JPanel;
+
 import model.ReadOnlyModel;
 import world.Room;
 
@@ -20,11 +21,14 @@ public class GameBoardPanel extends JPanel {
    */
   public GameBoardPanel(ReadOnlyModel model) {
     this.model = model;
-    this.rooms = model.getRooms();
+    this.rooms = model == null ? null : model.getRooms();
   }
 
   @Override
   protected void paintComponent(Graphics g) {
+    if(model == null) {
+      return;
+    }
     super.paintComponent(g);
     paintRooms(g);
   }
@@ -34,12 +38,12 @@ public class GameBoardPanel extends JPanel {
     int cellHeight = getHeight();
     int maxWidth = 0;
     int maxHeight = 0;
-    for(Room room : rooms){
+    for (Room room : rooms) {
       maxHeight = Math.max(maxHeight, room.getLowerCorner());
       maxWidth = Math.max(maxWidth, room.getRightCorner());
     }
     int amplificationFactor = Math.min(cellWidth / (maxWidth + 1), cellHeight / (maxHeight + 1));
-    for(Room room : rooms) {
+    for (Room room : rooms) {
       int upperBound = room.getUpperCorner();
       int leftBound = room.getLeftCorner();
       int lowerBound = room.getLowerCorner();
