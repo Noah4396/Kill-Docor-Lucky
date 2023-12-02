@@ -1,7 +1,9 @@
 package view;
 
+import controller.Features;
 import controller.ViewController;
 import model.ReadOnlyModel;
+import view.menu.NewGameListener;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -11,7 +13,6 @@ public class GamingMenu extends JMenuBar {
   private JMenuItem newGameMenuItem;
   private JMenuItem exitMenuItem;
   private ReadOnlyModel model;
-  private ViewController controller;
 
   public GamingMenu(ReadOnlyModel model) {
     initializeMenu();
@@ -34,20 +35,15 @@ public class GamingMenu extends JMenuBar {
 
     add(gameMenu);
 
-    // Add action listeners for menu items
-    newGameMenuItem.addActionListener(new ActionListener() {
-      @Override
-      public void actionPerformed(ActionEvent e) {
-        // Handle new game action
-        // Add your logic here
-      }
-    });
+  }
+
+  public void addListener(Features listener) {
+    newGameMenuItem.addActionListener(new NewGameListener(listener));
 
     exitMenuItem.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        // Handle exit action
-        // Add your logic here
+
       }
     });
   }

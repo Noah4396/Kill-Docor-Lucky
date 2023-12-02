@@ -1,6 +1,7 @@
 package driver;
 
 import controller.GamingConsoleController;
+import controller.ViewController;
 import model.GamingModel;
 import view.GamingView;
 
@@ -19,8 +20,10 @@ public class ViewDriver {
     String path = "res/mansion.txt";
     int turnNumber = 10;
     Scanner scan = new Scanner(System.in);
-    GamingModel model = new GamingModel(path, turnNumber);
+    GamingModel model = null;
     GamingView view = new GamingView(model);
+    ViewController controller = new ViewController(view, model);
+    view.setFeatures(controller);
     view.makeVisible();
   }
 }

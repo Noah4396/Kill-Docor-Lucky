@@ -1,17 +1,19 @@
 package view;
 
 import controller.Controller;
+import controller.Features;
 import model.ReadOnlyModel;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class GamingView extends JFrame implements View {
-  private final ReadOnlyModel model;
-  private final GameBoardPanel boardPanel;
+  private ReadOnlyModel model;
+  private GameBoardPanel boardPanel;
   private final JLabel turnLabel;
   private String turnInfo;
   private final GamingMenu gameMenu;
+  private final JLabel guideLabel;
 
   public GamingView(ReadOnlyModel model) {
     turnInfo = "1";
@@ -27,33 +29,58 @@ public class GamingView extends JFrame implements View {
     gameMenu = new GamingMenu(model);
     setJMenuBar(gameMenu);
 
-    turnLabel = new JLabel("Current turn: " + turnInfo, SwingConstants.LEADING);
+    turnLabel = new JLabel("", SwingConstants.LEADING);
     add(turnLabel, BorderLayout.EAST); // Move the label to the right side
-    turnLabel.setVerticalTextPosition(SwingConstants.TOP);
-    turnLabel.setHorizontalTextPosition(SwingConstants.LEFT);
 
-    boardPanel = new GameBoardPanel(model);
-    boardPanel.setLayout(new GridLayout(0, 1)); // GridLayout with a single column
-    add(boardPanel, BorderLayout.CENTER);
+
+    guideLabel = new JLabel("Click menu Game --> NewGame to start.");
+    add(guideLabel, BorderLayout.CENTER);
+
+
+    boardPanel = null;
+  }
+
+
+  @Override
+  public void addClickListener(Features listener) {
+
   }
 
   @Override
-  public void addClickListener(Controller listener) {
-
-  }
-
-  @Override
-  public void addKeyListener(Controller listener) {
+  public void addKeyListener(Features listener) {
 
   }
 
   @Override
   public void refresh() {
-
+    boardPanel.repaint();
+    if (model.isGameOver()) {
+      turnLabel.setText("Game over!");
+    } else {
+      turnLabel.setText("Current turn: " + turnInfo);
+    }
   }
 
   @Override
   public void makeVisible() {
     setVisible(true);
+  }
+
+  @Override
+  public void setModel(ReadOnlyModel model) {
+    this.model = model;
+  }
+
+  @Override
+  public void paintLayout() {
+    boardPanel = new GameBoardPanel(model);
+    boardPanel.setLayout(new GridLayout(0, 1)); // GridLayout with a single column
+    guideLabel.setText("");
+    add(boardPanel, BorderLayout.CENTER);
+  }
+
+  @Override
+  public void setFeatures(Features features) {
+    gameMenu.addListener(features);
   }
 }

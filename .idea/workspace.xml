@@ -9,15 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="paint the rooms">
-      <change afterPath="$PROJECT_DIR$/src/view/GamingMenu.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Create menu and controller">
+      <change afterPath="$PROJECT_DIR$/src/controller/Features.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/menu/NewGameListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/ViewDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GamingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,15 +267,7 @@
       <workItem from="1701229017008" duration="1196000" />
       <workItem from="1701297436588" duration="8579000" />
       <workItem from="1701375575146" duration="10642000" />
-      <workItem from="1701465811327" duration="3636000" />
-    </task>
-    <task id="LOCAL-00044" summary="Realized add player">
-      <option name="closed" value="true" />
-      <created>1697856993235</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1697856993236</updated>
+      <workItem from="1701465811327" duration="10260000" />
     </task>
     <task id="LOCAL-00045" summary="Finish the initialization of player">
       <option name="closed" value="true" />
@@ -661,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701403191766</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Create menu and controller">
+      <option name="closed" value="true" />
+      <created>1701470505506</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1701470505507</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -705,7 +705,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modify README.md" />
     <MESSAGE value="Check style" />
     <MESSAGE value="Modify look around" />
     <MESSAGE value="Create Pet" />
@@ -730,6 +729,7 @@
     <MESSAGE value="add view and refractor" />
     <MESSAGE value="Create GamingView and Panel" />
     <MESSAGE value="paint the rooms" />
-    <option name="LAST_COMMIT_MESSAGE" value="paint the rooms" />
+    <MESSAGE value="Create menu and controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create menu and controller" />
   </component>
 </project>
