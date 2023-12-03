@@ -3,6 +3,7 @@ package view;
 import controller.Features;
 import controller.ViewController;
 import model.ReadOnlyModel;
+import view.menu.AddPlayerListener;
 import view.menu.NewGameListener;
 
 import javax.swing.*;
@@ -12,6 +13,8 @@ import java.awt.event.ActionListener;
 public class GamingMenu extends JMenuBar {
   private JMenuItem newGameMenuItem;
   private JMenuItem exitMenuItem;
+  private JMenuItem startGameMenuItem;
+  private JMenuItem addPlayerMenuItem;
   private ReadOnlyModel model;
 
   public GamingMenu(ReadOnlyModel model) {
@@ -28,8 +31,14 @@ public class GamingMenu extends JMenuBar {
 
     newGameMenuItem = new JMenuItem("New Game");
     exitMenuItem = new JMenuItem("Exit");
+    startGameMenuItem = new JMenuItem("Start Game");
+    addPlayerMenuItem = new JMenuItem("Add Player");
 
     gameMenu.add(newGameMenuItem);
+    gameMenu.addSeparator();
+    gameMenu.add(startGameMenuItem);
+    gameMenu.addSeparator();
+    gameMenu.add(addPlayerMenuItem);
     gameMenu.addSeparator();
     gameMenu.add(exitMenuItem);
 
@@ -46,5 +55,14 @@ public class GamingMenu extends JMenuBar {
 
       }
     });
+
+    startGameMenuItem.addActionListener(new ActionListener() {
+      @Override
+      public void actionPerformed(ActionEvent e) {
+        listener.startGame();
+      }
+    });
+
+    addPlayerMenuItem.addActionListener(new AddPlayerListener(listener));
   }
 }

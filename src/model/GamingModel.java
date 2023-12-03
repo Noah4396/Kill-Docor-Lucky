@@ -109,6 +109,11 @@ public class GamingModel implements Model {
   }
 
   @Override
+  public ArrayList<PlayerCharacter> getPlayers() {
+    return players;
+  }
+
+  @Override
   public boolean isGameStart() {
     return gameStart;
   }
@@ -550,7 +555,7 @@ public class GamingModel implements Model {
     }
     for (PlayerCharacter tmp : players) {
       if (tmp.getName().equals(p.getName())) {
-        throw new IllegalArgumentException("Invalid input");
+        throw new IllegalStateException("Invalid input");
       }
     }
     players.add(p);

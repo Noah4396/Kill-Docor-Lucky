@@ -91,4 +91,10 @@ public interface ReadOnlyModel {
    * @return the target
    */
   Character getTarget();
+
+  /**
+   * get players.
+   * @return the players
+   */
+  ArrayList<PlayerCharacter> getPlayers();
 }

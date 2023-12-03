@@ -80,6 +80,11 @@ public class GamingView extends JFrame implements View {
   }
 
   @Override
+  public void setPlayer() {
+    boardPanel.setPlayer();
+  }
+
+  @Override
   public void setFeatures(Features features) {
     gameMenu.addListener(features);
   }

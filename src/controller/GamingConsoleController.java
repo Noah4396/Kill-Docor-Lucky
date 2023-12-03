@@ -191,7 +191,7 @@ public class GamingConsoleController implements Controller {
       roomIndex = scan.nextInt();
       m.addPlayer(player, roomIndex);
       players.add(player);
-    } catch (InputMismatchException | IllegalArgumentException e) {
+    } catch (InputMismatchException | IllegalArgumentException | IllegalStateException e) {
       outputString("Invalid room index or name duplicated!\n");
       return;
     }

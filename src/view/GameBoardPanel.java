@@ -99,7 +99,17 @@ public class GameBoardPanel extends JPanel {
       FontMetrics fontMetrics = g.getFontMetrics();
       int textWidth = fontMetrics.stringWidth(roomName);
       int textHeight = fontMetrics.getHeight();
-      g.drawString(room.getName(), leftBound + width / 4, upperBound + height / 2);
+      StringBuffer sb = new StringBuffer();
+      sb.append(room.getName());
+      sb.append(", index: ");
+      sb.append(room.getIndex());
+      g.drawString(sb.toString(), leftBound + width / 4, upperBound + height / 2);
+    }
+  }
+
+  public void setPlayer() {
+    for(PlayerCharacter player : model.getPlayers()) {
+      players.add(new Player(player));
     }
   }
 
@@ -128,7 +138,8 @@ public class GameBoardPanel extends JPanel {
       } else {
         g.setColor(Color.BLUE);
       }
-      g.fillOval(leftBound, upperBound, radius, radius);  // Draw a simple oval as a player
+      g.drawOval(leftBound, upperBound, radius, radius);  // Draw a simple oval as a player
+      g.drawString("" + character.getIndex(), leftBound, upperBound);
     }
 
     public String getPlayerName() {

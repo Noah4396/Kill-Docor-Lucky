@@ -47,4 +47,9 @@ public interface View {
    * Paint the layout of the view.
    */
   public void paintLayout();
+
+  /**
+   * Set the all player in the model.
+   */
+  void setPlayer();
 }
