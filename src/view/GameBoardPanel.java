@@ -99,11 +99,9 @@ public class GameBoardPanel extends JPanel {
       FontMetrics fontMetrics = g.getFontMetrics();
       int textWidth = fontMetrics.stringWidth(roomName);
       int textHeight = fontMetrics.getHeight();
-      StringBuffer sb = new StringBuffer();
-      sb.append(room.getName());
-      sb.append(", index: ");
-      sb.append(room.getIndex());
-      g.drawString(sb.toString(), leftBound + width / 4, upperBound + height / 2);
+      g.drawString(roomName, leftBound + width / 4, upperBound + height / 2 - textHeight / 2);
+      // Draw the second line (index)
+      g.drawString("index: " + String.valueOf(room.getIndex()), leftBound + width / 4, upperBound + height / 2 + textHeight / 2);
     }
   }
 
