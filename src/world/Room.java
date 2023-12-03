@@ -182,4 +182,10 @@ public interface Room {
    */
   public Room getRandNeighbour(int index);
 
+  /**
+   * Get the character index.
+   * @param character the character.
+   * @return the index of character.
+   */
+  public int getCharacterIndex(Character character);
 }

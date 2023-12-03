@@ -102,6 +102,11 @@ public class MockModel implements Model {
   }
 
   @Override
+  public Character getTarget() {
+    return null;
+  }
+
+  @Override
   public boolean isGameStart() {
     return gameStart;
   }

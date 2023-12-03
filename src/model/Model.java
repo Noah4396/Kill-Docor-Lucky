@@ -72,4 +72,5 @@ public interface Model extends ReadOnlyModel {
    * @param gameStart the game start
    */
   void setGameStart(boolean gameStart);
+
 }

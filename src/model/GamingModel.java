@@ -104,6 +104,11 @@ public class GamingModel implements Model {
   }
 
   @Override
+  public Character getTarget() {
+    return doctorLucky;
+  }
+
+  @Override
   public boolean isGameStart() {
     return gameStart;
   }
@@ -554,7 +559,7 @@ public class GamingModel implements Model {
 
   @Override
   public PlayerCharacter getTurn() {
-    return players.get(currentTurn);
+    return players.isEmpty() ? null : players.get(currentTurn);
   }
 
   @Override

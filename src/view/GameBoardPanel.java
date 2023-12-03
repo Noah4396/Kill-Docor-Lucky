@@ -2,9 +2,11 @@ package view;
 
 import java.awt.*;
 import java.util.ArrayList;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 import model.ReadOnlyModel;
+import world.Character;
+import world.PlayerCharacter;
 import world.Room;
 
 /**
@@ -13,6 +15,8 @@ import world.Room;
 public class GameBoardPanel extends JPanel {
   private final ReadOnlyModel model;
   private final ArrayList<Room> rooms;
+  private int amplificationFactor;
+  private final ArrayList<Player> players;
 
   /**
    * Constructor.
@@ -22,6 +26,8 @@ public class GameBoardPanel extends JPanel {
   public GameBoardPanel(ReadOnlyModel model) {
     this.model = model;
     this.rooms = model == null ? null : model.getRooms();
+    this.amplificationFactor = 0;
+    this.players = new ArrayList<>();
   }
 
   @Override
@@ -31,6 +37,30 @@ public class GameBoardPanel extends JPanel {
     }
     super.paintComponent(g);
     paintRooms(g);
+    paintTarget(g);
+    for(Player player : players) {
+      player.paintComponent(g);
+    }
+  }
+
+  private void paintTarget(Graphics g) {
+    Character target = model.getTarget();
+    Room room = target.getRoom();
+
+    int upperBound = room.getUpperCorner();
+    int leftBound = room.getLeftCorner();
+    int lowerBound = room.getLowerCorner();
+    int rightBound = room.getRightCorner();
+
+    // Calculate the width and height of the rectangle
+    int width = (rightBound - leftBound + 1) * amplificationFactor;
+    int height = (lowerBound - upperBound + 1) * amplificationFactor;
+    leftBound *= amplificationFactor;
+    upperBound *= amplificationFactor;
+    int radius = amplificationFactor;
+
+    g.setColor(Color.RED);
+    g.fillOval(leftBound + width/2, upperBound + height/2, radius, radius);
   }
 
   private void paintRooms(Graphics g) {
@@ -42,7 +72,7 @@ public class GameBoardPanel extends JPanel {
       maxHeight = Math.max(maxHeight, room.getLowerCorner());
       maxWidth = Math.max(maxWidth, room.getRightCorner());
     }
-    int amplificationFactor = Math.min(cellWidth / (maxWidth + 1), cellHeight / (maxHeight + 1));
+    amplificationFactor = Math.min(cellWidth / (maxWidth + 1), cellHeight / (maxHeight + 1));
     for (Room room : rooms) {
       int upperBound = room.getUpperCorner();
       int leftBound = room.getLeftCorner();
@@ -70,6 +100,39 @@ public class GameBoardPanel extends JPanel {
       int textWidth = fontMetrics.stringWidth(roomName);
       int textHeight = fontMetrics.getHeight();
       g.drawString(room.getName(), leftBound + width / 4, upperBound + height / 2);
+    }
+  }
+
+  class Player extends JComponent {
+    private Character character;
+
+    public Player(Character character) {
+      this.character = character;
+    }
+
+    @Override
+    protected void paintComponent(Graphics g) {
+      super.paintComponent(g);
+      Room room = character.getRoom();
+
+      int upperBound = room.getUpperCorner();
+      int leftBound = room.getLeftCorner();
+      // Calculate the width and height of the rectangle
+      leftBound *= amplificationFactor;
+      upperBound *= amplificationFactor;
+      int radius = amplificationFactor;
+
+      int index = room.getCharacterIndex(character);
+      if(model.getTurn() == character) {
+        g.setColor(Color.RED);
+      } else {
+        g.setColor(Color.BLUE);
+      }
+      g.fillOval(leftBound, upperBound, radius, radius);  // Draw a simple oval as a player
+    }
+
+    public String getPlayerName() {
+      return character.getName();
     }
   }
 }

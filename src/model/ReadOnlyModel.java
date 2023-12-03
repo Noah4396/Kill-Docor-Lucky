@@ -85,4 +85,10 @@ public interface ReadOnlyModel {
    * @return the boolean
    */
   boolean isGameStart();
+
+  /**
+   * get target.
+   * @return the target
+   */
+  Character getTarget();
 }

@@ -388,6 +388,11 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
+  public int getCharacterIndex(Character character) {
+    return characters.indexOf(character);
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;
