@@ -139,7 +139,7 @@ public class GameBoardPanel extends JPanel {
       int centerY = upperBound + radius / 2;
 
       // Draw the oval
-      g.drawOval(leftBound, upperBound, radius, radius);
+      g.drawOval(leftBound + index * radius, upperBound, radius, radius);
 
       // Draw the text in the center
       String text = "" + character.getIndex();
@@ -147,6 +147,7 @@ public class GameBoardPanel extends JPanel {
       int textWidth = fontMetrics.stringWidth(text);
       int textHeight = fontMetrics.getHeight();
       int textX = centerX - textWidth / 2;
+      textX += index * radius;
       int textY = centerY + textHeight / 2;
 
       g.drawString(text, textX, textY);

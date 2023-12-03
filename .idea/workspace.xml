@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="make adding player better" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="make the room title better">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -259,15 +261,8 @@
       <workItem from="1701297436588" duration="8579000" />
       <workItem from="1701375575146" duration="10642000" />
       <workItem from="1701465811327" duration="10680000" />
-      <workItem from="1701555108038" duration="11516000" />
-    </task>
-    <task id="LOCAL-00049" summary="Finish the model test.">
-      <option name="closed" value="true" />
-      <created>1697922433730</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1697922433730</updated>
+      <workItem from="1701555108038" duration="11917000" />
+      <workItem from="1701643348372" duration="598000" />
     </task>
     <task id="LOCAL-00050" summary="Test invalid command">
       <option name="closed" value="true" />
@@ -653,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701574966307</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="make the room title better">
+      <option name="closed" value="true" />
+      <created>1701575308092</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1701575308098</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -697,7 +700,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The pet will make the room invisible" />
     <MESSAGE value="The wandering pet" />
     <MESSAGE value="Create move pet method in GamingModel.java" />
     <MESSAGE value="Fix the dfs move pet" />
@@ -722,6 +724,7 @@
     <MESSAGE value="Draw player and target" />
     <MESSAGE value="add player" />
     <MESSAGE value="make adding player better" />
-    <option name="LAST_COMMIT_MESSAGE" value="make adding player better" />
+    <MESSAGE value="make the room title better" />
+    <option name="LAST_COMMIT_MESSAGE" value="make the room title better" />
   </component>
 </project>
