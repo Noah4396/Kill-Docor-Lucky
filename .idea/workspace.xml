@@ -9,19 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Draw player and target">
-      <change afterPath="$PROJECT_DIR$/src/view/menu/AddPlayerListener.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="add player">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Features.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GamingConsoleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/MockModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/MockModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/ReadOnlyModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GamingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -272,15 +266,7 @@
       <workItem from="1701297436588" duration="8579000" />
       <workItem from="1701375575146" duration="10642000" />
       <workItem from="1701465811327" duration="10680000" />
-      <workItem from="1701555108038" duration="10490000" />
-    </task>
-    <task id="LOCAL-00047" summary="Finish the program">
-      <option name="closed" value="true" />
-      <created>1697867329360</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1697867329360</updated>
+      <workItem from="1701555108038" duration="11175000" />
     </task>
     <task id="LOCAL-00048" summary="Modify the model test.">
       <option name="closed" value="true" />
@@ -666,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701563481772</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="add player">
+      <option name="closed" value="true" />
+      <created>1701574290471</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1701574290471</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -710,7 +704,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create Pet" />
     <MESSAGE value="Add Pet to the gaming model" />
     <MESSAGE value="The pet will make the room invisible" />
     <MESSAGE value="The wandering pet" />
@@ -735,6 +728,7 @@
     <MESSAGE value="Create menu and controller" />
     <MESSAGE value="Game Initialization" />
     <MESSAGE value="Draw player and target" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draw player and target" />
+    <MESSAGE value="add player" />
+    <option name="LAST_COMMIT_MESSAGE" value="add player" />
   </component>
 </project>

@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import controller.Features;
 import model.ReadOnlyModel;
+import world.PlayerCharacter;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,8 +81,8 @@ public class GamingView extends JFrame implements View {
   }
 
   @Override
-  public void setPlayer() {
-    boardPanel.setPlayer();
+  public void addPlayer(PlayerCharacter player) {
+    boardPanel.addPlayer(player);
   }
 
   @Override

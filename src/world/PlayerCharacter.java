@@ -167,6 +167,7 @@ public class PlayerCharacter implements Character {
     StringBuffer sb = new StringBuffer();
     sb.append("Character name: " + name);
     sb.append(", Current room: " + room.getName());
+    sb.append(", index: " + index);
     sb.append(", items: " + items);
     sb.append(", player type: ");
     if (isComputer) {

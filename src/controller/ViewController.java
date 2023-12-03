@@ -30,7 +30,6 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void startGame() {
-    view.setPlayer();
     model.setGameStart(true);
     view.refresh();
   }
@@ -40,11 +39,12 @@ public class ViewController implements Controller,  Features {
     if(capacity < 0 || index < 0) {
       throw new IllegalArgumentException("Invalid input. Please enter a valid number.");
     }
-    PlayerCharacter player = new PlayerCharacter(name, model.getRooms().size(), capacity);
+    PlayerCharacter player = new PlayerCharacter(name, model.getPlayers().size(), capacity);
     model.addPlayer(player, index);
     if (isComputer) {
       player.setAsComputer();
     }
+    view.addPlayer(player);
     view.refresh();
   }
 }

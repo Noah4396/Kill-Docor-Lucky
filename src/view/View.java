@@ -3,6 +3,7 @@ package view;
 import controller.Controller;
 import controller.Features;
 import model.ReadOnlyModel;
+import world.PlayerCharacter;
 
 /**
  * A view for the game: display the game board and provide visual interface for users.
@@ -49,7 +50,8 @@ public interface View {
   public void paintLayout();
 
   /**
-   * Set the all player in the model.
+   * Add a player to the view.
+   * @param player the player to add
    */
-  void setPlayer();
+  public void addPlayer(PlayerCharacter player);
 }

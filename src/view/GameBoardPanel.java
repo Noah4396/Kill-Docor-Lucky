@@ -107,10 +107,8 @@ public class GameBoardPanel extends JPanel {
     }
   }
 
-  public void setPlayer() {
-    for(PlayerCharacter player : model.getPlayers()) {
-      players.add(new Player(player));
-    }
+  public void addPlayer(PlayerCharacter player) {
+    players.add(new Player(player));
   }
 
   class Player extends JComponent {
@@ -138,8 +136,22 @@ public class GameBoardPanel extends JPanel {
       } else {
         g.setColor(Color.BLUE);
       }
-      g.drawOval(leftBound, upperBound, radius, radius);  // Draw a simple oval as a player
-      g.drawString("" + character.getIndex(), leftBound, upperBound);
+      // Assuming radius is the diameter of the oval
+      int centerX = leftBound + radius / 2;
+      int centerY = upperBound + radius / 2;
+
+      // Draw the oval
+      g.drawOval(leftBound, upperBound, radius, radius);
+
+      // Draw the text in the center
+      String text = "" + character.getIndex();
+      FontMetrics fontMetrics = g.getFontMetrics();
+      int textWidth = fontMetrics.stringWidth(text);
+      int textHeight = fontMetrics.getHeight();
+      int textX = centerX - textWidth / 2;
+      int textY = centerY + textHeight / 2;
+
+      g.drawString(text, textX, textY);
     }
 
     public String getPlayerName() {
