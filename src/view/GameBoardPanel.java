@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.*;
 
@@ -8,6 +10,7 @@ import model.ReadOnlyModel;
 import world.Character;
 import world.PlayerCharacter;
 import world.Room;
+import world.TargetCharacter;
 
 /**
  * Panel for the game board.
@@ -17,6 +20,7 @@ public class GameBoardPanel extends JPanel {
   private final ArrayList<Room> rooms;
   private int amplificationFactor;
   private final ArrayList<Player> players;
+  private final Player target;
 
   /**
    * Constructor.
@@ -26,10 +30,20 @@ public class GameBoardPanel extends JPanel {
   public GameBoardPanel(ReadOnlyModel model) {
     this.model = model;
     this.rooms = model == null ? null : model.getRooms();
+    this.target = model == null ? null : new Player(model.getTarget());
     this.amplificationFactor = 0;
     this.players = new ArrayList<>();
+    this.requestFocus();
   }
 
+  public void setZOrder(Component component, int index) {
+    if (this.isAncestorOf(component)) {
+      this.setComponentZOrder(component, index);
+    } else {
+      // Handle the case when the component is not a child of this panel
+      // You might need to add the component to the panel before setting its Z-order
+    }
+  }
   @Override
   protected void paintComponent(Graphics g) {
     if(model == null) {
@@ -37,30 +51,12 @@ public class GameBoardPanel extends JPanel {
     }
     super.paintComponent(g);
     paintRooms(g);
-    paintTarget(g);
+    //paintTarget(g);
+    target.paintComponent(g);
     for(Player player : players) {
       player.paintComponent(g);
+      setZOrder(player, 0);
     }
-  }
-
-  private void paintTarget(Graphics g) {
-    Character target = model.getTarget();
-    Room room = target.getRoom();
-
-    int upperBound = room.getUpperCorner();
-    int leftBound = room.getLeftCorner();
-    int lowerBound = room.getLowerCorner();
-    int rightBound = room.getRightCorner();
-
-    // Calculate the width and height of the rectangle
-    int width = (rightBound - leftBound + 1) * amplificationFactor;
-    int height = (lowerBound - upperBound + 1) * amplificationFactor;
-    leftBound *= amplificationFactor;
-    upperBound *= amplificationFactor;
-    int radius = amplificationFactor;
-
-    g.setColor(Color.RED);
-    g.fillOval(leftBound + width/2, upperBound + height/2, radius, radius);
   }
 
   private void paintRooms(Graphics g) {
@@ -114,6 +110,12 @@ public class GameBoardPanel extends JPanel {
 
     public Player(Character character) {
       this.character = character;
+      addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+          handleMouseClick(e);
+        }
+      });
     }
 
     @Override
@@ -139,7 +141,14 @@ public class GameBoardPanel extends JPanel {
       int centerY = upperBound + radius / 2;
 
       // Draw the oval
-      g.drawOval(leftBound + index * radius, upperBound, radius, radius);
+      if(character instanceof TargetCharacter){
+        g.setColor(Color.RED);
+        g.fillOval(leftBound + index * radius, upperBound, radius, radius);
+        return;
+      }
+      else {
+        g.drawOval(leftBound + index * radius, upperBound, radius, radius);
+      }
 
       // Draw the text in the center
       String text = "" + character.getIndex();
@@ -155,6 +164,11 @@ public class GameBoardPanel extends JPanel {
 
     public String getPlayerName() {
       return character.getName();
+    }
+
+    private void handleMouseClick(MouseEvent e) {
+      // Handle the mouse click on the player text
+      System.out.println("Player text clicked: " + getPlayerName());
     }
   }
 }

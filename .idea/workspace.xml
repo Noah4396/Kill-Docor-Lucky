@@ -9,8 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="make the room title better">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="fix bug for player in the same room">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -262,15 +263,7 @@
       <workItem from="1701375575146" duration="10642000" />
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
-      <workItem from="1701643348372" duration="598000" />
-    </task>
-    <task id="LOCAL-00050" summary="Test invalid command">
-      <option name="closed" value="true" />
-      <created>1697928229529</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1697928229531</updated>
+      <workItem from="1701643348372" duration="2464000" />
     </task>
     <task id="LOCAL-00051" summary="Test add invalid player">
       <option name="closed" value="true" />
@@ -656,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701575308098</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="fix bug for player in the same room">
+      <option name="closed" value="true" />
+      <created>1701644523838</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1701644523839</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The wandering pet" />
     <MESSAGE value="Create move pet method in GamingModel.java" />
     <MESSAGE value="Fix the dfs move pet" />
     <MESSAGE value="Move pet command" />
@@ -725,6 +725,7 @@
     <MESSAGE value="add player" />
     <MESSAGE value="make adding player better" />
     <MESSAGE value="make the room title better" />
-    <option name="LAST_COMMIT_MESSAGE" value="make the room title better" />
+    <MESSAGE value="fix bug for player in the same room" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bug for player in the same room" />
   </component>
 </project>
