@@ -54,7 +54,10 @@ public class GamingView extends JFrame implements View {
 
   @Override
   public void refresh() {
-    boardPanel.repaint();
+    // Revalidate and repaint the container to reflect the changes
+    revalidate();
+    repaint();
+
     if (model.isGameOver()) {
       turnLabel.setText("Game over!");
     } else {
@@ -83,13 +86,9 @@ public class GamingView extends JFrame implements View {
     boardPanel = new GameBoardPanel(model);
     boardPanel.setLayout(new GridLayout(0, 1));
     guideLabel.setText("");
-
     // Add the new boardPanel to the container
     add(boardPanel, BorderLayout.CENTER);
 
-    // Revalidate and repaint the container to reflect the changes
-    revalidate();
-    repaint();
   }
 
 
@@ -99,7 +98,12 @@ public class GamingView extends JFrame implements View {
   }
 
   @Override
-  public void setFeatures(Features features) {
+  public void setMenuFeatures(Features features) {
     gameMenu.addListener(features);
+  }
+
+  @Override
+  public void setPanelFeatures(Features features) {
+    boardPanel.addListener(features);
   }
 }

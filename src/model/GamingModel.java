@@ -189,12 +189,7 @@ public class GamingModel implements Model {
     this.pet = new Pet(s);
   }
 
-  /**
-   * Move a character to a room.
-   *
-   * @param character the character.
-   * @param room      the room.
-   */
+  @Override
   public void move(Character character, Room room) {
     if (character == null || room == null) {
       throw new IllegalArgumentException("Invalid input of move");

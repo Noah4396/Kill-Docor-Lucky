@@ -1,5 +1,7 @@
 package controller;
 
+import world.Room;
+
 public interface Features {
   /**
    * Start a new game.
@@ -23,4 +25,11 @@ public interface Features {
    * @param isComputer whether the player is a computer
    */
   void addPlayer(String name, int capacity, int index, boolean isComputer);
+
+  /**
+   * Move the player to the given room.
+   *
+   * @param room the room to move the player to
+   */
+  void movePlayer(Room room);
 }

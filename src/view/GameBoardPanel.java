@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import javax.swing.*;
 
+import controller.Features;
 import model.ReadOnlyModel;
 import world.Character;
 import world.PlayerCharacter;
@@ -22,6 +23,7 @@ public class GameBoardPanel extends JPanel {
   private int amplificationFactor;
   private final ArrayList<Player> players;
   private final Player target;
+  private Features listener;
 
   /**
    * Constructor.
@@ -32,6 +34,7 @@ public class GameBoardPanel extends JPanel {
     this.model = model;
     this.roomComponents = new ArrayList<>();
     this.rooms = model == null ? null : model.getRooms();
+    this.listener = null;
     if (model != null) {
       for (Room room : rooms) {
         RoomComponent roomComponent = new RoomComponent(room);
@@ -50,6 +53,9 @@ public class GameBoardPanel extends JPanel {
     });
   }
 
+  public void addListener(Features listener) {
+    this.listener = listener;
+  }
   private void initializeAmp() {
     if (model == null) {
       amplificationFactor = 0;
@@ -78,14 +84,27 @@ public class GameBoardPanel extends JPanel {
     }
     for (Player player : players) {
       if (isInRange(x, y, player.x, player.y, player.radius)) {
-        System.out.println("Player clicked: " + player.getPlayerName());
+        sb.append(player.character.toString());
+        JOptionPane.showMessageDialog(null, sb.toString());
         return;
       }
     }
     for (RoomComponent roomComponent : roomComponents) {
       if (isInRange(x, y, roomComponent.x, roomComponent.y, amplificationFactor)) {
-        System.out.println("Room clicked: " + roomComponent.room.getName());
-        return;
+        if(!model.isGameStart()){
+          sb.append(roomComponent.room.toString());
+          JOptionPane.showMessageDialog(null, sb.toString());
+          return;
+        }
+
+        if (listener != null) {
+          try {
+            listener.movePlayer(roomComponent.room);
+          } catch (IllegalStateException exception) {
+            sb.append("Invalid move: " + exception.getMessage());
+            JOptionPane.showMessageDialog(null, sb.toString());
+          }
+        }
       }
     }
   }

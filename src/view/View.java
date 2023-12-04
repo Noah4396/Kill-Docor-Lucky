@@ -1,6 +1,5 @@
 package view;
 
-import controller.Controller;
 import controller.Features;
 import model.ReadOnlyModel;
 import world.PlayerCharacter;
@@ -36,8 +35,13 @@ public interface View {
    * Set the features of the view.
    * @param features the features to set
    */
-  void setFeatures(Features features);
+  void setMenuFeatures(Features features);
 
+  /**
+   * Set the features of the panel.
+   * @param features the features to set
+   */
+  void setPanelFeatures(Features features);
   /**
    * Set the model of the view.
    * @param model the model to set

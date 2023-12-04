@@ -2,6 +2,7 @@ package model;
 
 import world.Character;
 import world.PlayerCharacter;
+import world.Room;
 
 /**
  * The model of game.
@@ -73,4 +74,11 @@ public interface Model extends ReadOnlyModel {
    */
   void setGameStart(boolean gameStart);
 
+  /**
+   * Move a character to a room.
+   *
+   * @param character the character.
+   * @param room      the room.
+   */
+  public void move(Character character, Room room);
 }

@@ -9,9 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add mouse click">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix start new game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Features.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/ViewDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GamingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GamingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Model.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,23 +270,7 @@
       <workItem from="1701375575146" duration="10642000" />
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
-      <workItem from="1701643348372" duration="13115000" />
-    </task>
-    <task id="LOCAL-00053" summary="Test move">
-      <option name="closed" value="true" />
-      <created>1697933971225</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1697933971225</updated>
-    </task>
-    <task id="LOCAL-00054" summary="Add Mock test.">
-      <option name="closed" value="true" />
-      <created>1697948168958</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1697948168959</updated>
+      <workItem from="1701643348372" duration="17402000" />
     </task>
     <task id="LOCAL-00055" summary="Finish Mock Test">
       <option name="closed" value="true" />
@@ -657,7 +648,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701653871425</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="Player change line when overfill">
+      <option name="closed" value="true" />
+      <created>1701657436984</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1701657436986</updated>
+    </task>
+    <task id="LOCAL-00103" summary="Fix start new game">
+      <option name="closed" value="true" />
+      <created>1701657929221</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1701657929223</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,8 +708,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Move pet command" />
-    <MESSAGE value="Test move pet" />
     <MESSAGE value="Add attempt" />
     <MESSAGE value="Finish attempt" />
     <MESSAGE value="Test attempt" />
@@ -726,6 +731,8 @@
     <MESSAGE value="fix bug for player in the same room" />
     <MESSAGE value="add mouse adaptor to player" />
     <MESSAGE value="Add mouse click" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add mouse click" />
+    <MESSAGE value="Player change line when overfill" />
+    <MESSAGE value="Fix start new game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix start new game" />
   </component>
 </project>

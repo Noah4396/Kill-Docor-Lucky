@@ -4,6 +4,7 @@ import model.GamingModel;
 import model.Model;
 import view.View;
 import world.PlayerCharacter;
+import world.Room;
 
 public class ViewController implements Controller,  Features {
   private  View view;
@@ -31,6 +32,7 @@ public class ViewController implements Controller,  Features {
   @Override
   public void startGame() {
     model.setGameStart(true);
+    view.setPanelFeatures(this);
     view.refresh();
   }
 
@@ -46,5 +48,18 @@ public class ViewController implements Controller,  Features {
     }
     view.addPlayer(player);
     view.refresh();
+  }
+
+  @Override
+  public void movePlayer(Room room) {
+    PlayerCharacter player = model.getTurn();
+    Room currentRoom = player.getRoom();
+    if(currentRoom.isNeighbour(room) != 0) {
+      model.move(player, room);
+      view.refresh();
+    }
+    else{
+      throw new IllegalStateException("Cannot move to such room, it is not neighbour to the player");
+    }
   }
 }

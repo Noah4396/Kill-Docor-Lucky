@@ -1,6 +1,5 @@
 package driver;
 
-import controller.GamingConsoleController;
 import controller.ViewController;
 import model.GamingModel;
 import view.GamingView;
@@ -23,7 +22,7 @@ public class ViewDriver {
     GamingModel model = null;
     GamingView view = new GamingView(model);
     ViewController controller = new ViewController(view, model);
-    view.setFeatures(controller);
+    view.setMenuFeatures(controller);
     view.makeVisible();
   }
 }
