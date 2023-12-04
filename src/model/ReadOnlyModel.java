@@ -97,4 +97,10 @@ public interface ReadOnlyModel {
    * @return the players
    */
   ArrayList<PlayerCharacter> getPlayers();
+
+  /**
+   * get max turn.
+   * @return the max turn
+   */
+  int getMaxTurn();
 }

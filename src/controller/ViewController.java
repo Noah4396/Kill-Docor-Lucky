@@ -38,6 +38,13 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void addPlayer(String name, int capacity, int index, boolean isComputer) {
+    if(model == null) {
+      throw new IllegalStateException("Please click Game -> New Game to start a new game with "
+          + "a world specification first.");
+    }
+    if(model.isGameStart()) {
+      throw new IllegalStateException("Cannot add player after the game has started.");
+    }
     if(capacity < 0 || index < 0) {
       throw new IllegalArgumentException("Invalid input. Please enter a valid number.");
     }
@@ -56,6 +63,7 @@ public class ViewController implements Controller,  Features {
     Room currentRoom = player.getRoom();
     if(currentRoom.isNeighbour(room) != 0) {
       model.move(player, room);
+      model.passTurn();
       view.refresh();
     }
     else{

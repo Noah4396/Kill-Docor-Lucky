@@ -12,12 +12,11 @@ public class GamingView extends JFrame implements View {
   private ReadOnlyModel model;
   private GameBoardPanel boardPanel;
   private final JLabel turnLabel;
-  private String turnInfo;
   private final GamingMenu gameMenu;
   private final JLabel guideLabel;
+  private String labelText;
 
   public GamingView(ReadOnlyModel model) {
-    turnInfo = "1";
     this.model = model;
     setTitle("Kill Doctor Lucky");
     setSize(1000, 1000);
@@ -33,14 +32,11 @@ public class GamingView extends JFrame implements View {
     turnLabel = new JLabel("", SwingConstants.LEADING);
     add(turnLabel, BorderLayout.EAST); // Move the label to the right side
 
-
     guideLabel = new JLabel("Click menu Game --> NewGame to start.");
     add(guideLabel, BorderLayout.CENTER);
 
-
     boardPanel = null;
   }
-
 
   @Override
   public void addClickListener(Features listener) {
@@ -58,11 +54,23 @@ public class GamingView extends JFrame implements View {
     revalidate();
     repaint();
 
-    if (model.isGameOver()) {
-      turnLabel.setText("Game over!");
-    } else {
-      turnLabel.setText("Current turn: " + turnInfo);
+    if (model != null) {
+      if (model.isGameOver()) {
+        labelText = "Game Over!";
+        if (model.getWinner() != null) {
+          labelText += "<br>Winner: " + model.getWinner().getName();
+        } else {
+          labelText += "<br>Reach the max turn, and no winner.";
+        }
+      } else {
+        labelText = "Current turn: " + (model.getTotalTurn() + 1)
+            + ", MaxTurn:" + model.getMaxTurn();
+        labelText += "<br>Current player: " + model.getTurn().getName()
+            + ", player index: " + model.getTurn().getIndex();
+      }
     }
+
+    turnLabel.setText("<html>" + labelText + "</html>");
   }
 
   @Override
@@ -90,7 +98,6 @@ public class GamingView extends JFrame implements View {
     add(boardPanel, BorderLayout.CENTER);
 
   }
-
 
   @Override
   public void addPlayer(PlayerCharacter player) {

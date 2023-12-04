@@ -43,10 +43,8 @@ public class AddPlayerListener implements ActionListener {
 
     try{
       features.addPlayer(name, capacity, index, isComputerPlayer);
-    } catch (IllegalArgumentException e) {
-      JOptionPane.showMessageDialog(null, "Invalid room index. Please enter a valid room index.");
-    } catch (IllegalStateException e) {
-      JOptionPane.showMessageDialog(null, "Name duplicated. Please enter a valid name.");
+    } catch (IllegalArgumentException | IllegalStateException e) {
+      JOptionPane.showMessageDialog(null, e.getMessage());
     }
   }
 

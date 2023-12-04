@@ -112,6 +112,11 @@ public class MockModel implements Model {
   }
 
   @Override
+  public int getMaxTurn() {
+    return 0;
+  }
+
+  @Override
   public boolean isGameStart() {
     return gameStart;
   }

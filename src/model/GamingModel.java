@@ -114,6 +114,11 @@ public class GamingModel implements Model {
   }
 
   @Override
+  public int getMaxTurn() {
+    return maxTurn;
+  }
+
+  @Override
   public boolean isGameStart() {
     return gameStart;
   }
@@ -550,7 +555,7 @@ public class GamingModel implements Model {
     }
     for (PlayerCharacter tmp : players) {
       if (tmp.getName().equals(p.getName())) {
-        throw new IllegalStateException("Invalid input");
+        throw new IllegalStateException("Player name duplicated");
       }
     }
     players.add(p);

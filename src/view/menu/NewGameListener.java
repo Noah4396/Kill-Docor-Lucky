@@ -30,6 +30,9 @@ public class NewGameListener implements ActionListener {
         // For example, assuming you have a method like startNewGame(String filePath, int maxTurns) in your controller
         features.startNewGame(filePath, maxTurns);
       }
+      else{
+        JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid turn number.");
+      }
     }
   }
 
