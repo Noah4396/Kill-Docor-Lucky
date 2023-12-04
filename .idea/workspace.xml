@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="fix bug for player in the same room">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add mouse click">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
     </list>
@@ -263,15 +263,7 @@
       <workItem from="1701375575146" duration="10642000" />
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
-      <workItem from="1701643348372" duration="2464000" />
-    </task>
-    <task id="LOCAL-00051" summary="Test add invalid player">
-      <option name="closed" value="true" />
-      <created>1697929489345</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1697929489345</updated>
+      <workItem from="1701643348372" duration="10237000" />
     </task>
     <task id="LOCAL-00052" summary="Test computer player.">
       <option name="closed" value="true" />
@@ -657,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701644523839</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="add mouse adaptor to player">
+      <option name="closed" value="true" />
+      <created>1701646299004</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1701646299004</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,8 +701,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create move pet method in GamingModel.java" />
-    <MESSAGE value="Fix the dfs move pet" />
     <MESSAGE value="Move pet command" />
     <MESSAGE value="Test move pet" />
     <MESSAGE value="Add attempt" />
@@ -726,6 +724,8 @@
     <MESSAGE value="make adding player better" />
     <MESSAGE value="make the room title better" />
     <MESSAGE value="fix bug for player in the same room" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bug for player in the same room" />
+    <MESSAGE value="add mouse adaptor to player" />
+    <MESSAGE value="Add mouse click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add mouse click" />
   </component>
 </project>
