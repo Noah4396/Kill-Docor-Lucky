@@ -78,7 +78,7 @@ public class GameBoardPanel extends JPanel {
     StringBuffer sb = new StringBuffer();
     // Handle the mouse click on the room
     if (isInRange(x, y, target.x, target.y, target.radius)) {
-      sb.append("Target clicked: " + target.getPlayerName() + "\n");
+      sb.append("Target clicked, " + target.character.toString() + "\n");
       JOptionPane.showMessageDialog(null, sb.toString());
       return;
     }
@@ -234,16 +234,16 @@ public class GameBoardPanel extends JPanel {
       this.radius = radius / 2;
 
       // Draw the oval
+      String text;
       if (character instanceof TargetCharacter) {
         g.setColor(Color.RED);
-        g.fillOval(x - this.radius , y - this.radius, radius, radius);
-        return;
+        text = "" + ((TargetCharacter) character).getHealth();
       } else {
-        g.fillOval(x - this.radius , y - this.radius, radius, radius);
+        text = "" + character.getIndex();
       }
 
+      g.fillOval(x - this.radius , y - this.radius, radius, radius);
       // Draw the text in the center
-      String text = "" + character.getIndex();
       g.setColor(Color.black);
       FontMetrics fontMetrics = g.getFontMetrics();
       int textWidth = fontMetrics.stringWidth(text);

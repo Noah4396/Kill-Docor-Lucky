@@ -36,9 +36,9 @@ public class GamingMenu extends JMenuBar {
 
     gameMenu.add(newGameMenuItem);
     gameMenu.addSeparator();
-    gameMenu.add(startGameMenuItem);
-    gameMenu.addSeparator();
     gameMenu.add(addPlayerMenuItem);
+    gameMenu.addSeparator();
+    gameMenu.add(startGameMenuItem);
     gameMenu.addSeparator();
     gameMenu.add(exitMenuItem);
 

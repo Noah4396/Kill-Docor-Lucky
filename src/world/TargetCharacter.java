@@ -88,7 +88,7 @@ public class TargetCharacter implements Character {
   public String toString() {
     StringBuffer sb = new StringBuffer();
     sb.append("Target name: " + name);
-    sb.append(", Current room: " + room.getName());
+    sb.append(", Current health: " + health);
     return sb.toString();
   }
 
