@@ -32,4 +32,10 @@ public interface Features {
    * @param room the room to move the player to
    */
   void movePlayer(Room room);
+
+  void pickUpItem(int itemIndex);
+
+  String lookAround();
+
+  void makeAttempt(int itemIndex);
 }

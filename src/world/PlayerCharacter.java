@@ -186,6 +186,7 @@ public class PlayerCharacter implements Character {
   public String displayItems() {
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < items.size(); i++) {
+      sb.append("Index: " + i + ", ");
       sb.append(items.get(i).toString() + "\n");
     }
     return sb.toString();

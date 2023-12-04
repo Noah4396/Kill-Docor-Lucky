@@ -70,4 +70,20 @@ public class ViewController implements Controller,  Features {
       throw new IllegalStateException("Cannot move to such room, it is not neighbour to the player");
     }
   }
+
+  @Override
+  public void pickUpItem(int itemIndex) {
+    System.out.println("pickUpItem");
+  }
+
+  @Override
+  public String lookAround() {
+    System.out.println("lookAround");
+    return null;
+  }
+
+  @Override
+  public void makeAttempt(int itemIndex) {
+    System.out.println("makeAttempt");
+  }
 }
