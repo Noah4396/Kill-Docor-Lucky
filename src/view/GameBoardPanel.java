@@ -32,7 +32,7 @@ public class GameBoardPanel extends JPanel {
     this.model = model;
     this.roomComponents = new ArrayList<>();
     this.rooms = model == null ? null : model.getRooms();
-    if(model != null){
+    if (model != null) {
       for (Room room : rooms) {
         RoomComponent roomComponent = new RoomComponent(room);
         roomComponents.add(roomComponent);
@@ -50,8 +50,8 @@ public class GameBoardPanel extends JPanel {
     });
   }
 
-  private void initializeAmp(){
-    if(model == null) {
+  private void initializeAmp() {
+    if (model == null) {
       amplificationFactor = 0;
       return;
     }
@@ -69,19 +69,21 @@ public class GameBoardPanel extends JPanel {
   private void handleMouseClick(MouseEvent e) {
     int x = e.getX();
     int y = e.getY();
+    StringBuffer sb = new StringBuffer();
     // Handle the mouse click on the room
-    if(isInRange(x, y, target.x, target.y, target.radius)) {
-      System.out.println("Target clicked: " + target.getPlayerName());
+    if (isInRange(x, y, target.x, target.y, target.radius)) {
+      sb.append("Target clicked: " + target.getPlayerName() + "\n");
+      JOptionPane.showMessageDialog(null, sb.toString());
       return;
     }
-    for(Player player : players) {
-      if(isInRange(x, y, player.x, player.y, player.radius)) {
+    for (Player player : players) {
+      if (isInRange(x, y, player.x, player.y, player.radius)) {
         System.out.println("Player clicked: " + player.getPlayerName());
         return;
       }
     }
-    for(RoomComponent roomComponent : roomComponents) {
-      if(isInRange(x, y, roomComponent.x, roomComponent.y, amplificationFactor)) {
+    for (RoomComponent roomComponent : roomComponents) {
+      if (isInRange(x, y, roomComponent.x, roomComponent.y, amplificationFactor)) {
         System.out.println("Room clicked: " + roomComponent.room.getName());
         return;
       }
@@ -91,18 +93,19 @@ public class GameBoardPanel extends JPanel {
   private boolean isInRange(int x, int y, int centerX, int centerY, int radius) {
     return (x - centerX) * (x - centerX) + (y - centerY) * (y - centerY) <= radius * radius;
   }
+
   @Override
   protected void paintComponent(Graphics g) {
-    if(model == null) {
+    if (model == null) {
       return;
     }
     super.paintComponent(g);
     initializeAmp();
-    for(RoomComponent roomComponent : roomComponents) {
+    for (RoomComponent roomComponent : roomComponents) {
       roomComponent.paintComponent(g);
     }
     target.paintComponent(g);
-    for(Player player : players) {
+    for (Player player : players) {
       player.paintComponent(g);
     }
   }
@@ -117,11 +120,11 @@ public class GameBoardPanel extends JPanel {
     }
   }
 
-
   public class RoomComponent extends JComponent {
     private Room room;
     public int x;
     public int y;
+
     public RoomComponent(Room room) {
       this.room = room;
     }
@@ -159,13 +162,14 @@ public class GameBoardPanel extends JPanel {
       int textHeight = fontMetrics.getHeight();
       g.drawString(roomName, leftBound + width / 4, upperBound + height / 2 - textHeight / 2);
       // Draw the second line (index)
-      g.drawString("index: " + String.valueOf(room.getIndex()), leftBound + width / 4, upperBound + height / 2 + textHeight / 2);
+      g.drawString("index: " + String.valueOf(room.getIndex()), leftBound + width / 4,
+          upperBound + height / 2 + textHeight / 2);
       g.setColor(Color.GRAY);
-      g.drawOval(x - amplificationFactor, y - amplificationFactor, amplificationFactor * 2, amplificationFactor * 2);
+      g.drawOval(x - amplificationFactor, y - amplificationFactor, amplificationFactor * 2,
+          amplificationFactor * 2);
     }
 
   }
-
 
   class Player extends JComponent {
     private Character character;
@@ -184,32 +188,39 @@ public class GameBoardPanel extends JPanel {
 
       int upperBound = room.getUpperCorner();
       int leftBound = room.getLeftCorner();
+      int rightBound = room.getRightCorner();
       // Calculate the width and height of the rectangle
       leftBound *= amplificationFactor;
       upperBound *= amplificationFactor;
+      rightBound *= amplificationFactor;
+      int width = rightBound - leftBound;
       int radius = amplificationFactor;
 
       int index = room.getCharacterIndex(character);
-      if(model.getTurn() == character) {
+      if (model.getTurn() == character) {
         g.setColor(Color.YELLOW);
       } else {
-        g.setColor(Color.BLUE);
+        g.setColor(Color.CYAN);
       }
       // Assuming radius is the diameter of the oval
       int centerX = leftBound + radius / 2;
       int centerY = upperBound + radius / 2;
-      x = centerX+ index * radius;
-      y = centerY;
+      int offset = 0;
+      x = centerX + index * radius;
+      if(x > rightBound) {
+        offset = (x - leftBound) / width;
+        x = x - offset * width;
+      }
+      y = centerY + offset * radius;
       this.radius = radius / 2;
 
       // Draw the oval
-      if(character instanceof TargetCharacter){
+      if (character instanceof TargetCharacter) {
         g.setColor(Color.RED);
-        g.fillOval(leftBound + index * radius, upperBound, radius, radius);
+        g.fillOval(x - this.radius , y - this.radius, radius, radius);
         return;
-      }
-      else {
-        g.fillOval(leftBound + index * radius, upperBound, radius, radius);
+      } else {
+        g.fillOval(x - this.radius , y - this.radius, radius, radius);
       }
 
       // Draw the text in the center
@@ -218,9 +229,8 @@ public class GameBoardPanel extends JPanel {
       FontMetrics fontMetrics = g.getFontMetrics();
       int textWidth = fontMetrics.stringWidth(text);
       int textHeight = fontMetrics.getHeight();
-      int textX = centerX - textWidth / 2;
-      textX += index * radius;
-      int textY = centerY + textHeight / 2;
+      int textX = x - textWidth / 2;
+      int textY = y + textHeight / 2;
 
       g.drawString(text, textX, textY);
     }
