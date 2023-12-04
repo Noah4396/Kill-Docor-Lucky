@@ -188,4 +188,10 @@ public interface Room {
    * @return the index of character.
    */
   public int getCharacterIndex(Character character);
+
+  /**
+   * Get the items string.
+   * @return the items string.
+   */
+  public String getItemsString();
 }

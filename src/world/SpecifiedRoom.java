@@ -393,6 +393,15 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
+  public String getItemsString() {
+    StringBuffer sb = new StringBuffer();
+    for(Item item : items) {
+      sb.append(item.getName() + ": " + item.getDamagePoint() + ", ");
+    }
+    return sb.toString();
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;
