@@ -74,11 +74,24 @@ public class GamingView extends JFrame implements View {
 
   @Override
   public void paintLayout() {
+    // Remove the existing boardPanel, if any
+    if (boardPanel != null) {
+      remove(boardPanel);
+    }
+
+    // Create and set up the new boardPanel
     boardPanel = new GameBoardPanel(model);
-    boardPanel.setLayout(new GridLayout(0, 1)); // GridLayout with a single column
+    boardPanel.setLayout(new GridLayout(0, 1));
     guideLabel.setText("");
+
+    // Add the new boardPanel to the container
     add(boardPanel, BorderLayout.CENTER);
+
+    // Revalidate and repaint the container to reflect the changes
+    revalidate();
+    repaint();
   }
+
 
   @Override
   public void addPlayer(PlayerCharacter player) {
