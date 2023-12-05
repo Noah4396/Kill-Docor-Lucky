@@ -154,46 +154,46 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     int key = e.getKeyCode();
     StringBuffer sb = new StringBuffer();
     // Example: Map keys to specific actions
-    switch (key) {
-      case KeyEvent.VK_1:
-        sb.append("The room has the following items:\n");
-        sb.append(model.getTurn().getRoom().getItemsString() + "\n");
-        sb.append("Please enter the index of the item you want to pick up:\n");
-        String userInput = JOptionPane.showInputDialog(this, sb.toString());
-        if (userInput != null && !userInput.isEmpty()) {
-          try {
-            int itemIndex = Integer.parseInt(userInput);
-            listener.pickUpItem(itemIndex);
-          } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
-          }
-        }
-        break;
-      case KeyEvent.VK_2:
-        String lookAround = listener.lookAround();
-        JOptionPane.showMessageDialog(this, lookAround);
-        break;
-      case KeyEvent.VK_3:
-        sb.append("The player has following items:\n");
-        sb.append(model.getTurn().displayItems() + "\n");
-        sb.append("Please enter the index of the item you want to use:\n");
-        String attemptInput = JOptionPane.showInputDialog(this, sb.toString());
-        if (attemptInput != null && !attemptInput.isEmpty()) {
-          try {
-            int itemIndex = Integer.parseInt(attemptInput);
-            listener.makeAttempt(itemIndex);
-          } catch (NumberFormatException ex) {
-            JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
-          }
-        }
-        break;
-      // Add more cases for other keys if needed
-    }
+    listener.executeCommand(key, this);
   }
 
   @Override
   public void keyReleased(KeyEvent e) {
 
+  }
+
+  public int getRoomItemIndex() {
+    StringBuffer sb = new StringBuffer();
+    sb.append("The room has the following items:\n");
+    sb.append(model.getTurn().getRoom().displayItems() + "\n");
+    sb.append("Please enter the index of the item you want to pick up:\n");
+    String userInput = JOptionPane.showInputDialog(this, sb.toString());
+    if (userInput != null && !userInput.isEmpty()) {
+      try {
+        int itemIndex = Integer.parseInt(userInput);
+        return itemIndex;
+      } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
+      }
+    }
+    return -1;
+  }
+
+  public int getPlayerItemIndex() {
+    StringBuffer sb = new StringBuffer();
+    sb.append("The player has following items:\n");
+    sb.append(model.getTurn().displayItems() + "\n");
+    sb.append("Please enter the index of the item you want to use:\n");
+    String attemptInput = JOptionPane.showInputDialog(this, sb.toString());
+    if (attemptInput != null && !attemptInput.isEmpty()) {
+      try {
+        int itemIndex = Integer.parseInt(attemptInput);
+        return itemIndex;
+      } catch (NumberFormatException ex) {
+        JOptionPane.showMessageDialog(this, "Invalid input. Please enter a valid number.");
+      }
+    }
+    return -1;
   }
 
   public class RoomComponent extends JComponent {

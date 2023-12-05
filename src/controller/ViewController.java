@@ -1,19 +1,31 @@
 package controller;
 
+import command.*;
 import model.GamingModel;
 import model.Model;
+import view.GameBoardPanel;
 import view.View;
 import world.PlayerCharacter;
 import world.Room;
 
+import javax.swing.*;
+import java.awt.event.KeyEvent;
+import java.util.*;
+import java.util.function.Function;
+
 public class ViewController implements Controller,  Features {
   private  View view;
   private Model model;
+  Map<Integer, Function<GameBoardPanel, GamingCommand>> knownCommands;
+  Stack<GamingCommand> commands;
 
   public ViewController(View view, Model model) {
     this.view = view;
     this.model = model;
+    knownCommands = new HashMap<>();
+    commands = new Stack<>();
   }
+
 
   @Override
   public void playGame(Model m) {
@@ -25,6 +37,9 @@ public class ViewController implements Controller,  Features {
     System.out.println("startNewGame");
     model = new GamingModel(filePath, maxTurns);
     view.setModel(model);
+    knownCommands.put(KeyEvent.VK_1, s -> new PickUp(model.getTurn(), s.getRoomItemIndex()));
+    knownCommands.put(KeyEvent.VK_2, s -> new ViewLookAround(model.getTurn(), s));
+    knownCommands.put(KeyEvent.VK_3, s -> new Attempt(model.getTurn(), s.getPlayerItemIndex()));
     view.paintLayout();
     view.refresh();
   }
@@ -72,18 +87,17 @@ public class ViewController implements Controller,  Features {
   }
 
   @Override
-  public void pickUpItem(int itemIndex) {
-    System.out.println("pickUpItem");
+  public void executeCommand(int key, GameBoardPanel panel) {
+    if(knownCommands.containsKey(key)) {
+      GamingCommand command = knownCommands.get(key).apply(panel);
+      try {
+        command.execute(model);
+      } catch (IllegalArgumentException | IllegalStateException | InputMismatchException e){
+        JOptionPane.showMessageDialog(panel, e.getMessage());
+      }
+      commands.push(command);
+      view.refresh();
+    }
   }
 
-  @Override
-  public String lookAround() {
-    System.out.println("lookAround");
-    return null;
-  }
-
-  @Override
-  public void makeAttempt(int itemIndex) {
-    System.out.println("makeAttempt");
-  }
 }

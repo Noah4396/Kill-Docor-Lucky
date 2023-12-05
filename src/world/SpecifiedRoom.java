@@ -402,6 +402,15 @@ public class SpecifiedRoom implements Room {
   }
 
   @Override
+  public String displayItems(){
+    StringBuffer sb = new StringBuffer();
+    for(int i = 0; i < items.size(); i++){
+      sb.append(i + ". " + items.get(i).getName() + ": " + items.get(i).getDamagePoint() + "\n");
+    }
+    return sb.toString();
+  }
+
+  @Override
   public boolean equals(Object o) {
     if (this == o) {
       return true;

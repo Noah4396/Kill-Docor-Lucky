@@ -19,7 +19,7 @@ public class GamingView extends JFrame implements View {
   public GamingView(ReadOnlyModel model) {
     this.model = model;
     setTitle("Kill Doctor Lucky");
-    setSize(1000, 1000);
+    setSize(1400, 1200);
     setLocation(200, 200);
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setResizable(true);
@@ -59,8 +59,10 @@ public class GamingView extends JFrame implements View {
         labelText = "Game Over!";
         if (model.getWinner() != null) {
           labelText += "<br>Winner: " + model.getWinner().getName();
+          JOptionPane.showMessageDialog(this, "Winner: " + model.getWinner().getName());
         } else {
           labelText += "<br>Reach the max turn, and no winner.";
+          JOptionPane.showMessageDialog(this, "Reach the max turn, and no winner.");
         }
       } else {
         labelText = "Current turn: " + (model.getTotalTurn() + 1)

@@ -1,5 +1,6 @@
 package controller;
 
+import view.GameBoardPanel;
 import world.Room;
 
 public interface Features {
@@ -33,9 +34,10 @@ public interface Features {
    */
   void movePlayer(Room room);
 
-  void pickUpItem(int itemIndex);
 
-  String lookAround();
-
-  void makeAttempt(int itemIndex);
+  /**
+   * Execute the command.
+   * @param key
+   */
+  void executeCommand(int key, GameBoardPanel panel);
 }

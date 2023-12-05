@@ -194,4 +194,10 @@ public interface Room {
    * @return the items string.
    */
   public String getItemsString();
+
+  /**
+   * Get the items.
+   * @return the items.
+   */
+  String displayItems();
 }
