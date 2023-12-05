@@ -9,15 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Add method for action in the Features">
-      <change afterPath="$PROJECT_DIR$/src/command/ViewLookAround.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish command for human player">
+      <change afterPath="$PROJECT_DIR$/src/command/ViewComputerCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Features.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Features.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/PickUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/PickUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ViewLookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ViewLookAround.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/SpecifiedRoom.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,15 +269,7 @@
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
       <workItem from="1701643348372" duration="18211000" />
-      <workItem from="1701725865680" duration="11432000" />
-    </task>
-    <task id="LOCAL-00060" summary="Check style">
-      <option name="closed" value="true" />
-      <created>1698033422920</created>
-      <option name="number" value="00060" />
-      <option name="presentableId" value="LOCAL-00060" />
-      <option name="project" value="LOCAL" />
-      <updated>1698033422920</updated>
+      <workItem from="1701725865680" duration="12852000" />
     </task>
     <task id="LOCAL-00061" summary="Check style">
       <option name="closed" value="true" />
@@ -664,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701734025961</updated>
     </task>
-    <option name="localTasksCounter" value="109" />
+    <task id="LOCAL-00109" summary="Finish command for human player">
+      <option name="closed" value="true" />
+      <created>1701738588117</created>
+      <option name="number" value="00109" />
+      <option name="presentableId" value="LOCAL-00109" />
+      <option name="project" value="LOCAL" />
+      <updated>1701738588117</updated>
+    </task>
+    <option name="localTasksCounter" value="110" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,7 +707,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="change life of target" />
     <MESSAGE value="Fix the controller" />
     <MESSAGE value="Test the controller" />
     <MESSAGE value="modify README.md" />
@@ -733,6 +731,7 @@
     <MESSAGE value="Make health visible on target." />
     <MESSAGE value="Display items in the room." />
     <MESSAGE value="Add method for action in the Features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add method for action in the Features" />
+    <MESSAGE value="Finish command for human player" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish command for human player" />
   </component>
 </project>

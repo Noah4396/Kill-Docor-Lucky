@@ -40,6 +40,7 @@ public class ViewController implements Controller,  Features {
     knownCommands.put(KeyEvent.VK_1, s -> new PickUp(model.getTurn(), s.getRoomItemIndex()));
     knownCommands.put(KeyEvent.VK_2, s -> new ViewLookAround(model.getTurn(), s));
     knownCommands.put(KeyEvent.VK_3, s -> new Attempt(model.getTurn(), s.getPlayerItemIndex()));
+    knownCommands.put(KeyEvent.VK_C, s -> new ViewComputerCommand(model.getTurn(), s));
     view.paintLayout();
     view.refresh();
   }

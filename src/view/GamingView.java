@@ -78,6 +78,7 @@ public class GamingView extends JFrame implements View {
         labelText += "<br> Enter 1 to pick up an item in the room.";
         labelText += "<br> Enter 2 to look around.";
         labelText += "<br> Enter 3 to attempt to kill the target.";
+        labelText += "<br> Enter c to let the computer player execute its command.";
       }
     }
 

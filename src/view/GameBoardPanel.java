@@ -61,6 +61,7 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     setFocusable(true);
     requestFocusInWindow();
   }
+
   private void initializeAmp() {
     if (model == null) {
       amplificationFactor = 0;
@@ -96,12 +97,16 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     }
     for (RoomComponent roomComponent : roomComponents) {
       if (isInRange(x, y, roomComponent.x, roomComponent.y, amplificationFactor)) {
-        if(!model.isGameStart()){
+        if (!model.isGameStart()) {
           sb.append(roomComponent.room.toString());
           JOptionPane.showMessageDialog(null, sb.toString());
           return;
         }
-
+        if (model.getTurn().isComputer()) {
+          sb.append("This is a computer player, please enter c to execute the command.");
+          JOptionPane.showMessageDialog(null, sb.toString());
+          return;
+        }
         if (listener != null) {
           try {
             listener.movePlayer(roomComponent.room);
@@ -152,7 +157,6 @@ public class GameBoardPanel extends JPanel implements KeyListener {
   @Override
   public void keyPressed(KeyEvent e) {
     int key = e.getKeyCode();
-    StringBuffer sb = new StringBuffer();
     // Example: Map keys to specific actions
     listener.executeCommand(key, this);
   }
@@ -283,7 +287,7 @@ public class GameBoardPanel extends JPanel implements KeyListener {
       int centerY = upperBound + radius / 2;
       int offset = 0;
       x = centerX + index * radius;
-      if(x > rightBound) {
+      if (x > rightBound) {
         offset = (x - leftBound) / width;
         x = x - offset * width;
       }
@@ -299,7 +303,7 @@ public class GameBoardPanel extends JPanel implements KeyListener {
         text = "" + character.getIndex();
       }
 
-      g.fillOval(x - this.radius , y - this.radius, radius, radius);
+      g.fillOval(x - this.radius, y - this.radius, radius, radius);
       // Draw the text in the center
       g.setColor(Color.black);
       FontMetrics fontMetrics = g.getFontMetrics();
