@@ -69,6 +69,7 @@ public class GamingView extends JFrame implements View {
             + ", MaxTurn:" + model.getMaxTurn();
         labelText += "<br>Current player: " + model.getTurn().getName()
             + ", player index: " + model.getTurn().getIndex();
+        labelText += "<br>Player Type: " + (model.getTurn().isComputer() ? "Computer" : "Human");
 
         labelText += "<br>";
         labelText += "<br>Items in the room: " + "<br>" + model.getTurn().getRoom().getItemsString();

@@ -9,13 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish command for human player">
-      <change afterPath="$PROJECT_DIR$/src/command/ViewComputerCommand.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish computer command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/PickUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/PickUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/command/ViewLookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ViewLookAround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GameBoardPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameBoardPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,15 +264,7 @@
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
       <workItem from="1701643348372" duration="18211000" />
-      <workItem from="1701725865680" duration="12852000" />
-    </task>
-    <task id="LOCAL-00061" summary="Check style">
-      <option name="closed" value="true" />
-      <created>1698034068913</created>
-      <option name="number" value="00061" />
-      <option name="presentableId" value="LOCAL-00061" />
-      <option name="project" value="LOCAL" />
-      <updated>1698034068913</updated>
+      <workItem from="1701725865680" duration="14114000" />
     </task>
     <task id="LOCAL-00062" summary="Check style">
       <option name="closed" value="true" />
@@ -663,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701738588117</updated>
     </task>
-    <option name="localTasksCounter" value="110" />
+    <task id="LOCAL-00110" summary="Finish computer command">
+      <option name="closed" value="true" />
+      <created>1701740233467</created>
+      <option name="number" value="00110" />
+      <option name="presentableId" value="LOCAL-00110" />
+      <option name="project" value="LOCAL" />
+      <updated>1701740233467</updated>
+    </task>
+    <option name="localTasksCounter" value="111" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +702,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fix the controller" />
     <MESSAGE value="Test the controller" />
     <MESSAGE value="modify README.md" />
     <MESSAGE value="mock model" />
@@ -732,6 +726,7 @@
     <MESSAGE value="Display items in the room." />
     <MESSAGE value="Add method for action in the Features" />
     <MESSAGE value="Finish command for human player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish command for human player" />
+    <MESSAGE value="Finish computer command" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish computer command" />
   </component>
 </project>
