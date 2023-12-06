@@ -60,7 +60,6 @@ public class GamingMenu extends JMenuBar {
       @Override
       public void actionPerformed(ActionEvent e) {
         listener.startGame();
-        JOptionPane.showMessageDialog(null, "Game started.");
       }
     });
 

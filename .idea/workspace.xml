@@ -9,8 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish computer command">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix the prompt">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/ViewDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -264,15 +266,10 @@
       <workItem from="1701465811327" duration="10680000" />
       <workItem from="1701555108038" duration="11917000" />
       <workItem from="1701643348372" duration="18211000" />
-      <workItem from="1701725865680" duration="14114000" />
-    </task>
-    <task id="LOCAL-00062" summary="Check style">
-      <option name="closed" value="true" />
-      <created>1698034187630</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1698034187630</updated>
+      <workItem from="1701725865680" duration="14550000" />
+      <workItem from="1701747128211" duration="757000" />
+      <workItem from="1701896843761" duration="266000" />
+      <workItem from="1701897134319" duration="1731000" />
     </task>
     <task id="LOCAL-00063" summary="Modify look around">
       <option name="closed" value="true" />
@@ -658,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701740233467</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="Fix the prompt">
+      <option name="closed" value="true" />
+      <created>1701741244999</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1701741244999</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,7 +707,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Test the controller" />
     <MESSAGE value="modify README.md" />
     <MESSAGE value="mock model" />
     <MESSAGE value="check style" />
@@ -727,6 +731,7 @@
     <MESSAGE value="Add method for action in the Features" />
     <MESSAGE value="Finish command for human player" />
     <MESSAGE value="Finish computer command" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish computer command" />
+    <MESSAGE value="Fix the prompt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix the prompt" />
   </component>
 </project>

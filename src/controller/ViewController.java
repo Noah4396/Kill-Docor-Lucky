@@ -37,19 +37,25 @@ public class ViewController implements Controller,  Features {
     System.out.println("startNewGame");
     model = new GamingModel(filePath, maxTurns);
     view.setModel(model);
-    knownCommands.put(KeyEvent.VK_1, s -> new PickUp(model.getTurn(), s.getRoomItemIndex()));
-    knownCommands.put(KeyEvent.VK_2, s -> new ViewLookAround(model.getTurn(), s));
-    knownCommands.put(KeyEvent.VK_3, s -> new Attempt(model.getTurn(), s.getPlayerItemIndex()));
-    knownCommands.put(KeyEvent.VK_C, s -> new ViewComputerCommand(model.getTurn(), s));
     view.paintLayout();
     view.refresh();
   }
 
   @Override
   public void startGame() {
+    if(model.getTurn()== null){
+      JOptionPane.showMessageDialog(null, "No player"
+          + ", please add player first.");
+      return;
+    }
     model.setGameStart(true);
+    knownCommands.put(KeyEvent.VK_1, s -> new PickUp(model.getTurn(), s.getRoomItemIndex()));
+    knownCommands.put(KeyEvent.VK_2, s -> new ViewLookAround(model.getTurn(), s));
+    knownCommands.put(KeyEvent.VK_3, s -> new Attempt(model.getTurn(), s.getPlayerItemIndex()));
+    knownCommands.put(KeyEvent.VK_C, s -> new ViewComputerCommand(model.getTurn(), s));
     view.setPanelFeatures(this);
     view.refresh();
+    JOptionPane.showMessageDialog(null, "Game started.");
   }
 
   @Override

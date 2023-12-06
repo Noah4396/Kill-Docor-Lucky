@@ -19,7 +19,14 @@ public class ViewDriver {
     String path = "res/mansion.txt";
     int turnNumber = 10;
     Scanner scan = new Scanner(System.in);
-    GamingModel model = null;
+    GamingModel model;
+    if(args.length == 0) {
+      model = null;
+    } else {
+      path = args[0];
+      turnNumber = Integer.parseInt(args[1]);
+      model = new GamingModel(path, turnNumber);
+    }
     GamingView view = new GamingView(model);
     ViewController controller = new ViewController(view, model);
     view.setMenuFeatures(controller);

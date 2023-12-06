@@ -32,10 +32,14 @@ public class GamingView extends JFrame implements View {
     turnLabel = new JLabel("", SwingConstants.LEADING);
     add(turnLabel, BorderLayout.EAST); // Move the label to the right side
 
-    guideLabel = new JLabel("Click menu Game --> NewGame to start.");
+    guideLabel = new JLabel("Click menu Game --> NewGame "
+        + "to start a new game with a world specification.");
     add(guideLabel, BorderLayout.CENTER);
 
     boardPanel = null;
+    if (model != null) {
+      paintLayout();
+    }
   }
 
   @Override
@@ -55,31 +59,43 @@ public class GamingView extends JFrame implements View {
     repaint();
 
     if (model != null) {
-      if (model.isGameOver()) {
-        labelText = "Game Over!";
-        if (model.getWinner() != null) {
-          labelText += "<br>Winner: " + model.getWinner().getName();
-          JOptionPane.showMessageDialog(this, "Winner: " + model.getWinner().getName());
-        } else {
-          labelText += "<br>Reach the max turn, and no winner.";
-          JOptionPane.showMessageDialog(this, "Reach the max turn, and no winner.");
-        }
+      if (!model.isGameStart()) {
+        labelText = "Click menu Game --> Add Player to add player";
+        labelText += "<br>After adding all of the player, "
+            + "click menu Game --> Start Game to start the game.";
       } else {
-        labelText = "Current turn: " + (model.getTotalTurn() + 1)
-            + ", MaxTurn:" + model.getMaxTurn();
-        labelText += "<br>Current player: " + model.getTurn().getName()
-            + ", player index: " + model.getTurn().getIndex();
-        labelText += "<br>Player Type: " + (model.getTurn().isComputer() ? "Computer" : "Human");
+        if (model.isGameOver()) {
+          labelText = "Game Over!";
+          if (model.getWinner() != null) {
+            labelText += "<br>Winner: " + model.getWinner().getName();
+            JOptionPane.showMessageDialog(this, "Winner: " + model.getWinner().getName());
+          } else {
+            labelText += "<br>Reach the max turn, and no winner.";
+            JOptionPane.showMessageDialog(this, "Reach the max turn, and no winner.");
+          }
+        } else {
+          labelText = "The red circle is the target and the number on it is the health.";
+          labelText += "<br>The yellow circle is the current player and its player index.";
+          labelText += "<br>The blue circle is the player not in turn and its player index.";
+          labelText += "<br>Try your best to kill the target!.";
+          labelText += "<br>";
+          labelText +=
+              "<br>Current turn: " + (model.getTotalTurn() + 1) + ", MaxTurn:" + model.getMaxTurn();
+          labelText += "<br>Current player: " + model.getTurn().getName() + ", player index: "
+              + model.getTurn().getIndex();
+          labelText += "<br>Player Type: " + (model.getTurn().isComputer() ? "Computer" : "Human");
 
-        labelText += "<br>";
-        labelText += "<br>Items in the room: " + "<br>" + model.getTurn().getRoom().getItemsString();
+          labelText += "<br>";
+          labelText +=
+              "<br>Items in the room: " + "<br>" + model.getTurn().getRoom().getItemsString();
 
-        labelText += "<br>";
-        labelText += "<br>Click in the circle of room to move to neighbour." ;
-        labelText += "<br> Enter 1 to pick up an item in the room.";
-        labelText += "<br> Enter 2 to look around.";
-        labelText += "<br> Enter 3 to attempt to kill the target.";
-        labelText += "<br> Enter c to let the computer player execute its command.";
+          labelText += "<br>";
+          labelText += "<br>Click in the circle of room to move to neighbour.";
+          labelText += "<br> Enter 1 to pick up an item in the room.";
+          labelText += "<br> Enter 2 to look around.";
+          labelText += "<br> Enter 3 to attempt to kill the target.";
+          labelText += "<br> Enter c to let the computer player execute its command.";
+        }
       }
     }
 
