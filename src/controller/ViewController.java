@@ -71,6 +71,9 @@ public class ViewController implements Controller,  Features {
     if(model.isGameStart()) {
       throw new IllegalStateException("Cannot add player after the game has started.");
     }
+    if(model.getPlayers().size() == 10) {
+      throw new IllegalStateException("Cannot add more than 10 players.");
+    }
     if(capacity < 0 || index < 0) {
       throw new IllegalArgumentException("Invalid input. Please enter a valid number.");
     }
