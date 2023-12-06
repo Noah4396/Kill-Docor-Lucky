@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="update README.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/res/revisedUML.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/res/revisedUML.pdf" afterDir="false" />
-    </list>
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="update README.md" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -268,15 +264,7 @@
       <workItem from="1701725865680" duration="14550000" />
       <workItem from="1701747128211" duration="757000" />
       <workItem from="1701896843761" duration="266000" />
-      <workItem from="1701897134319" duration="5838000" />
-    </task>
-    <task id="LOCAL-00066" summary="The pet will make the room invisible">
-      <option name="closed" value="true" />
-      <created>1699333978241</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1699333978241</updated>
+      <workItem from="1701897134319" duration="6464000" />
     </task>
     <task id="LOCAL-00067" summary="The wandering pet">
       <option name="closed" value="true" />
@@ -662,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701901899993</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="update README.md">
+      <option name="closed" value="true" />
+      <created>1701903023250</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1701903023251</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
