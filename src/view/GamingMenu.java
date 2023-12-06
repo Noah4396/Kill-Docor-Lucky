@@ -52,7 +52,7 @@ public class GamingMenu extends JMenuBar {
     exitMenuItem.addActionListener(new ActionListener() {
       @Override
       public void actionPerformed(ActionEvent e) {
-
+        System.exit(0);
       }
     });
 

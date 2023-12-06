@@ -9,11 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Fix the prompt">
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Update the UI">
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/TheWorld.jar" beforeDir="false" afterPath="$PROJECT_DIR$/res/TheWorld.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/driver/ViewDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GamingView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GamingMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GamingMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/menu/AddPlayerListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/menu/AddPlayerListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,15 +271,7 @@
       <workItem from="1701725865680" duration="14550000" />
       <workItem from="1701747128211" duration="757000" />
       <workItem from="1701896843761" duration="266000" />
-      <workItem from="1701897134319" duration="1731000" />
-    </task>
-    <task id="LOCAL-00063" summary="Modify look around">
-      <option name="closed" value="true" />
-      <created>1699247938509</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1699247938509</updated>
+      <workItem from="1701897134319" duration="2750000" />
     </task>
     <task id="LOCAL-00064" summary="Create Pet">
       <option name="closed" value="true" />
@@ -663,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701741244999</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Update the UI">
+      <option name="closed" value="true" />
+      <created>1701899043825</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1701899043825</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -707,7 +709,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="modify README.md" />
     <MESSAGE value="mock model" />
     <MESSAGE value="check style" />
     <MESSAGE value="add view and refractor" />
@@ -732,6 +733,7 @@
     <MESSAGE value="Finish command for human player" />
     <MESSAGE value="Finish computer command" />
     <MESSAGE value="Fix the prompt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix the prompt" />
+    <MESSAGE value="Update the UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update the UI" />
   </component>
 </project>

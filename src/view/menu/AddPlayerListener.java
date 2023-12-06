@@ -39,6 +39,7 @@ public class AddPlayerListener implements ActionListener {
       index = Integer.parseInt(roomIndex);
     } catch (NumberFormatException e) {
       JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid number.");
+      return;
     }
 
     try{

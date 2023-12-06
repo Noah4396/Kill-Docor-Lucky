@@ -48,6 +48,10 @@ public class ViewController implements Controller,  Features {
           + ", please add player first.");
       return;
     }
+    if(model.isGameStart()){
+      JOptionPane.showMessageDialog(null, "Game has already started.");
+      return;
+    }
     model.setGameStart(true);
     knownCommands.put(KeyEvent.VK_1, s -> new PickUp(model.getTurn(), s.getRoomItemIndex()));
     knownCommands.put(KeyEvent.VK_2, s -> new ViewLookAround(model.getTurn(), s));
@@ -81,6 +85,10 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void movePlayer(Room room) {
+    if(model.isGameOver()){
+      JOptionPane.showMessageDialog(null, "Game is over, please start a new game.");
+      return;
+    }
     PlayerCharacter player = model.getTurn();
     Room currentRoom = player.getRoom();
     if(currentRoom.isNeighbour(room) != 0) {
@@ -95,6 +103,10 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void executeCommand(int key, GameBoardPanel panel) {
+    if(model.isGameOver()){
+      JOptionPane.showMessageDialog(null, "Game is over, please start a new game.");
+      return;
+    }
     if(knownCommands.containsKey(key)) {
       GamingCommand command = knownCommands.get(key).apply(panel);
       try {
