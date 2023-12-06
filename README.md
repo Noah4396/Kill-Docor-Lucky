@@ -7,7 +7,11 @@
 1. The game can only have no more than 10 players
 
 **Design changes**  
-I add some methods to the game model that my previous design does not have, eg. movePetDepthFirst, petInitialize, etc.
+Because the lucid chart has a limitation of 60 elements, I only include the controller
+and view part in the revisedUML.pdf. I did not change the model part, so you can see 
+the model part in the UML I submitted in the preliminary design. Here are the changes I made:
+1. I add new class and interface like GamingBoardPanel and FeaturesPanel to make the code more readable and maintainable.
+2. I add some method in to the view and controller to interact with the new class and interface.
 
 **Citations**
 1. CS5010 Milestone 4 - The View
