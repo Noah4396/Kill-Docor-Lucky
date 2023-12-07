@@ -98,6 +98,7 @@ public class MockModel implements Model {
 
   @Override
   public void setGameStart(boolean gameStart) {
+    log.append("setGameStart, input: " + gameStart + "\n");
     this.gameStart = gameStart;
   }
 
@@ -108,7 +109,8 @@ public class MockModel implements Model {
 
   @Override
   public ArrayList<PlayerCharacter> getPlayers() {
-    return null;
+    log.append("getPlayers\n");
+    return players;
   }
 
   @Override
@@ -118,6 +120,7 @@ public class MockModel implements Model {
 
   @Override
   public boolean isGameStart() {
+    log.append("isGameStart\n");
     return gameStart;
   }
   /**
@@ -193,6 +196,7 @@ public class MockModel implements Model {
    * @param room      the room.
    */
   public void move(Character character, Room room) {
+    log.append("move, input: " + character.getName()+ " " + room.getName() + "\n");
     if (character == null || room == null) {
       throw new IllegalArgumentException("Invalid input of move");
     }
@@ -507,7 +511,10 @@ public class MockModel implements Model {
 
   @Override
   public PlayerCharacter getTurn() {
-    return players.get(currentTurn);
+    log.append("getTurn\n");
+    PlayerCharacter mockPlayer = new PlayerCharacter("Doctor Lucky", 0, 0);
+    move(mockPlayer, rooms.get(1));
+    return mockPlayer;
   }
 
   @Override
@@ -636,12 +643,7 @@ public class MockModel implements Model {
    * Pass the turn.
    */
   public void passTurn() {
-    currentTurn++;
-    currentTurn = currentTurn % players.size();
-    totalTurn++;
-    if (totalTurn >= maxTurn) {
-      gameOver = true;
-    }
+    log.append("passTurn\n");
   }
 
   @Override

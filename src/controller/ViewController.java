@@ -34,7 +34,6 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void startNewGame(String filePath, int maxTurns) {
-    System.out.println("startNewGame");
     model = new GamingModel(filePath, maxTurns);
     view.setModel(model);
     view.paintLayout();
@@ -122,4 +121,24 @@ public class ViewController implements Controller,  Features {
     }
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+    ViewController that = (ViewController) o;
+    return Objects.equals(view, that.view) && Objects.equals(model, that.model) && Objects.equals(
+        knownCommands, that.knownCommands) && Objects.equals(commands, that.commands);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(view, model, knownCommands, commands);
+  }
+
+  @Override
+  public String toString() {
+    return hashCode() + "";
+  }
 }
