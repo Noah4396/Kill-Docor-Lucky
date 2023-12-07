@@ -5,12 +5,7 @@ import command.GamingCommand;
 import command.PickUp;
 import command.ViewComputerCommand;
 import command.ViewLookAround;
-import model.GamingModel;
-import model.Model;
-import view.GameBoardPanel;
-import view.View;
-import world.PlayerCharacter;
-import world.Room;
+
 import javax.swing.JOptionPane;
 import java.awt.event.KeyEvent;
 import java.util.HashMap;
@@ -20,13 +15,28 @@ import java.util.Objects;
 import java.util.Stack;
 import java.util.function.Function;
 
+import model.GamingModel;
+import model.Model;
+import view.GameBoardPanel;
+import view.View;
+import world.PlayerCharacter;
+import world.Room;
 
+/**
+ * The controller for the view.
+ */
 public class ViewController implements Controller, Features {
   private View view;
   private Model model;
-  Map<Integer, Function<GameBoardPanel, GamingCommand>> knownCommands;
-  Stack<GamingCommand> commands;
+  private Map<Integer, Function<GameBoardPanel, GamingCommand>> knownCommands;
+  private Stack<GamingCommand> commands;
 
+  /**
+   * Constructor for the controller.
+   *
+   * @param view  the view
+   * @param model the model
+   */
   public ViewController(View view, Model model) {
     this.view = view;
     this.model = model;
@@ -129,10 +139,12 @@ public class ViewController implements Controller, Features {
 
   @Override
   public boolean equals(Object o) {
-    if (this == o)
+    if (this == o) {
       return true;
-    if (o == null || getClass() != o.getClass())
+    }
+    if (o == null || getClass() != o.getClass()) {
       return false;
+    }
     ViewController that = (ViewController) o;
     return Objects.equals(view, that.view) && Objects.equals(model, that.model) && Objects.equals(
         knownCommands, that.knownCommands) && Objects.equals(commands, that.commands);

@@ -1,9 +1,9 @@
 package command;
 
 import model.Model;
+import javax.swing.JOptionPane;
 import view.GameBoardPanel;
 import world.PlayerCharacter;
-import javax.swing.JOptionPane;
 
 /**
  * A command to view the computer's command.

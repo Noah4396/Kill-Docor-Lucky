@@ -1,11 +1,9 @@
 package command;
 
+import javax.swing.JOptionPane;
 import model.Model;
 import view.GameBoardPanel;
-import javax.swing.JOptionPane;
 import world.PlayerCharacter;
-
-import java.io.IOException;
 
 /**
  * A command to view the computer's command.
