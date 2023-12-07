@@ -165,11 +165,12 @@ public class PlayerCharacter implements Character {
   @Override
   public String toString() {
     StringBuffer sb = new StringBuffer();
-    sb.append("Character name: " + name);
-    sb.append(", Current room: " + room.getName());
-    sb.append(", index: " + index);
-    sb.append(", items: " + items);
-    sb.append(", player type: ");
+    sb.append("Character name: " + name + "\n");
+    sb.append("capacity: " + itemCapacity + "\n");
+    sb.append("Current room: " + room.getName() + "\n");
+    sb.append("index: " + index + "\n");
+    sb.append("items: " + items + "\n");
+    sb.append("player type: ");
     if (isComputer) {
       sb.append("computer");
     } else {

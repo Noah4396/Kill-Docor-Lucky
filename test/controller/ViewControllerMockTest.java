@@ -43,7 +43,7 @@ public class ViewControllerMockTest {
     expected.append("paintLayout\n");
     expected.append("refresh\n");
     assertEquals(expected.toString(), viewLog.toString());
-    assertEquals("", modelLog.toString());
+    assertEquals("move, input: Doctor Lucky Armory\n", modelLog.toString());
   }
 
   @Test
@@ -51,11 +51,13 @@ public class ViewControllerMockTest {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.startGame();
     StringBuffer expectedViewLog = new StringBuffer();
-    expectedViewLog.append("setPanelFeatures, input:-697108828\n" + "refresh\n");
+    expectedViewLog.append("setPanelFeatures, input:" + controller.hashCode() + "\n" + "refresh\n");
     assertEquals(expectedViewLog.toString(), viewLog.toString());
 
     StringBuffer expectedModelLog = new StringBuffer();
-    expectedModelLog.append("getTurn\n" + "isGameStart\n" + "setGameStart, input: true\n");
+    expectedModelLog.append("move, input: Doctor Lucky Armory\n" + "getTurn\n"
+        + "move, input: Doctor Lucky Billiard Room\n" + "isGameStart\n"
+        + "setGameStart, input: true\n");
     assertEquals(expectedModelLog.toString(), modelLog.toString());
   }
 
@@ -64,15 +66,16 @@ public class ViewControllerMockTest {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.addPlayer("test", 5, 1, true);
     StringBuffer expectedViewLog = new StringBuffer();
-    expectedViewLog.append("addPlayer, input:Character name: test,"
-        + " Current room: Billiard Room, index: 0, items: [], player type: computer\n"
+    expectedViewLog.append("addPlayer, input:Character name: test\n" + "capacity: 5\n"
+        + "Current room: Billiard Room\n" + "index: 0\n" + "items: []\n" + "player type: computer\n"
         + "refresh\n");
     assertEquals(expectedViewLog.toString(), viewLog.toString());
 
     StringBuffer expectedModelLog = new StringBuffer();
-    expectedModelLog.append("isGameStart\n" + "getPlayers\n" + "getPlayers\n"
-        + "Input: Character name: test, "
-        + "Current room: Billiard Room, index: 0, items: [], player type: human 1\n");
+    expectedModelLog.append("move, input: Doctor Lucky Armory\n" + "isGameStart\n" + "getPlayers\n"
+        + "getPlayers\n" + "move, input: test Billiard Room\n" + "Input: Character name: test\n"
+        + "capacity: 5\n" + "Current room: Billiard Room\n" + "index: 0\n" + "items: []\n"
+        + "player type: human 1\n");
     assertEquals(expectedModelLog.toString(), modelLog.toString());
   }
 
