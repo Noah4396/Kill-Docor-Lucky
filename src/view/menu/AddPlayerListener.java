@@ -1,16 +1,20 @@
 package view.menu;
 
 import controller.Features;
-import model.Model;
-import model.ReadOnlyModel;
-
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
+/**
+ * A listener for the add player menu item.
+ */
 public class AddPlayerListener implements ActionListener {
   private Features features;
 
-
+  /**
+   * Construct an add player listener.
+   * @param features the features
+   */
   public AddPlayerListener(Features features) {
     this.features = features;
   }

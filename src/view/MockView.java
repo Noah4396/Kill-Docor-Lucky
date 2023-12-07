@@ -4,10 +4,18 @@ import controller.Features;
 import model.ReadOnlyModel;
 import world.PlayerCharacter;
 
+/**
+ * A mock view for testing.
+ */
 public class MockView implements View {
   private StringBuilder log;
   private final String uniqueCode;
 
+  /**
+   * Construct a mock view.
+   * @param log the log
+   * @param uniqueCode the unique code
+   */
   public MockView(StringBuilder log, String uniqueCode) {
     this.log = log;
     this.uniqueCode = uniqueCode;

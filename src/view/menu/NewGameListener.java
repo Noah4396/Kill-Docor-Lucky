@@ -1,16 +1,23 @@
 package view.menu;
 
 import controller.Features;
-
-import javax.swing.*;
+import javax.swing.JOptionPane;
+import javax.swing.JFileChooser;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
+/**
+ * A listener for the new game menu item.
+ */
 public class NewGameListener implements ActionListener {
 
   private Features features;
 
+  /**
+   * Construct a new game listener.
+   * @param features the features
+   */
   public NewGameListener(Features features) {
     this.features = features;
   }

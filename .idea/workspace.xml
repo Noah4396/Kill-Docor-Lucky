@@ -9,8 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Update test and display player info in a better way">
-      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Check style">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ViewComputerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ViewComputerCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/command/ViewLookAround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/ViewLookAround.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/driver/ViewDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/driver/ViewDriver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,15 +272,7 @@
       <workItem from="1701725865680" duration="14550000" />
       <workItem from="1701747128211" duration="757000" />
       <workItem from="1701896843761" duration="266000" />
-      <workItem from="1701897134319" duration="11796000" />
-    </task>
-    <task id="LOCAL-00070" summary="Move pet command">
-      <option name="closed" value="true" />
-      <created>1699682223157</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1699682223157</updated>
+      <workItem from="1701897134319" duration="13240000" />
     </task>
     <task id="LOCAL-00071" summary="Test move pet">
       <option name="closed" value="true" />
@@ -662,7 +658,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701911270862</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="Check style">
+      <option name="closed" value="true" />
+      <created>1701912871145</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1701912871145</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -706,7 +710,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Create menu and controller" />
     <MESSAGE value="Game Initialization" />
     <MESSAGE value="Draw player and target" />
     <MESSAGE value="add player" />
@@ -731,6 +734,7 @@
     <MESSAGE value="set up for mock view" />
     <MESSAGE value="Finish test" />
     <MESSAGE value="Update test and display player info in a better way" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update test and display player info in a better way" />
+    <MESSAGE value="Check style" />
+    <option name="LAST_COMMIT_MESSAGE" value="Check style" />
   </component>
 </project>

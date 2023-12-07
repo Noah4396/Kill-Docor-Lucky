@@ -3,13 +3,20 @@ package command;
 import model.Model;
 import view.GameBoardPanel;
 import world.PlayerCharacter;
+import javax.swing.JOptionPane;
 
-import javax.swing.*;
-
+/**
+ * A command to view the computer's command.
+ */
 public class ViewComputerCommand implements GamingCommand {
   private PlayerCharacter player;
   private GameBoardPanel panel;
 
+  /**
+   * Construct a view computer command.
+   * @param player the player
+   * @param panel the panel
+   */
   public ViewComputerCommand(PlayerCharacter player, GameBoardPanel panel) {
     this.player = player;
     this.panel = panel;

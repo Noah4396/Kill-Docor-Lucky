@@ -1,17 +1,25 @@
 package controller;
 
-import command.*;
+import command.Attempt;
+import command.GamingCommand;
+import command.PickUp;
+import command.ViewComputerCommand;
+import command.ViewLookAround;
 import model.GamingModel;
 import model.Model;
 import view.GameBoardPanel;
 import view.View;
 import world.PlayerCharacter;
 import world.Room;
-
-import javax.swing.*;
+import javax.swing.JOptionPane;
 import java.awt.event.KeyEvent;
-import java.util.*;
+import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Stack;
 import java.util.function.Function;
+
 
 public class ViewController implements Controller, Features {
   private View view;

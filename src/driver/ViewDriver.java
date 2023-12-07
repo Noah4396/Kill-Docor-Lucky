@@ -3,7 +3,6 @@ package driver;
 import controller.ViewController;
 import model.GamingModel;
 import view.GamingView;
-
 import java.io.InputStreamReader;
 import java.util.Scanner;
 

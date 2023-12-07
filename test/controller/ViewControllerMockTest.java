@@ -10,6 +10,9 @@ import view.GameBoardPanel;
 import view.MockView;
 import view.View;
 
+/**
+ * A test class for ViewController.
+ */
 public class ViewControllerMockTest {
   private Model mockModel;
   private StringBuilder modelLog;

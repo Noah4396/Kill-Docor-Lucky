@@ -2,14 +2,23 @@ package command;
 
 import model.Model;
 import view.GameBoardPanel;
+import javax.swing.JOptionPane;
 import world.PlayerCharacter;
 
-import javax.swing.*;
+import java.io.IOException;
 
+/**
+ * A command to view the computer's command.
+ */
 public class ViewLookAround implements GamingCommand {
   private PlayerCharacter player;
   private GameBoardPanel panel;
 
+  /**
+   * Construct a view computer command.
+   * @param player the player
+   * @param panel the panel
+   */
   public ViewLookAround(PlayerCharacter player, GameBoardPanel panel) {
     this.player = player;
     this.panel = panel;
@@ -23,7 +32,7 @@ public class ViewLookAround implements GamingCommand {
     try {
       JOptionPane.showMessageDialog(panel, m.lookAround(player));
       m.passTurn();
-    } catch (Exception e) {
+    } catch (IllegalStateException e) {
       throw new IllegalStateException("Append failed", e);
     }
   }
