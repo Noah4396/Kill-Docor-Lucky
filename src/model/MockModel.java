@@ -13,6 +13,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Stack;
 import javax.imageio.ImageIO;
+
 import world.Character;
 import world.Item;
 import world.Pet;
@@ -123,6 +124,7 @@ public class MockModel implements Model {
     log.append("isGameStart\n");
     return gameStart;
   }
+
   /**
    * Paint the rooms.
    *
@@ -196,7 +198,7 @@ public class MockModel implements Model {
    * @param room      the room.
    */
   public void move(Character character, Room room) {
-    log.append("move, input: " + character.getName()+ " " + room.getName() + "\n");
+    log.append("move, input: " + character.getName() + " " + room.getName() + "\n");
     if (character == null || room == null) {
       throw new IllegalArgumentException("Invalid input of move");
     }

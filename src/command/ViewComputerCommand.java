@@ -6,7 +6,7 @@ import world.PlayerCharacter;
 
 import javax.swing.*;
 
-public class ViewComputerCommand implements GamingCommand{
+public class ViewComputerCommand implements GamingCommand {
   private PlayerCharacter player;
   private GameBoardPanel panel;
 
@@ -17,9 +17,9 @@ public class ViewComputerCommand implements GamingCommand{
 
   @Override
   public void execute(Model m) {
-    if(!player.isComputer()){
-      throw new IllegalStateException("This is not a computer, "
-          + "please enter 1-3 to execute the command.");
+    if (!player.isComputer()) {
+      throw new IllegalStateException(
+          "This is not a computer, " + "please enter 1-3 to execute the command.");
     }
     StringBuffer sb = new StringBuffer();
     m.computerCommand(player, sb);

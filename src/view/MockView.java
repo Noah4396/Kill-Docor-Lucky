@@ -4,7 +4,7 @@ import controller.Features;
 import model.ReadOnlyModel;
 import world.PlayerCharacter;
 
-public class MockView implements View{
+public class MockView implements View {
   private StringBuilder log;
   private final String uniqueCode;
 

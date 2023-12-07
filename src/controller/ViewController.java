@@ -13,8 +13,8 @@ import java.awt.event.KeyEvent;
 import java.util.*;
 import java.util.function.Function;
 
-public class ViewController implements Controller,  Features {
-  private  View view;
+public class ViewController implements Controller, Features {
+  private View view;
   private Model model;
   Map<Integer, Function<GameBoardPanel, GamingCommand>> knownCommands;
   Stack<GamingCommand> commands;
@@ -25,7 +25,6 @@ public class ViewController implements Controller,  Features {
     knownCommands = new HashMap<>();
     commands = new Stack<>();
   }
-
 
   @Override
   public void playGame(Model m) {
@@ -42,12 +41,11 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void startGame() {
-    if(model.getTurn()== null){
-      JOptionPane.showMessageDialog(null, "No player"
-          + ", please add player first.");
+    if (model.getTurn() == null) {
+      JOptionPane.showMessageDialog(null, "No player" + ", please add player first.");
       return;
     }
-    if(model.isGameStart()){
+    if (model.isGameStart()) {
       JOptionPane.showMessageDialog(null, "Game has already started.");
       return;
     }
@@ -63,17 +61,17 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void addPlayer(String name, int capacity, int index, boolean isComputer) {
-    if(model == null) {
+    if (model == null) {
       throw new IllegalStateException("Please click Game -> New Game to start a new game with "
           + "a world specification first.");
     }
-    if(model.isGameStart()) {
+    if (model.isGameStart()) {
       throw new IllegalStateException("Cannot add player after the game has started.");
     }
-    if(model.getPlayers().size() == 10) {
+    if (model.getPlayers().size() == 10) {
       throw new IllegalStateException("Cannot add more than 10 players.");
     }
-    if(capacity < 0 || index < 0) {
+    if (capacity < 0 || index < 0) {
       throw new IllegalArgumentException("Invalid input. Please enter a valid number.");
     }
     PlayerCharacter player = new PlayerCharacter(name, model.getPlayers().size(), capacity);
@@ -87,33 +85,33 @@ public class ViewController implements Controller,  Features {
 
   @Override
   public void movePlayer(Room room) {
-    if(model.isGameOver()){
+    if (model.isGameOver()) {
       JOptionPane.showMessageDialog(null, "Game is over, please start a new game.");
       return;
     }
     PlayerCharacter player = model.getTurn();
     Room currentRoom = player.getRoom();
-    if(currentRoom.isNeighbour(room) != 0) {
+    if (currentRoom.isNeighbour(room) != 0) {
       model.move(player, room);
       model.passTurn();
       view.refresh();
-    }
-    else{
-      throw new IllegalStateException("Cannot move to such room, it is not neighbour to the player");
+    } else {
+      throw new IllegalStateException(
+          "Cannot move to such room, it is not neighbour to the player");
     }
   }
 
   @Override
   public void executeCommand(int key, GameBoardPanel panel) {
-    if(model.isGameOver()){
+    if (model.isGameOver()) {
       JOptionPane.showMessageDialog(null, "Game is over, please start a new game.");
       return;
     }
-    if(knownCommands.containsKey(key)) {
+    if (knownCommands.containsKey(key)) {
       GamingCommand command = knownCommands.get(key).apply(panel);
       try {
         command.execute(model);
-      } catch (IllegalArgumentException | IllegalStateException | InputMismatchException e){
+      } catch (IllegalArgumentException | IllegalStateException | InputMismatchException e) {
         JOptionPane.showMessageDialog(panel, e.getMessage());
       }
       commands.push(command);

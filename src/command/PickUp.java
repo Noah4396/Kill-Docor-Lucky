@@ -28,7 +28,7 @@ public class PickUp implements GamingCommand {
 
   @Override
   public void execute(Model m) {
-    if(player.isComputer()){
+    if (player.isComputer()) {
       throw new IllegalStateException("Please enter c to make the computer execute its command.");
     }
     m.pickUpItem(player, index);

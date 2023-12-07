@@ -28,14 +28,14 @@ public class ViewControllerMockTest {
   }
 
   @Test
-  public void testPlayGame(){
+  public void testPlayGame() {
     Controller controller = new ViewController(mockView, mockModel);
     controller.playGame(mockModel);
     assert (viewLog.toString().contains("makeVisible\n"));
   }
 
   @Test
-  public void testStartNewGame(){
+  public void testStartNewGame() {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.startNewGame("res/mansion.txt", 5);
     StringBuffer expected = new StringBuffer();
@@ -47,7 +47,7 @@ public class ViewControllerMockTest {
   }
 
   @Test
-  public void testStartGame(){
+  public void testStartGame() {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.startGame();
     StringBuffer expectedViewLog = new StringBuffer();
@@ -62,7 +62,7 @@ public class ViewControllerMockTest {
   }
 
   @Test
-  public void testAddPlayer(){
+  public void testAddPlayer() {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.addPlayer("test", 5, 1, true);
     StringBuffer expectedViewLog = new StringBuffer();
@@ -72,10 +72,11 @@ public class ViewControllerMockTest {
     assertEquals(expectedViewLog.toString(), viewLog.toString());
 
     StringBuffer expectedModelLog = new StringBuffer();
-    expectedModelLog.append("move, input: Doctor Lucky Armory\n" + "isGameStart\n" + "getPlayers\n"
-        + "getPlayers\n" + "move, input: test Billiard Room\n" + "Input: Character name: test\n"
-        + "capacity: 5\n" + "Current room: Billiard Room\n" + "index: 0\n" + "items: []\n"
-        + "player type: human 1\n");
+    expectedModelLog.append(
+        "move, input: Doctor Lucky Armory\n" + "isGameStart\n" + "getPlayers\n" + "getPlayers\n"
+            + "move, input: test Billiard Room\n" + "Input: Character name: test\n"
+            + "capacity: 5\n" + "Current room: Billiard Room\n" + "index: 0\n" + "items: []\n"
+            + "player type: human 1\n");
     assertEquals(expectedModelLog.toString(), modelLog.toString());
   }
 
@@ -95,7 +96,7 @@ public class ViewControllerMockTest {
   }
 
   @Test
-  public void testExecuteCommand(){
+  public void testExecuteCommand() {
     ViewController controller = new ViewController(mockView, mockModel);
     controller.executeCommand(1, new GameBoardPanel(mockModel));
     StringBuffer expectedViewLog = new StringBuffer();

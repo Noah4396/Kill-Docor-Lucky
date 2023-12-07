@@ -42,6 +42,7 @@ public interface View {
    * @param features the features to set
    */
   void setPanelFeatures(Features features);
+
   /**
    * Set the model of the view.
    * @param model the model to set

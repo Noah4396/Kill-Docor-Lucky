@@ -32,8 +32,8 @@ public class GamingView extends JFrame implements View {
     turnLabel = new JLabel("", SwingConstants.LEADING);
     add(turnLabel, BorderLayout.EAST); // Move the label to the right side
 
-    guideLabel = new JLabel("Click menu Game --> NewGame "
-        + "to start a new game with a world specification.");
+    guideLabel = new JLabel(
+        "Click menu Game --> NewGame " + "to start a new game with a world specification.");
     add(guideLabel, BorderLayout.CENTER);
 
     boardPanel = null;

@@ -13,6 +13,7 @@ public interface ReadOnlyModel {
 
   /**
    * Look around the room.
+   *
    * @param c the character
    * @return the string of the room
    */
@@ -76,30 +77,35 @@ public interface ReadOnlyModel {
 
   /**
    * Get all rooms.
+   *
    * @return the array list of rooms
    */
   ArrayList<Room> getRooms();
 
   /**
    * Get if the game start.
+   *
    * @return the boolean
    */
   boolean isGameStart();
 
   /**
    * get target.
+   *
    * @return the target
    */
   Character getTarget();
 
   /**
    * get players.
+   *
    * @return the players
    */
   ArrayList<PlayerCharacter> getPlayers();
 
   /**
    * get max turn.
+   *
    * @return the max turn
    */
   int getMaxTurn();

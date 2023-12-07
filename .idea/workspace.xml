@@ -9,10 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Finish test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/world/PlayerCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/world/PlayerCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/controller/ViewControllerMockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/controller/ViewControllerMockTest.java" afterDir="false" />
+    <list default="true" id="74c3b96d-ab08-4f4e-9e60-b4fc2c3932b5" name="Changes" comment="Update test and display player info in a better way">
+      <change beforePath="$PROJECT_DIR$/src/command/Attempt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/command/Attempt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,15 +268,7 @@
       <workItem from="1701725865680" duration="14550000" />
       <workItem from="1701747128211" duration="757000" />
       <workItem from="1701896843761" duration="266000" />
-      <workItem from="1701897134319" duration="11031000" />
-    </task>
-    <task id="LOCAL-00069" summary="Fix the dfs move pet">
-      <option name="closed" value="true" />
-      <created>1699679768887</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1699679768887</updated>
+      <workItem from="1701897134319" duration="11796000" />
     </task>
     <task id="LOCAL-00070" summary="Move pet command">
       <option name="closed" value="true" />
@@ -664,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701910840437</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Update test and display player info in a better way">
+      <option name="closed" value="true" />
+      <created>1701911270862</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1701911270862</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -708,7 +706,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="paint the rooms" />
     <MESSAGE value="Create menu and controller" />
     <MESSAGE value="Game Initialization" />
     <MESSAGE value="Draw player and target" />
@@ -733,6 +730,7 @@
     <MESSAGE value="update README.md" />
     <MESSAGE value="set up for mock view" />
     <MESSAGE value="Finish test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish test" />
+    <MESSAGE value="Update test and display player info in a better way" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update test and display player info in a better way" />
   </component>
 </project>

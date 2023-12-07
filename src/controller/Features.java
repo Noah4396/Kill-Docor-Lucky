@@ -3,6 +3,9 @@ package controller;
 import view.GameBoardPanel;
 import world.Room;
 
+/**
+ * This interface represents the features of the game.
+ */
 public interface Features {
   /**
    * Start a new game.
@@ -20,9 +23,9 @@ public interface Features {
   /**
    * Add a player to the game.
    *
-   * @param name the name of the player
-   * @param capacity the capacity of the player
-   * @param index the index of the room the player is in
+   * @param name       the name of the player
+   * @param capacity   the capacity of the player
+   * @param index      the index of the room the player is in
    * @param isComputer whether the player is a computer
    */
   void addPlayer(String name, int capacity, int index, boolean isComputer);
@@ -34,10 +37,11 @@ public interface Features {
    */
   void movePlayer(Room room);
 
-
   /**
    * Execute the command.
-   * @param key
+   *
+   * @param key   the key of the command
+   * @param panel the panel to display the message
    */
   void executeCommand(int key, GameBoardPanel panel);
 }

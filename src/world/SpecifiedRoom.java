@@ -395,16 +395,16 @@ public class SpecifiedRoom implements Room {
   @Override
   public String getItemsString() {
     StringBuffer sb = new StringBuffer();
-    for(Item item : items) {
+    for (Item item : items) {
       sb.append(item.getName() + ": " + item.getDamagePoint() + ", ");
     }
     return sb.toString();
   }
 
   @Override
-  public String displayItems(){
+  public String displayItems() {
     StringBuffer sb = new StringBuffer();
-    for(int i = 0; i < items.size(); i++){
+    for (int i = 0; i < items.size(); i++) {
       sb.append(i + ". " + items.get(i).getName() + ": " + items.get(i).getDamagePoint() + "\n");
     }
     return sb.toString();

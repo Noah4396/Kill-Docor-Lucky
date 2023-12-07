@@ -6,7 +6,7 @@ import world.PlayerCharacter;
 
 import javax.swing.*;
 
-public class ViewLookAround implements GamingCommand{
+public class ViewLookAround implements GamingCommand {
   private PlayerCharacter player;
   private GameBoardPanel panel;
 
@@ -17,7 +17,7 @@ public class ViewLookAround implements GamingCommand{
 
   @Override
   public void execute(Model m) {
-    if(player.isComputer()){
+    if (player.isComputer()) {
       throw new IllegalStateException("Please enter c to make the computer execute its command.");
     }
     try {

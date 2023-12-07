@@ -20,7 +20,7 @@ public class ViewDriver {
     int turnNumber = 10;
     Scanner scan = new Scanner(System.in);
     GamingModel model;
-    if(args.length == 0) {
+    if (args.length == 0) {
       model = null;
     } else {
       path = args[0];

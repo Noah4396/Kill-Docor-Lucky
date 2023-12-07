@@ -23,7 +23,7 @@ public class Attempt implements GamingCommand {
 
   @Override
   public void execute(Model m) {
-    if(player.isComputer()){
+    if (player.isComputer()) {
       throw new IllegalStateException("Please enter c to make the computer execute its command.");
     }
 
