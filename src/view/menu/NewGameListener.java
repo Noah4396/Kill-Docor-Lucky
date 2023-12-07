@@ -4,8 +4,8 @@ import controller.Features;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import javax.swing.JOptionPane;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  * A listener for the new game menu item.
@@ -33,11 +33,10 @@ public class NewGameListener implements ActionListener {
 
       // Start a new game with the provided configuration and max turn number
       if (maxTurns > 0) {
-        // You need a method in your controller to start a new game with the given parameters
-        // For example, assuming you have a method like startNewGame(String filePath, int maxTurns) in your controller
         features.startNewGame(filePath, maxTurns);
       } else {
-        JOptionPane.showMessageDialog(null, "Invalid input. Please enter a valid turn number.");
+        JOptionPane.showMessageDialog(null,
+            "Invalid input. Please enter a valid turn number.");
       }
     }
   }

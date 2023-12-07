@@ -2,15 +2,18 @@ package view;
 
 import controller.Controller;
 import controller.Features;
-import model.ReadOnlyModel;
-import world.PlayerCharacter;
-
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
-import java.awt.*;
+import model.ReadOnlyModel;
+import world.PlayerCharacter;
 
+/**
+ * The view for the game.
+ */
 public class GamingView extends JFrame implements View {
   private ReadOnlyModel model;
   private GameBoardPanel boardPanel;
@@ -19,6 +22,11 @@ public class GamingView extends JFrame implements View {
   private final JLabel guideLabel;
   private String labelText;
 
+  /**
+   * Construct a gaming view.
+   *
+   * @param model the model
+   */
   public GamingView(ReadOnlyModel model) {
     this.model = model;
     setTitle("Kill Doctor Lucky");

@@ -1,18 +1,18 @@
 package view;
 
+import controller.Features;
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.Font;
-import java.awt.FontMetrics;
-import java.awt.Graphics;
 import java.util.ArrayList;
 import javax.swing.JComponent;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import controller.Features;
 import model.ReadOnlyModel;
 import world.Character;
 import world.PlayerCharacter;
@@ -59,6 +59,11 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     });
   }
 
+  /**
+   * Add a listener to the panel.
+   *
+   * @param listener the listener to add
+   */
   public void addListener(Features listener) {
     this.listener = listener;
     addKeyListener(this);
@@ -143,12 +148,17 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     }
   }
 
+  /**
+   * Add a player to the panel.
+   *
+   * @param player the player to add
+   */
   public void addPlayer(PlayerCharacter player) {
     try {
       Player newPlayer = new Player(player);
       players.add(newPlayer);
       this.repaint();
-    } catch (Exception e) {
+    } catch (IllegalArgumentException | IllegalStateException e) {
       e.printStackTrace();
     }
   }
@@ -170,6 +180,11 @@ public class GameBoardPanel extends JPanel implements KeyListener {
 
   }
 
+  /**
+   * Get the index of the room.
+   *
+   * @return the index of the room
+   */
   public int getRoomItemIndex() {
     StringBuffer sb = new StringBuffer();
     sb.append("The room has the following items:\n");
@@ -187,6 +202,11 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     return -1;
   }
 
+  /**
+   * Get the index of the item.
+   *
+   * @return the index of the item
+   */
   public int getPlayerItemIndex() {
     StringBuffer sb = new StringBuffer();
     sb.append("The player has following items:\n");
@@ -204,11 +224,19 @@ public class GameBoardPanel extends JPanel implements KeyListener {
     return -1;
   }
 
+  /**
+   * RoomComponent class.
+   */
   public class RoomComponent extends JComponent {
-    private Room room;
     public int x;
     public int y;
+    private Room room;
 
+    /**
+     * Constructor.
+     *
+     * @param room the room to use
+     */
     public RoomComponent(Room room) {
       this.room = room;
     }
@@ -255,12 +283,20 @@ public class GameBoardPanel extends JPanel implements KeyListener {
 
   }
 
+  /**
+   * Player class.
+   */
   class Player extends JComponent {
-    private Character character;
     public int x;
     public int y;
     public int radius;
+    private Character character;
 
+    /**
+     * Constructor.
+     *
+     * @param character the character to use
+     */
     public Player(Character character) {
       this.character = character;
     }
@@ -319,6 +355,11 @@ public class GameBoardPanel extends JPanel implements KeyListener {
       g.drawString(text, textX, textY);
     }
 
+    /**
+     * Get the name of the player.
+     *
+     * @return the name of the player
+     */
     public String getPlayerName() {
       return character.getName();
     }
