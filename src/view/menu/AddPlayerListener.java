@@ -20,6 +20,9 @@ public class AddPlayerListener implements ActionListener {
     this.features = features;
   }
 
+  /**
+   * Prompt the user for player information and add the player.
+   */
   public void promptForPlayerInfo() {
     String name = JOptionPane.showInputDialog("Enter player name:");
     String capacityInput = JOptionPane.showInputDialog("Enter player capacity:");

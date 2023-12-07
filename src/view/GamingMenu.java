@@ -2,16 +2,18 @@ package view;
 
 import controller.Features;
 import controller.ViewController;
-import model.ReadOnlyModel;
-import view.menu.AddPlayerListener;
-import view.menu.NewGameListener;
-
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.ReadOnlyModel;
+import view.menu.AddPlayerListener;
+import view.menu.NewGameListener;
 
+/**
+ * The menu for the game.
+ */
 public class GamingMenu extends JMenuBar {
   private JMenuItem newGameMenuItem;
   private JMenuItem exitMenuItem;
@@ -19,11 +21,21 @@ public class GamingMenu extends JMenuBar {
   private JMenuItem addPlayerMenuItem;
   private ReadOnlyModel model;
 
+  /**
+   * Construct a gaming menu.
+   *
+   * @param model the model
+   */
   public GamingMenu(ReadOnlyModel model) {
     initializeMenu();
     this.model = model;
   }
 
+  /**
+   * Set the model.
+   *
+   * @param model the model
+   */
   public void setModel(ReadOnlyModel model) {
     this.model = model;
   }
@@ -48,6 +60,11 @@ public class GamingMenu extends JMenuBar {
 
   }
 
+  /**
+   * Add a listener to the menu.
+   *
+   * @param listener the listener
+   */
   public void addListener(Features listener) {
     newGameMenuItem.addActionListener(new NewGameListener(listener));
 
