@@ -2,11 +2,11 @@ package view;
 
 import controller.Features;
 import controller.ViewController;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import model.ReadOnlyModel;
 import view.menu.AddPlayerListener;
 import view.menu.NewGameListener;
