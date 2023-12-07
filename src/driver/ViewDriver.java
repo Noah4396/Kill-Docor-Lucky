@@ -1,11 +1,14 @@
 package driver;
 
 import controller.ViewController;
-import model.GamingModel;
-import view.GamingView;
 import java.io.InputStreamReader;
 import java.util.Scanner;
+import model.GamingModel;
+import view.GamingView;
 
+/**
+ * The driver for the view.
+ */
 public class ViewDriver {
   /**
    * Run a Kill doctor lucky game interactively on the console.

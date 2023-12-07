@@ -5,16 +5,14 @@ import command.GamingCommand;
 import command.PickUp;
 import command.ViewComputerCommand;
 import command.ViewLookAround;
-
-import javax.swing.JOptionPane;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Stack;
 import java.util.function.Function;
-
 import model.GamingModel;
 import model.Model;
 import view.GameBoardPanel;

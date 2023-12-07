@@ -1,7 +1,7 @@
 package command;
 
-import model.Model;
 import javax.swing.JOptionPane;
+import model.Model;
 import view.GameBoardPanel;
 import world.PlayerCharacter;
 

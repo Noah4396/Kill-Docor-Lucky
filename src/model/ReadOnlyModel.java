@@ -1,10 +1,9 @@
 package model;
 
+import java.util.ArrayList;
 import world.Character;
 import world.PlayerCharacter;
 import world.Room;
-
-import java.util.ArrayList;
 
 /**
  * The read-only model of the game.
@@ -20,7 +19,7 @@ public interface ReadOnlyModel {
   String lookAround(Character c);
 
   /**
-   * Get Winner
+   * Get Winner.
    *
    * @return the player character
    */

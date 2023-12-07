@@ -5,7 +5,10 @@ import controller.Features;
 import model.ReadOnlyModel;
 import world.PlayerCharacter;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.SwingConstants;
 import java.awt.*;
 
 public class GamingView extends JFrame implements View {
